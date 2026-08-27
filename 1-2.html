@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>集合间的基本关系</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第一章**
+
+					## **集合**
+
+					### **$\S 1.2$ 集合间的基本关系**
+
+					### 王瑞
+
+					### 合肥六中
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **$\S 1.2$ 集合间的基本关系**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex"data-auto-animate>
+					<textarea data-template>
+					### **背景**
+
+					两个实数之间有大小关系，相等关系。例如：
+
+					$$5 = 5$$
+
+					$$5 < 7$$
+
+					$$5 > 3$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **背景**
+
+					两个实数之间有大小关系，相等关系。例如：
+
+					$$5 = 5$$
+
+					$$5 < 7$$
+
+					$$5 > 3$$
+
+					**两个集合之间是否也有类似关系呢？**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **背景**
+
+					观察下面几个例子，类比实数之间的相等关系、大小关系，你能发现下面两个集合之间的关系吗？
+
+					1. $A = \\{1, 2, 3\\}$，$B = \\{1, 2, 3, 4, 5\\}$
+					2. $C$ 为高一全体女生组成的集合，$D$ 为我们班全体学生组成的集合
+					3. $E = \\{x \mid x\text{是有两条边相等的三角形}\\}$，$F = \\{x \mid x\text{是等腰三角形}\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate >
+					<textarea data-template>
+					### **子集**
+
+					一般地，对于两个集合 $A, B$，如果集合 $A$ 中任意一个元素都是集合 $B$ 中的元素，就称集合 $A$ 为集合 $B$ 的**子集**（subset），记作
+
+					$$A \subseteq B \quad (B \supseteq A)$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate >
+					<textarea data-template>
+					### **子集**
+
+					一般地，对于两个集合 $A, B$，如果集合 $A$ 中任意一个元素都是集合 $B$ 中的元素，就称集合 $A$ 为集合 $B$ 的**子集**（subset），记作
+
+					$$A \subseteq B \quad (B \supseteq A)$$
+
+					读作“$A$ <font color="red">包含于</font> $B$”（或“$B$ <font color="red">包含</font> $A$”），哪个集合“大”，开口就朝向谁。
+					</textarea>
+				</section>
+
+				<section data-transition="convex">
+					<h3><strong>Venn 图</strong></h3>
+
+					<p style="font-size:0.85em;">在数学中，我们经常用平面上封闭曲线的内部代表集合，这种图称为 Venn 图，这种图是英国数学家 John Venn 发明的。</p>
+					<p style="font-size:0.85em;">上述集合 $A$ 与集合 $B$ 的包含关系如图 1.2-1 所示：</p>
+
+					<br>
+
+					<svg viewBox="0 0 420 300" width="420" height="300" style="">
+						<ellipse cx="225" cy="150" rx="160" ry="105" fill="rgba(120,180,255,.25)" stroke="#2a6" stroke-width="2.5"/>
+						<ellipse cx="185" cy="150" rx="75" ry="48" fill="rgba(255,180,120,.45)" stroke="#a52" stroke-width="2.5"/>
+						<text x="125" y="160" font-size="26" font-family="serif" font-weight="bold">A</text>
+						<text x="315" y="85" font-size="26" font-family="serif" font-weight="bold">B</text>
+						<text x="210" y="290" font-size="18" text-anchor="middle" font-family="serif">图 1.2-1</text>
+					</svg>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate="2">
+					<textarea data-template>
+					### **集合相等**
+
+					一般地，如果集合 $A$ 的任何一个元素都是集合 $B$ 的元素，同时集合 $B$ 的任何一个元素都是集合 $A$ 的元素，那么集合 $A$ 与集合 $B$ 相等，记作 $A = B$。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate="2">
+					<textarea data-template>
+					### **集合相等**
+
+
+					$$\text{若 } A \subseteq B \text{ 且 } B \subseteq A \text{，则 } A = B$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate="2">
+					<textarea data-template>
+					### **集合相等**
+
+
+					$$\text{若 } A \subseteq B \text{ 且 } B \subseteq A \text{，则 } A = B$$
+
+					与实数中的结论“若 $a \ge b$ 且 $b \ge a$，则 $a = b$”相类比，有什么发现？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **真子集和空集**
+
+					如果集合 $A \subseteq B$，但存在元素 $x \in B$，且 $x \notin A$，就称集合 $A$ 是集合 $B$ 的**真子集**（proper subset），记作
+
+					$$A \subsetneqq B \quad (\text{或 } B \supsetneqq A)$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3" >
+					<textarea data-template>
+					### **真子集和空集**
+
+
+					一般地，我们把不含任何元素的集合叫做**空集**（empty set），记为 $\varnothing$，并规定：空集是任何集合的子集。
+
+					> 试举出几个空集的例子？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **推论**
+
+					1. 任何集合也是它本身的子集，即 $A \subseteq A$
+					2. 对于集合 $A, B, C$，如果 $A \subseteq B$，$B \subseteq C$，那么 $A \subseteq C$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **推论**
+
+					**推论 2 的证明：**
+
+					**证明：** 任取 $x \in A$，因为 $A \subseteq B$，所以 $x \in B$；又 $B \subseteq C$，所以 $x \in C$，所以 $A \subseteq C$。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					1. 写出集合 $\\{a, b\\}$ 的所有子集
+					</textarea>
+				</section>
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					2. 集合 $\\{1, 2, 3, \cdots, n\\}$，$n \in \mathbb{N}^{*}$ 的所有子集一共有多少个？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					3. 在平面直角坐标系中，集合 $C = \\{(x, y) \mid y = x\\}$ 表示直线 $y = x$，从这个角度看，集合 $D = \\{(x, y) \mid 2x - y = 1,\ x + 4y = 5\\}$ 表示什么？集合 $C, D$ 之间有什么关系？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					4. $a, b \in \mathbb{R}$，$P = \\{1, a\\}$，$Q = \\{-1, -b\\}$，若 $P = Q$，求 $a - b$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					5. $A = \\{x \mid 0 < x < a\\}$，$B = \\{x \mid 1 < x < 2\\}$，若 $B \subseteq A$，求 $a$ 的取值范围
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					5. 变式 $A = \\{x \mid 0 < x < a\\}$，$B = \\{x \mid 1 < x < 2\\}$，若 $A \subseteq B$，求 $a$ 的取值范围
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **思考**
+					
+					1. 有集合 $S = \\{a_1, a_2, a_3, a_4\\}$，若集合 $S$ 的所有非空子集的元素之和是 $40$，则 $a_1 + a_2 + a_3 + a_4 = ?$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **思考**
+
+					2. 已知集合 $A = \\{x \mid x = 3a + 5b,\ a, b \in \mathbb{Z}\\}$，$B = \\{y \mid y = 7m + 10n,\ m, n \in \mathbb{Z}\\}$，证明 $A = B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾**
+
+					#### **集合间的基本关系**
+
+					+ **包含**
+						+ **子集**
+						+ **真子集**
+					+ **相等**
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

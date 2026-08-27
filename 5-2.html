@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-baqh{text-align:center;vertical-align:top}
+			.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+			.tg .tg-hjji{font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-6ibf{border-color:inherit;font-size:24px;text-align:center;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.2$ **三角函数的概念** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+		<section  data-transition="convex">
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>圆周运动</strong></h3>
+
+						<br>
+						<br>
+
+						圆周运动是一种常见的运动，如何刻画一个做圆周运动的点的位置变化规律？
+
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>圆周运动</strong></h3>
+
+					
+
+					如下图所示，单位圆$\odot O$上的点$P$以$A$为起点做逆时针方向旋转，建立一个模型，刻画$P$的变化情况。
+
+					<div class="main">
+						<div id="box1" class="jxgbox" style="width:450px; height:450px;"></div>
+					</div>
+
+			
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>圆周运动</strong></h3>
+
+					根据研究函数的经验，我们利用直角坐标系来研究上述问题。
+
+
+					<br>
+
+					以单位圆的圆心$O$为原点，以射线$OA$为$x$轴的非负半轴，建立直角坐标系。
+					点$A$的坐标为$(1,0)$，点𝑃的坐标为$(x,y)$，射线$PA$从$x$轴的非负半轴开始，绕点$O$按逆时针方向旋转角$\alpha$，终止位置为$OP$。
+					<br>
+
+
+
+				</section>
+
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>圆周运动</strong></h3>
+
+					<br>
+
+					<div class="main">
+						<div id="box2" class="jxgbox" style="width:550px; height:550px;"></div>
+					</div>
+					
+
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>圆周运动</strong></h3>
+
+					<br>
+
+					$\alpha=\frac{\pi}{6}$时，点$P$的坐标是多少？
+
+					<br>
+
+					$\alpha=\frac{\pi}{2}$时，点$P$的坐标是多少？
+
+					<br>
+
+					当角$\alpha$确定时，对应的$P$点坐标唯一确定么？
+					
+
+
+				</section>
+
+				
+					
+
+
+		</section>
+
+
+
+
+
+
+		
+
+
+
+		<section  data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				一般地，任意给定一个角$\alpha\in\mathbb{R}$，它的终边$OP$与单位圆交点$P$的坐标，无论是横坐标$x$还是纵坐标$y$，都是唯一确定的。
+
+
+				<br>
+
+				所以，点$P$的横坐标$x$，纵坐标$y$都是角$\alpha$的函数，下面给出这些函数的定义。
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				 
+
+				设$\alpha$是一个任意角，$\alpha\in\mathbb{R}$。它的终边$OP$与单位圆交于点$P(x,y)$。
+
+				<ul>
+					<li>
+						把点$P$的纵坐标$y$叫做$\alpha$的<font color="red">正弦函数</font>，记作$\sin\alpha$，
+						<br>
+						即$y=\sin\alpha$。
+					</li>
+					<li>
+						把点$P$的横坐标$x$叫做$\alpha$的<font color="red">余弦函数</font>，记作$\cos\alpha$，即$x=\cos\alpha$。
+					</li>
+					<li>
+						把点$P$的纵坐标与横坐标的比值$\frac{y}{x} $叫做$\alpha$的<font color="red">正切</font>，记作$\tan\alpha$，即
+						$\frac{y}{x}=\tan\alpha(x\neq0) $
+					</li>
+				</ul>
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+
+				我们将正弦函数、余弦函数和正切函数统称为<font color="red">三角函数</font>，通常将它们记为：
+
+				$$\text{正弦函数}\quad y=\sin x,x\in\mathbb{R} $$
+
+				$$\text{余弦函数}\quad y=\cos x,x\in\mathbb{R} $$
+
+				$$\text{正切函数}\quad y=\tan x,x\in\{x|x\neq\frac{\pi}{2}+k\pi(k\in \mathbb{Z}) \} $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+
+				在初中我们学了锐角三角函数，知道它们都是以锐角为自变量，以比值为函数值的函数。
+
+				<br>
+				
+				设$x\in (0,\frac{\pi}{2}) $,
+				
+				把按照锐角三角函数定义求得的锐角$x$的正弦记为$z_1$，并把按照本节三角函数定义求得的正弦记为$y_1$，$z_1$与$y_1$相等吗？
+
+				<br>
+				
+				对于余弦、正切也有相同的结论吗？
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				
+
+				<strong>例1</strong>  求$\frac{5\pi}{3}$的正弦，余弦和正切值。
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+				
+
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<strong>例2</strong> 设$\alpha$是任意角，它的终边上任意一点$P$的坐标为$(x,y)$，点$P$与原点的距离为$r$。求证：
+
+				<br>
+
+				$$\sin\alpha=\frac{y}{r},\cos\alpha=\frac{x}{r},\tan\alpha=\frac{y}{x} $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+
+				<table><thead>
+					<tr>
+					  <th>三角函数</th>
+					  <th>定义域</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>$\sin x$</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>$\cos x$</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>$\tan x$</td>
+					  <td></td>
+					</tr>
+				  </tbody>
+				  </table>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+
+				<table><tr>
+					<td><img src=5-2-1.png border=0></td>
+					<td><img src=5-2-2.png border=0></td>
+					<td><img src=5-2-3.png border=0></td>
+				</tr></table>
+					
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+
+				<strong>例3</strong> 求证：
+
+				$$\text{角}\theta\text{是第三象限角}\iff \begin{cases}
+				\sin\theta < 0 \\
+				\tan\theta > 0
+				\end{cases}
+				
+				$$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				由三角函数的定义，可以知道：
+				<br>
+				<font color="red">终边相同的角的同一三角函数的值相等</font>。
+
+				<br>
+
+				<strong><font color="blue">公式1</font> </strong>  &nbsp 对于$k\in\mathbb{Z}$
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\alpha+k\cdot2\pi)=\sin\alpha $
+					</li>
+					<li>
+						$\cos(\alpha+k\cdot2\pi)=\cos\alpha $
+					</li>
+					<li>
+						$\tan(\alpha+k\cdot2\pi)=\tan\alpha $
+					</li>
+				</ul>
+				<br>
+
+				三角函数值有“周而复始”的变化规律，即角$\alpha$的终边每绕原点转一周，函数值将重复出现。
+
+				
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>三角函数的概念</strong></h3>
+
+				<br>
+				<strong>例4</strong> 判断下列三角函数的符号
+
+				<br>
+
+				<ul>
+					<li>
+						$\cos 250^{\circ} $
+					</li>
+					<li>
+						$\sin(-\frac{\pi}{4} ) $
+					</li>
+					<li>
+						$\tan(-672^{\circ})$
+					</li>
+					<li>
+						$\tan(3\pi) $
+					</li>
+				</ul>
+
+
+			</section>
+
+			
+
+
+		</section>
+
+	
+
+	
+
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				<h3>回忆公式一？</h3>
+
+				<br>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				<strong><font color="blue">公式1</font> </strong>  &nbsp 对于$k\in\mathbb{Z}$
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\alpha+k\cdot2\pi)=\sin\alpha $
+					</li>
+					<li>
+						$\cos(\alpha+k\cdot2\pi)=\cos\alpha $
+					</li>
+					<li>
+						$\tan(\alpha+k\cdot2\pi)=\tan\alpha $
+					</li>
+				</ul>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				公式一表明终边相同的角的同一三角函数值相等，那么，终边相同的角的三个三角函数值之间是否也有某种关系呢？
+
+				<br>
+
+				<br>
+
+				由公式一可知，我们不妨讨论同一个角的三个三角函数值之间的关系。
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+				<div class="main">
+					<div id="box5" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				$$\sin^2\alpha+\cos^2\alpha=1 $$
+
+				$$\frac{\sin\alpha}{\cos\alpha}=\tan\alpha,\alpha\neq k\pi+\frac{\pi}{2}(k\in\mathbb{Z})$$
+				
+				<font color="red">同一个角$\alpha$的正弦、余弦的平方和等于1，商等于角$\alpha$的正切。</font>
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				<ul>
+					<li>
+						已知$\sin\alpha=-\frac{3}{5} $，求$\cos\alpha,\tan\alpha$
+					</li>
+					<li>
+						已知$\cos\alpha=-\frac{8}{17} $，求$\sin\alpha,\tan\alpha$
+					</li>
+				</ul>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				已知$\sin\alpha +3\cos\alpha=0 $，求$\sin\alpha,\cos\alpha$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				已知$\tan\alpha=2$，求下列代数式的值：
+
+				$$\frac{4\sin\alpha -2\cos\alpha}{5\sin\alpha +3\cos\alpha}= $$
+
+				$$\frac{1}{4}\sin^2\alpha+\frac{1}{3}\sin\alpha\cos\alpha+\frac{1}{2}\cos^2\alpha=  $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				求证：
+
+				$$\frac{\cos x}{1-\sin x}=\frac{1+\sin x}{\cos x} $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				求证：
+
+				$$\sin^4\alpha+\sin^2\alpha\cdot\cos^2\alpha+\cos^2\alpha=1 $$
+
+				$$\sin^2x-\cos^2x=\sin^4x-\cos^4x $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				求证：
+
+				$$\frac{1+2\sin x\cos x}{\sin^2x-\cos^2x}=\frac{\tan x+1}{\tan x-1} $$
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>同角三角函数的关系</strong></h3>
+
+				<br>
+
+				已知$\sin\alpha+\cos\alpha=\frac{1}{5},0< \alpha< \pi$，求
+				
+				<br>
+				<br>
+				<ul>
+					<li>
+						$\sin\alpha\cos\alpha $
+					</li>
+					<li>
+						$\sin\alpha-\cos\alpha $
+					</li>
+				</ul>
+
+			</section>
+
+			
+
+
+		
+
+		</section>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:false,showCopyright: false,});
+			
+			var p11 = board1.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p12 = board1.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p13 = board1.create('point', [0.8,0.6 ],{name:'$P$'});
+			
+			var c11 = board1.create('circle',[p11, p12]);
+			var li11 = board1.create('line',[p11,p13], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li12 = board1.create('line',[p11,p12], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			s11 = board1.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.25, 6*Math.PI]]);
+
+			var angle11 = board1.create('angle', [p12, p11, p13],{ radius:0.25 , name: '$\\alpha$' });
+
+			angle11.setAngle(function() {
+    			return s11.Value(); });	
+
+			board1.update();
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p21 = board2.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p22 = board2.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p23 = board2.create('point', [0.8,0.6 ],{name:'$P(x,y)$'});
+			
+			var c21 = board2.create('circle',[p21, p22]);
+
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li22 = board2.create('line',[p21,p22], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			s21 = board2.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.25, 6*Math.PI]]);
+
+			var angle21 = board2.create('angle', [p22, p21, p23],{ radius:0.25 , name: '$\\alpha$' });
+
+			angle21.setAngle(function() {
+    			return s21.Value(); });	
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p31 = board3.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p32 = board3.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p33 = board3.create('point', [0.8,0.6 ],{name:'$P(x,y)$'});
+			
+			var c31 = board3.create('circle',[p31, p32]);
+
+			var li31 = board3.create('line',[p31,p33], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li32 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			s31 = board3.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*5/3, 6*Math.PI]]);
+
+			var angle31 = board3.create('angle', [p32, p31, p33],{ radius:0.25 , name: '$\\alpha$' });
+
+			angle31.setAngle(function() {
+				return s31.Value(); });	
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2.5, 2.5 , 2.5, -2.5], axis:true,showCopyright: false,});
+			
+			var p41 = board4.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p42 = board4.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p43 = board4.create('point', [-1.5,-1.5 ],{name:'$P(x,y)$'});
+			
+			var c41 = board4.create('circle',[p41, p42]);
+
+			var li41 = board4.create('line',[p41,p43], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li42 = board4.create('line',[p41,p42], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+
+			var p44 = board4.create('intersection',[li41,c41],{name:'$P_0$'});
+
+			var p45 = board4.create('point',[ function(){return p43.X()} , 0 ],{name:'$M$'});
+
+			var p47 = board4.create('point',[ 0,function(){return p43.Y()} ],{name:'$N$'});
+
+			var p46 = board4.create('point',[ function(){return p44.X()} , 0 ],{name:'$M_0$'});
+
+			var p48 = board4.create('point',[0, function(){return p44.Y()}],{name:'$N_0$'});
+
+			var li43 = board4.create('line',[p43,p45], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+			var li45 = board4.create('line',[p43,p47], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+
+			var li44 = board4.create('line',[p44,p46], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+
+			var li46 = board4.create('line',[p44,p48], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+
+			var angle41 = board4.create('angle', [p42, p41, p43],{ radius:0.25 , name: '$\\alpha$' });
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-2.5, 2.5 , 2.5, -2.5], axis:true,showCopyright: false,});
+			
+			var p51 = board5.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p52 = board5.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p53 = board5.create('point', [-1.5, 1.5 ],{name:'',size: 1 });
+			
+			var c51 = board5.create('circle',[p51, p52]);
+
+			var li51 = board5.create('line',[p51,p53], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li52 = board5.create('line',[p51,p52], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+
+			var p54 = board5.create('intersection',[li51,c51],{name:'$P(x,y)$'});
+
+			var p56 = board5.create('point',[ function(){return p54.X()} , 0 ],{name:'$M(x,0)$'});
+
+			var p58 = board5.create('point',[0, function(){return p54.Y()}],{name:'$N(0,y)$'});
+
+			
+			var li55 = board5.create('line',[p54,p56], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+
+			var li53 = board5.create('line',[p54,p58], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 ,dash:1});
+
+
+			var angle51 = board5.create('angle', [p52, p51, p53],{ radius:0.25 , name: '$\\alpha$' });
+
+
+		</script>
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

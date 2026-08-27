@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>德摩根定律演示 — jsxgraph</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.8.0/jsxgraph.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.8.0/jsxgraphcore.js"></script>
+	<style>
+		body { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; background: #f5f6f8; margin: 0; padding: 20px; }
+		h1 { text-align: center; font-size: 24px; margin: 4px 0 8px; }
+		.laws { text-align: center; font-size: 19px; margin: 0 0 16px; color: #333; }
+		.laws b { color: #b05a10; }
+		.board-row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
+		.board-box { background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.15); padding: 12px 12px 14px; }
+		.board-title { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+		.jxgbox { width: 560px; height: 420px; border-radius: 6px; }
+		.controls { text-align: center; margin-top: 10px; }
+		.controls button { font-size: 15px; padding: 6px 16px; border-radius: 6px; border: 1px solid #888; cursor: pointer; background: #eef3fa; }
+		.controls button:hover { background: #dce7f5; }
+		.legend { text-align: center; font-size: 14px; color: #666; margin-top: 14px; }
+		.legend .sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin: 0 4px 0 12px; }
+		.note { text-align: center; color: #777; margin-top: 12px; font-size: 14px; }
+	</style>
+</head>
+<body>
+
+	<h1>德摩根定律（De Morgan's Laws）— Venn 图演示</h1>
+	<div class="laws">
+		<b>(A ∪ B)<sup>c</sup> = A<sup>c</sup> ∩ B<sup>c</sup></b>　　｜　　<b>(A ∩ B)<sup>c</sup> = A<sup>c</sup> ∪ B<sup>c</sup></b>
+	</div>
+
+	<div class="board-row">
+		<div class="board-box">
+			<div class="board-title">(A ∪ B)<sup>c</sup> = A<sup>c</sup> ∩ B<sup>c</sup></div>
+			<div id="board1" class="jxgbox"></div>
+			<div class="controls">
+				<button id="btn1" onclick="toggleLaw(1)">显示 A ∪ B</button>
+			</div>
+		</div>
+		<div class="board-box">
+			<div class="board-title">(A ∩ B)<sup>c</sup> = A<sup>c</sup> ∪ B<sup>c</sup></div>
+			<div id="board2" class="jxgbox"></div>
+			<div class="controls">
+				<button id="btn2" onclick="toggleLaw(2)">显示 A ∩ B</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="legend">
+		<span class="sw" style="background:rgba(46,111,194,.85);"></span>原集合区域
+		<span class="sw" style="background:rgba(232,145,45,.9);"></span>补集区域（德摩根结论）
+	</div>
+	<p class="note">拖动圆 <b>A</b>、<b>B</b> 的圆心或圆周上的手柄改变集合，区域实时更新；点击按钮在原集合与补集之间切换。</p>
+
+	<script>
+		// ---------- 多边形工具（圆用内接 N 边形近似，Sutherland–Hodgman 求交集） ----------
+		var N = 96;
+
+		function circlePts(cx, cy, r) {
+			var pts = [];
+			for (var i = 0; i < N; i++) {
+				var t = 2 * Math.PI * i / N;
+				pts.push([cx + r * Math.cos(t), cy + r * Math.sin(t)]);
+			}
+			return pts;
+		}
+		function isIn(p, a, b) { // 点 p 是否在边 ab 左侧（逆时针多边形内部在左侧）
+			return (b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0]) >= -1e-9;
+		}
+		function interPt(p, q, a, b) {
+			var d1x = q[0] - p[0], d1y = q[1] - p[1];
+			var d2x = b[0] - a[0], d2y = b[1] - a[1];
+			var den = d1x * d2y - d1y * d2x;
+			if (Math.abs(den) < 1e-12) return [q[0], q[1]];
+			var t = ((a[0] - p[0]) * d2y - (a[1] - p[1]) * d2x) / den;
+			return [p[0] + t * d1x, p[1] + t * d1y];
+		}
+		// Sutherland–Hodgman：保留 subject 位于 clip（凸、逆时针）内部的部分
+		function clipPoly(subject, clip) {
+			var out = subject.slice();
+			for (var i = 0; i < clip.length && out.length > 0; i++) {
+				var a = clip[i], b = clip[(i + 1) % clip.length];
+				var inp = out; out = [];
+				for (var j = 0; j < inp.length; j++) {
+					var p = inp[j], q = inp[(j + 1) % inp.length];
+					var pin = isIn(p, a, b), qin = isIn(q, a, b);
+					if (pin && qin) out.push(q);
+					else if (pin && !qin) out.push(interPt(p, q, a, b));
+					else if (!pin && qin) { out.push(interPt(p, q, a, b)); out.push(q); }
+				}
+			}
+			return out;
+		}
+
+		// ---------- 构建一个演示板 ----------
+		// 分层渲染：橙底（U）在最下 → 圆 → 透镜 → U 虚线边框在最上。
+		// 补集模式：橙底可见，圆盘（左板）/透镜（右板）用不透明白色覆盖＝挖洞，
+		// 于是橙色区域恰好是补集；原集合模式：隐藏橙底，高亮原集合。
+		function build(divId, cfg) {
+			var board = JXG.JSXGraph.initBoard(divId, {
+				boundingbox: cfg.bbox,
+				showNavigation: false,
+				showCopyright: false,
+				axis: false,
+				grid: false
+			});
+			var U = cfg.U; // 逆时针矩形
+
+			// 橙底：全集 U（补集底色）
+			var bg = board.create('polygon', U, {
+				fillColor: '#e8912d', fillOpacity: 0.5,
+				borders: { visible: false },
+				vertices: { visible: false, size: 0 },
+				visible: false,
+				fixed: true
+			});
+
+			// 圆 A、B（圆心 + 圆周手柄，均可拖动）
+			var cA = board.create('point', cfg.centerA, { name: 'A', size: 3, strokeColor: '#2255aa', fillColor: '#2255aa', withLabel: true, label: { offset: [10, 10] } });
+			var rA = board.create('point', cfg.rimA, { size: 3, strokeColor: '#2255aa', fillColor: '#2255aa', withLabel: false });
+			var cB = board.create('point', cfg.centerB, { name: 'B', size: 3, strokeColor: '#aa2222', fillColor: '#aa2222', withLabel: true, label: { offset: [10, 10] } });
+			var rB = board.create('point', cfg.rimB, { size: 3, strokeColor: '#aa2222', fillColor: '#aa2222', withLabel: false });
+
+			var cirA = board.create('circle', [cA, rA], { strokeColor: '#2255aa', strokeWidth: 2.5, fillColor: '#2255aa', fillOpacity: 0.06 });
+			var cirB = board.create('circle', [cB, rB], { strokeColor: '#aa2222', strokeWidth: 2.5, fillColor: '#aa2222', fillOpacity: 0.06 });
+
+			// 透镜 A∩B 的两条曲线：蓝（原集合高亮）/ 白（补集挖洞）
+			function mkLens(fill, opacity) {
+				return board.create('curve', [[], []], {
+					curveType: 'plot',
+					strokeWidth: 0,
+					fillColor: fill,
+					fillOpacity: opacity,
+					visible: false,
+					updateDataArray: function () {
+						var pts = clipPoly(circlePts(cA.X(), cA.Y(), cirA.Radius()), circlePts(cB.X(), cB.Y(), cirB.Radius()));
+						this.dataX = []; this.dataY = [];
+						for (var k = 0; k < pts.length; k++) { this.dataX.push(pts[k][0]); this.dataY.push(pts[k][1]); }
+					}
+				});
+			}
+			var lensBlue = mkLens('#2e6fc2', 0.6);
+			var lensWhite = mkLens('#ffffff', 1);
+
+			// U 虚线边框（最上层）
+			board.create('polygon', U, {
+				fillColor: 'none', fillOpacity: 0,
+				borders: { strokeColor: '#888', strokeWidth: 1.5, dash: 2 },
+				vertices: { visible: false, size: 0 },
+				fixed: true
+			});
+			board.create('text', [U[0][0] - 0.35, U[3][1] + 0.5, 'U'], { fontSize: 18, highlight: false, fixed: true });
+
+			// 区域说明标签
+			var tagOrig = board.create('text', cfg.labelPos, cfg.labelOrig, { fontSize: 16, strokeColor: '#333', highlight: false, fixed: true, visible: false });
+			var tagComp = board.create('text', cfg.labelPos, cfg.labelComp, { fontSize: 16, strokeColor: '#333', highlight: false, fixed: true, visible: true });
+
+			board.update();
+			return { board: board, circleA: cirA, circleB: cirB, bg: bg, lensBlue: lensBlue, lensWhite: lensWhite, tagOrig: tagOrig, tagComp: tagComp };
+		}
+
+		// ---------- 两个演示板 ----------
+		var U = [[-3.5, -5.5], [9.5, -5.5], [9.5, 5.5], [-3.5, 5.5]]; // 全集矩形（逆时针）
+
+		var boards = {
+			1: build('board1', {
+				bbox: [-6.5, 7, 12.5, -7], U: U,
+				centerA: [1, 0.5], rimA: [3.3, 0.5],
+				centerB: [5.6, 0.5], rimB: [8.5, 0.5],
+				labelPos: [8.3, 4.6], labelOrig: 'A ∪ B', labelComp: 'U ∖ (A ∪ B)'
+			}),
+			2: build('board2', {
+				bbox: [-6.5, 7, 12.5, -7], U: U,
+				centerA: [1, 0.5], rimA: [3.3, 0.5],
+				centerB: [5.6, 0.5], rimB: [8.5, 0.5],
+				labelPos: [8.3, 4.6], labelOrig: 'A ∩ B', labelComp: 'U ∖ (A ∩ B)'
+			})
+		};
+
+		// ---------- 模式切换：补集（德摩根结论）/ 原集合 ----------
+		var mode = { 1: 'comp', 2: 'comp' };
+
+		function applyMode(i) {
+			var b = boards[i], m = mode[i];
+			b.bg.setAttribute({ visible: m === 'comp' });
+			b.tagOrig.setAttribute({ visible: m === 'orig' });
+			b.tagComp.setAttribute({ visible: m === 'comp' });
+
+			if (i === 1) {
+				// 圆盘：补集模式用白色不透明挖洞；原集合模式用本色高亮 A∪B
+				b.circleA.setAttribute({ fillColor: m === 'comp' ? '#ffffff' : '#2255aa', fillOpacity: m === 'comp' ? 1 : 0.30 });
+				b.circleB.setAttribute({ fillColor: m === 'comp' ? '#ffffff' : '#aa2222', fillOpacity: m === 'comp' ? 1 : 0.30 });
+				document.getElementById('btn1').textContent = m === 'comp' ? '显示 A ∪ B' : '显示 (A ∪ B)ᶜ';
+			} else {
+				// 透镜：补集模式白色挖洞；原集合模式蓝色高亮 A∩B；圆盘保持淡色
+				b.lensBlue.setAttribute({ visible: m === 'orig' });
+				b.lensWhite.setAttribute({ visible: m === 'comp' });
+				b.circleA.setAttribute({ fillOpacity: m === 'comp' ? 0 : 0.06 });
+				b.circleB.setAttribute({ fillOpacity: m === 'comp' ? 0 : 0.06 });
+				document.getElementById('btn2').textContent = m === 'comp' ? '显示 A ∩ B' : '显示 (A ∩ B)ᶜ';
+			}
+			b.board.update();
+		}
+
+		function toggleLaw(i) {
+			mode[i] = mode[i] === 'comp' ? 'orig' : 'comp';
+			applyMode(i);
+		}
+
+		applyMode(1);
+		applyMode(2);
+	</script>
+</body>
+</html>

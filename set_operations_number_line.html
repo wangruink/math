@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数轴法求集合交集与并集 · 动态交互可视化</title>
+    
+    <!-- KaTeX for math formulas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* 浅色主题变量 (默认) */
+        :root, [data-theme="light"] {
+            --bg-page: #f4f6fb;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --border-card: #e2e8f0;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            
+            --setA-color: #0284c7; /* 湖蓝 */
+            --setA-bg: rgba(2, 132, 199, 0.12);
+            --setB-color: #e11d48; /* 胭脂红 */
+            --setB-bg: rgba(225, 29, 72, 0.12);
+            --inter-color: #d97706; /* 琥珀金 (交集) */
+            --inter-bg: rgba(245, 158, 11, 0.12);
+            --inter-border: rgba(217, 119, 6, 0.35);
+            --union-color: #16a34a; /* 翡翠绿 (并集) */
+            --union-bg: rgba(22, 163, 74, 0.12);
+            --union-border: rgba(22, 163, 74, 0.35);
+            
+            --axis-color: #334155;
+            --grid-color: rgba(148, 163, 184, 0.25);
+            --svg-bg: #ffffff;
+            --endpoint-stroke: #ffffff;
+            
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --text-muted: #64748b;
+            --input-bg: #f8fafc;
+            --input-border: #cbd5e1;
+            --stepper-bg: #e2e8f0;
+            --btn-bg: #ffffff;
+            --btn-border: #cbd5e1;
+            --btn-text: #1e293b;
+        }
+
+        /* 深色主题变量 (支持一键切换) */
+        [data-theme="dark"] {
+            --bg-page: #090d16;
+            --bg-card: rgba(22, 30, 46, 0.85);
+            --border-card: rgba(255, 255, 255, 0.1);
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            
+            --setA-color: #38bdf8;
+            --setA-bg: rgba(56, 189, 248, 0.25);
+            --setB-color: #fb7185;
+            --setB-bg: rgba(251, 113, 133, 0.25);
+            --inter-color: #fbbf24;
+            --inter-bg: rgba(251, 191, 36, 0.18);
+            --inter-border: rgba(251, 191, 36, 0.4);
+            --union-color: #4ade80;
+            --union-bg: rgba(74, 222, 128, 0.18);
+            --union-border: rgba(74, 222, 128, 0.4);
+            
+            --axis-color: #94a3b8;
+            --grid-color: rgba(255, 255, 255, 0.05);
+            --svg-bg: rgba(10, 15, 26, 0.7);
+            --endpoint-stroke: #090d16;
+            
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --text-muted: #64748b;
+            --input-bg: rgba(255, 255, 255, 0.06);
+            --input-border: rgba(255, 255, 255, 0.12);
+            --stepper-bg: rgba(0, 0, 0, 0.3);
+            --btn-bg: rgba(255, 255, 255, 0.08);
+            --btn-border: rgba(255, 255, 255, 0.15);
+            --btn-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-page);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 24px 20px 40px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(225, 29, 72, 0.06) 0px, transparent 50%);
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 顶部 Header */
+        header {
+            position: relative;
+            text-align: center;
+            padding: 8px 0 14px;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            background: var(--setA-bg);
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            border-radius: 20px;
+            color: var(--setA-color);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 27px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 14.5px;
+        }
+
+        /* 主题切换按钮 */
+        .theme-toggle-btn {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--btn-border);
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .theme-toggle-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 主舞台与画布 */
+        .stage-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .svg-container {
+            width: 100%;
+            height: 290px;
+            position: relative;
+            background: var(--svg-bg);
+            border-radius: 14px;
+            border: 1px solid var(--border-card);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        /* 动画进度条/步骤指示器 */
+        .step-stepper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            background: var(--stepper-bg);
+            padding: 6px 8px;
+            border-radius: 12px;
+            gap: 6px;
+        }
+
+        .step-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text-sub);
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .step-item.active {
+            background: var(--bg-card);
+            border-color: var(--border-card);
+            color: var(--setA-color);
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .step-item.completed {
+            color: var(--text-main);
+        }
+
+        .step-item .step-num {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11.5px;
+            font-weight: 600;
+        }
+
+        .step-item.active .step-num {
+            background: var(--setA-color);
+            color: #ffffff;
+        }
+
+        /* 播放控制条 */
+        .controls-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn {
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn:hover {
+            border-color: #94a3b8;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-color: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            color: #ffffff;
+        }
+
+        .legend-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* 下方两栏布局 */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 20px 22px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        .card-title {
+            font-size: 15.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        /* 预设例题药丸按钮 */
+        .preset-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .preset-btn {
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .preset-btn:hover {
+            border-color: var(--setA-color);
+            background: rgba(2, 132, 199, 0.05);
+        }
+
+        .preset-btn.active {
+            background: rgba(2, 132, 199, 0.08);
+            border-color: var(--setA-color);
+            box-shadow: 0 0 0 1px var(--setA-color);
+        }
+
+        .preset-btn .preset-tag {
+            font-size: 11px;
+            color: var(--setA-color);
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .preset-btn .preset-desc {
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        /* 自定义区间控件 */
+        .interval-builder {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--input-bg);
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-card);
+        }
+
+        .interval-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .row-label {
+            width: 70px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-card);
+            padding: 4px 8px;
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+        }
+
+        select, input[type="number"] {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        select {
+            cursor: pointer;
+            color: var(--setA-color);
+            font-weight: 600;
+        }
+
+        input[type="number"] {
+            width: 44px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* 结论与解析卡片 */
+        .result-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .result-item {
+            border-radius: 12px;
+            padding: 13px 16px;
+            border: 1px solid;
+            transition: all 0.25s ease;
+        }
+
+        .result-item.intersection {
+            background: var(--inter-bg);
+            border-color: var(--inter-border);
+        }
+
+        .result-item.union {
+            background: var(--union-bg);
+            border-color: var(--union-border);
+        }
+
+        .result-title {
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .result-formula {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .result-desc {
+            font-size: 12.5px;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* 端点口诀小贴士 */
+        .tips-card {
+            margin-top: 14px;
+            background: var(--input-bg);
+            border: 1px dashed var(--input-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 12.5px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        .tips-card strong {
+            color: var(--inter-color);
+        }
+
+        /* 呼吸微动效 */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.45; }
+        }
+
+        .glow-pulse {
+            animation: pulseGlow 1.8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 高中数学直观可视化微课
+        </div>
+        <h1>数轴法求集合的交集与并集</h1>
+        <p class="subtitle">通过数轴投影、重叠阴影与端点判别，攻克集合区间运算的每个细节</p>
+        
+        <!-- 主题切换按钮 -->
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
+            <i class="fa-solid fa-moon"></i> <span>深色模式</span>
+        </button>
+    </header>
+
+    <!-- 演示主舞台 -->
+    <div class="stage-card">
+        <!-- SVG 数轴可视区 -->
+        <div class="svg-container" id="svgContainer">
+            <svg id="mathSvg" viewBox="0 0 1000 290">
+                <defs>
+                    <!-- 箭头标记 -->
+                    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--axis-color)"/>
+                    </marker>
+
+                    <!-- 斜纹图案：集合 A -->
+                    <pattern id="patA" width="12" height="12" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                        <line x1="0" y1="0" x2="0" y2="12" stroke="var(--setA-color)" stroke-width="2.5" opacity="0.6"/>
+                    </pattern>
+
+                    <!-- 反向斜纹图案：集合 B -->
+                    <pattern id="patB" width="12" height="12" patternTransform="rotate(-45 0 0)" patternUnits="userSpaceOnUse">
+                        <line x1="0" y1="0" x2="0" y2="12" stroke="var(--setB-color)" stroke-width="2.5" opacity="0.6"/>
+                    </pattern>
+
+                    <!-- 交集重叠网格 -->
+                    <pattern id="patInter" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <rect width="10" height="10" fill="var(--inter-bg)"/>
+                        <path d="M 0 10 L 10 0 M 0 0 L 10 10" fill="none" stroke="var(--inter-color)" stroke-width="1.5" opacity="0.75"/>
+                    </pattern>
+                </defs>
+
+                <!-- 图层 -->
+                <g id="gridLayer"></g>
+                <g id="axisLayer"></g>
+                <g id="intervalLayerA"></g>
+                <g id="intervalLayerB"></g>
+                <g id="operationLayer"></g>
+                <g id="projectionLayer"></g>
+                <g id="indicatorLayer"></g>
+            </svg>
+        </div>
+
+        <!-- 动画步骤指示器 -->
+        <div class="step-stepper">
+            <div class="step-item active" onclick="jumpToStep(1)" id="stepTab1">
+                <span class="step-num">1</span>
+                <span>绘制数轴</span>
+            </div>
+            <div class="step-item" onclick="jumpToStep(2)" id="stepTab2">
+                <span class="step-num">2</span>
+                <span>作集合 A 区间</span>
+            </div>
+            <div class="step-item" onclick="jumpToStep(3)" id="stepTab3">
+                <span class="step-num">3</span>
+                <span>作集合 B 区间</span>
+            </div>
+            <div class="step-item" onclick="jumpToStep(4)" id="stepTab4">
+                <span class="step-num">4</span>
+                <span>求解交集 A ∩ B</span>
+            </div>
+            <div class="step-item" onclick="jumpToStep(5)" id="stepTab5">
+                <span class="step-num">5</span>
+                <span>求解并集 A ∪ B</span>
+            </div>
+        </div>
+
+        <!-- 播放控制工具栏 -->
+        <div class="controls-bar">
+            <div class="btn-group">
+                <button class="btn btn-primary" id="playBtn" onclick="togglePlay()">
+                    <i class="fa-solid fa-play" id="playIcon"></i> <span id="playText">逐步演示</span>
+                </button>
+                <button class="btn" onclick="prevStep()"><i class="fa-solid fa-backward-step"></i> 上一步</button>
+                <button class="btn" onclick="nextStep()">下一步 <i class="fa-solid fa-forward-step"></i></button>
+                <button class="btn" onclick="resetAnimation()"><i class="fa-solid fa-rotate-right"></i> 重置</button>
+            </div>
+
+            <!-- 图例说明 -->
+            <div class="legend-group">
+                <div class="legend-item">
+                    <span class="legend-dot" style="background: var(--setA-color);"></span>
+                    <span>集合 A (上方)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background: var(--setB-color);"></span>
+                    <span>集合 B (下方)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background: var(--inter-color);"></span>
+                    <span>交集 A ∩ B (重叠公共区)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background: var(--union-color);"></span>
+                    <span>并集 A ∪ B (所有覆盖区)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部控制与结论区 -->
+    <div class="bottom-grid">
+        <!-- 左侧：参数与经典例题 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"><i class="fa-solid fa-sliders" style="color: var(--setA-color);"></i> 题型选择与自定义区间</span>
+                <span style="font-size: 12px; color: var(--text-muted);">实时计算响应</span>
+            </div>
+
+            <!-- 经典例题预设 -->
+            <div class="preset-list">
+                <div class="preset-btn active" onclick="loadPreset(0)" id="preset0">
+                    <div class="preset-tag">例 1 · 经典相交</div>
+                    <div class="preset-desc">$A=[-2, 3),\ B=(1, 5]$</div>
+                </div>
+                <div class="preset-btn" onclick="loadPreset(1)" id="preset1">
+                    <div class="preset-tag">例 2 · 包含子集</div>
+                    <div class="preset-desc">$A=[-3, 4],\ B=[0, 2)$</div>
+                </div>
+                <div class="preset-btn" onclick="loadPreset(2)" id="preset2">
+                    <div class="preset-tag">例 3 · 互斥不相交</div>
+                    <div class="preset-desc">$A=[-4, -1),\ B=(2, 5]$</div>
+                </div>
+                <div class="preset-btn" onclick="loadPreset(3)" id="preset3">
+                    <div class="preset-tag">例 4 · 易错端点重合</div>
+                    <div class="preset-desc">$A=[-3, 1],\ B=(1, 4]$</div>
+                </div>
+            </div>
+
+            <!-- 自定义参数微调 -->
+            <div class="interval-builder">
+                <!-- 集合 A 设置 -->
+                <div class="interval-row">
+                    <span class="row-label" style="color: var(--setA-color);"><i class="fa-solid fa-circle-dot"></i> 集合 A：</span>
+                    <div class="input-group">
+                        <select id="aLeftType" onchange="updateCustomInterval()">
+                            <option value="[">[ (闭/实心)</option>
+                            <option value="(">( (开/空心)</option>
+                        </select>
+                        <input type="number" id="aLeftVal" value="-2" min="-6" max="6" onchange="updateCustomInterval()">
+                        <span style="color: var(--text-muted);">,</span>
+                        <input type="number" id="aRightVal" value="3" min="-6" max="6" onchange="updateCustomInterval()">
+                        <select id="aRightType" onchange="updateCustomInterval()">
+                            <option value=")">) (开/空心)</option>
+                            <option value="]">] (闭/实心)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 集合 B 设置 -->
+                <div class="interval-row">
+                    <span class="row-label" style="color: var(--setB-color);"><i class="fa-solid fa-circle-dot"></i> 集合 B：</span>
+                    <div class="input-group">
+                        <select id="bLeftType" onchange="updateCustomInterval()">
+                            <option value="(">( (开/空心)</option>
+                            <option value="[">[ (闭/实心)</option>
+                        </select>
+                        <input type="number" id="bLeftVal" value="1" min="-6" max="6" onchange="updateCustomInterval()">
+                        <span style="color: var(--text-muted);">,</span>
+                        <input type="number" id="bRightVal" value="5" min="-6" max="6" onchange="updateCustomInterval()">
+                        <select id="bRightType" onchange="updateCustomInterval()">
+                            <option value="]">] (闭/实心)</option>
+                            <option value=")">) (开/空心)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 端点口诀提示 -->
+            <div class="tips-card">
+                <div><i class="fa-solid fa-lightbulb" style="color: var(--inter-color);"></i> <strong>数轴画法三字诀：</strong></div>
+                <div>1. <strong>定点：</strong>画实心还是空心？（含等号 $\le, \ge$ 实心点；不含等号 $<, >$ 空心圈）</div>
+                <div>2. <strong>交集（公共部分）：</strong>“有空则空，双实才实”——只有同时包含该端点，交集端点才为实心。</div>
+                <div>3. <strong>并集（全部覆盖）：</strong>“有实则实”——只要有一个集合包含该端点，并集即包含该端点。</div>
+            </div>
+        </div>
+
+        <!-- 右侧：数学计算结论与本质解析 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"><i class="fa-solid fa-square-root-variable" style="color: var(--union-color);"></i> 运算结论与几何意义解析</span>
+                <span id="currentStepBadge" style="font-size: 12px; background: var(--setA-bg); color: var(--setA-color); padding: 2px 8px; border-radius: 6px; font-weight: 600;">步骤 1/5</span>
+            </div>
+
+            <div class="result-box">
+                <!-- 当前状态与动态解析 -->
+                <div style="background: var(--input-bg); border-radius: 10px; padding: 12px 14px; border: 1px solid var(--border-card);">
+                    <div style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">当前步骤解析：</div>
+                    <div id="stepExplanation" style="font-size: 14px; line-height: 1.6; color: var(--text-main);">
+                        正在绘制标准数轴基准线……
+                    </div>
+                </div>
+
+                <!-- 交集结论 -->
+                <div class="result-item intersection">
+                    <div class="result-title" style="color: var(--inter-color);">
+                        <span><i class="fa-solid fa-layer-group"></i> 交集 (Intersection) $A \cap B$</span>
+                        <span style="font-size: 11px; background: rgba(217, 119, 6, 0.15); padding: 2px 6px; border-radius: 4px; font-weight: 600;">公共部分 (AND)</span>
+                    </div>
+                    <div class="result-formula" id="interMath">$A \cap B = (1, 3)$</div>
+                    <div class="result-desc" id="interDesc">
+                        属于集合 $A$ <strong>且</strong> 属于集合 $B$ 的所有实数构成的区域。
+                    </div>
+                </div>
+
+                <!-- 并集结论 -->
+                <div class="result-item union">
+                    <div class="result-title" style="color: var(--union-color);">
+                        <span><i class="fa-solid fa-arrows-left-right-to-line"></i> 并集 (Union) $A \cup B$</span>
+                        <span style="font-size: 11px; background: rgba(22, 163, 74, 0.15); padding: 2px 6px; border-radius: 4px; font-weight: 600;">合并所有 (OR)</span>
+                    </div>
+                    <div class="result-formula" id="unionMath">$A \cup B = [-2, 5]$</div>
+                    <div class="result-desc" id="unionDesc">
+                        属于集合 $A$ <strong>或</strong> 属于集合 $B$ 的所有实数覆盖的全部区域。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 状态与配置
+    const state = {
+        theme: 'light',
+        currentStep: 1,
+        totalSteps: 5,
+        isPlaying: false,
+        timer: null,
+        
+        // 集合 A
+        a: {
+            leftType: '[',
+            leftVal: -2,
+            rightVal: 3,
+            rightType: ')'
+        },
+        // 集合 B
+        b: {
+            leftType: '(',
+            leftVal: 1,
+            rightVal: 5,
+            rightType: ']'
+        },
+        
+        // 坐标系范围：[-7, 7]
+        minX: -7,
+        maxX: 7,
+        
+        // SVG 尺寸与轴心
+        svgWidth: 1000,
+        svgHeight: 290,
+        axisY: 145,
+        padX: 60
+    };
+
+    // 预设例题
+    const presets = [
+        { a: { leftType: '[', leftVal: -2, rightVal: 3, rightType: ')' }, b: { leftType: '(', leftVal: 1, rightVal: 5, rightType: ']' } },
+        { a: { leftType: '[', leftVal: -3, rightVal: 4, rightType: ']' }, b: { leftType: '[', leftVal: 0, rightVal: 2, rightType: ')' } },
+        { a: { leftType: '[', leftVal: -4, rightVal: -1, rightType: ')' }, b: { leftType: '(', leftVal: 2, rightVal: 5, rightType: ']' } },
+        { a: { leftType: '[', leftVal: -3, rightVal: 1, rightType: ']' }, b: { leftType: '(', leftVal: 1, rightVal: 4, rightType: ']' } }
+    ];
+
+    // 主题切换
+    function toggleTheme() {
+        state.theme = state.theme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', state.theme);
+        const btn = document.getElementById('themeBtn');
+        if (state.theme === 'dark') {
+            btn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>浅色模式</span>';
+        } else {
+            btn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>深色模式</span>';
+        }
+        drawSvg();
+    }
+
+    // 数值转 SVG 像素坐标
+    function valToX(val) {
+        const usableWidth = state.svgWidth - 2 * state.padX;
+        return state.padX + ((val - state.minX) / (state.maxX - state.minX)) * usableWidth;
+    }
+
+    // 格式化区间公式为 LaTeX
+    function formatIntervalTeX(leftType, leftVal, rightVal, rightType) {
+        if (leftVal > rightVal) return "\\emptyset";
+        if (leftVal === rightVal) {
+            if (leftType === '[' && rightType === ']') return `\\{${leftVal}\\}`;
+            return "\\emptyset";
+        }
+        const l = leftType === '[' ? '[' : '(';
+        const r = rightType === ']' ? ']' : ')';
+        return `${l}${leftVal}, ${rightVal}${r}`;
+    }
+
+    // 计算交集并集逻辑
+    function calculateSetOps() {
+        const { a, b } = state;
+        
+        // 计算交集 A ∩ B
+        let interLeftVal = Math.max(a.leftVal, b.leftVal);
+        let interRightVal = Math.min(a.rightVal, b.rightVal);
+        let interLeftType = '(';
+        let interRightType = ')';
+        let isInterEmpty = false;
+
+        if (interLeftVal > interRightVal) {
+            isInterEmpty = true;
+        } else if (interLeftVal === interRightVal) {
+            const inA = (interLeftVal > a.leftVal || (interLeftVal === a.leftVal && a.leftType === '[')) &&
+                        (interLeftVal < a.rightVal || (interLeftVal === a.rightVal && a.rightType === ']'));
+            const inB = (interLeftVal > b.leftVal || (interLeftVal === b.leftVal && b.leftType === '[')) &&
+                        (interLeftVal < b.rightVal || (interLeftVal === b.rightVal && b.rightType === ']'));
+            if (inA && inB) {
+                interLeftType = '[';
+                interRightType = ']';
+            } else {
+                isInterEmpty = true;
+            }
+        } else {
+            if (a.leftVal > b.leftVal) {
+                interLeftType = a.leftType;
+            } else if (b.leftVal > a.leftVal) {
+                interLeftType = b.leftType;
+            } else {
+                interLeftType = (a.leftType === '[' && b.leftType === '[') ? '[' : '(';
+            }
+
+            if (a.rightVal < b.rightVal) {
+                interRightType = a.rightType;
+            } else if (b.rightVal < a.rightVal) {
+                interRightType = b.rightType;
+            } else {
+                interRightType = (a.rightType === ']' && b.rightType === ']') ? ']' : ')';
+            }
+        }
+
+        // 计算并集 A ∪ B
+        let unionLeftVal = Math.min(a.leftVal, b.leftVal);
+        let unionRightVal = Math.max(a.rightVal, b.rightVal);
+        let unionLeftType = '(';
+        let unionRightType = ')';
+        let isUnionSeparated = false;
+
+        const leftSet = a.leftVal < b.leftVal ? a : b;
+        const rightSet = a.leftVal < b.leftVal ? b : a;
+
+        if (leftSet.rightVal < rightSet.leftVal) {
+            isUnionSeparated = true;
+        } else if (leftSet.rightVal === rightSet.leftVal) {
+            if (leftSet.rightType === ')' && rightSet.leftType === '(') {
+                isUnionSeparated = true;
+            }
+        }
+
+        if (!isUnionSeparated) {
+            if (a.leftVal < b.leftVal) {
+                unionLeftType = a.leftType;
+            } else if (b.leftVal < a.leftVal) {
+                unionLeftType = b.leftType;
+            } else {
+                unionLeftType = (a.leftType === '[' || b.leftType === '[') ? '[' : '(';
+            }
+
+            if (a.rightVal > b.rightVal) {
+                unionRightType = a.rightType;
+            } else if (b.rightVal > a.rightVal) {
+                unionRightType = b.rightType;
+            } else {
+                unionRightType = (a.rightType === ']' || b.rightType === ']') ? ']' : ')';
+            }
+        }
+
+        return {
+            inter: {
+                isEmpty: isInterEmpty,
+                leftVal: interLeftVal,
+                rightVal: interRightVal,
+                leftType: interLeftType,
+                rightType: interRightType
+            },
+            union: {
+                isSeparated: isUnionSeparated,
+                leftVal: unionLeftVal,
+                rightVal: unionRightVal,
+                leftType: unionLeftType,
+                rightType: unionRightType
+            }
+        };
+    }
+
+    // 渲染数学公式与文字
+    function renderMathFormulas() {
+        const { a, b } = state;
+        const ops = calculateSetOps();
+
+        const strA = formatIntervalTeX(a.leftType, a.leftVal, a.rightVal, a.rightType);
+        const strB = formatIntervalTeX(b.leftType, b.leftVal, b.rightVal, b.rightType);
+
+        let interTeX = "";
+        if (ops.inter.isEmpty) {
+            interTeX = `A \\cap B = \\emptyset`;
+        } else if (ops.inter.leftVal === ops.inter.rightVal) {
+            interTeX = `A \\cap B = \\{${ops.inter.leftVal}\\}`;
+        } else {
+            interTeX = `A \\cap B = ${formatIntervalTeX(ops.inter.leftType, ops.inter.leftVal, ops.inter.rightVal, ops.inter.rightType)}`;
+        }
+
+        let unionTeX = "";
+        if (ops.union.isSeparated) {
+            unionTeX = `A \\cup B = ${strA} \\cup ${strB}`;
+        } else {
+            unionTeX = `A \\cup B = ${formatIntervalTeX(ops.union.leftType, ops.union.leftVal, ops.union.rightVal, ops.union.rightType)}`;
+        }
+
+        katex.render(interTeX, document.getElementById('interMath'), { throwOnError: false });
+        katex.render(unionTeX, document.getElementById('unionMath'), { throwOnError: false });
+
+        const stepExps = [
+            `【第 1 步：绘制标准数轴】画出水平基准数轴，标明原点 $0$、正方向箭头和均匀刻度。`,
+            `【第 2 步：表示集合 A】在数轴上方画出 $A = ${strA}$。左端点 $x=${a.leftVal}$（${a.leftType==='['?'实心点':'空心圈'}），右端点 $x=${a.rightVal}$（${a.rightType===']'?'实心点':'空心圈'}），并填充湖蓝色斜纹。`,
+            `【第 3 步：表示集合 B】在数轴下方画出 $B = ${strB}$。左端点 $x=${b.leftVal}$（${b.leftType==='['?'实心点':'空心圈'}），右端点 $x=${b.rightVal}$（${b.rightType===']'?'实心点':'空心圈'}），并填充胭脂红斜纹。`,
+            `【第 4 步：求交集 $A \\cap B$】寻找<strong>上下两层阴影重叠的公共部分</strong>。经投影判别，${interTeX}。`,
+            `【第 5 步：求并集 $A \\cup B$】寻找<strong>所有被至少一层阴影覆盖的全部区域</strong>。合并扫描，${unionTeX}。`
+        ];
+
+        document.getElementById('stepExplanation').innerHTML = stepExps[state.currentStep - 1];
+        renderMathInElement(document.getElementById('stepExplanation'));
+    }
+
+    function renderMathInElement(el) {
+        if (!el) return;
+        const text = el.innerHTML;
+        const replaced = text.replace(/\$(.+?)\$/g, (_, tex) => {
+            try {
+                return katex.renderToString(tex, { throwOnError: false });
+            } catch (e) {
+                return tex;
+            }
+        });
+        el.innerHTML = replaced;
+    }
+
+    // 绘制 SVG 数轴与图形
+    function drawSvg() {
+        const axisG = document.getElementById('axisLayer');
+        const gridG = document.getElementById('gridLayer');
+        const intAG = document.getElementById('intervalLayerA');
+        const intBG = document.getElementById('intervalLayerB');
+        const opG = document.getElementById('operationLayer');
+        const projG = document.getElementById('projectionLayer');
+        const indG = document.getElementById('indicatorLayer');
+
+        axisG.innerHTML = '';
+        gridG.innerHTML = '';
+        intAG.innerHTML = '';
+        intBG.innerHTML = '';
+        opG.innerHTML = '';
+        projG.innerHTML = '';
+        indG.innerHTML = '';
+
+        const { axisY, minX, maxX } = state;
+        const isDark = state.theme === 'dark';
+        const axisStroke = isDark ? '#94a3b8' : '#334155';
+        const gridStroke = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(148,163,184,0.3)';
+        const numColor = isDark ? '#94a3b8' : '#475569';
+        const originColor = isDark ? '#38bdf8' : '#0284c7';
+
+        // ===== 1. 绘制网格与数轴 =====
+        if (state.currentStep >= 1) {
+            for (let i = minX; i <= maxX; i++) {
+                const x = valToX(i);
+                gridG.innerHTML += `
+                    <line x1="${x}" y1="20" x2="${x}" y2="${state.svgHeight - 20}" stroke="${gridStroke}" stroke-dasharray="4 4" />
+                `;
+            }
+
+            axisG.innerHTML += `
+                <line x1="${state.padX - 20}" y1="${axisY}" x2="${state.svgWidth - state.padX + 20}" y2="${axisY}" 
+                      stroke="${axisStroke}" stroke-width="2.5" marker-end="url(#arrow)" />
+                <text x="${state.svgWidth - state.padX + 32}" y="${axisY + 5}" fill="${axisStroke}" font-size="15" font-weight="bold" font-style="italic">x</text>
+            `;
+
+            for (let i = minX; i <= maxX; i++) {
+                const x = valToX(i);
+                const isOrigin = i === 0;
+                axisG.innerHTML += `
+                    <line x1="${x}" y1="${axisY - (isOrigin ? 9 : 6)}" x2="${x}" y2="${axisY + (isOrigin ? 9 : 6)}" 
+                          stroke="${isOrigin ? originColor : (isDark ? '#64748b' : '#94a3b8')}" stroke-width="${isOrigin ? 2.5 : 1.5}" />
+                    <text x="${x}" y="${axisY + 22}" fill="${isOrigin ? originColor : numColor}" 
+                          font-size="${isOrigin ? 14 : 12}" font-weight="${isOrigin ? 'bold' : '500'}" text-anchor="middle">${i}</text>
+                `;
+            }
+        }
+
+        const h = 48;
+
+        // ===== 2. 绘制集合 A (数轴上方) =====
+        if (state.currentStep >= 2) {
+            const { a } = state;
+            const x1 = valToX(a.leftVal);
+            const x2 = valToX(a.rightVal);
+            const topY = axisY - h;
+
+            intAG.innerHTML += `
+                <polygon points="${x1},${axisY} ${x1},${topY} ${x2},${topY} ${x2},${axisY}" 
+                         fill="url(#patA)" opacity="0.9" />
+                <polyline points="${x1},${axisY} ${x1},${topY} ${x2},${topY} ${x2},${axisY}" 
+                          fill="none" stroke="var(--setA-color)" stroke-width="3" stroke-linejoin="round" />
+                <text x="${(x1 + x2) / 2}" y="${topY - 10}" fill="var(--setA-color)" font-size="14" font-weight="bold" text-anchor="middle">集合 A</text>
+            `;
+
+            intAG.innerHTML += createEndpointSvg(x1, axisY, a.leftType === '[', 'var(--setA-color)');
+            intAG.innerHTML += createEndpointSvg(x2, axisY, a.rightType === ']', 'var(--setA-color)');
+        }
+
+        // ===== 3. 绘制集合 B (数轴下方) =====
+        if (state.currentStep >= 3) {
+            const { b } = state;
+            const x1 = valToX(b.leftVal);
+            const x2 = valToX(b.rightVal);
+            const botY = axisY + h;
+
+            intBG.innerHTML += `
+                <polygon points="${x1},${axisY} ${x1},${botY} ${x2},${botY} ${x2},${axisY}" 
+                         fill="url(#patB)" opacity="0.9" />
+                <polyline points="${x1},${axisY} ${x1},${botY} ${x2},${botY} ${x2},${axisY}" 
+                          fill="none" stroke="var(--setB-color)" stroke-width="3" stroke-linejoin="round" />
+                <text x="${(x1 + x2) / 2}" y="${botY + 22}" fill="var(--setB-color)" font-size="14" font-weight="bold" text-anchor="middle">集合 B</text>
+            `;
+
+            intBG.innerHTML += createEndpointSvg(x1, axisY, b.leftType === '[', 'var(--setB-color)');
+            intBG.innerHTML += createEndpointSvg(x2, axisY, b.rightType === ']', 'var(--setB-color)');
+        }
+
+        const ops = calculateSetOps();
+
+        // ===== 4. 步骤 4：求交集 A ∩ B 动效高亮 =====
+        if (state.currentStep === 4) {
+            if (!ops.inter.isEmpty) {
+                const ix1 = valToX(ops.inter.leftVal);
+                const ix2 = valToX(ops.inter.rightVal);
+                const topY = axisY - h;
+
+                projG.innerHTML += `
+                    <rect x="${ix1}" y="${topY}" width="${Math.max(ix2 - ix1, 4)}" height="${2 * h}" 
+                          fill="url(#patInter)" stroke="var(--inter-color)" stroke-width="2" rx="4" class="glow-pulse" />
+                    <line x1="${ix1}" y1="20" x2="${ix1}" y2="${state.svgHeight - 20}" stroke="var(--inter-color)" stroke-dasharray="3 3" opacity="0.6"/>
+                    <line x1="${ix2}" y1="20" x2="${ix2}" y2="${state.svgHeight - 20}" stroke="var(--inter-color)" stroke-dasharray="3 3" opacity="0.6"/>
+                `;
+
+                opG.innerHTML += `
+                    <line x1="${ix1}" y1="${axisY}" x2="${ix2}" y2="${axisY}" stroke="var(--inter-color)" stroke-width="7" stroke-linecap="round" />
+                    <text x="${(ix1 + ix2) / 2}" y="${axisY - 14}" fill="var(--inter-color)" font-size="13" font-weight="bold" text-anchor="middle">
+                        交集 A ∩ B 重叠区
+                    </text>
+                `;
+
+                opG.innerHTML += createEndpointSvg(ix1, axisY, ops.inter.leftType === '[', 'var(--inter-color)', 6);
+                opG.innerHTML += createEndpointSvg(ix2, axisY, ops.inter.rightType === ']', 'var(--inter-color)', 6);
+            } else {
+                opG.innerHTML += `
+                    <text x="${state.svgWidth / 2}" y="${axisY - 10}" fill="var(--inter-color)" font-size="15" font-weight="bold" text-anchor="middle">
+                        ✦ 两集合无公共阴影重叠，交集为 空集 ∅ ✦
+                    </text>
+                `;
+            }
+        }
+
+        // ===== 5. 步骤 5：求并集 A ∪ B 动效高亮 =====
+        if (state.currentStep === 5) {
+            const { a, b } = state;
+            const ax1 = valToX(a.leftVal), ax2 = valToX(a.rightVal);
+            const bx1 = valToX(b.leftVal), bx2 = valToX(b.rightVal);
+
+            if (!ops.union.isSeparated) {
+                const ux1 = valToX(ops.union.leftVal);
+                const ux2 = valToX(ops.union.rightVal);
+
+                opG.innerHTML += `
+                    <rect x="${ux1}" y="${axisY - 8}" width="${ux2 - ux1}" height="16" fill="var(--union-bg)" rx="4" />
+                    <line x1="${ux1}" y1="${axisY}" x2="${ux2}" y2="${axisY}" stroke="var(--union-color)" stroke-width="6" stroke-linecap="round" />
+                    <text x="${(ux1 + ux2) / 2}" y="${axisY - 16}" fill="var(--union-color)" font-size="13" font-weight="bold" text-anchor="middle">
+                        并集 A ∪ B 全部覆盖区
+                    </text>
+                `;
+
+                opG.innerHTML += createEndpointSvg(ux1, axisY, ops.union.leftType === '[', 'var(--union-color)', 6);
+                opG.innerHTML += createEndpointSvg(ux2, axisY, ops.union.rightType === ']', 'var(--union-color)', 6);
+            } else {
+                opG.innerHTML += `
+                    <line x1="${ax1}" y1="${axisY}" x2="${ax2}" y2="${axisY}" stroke="var(--union-color)" stroke-width="5" />
+                    <line x1="${bx1}" y1="${axisY}" x2="${bx2}" y2="${axisY}" stroke="var(--union-color)" stroke-width="5" />
+                    <text x="${state.svgWidth / 2}" y="${axisY - 14}" fill="var(--union-color)" font-size="13" font-weight="bold" text-anchor="middle">
+                        并集为两段区间之并：A ∪ B
+                    </text>
+                `;
+            }
+        }
+    }
+
+    function createEndpointSvg(x, y, isSolid, color, r = 5.5) {
+        const bgFill = state.theme === 'dark' ? '#090d16' : '#ffffff';
+        if (isSolid) {
+            return `<circle cx="${x}" cy="${y}" r="${r}" fill="${color}" stroke="${bgFill}" stroke-width="2" />`;
+        } else {
+            return `<circle cx="${x}" cy="${y}" r="${r}" fill="${bgFill}" stroke="${color}" stroke-width="2.5" />`;
+        }
+    }
+
+    function jumpToStep(step) {
+        state.currentStep = step;
+        updateUI();
+    }
+
+    function nextStep() {
+        if (state.currentStep < state.totalSteps) {
+            state.currentStep++;
+            updateUI();
+        } else {
+            if (state.isPlaying) togglePlay();
+        }
+    }
+
+    function prevStep() {
+        if (state.currentStep > 1) {
+            state.currentStep--;
+            updateUI();
+        }
+    }
+
+    function resetAnimation() {
+        if (state.isPlaying) togglePlay();
+        state.currentStep = 1;
+        updateUI();
+    }
+
+    function togglePlay() {
+        state.isPlaying = !state.isPlaying;
+        const icon = document.getElementById('playIcon');
+        const text = document.getElementById('playText');
+
+        if (state.isPlaying) {
+            icon.className = 'fa-solid fa-pause';
+            text.innerText = '暂停演示';
+            
+            if (state.currentStep === state.totalSteps) {
+                state.currentStep = 1;
+                updateUI();
+            }
+
+            state.timer = setInterval(() => {
+                if (state.currentStep < state.totalSteps) {
+                    state.currentStep++;
+                    updateUI();
+                } else {
+                    togglePlay();
+                }
+            }, 2200);
+        } else {
+            icon.className = 'fa-solid fa-play';
+            text.innerText = '逐步演示';
+            clearInterval(state.timer);
+            state.timer = null;
+        }
+    }
+
+    function updateUI() {
+        for (let i = 1; i <= state.totalSteps; i++) {
+            const tab = document.getElementById(`stepTab${i}`);
+            if (i === state.currentStep) {
+                tab.className = 'step-item active';
+            } else if (i < state.currentStep) {
+                tab.className = 'step-item completed';
+            } else {
+                tab.className = 'step-item';
+            }
+        }
+
+        document.getElementById('currentStepBadge').innerText = `步骤 ${state.currentStep}/${state.totalSteps}`;
+
+        drawSvg();
+        renderMathFormulas();
+    }
+
+    function loadPreset(idx) {
+        document.querySelectorAll('.preset-btn').forEach((b, i) => {
+            b.classList.toggle('active', i === idx);
+        });
+
+        const p = presets[idx];
+        state.a = { ...p.a };
+        state.b = { ...p.b };
+
+        document.getElementById('aLeftType').value = state.a.leftType;
+        document.getElementById('aLeftVal').value = state.a.leftVal;
+        document.getElementById('aRightVal').value = state.a.rightVal;
+        document.getElementById('aRightType').value = state.a.rightType;
+
+        document.getElementById('bLeftType').value = state.b.leftType;
+        document.getElementById('bLeftVal').value = state.b.leftVal;
+        document.getElementById('bRightVal').value = state.b.rightVal;
+        document.getElementById('bRightType').value = state.b.rightType;
+
+        updateUI();
+    }
+
+    function updateCustomInterval() {
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+
+        const aLv = parseInt(document.getElementById('aLeftVal').value, 10);
+        const aRv = parseInt(document.getElementById('aRightVal').value, 10);
+        const bLv = parseInt(document.getElementById('bLeftVal').value, 10);
+        const bRv = parseInt(document.getElementById('bRightVal').value, 10);
+
+        state.a = {
+            leftType: document.getElementById('aLeftType').value,
+            leftVal: Math.min(aLv, aRv),
+            rightVal: Math.max(aLv, aRv),
+            rightType: document.getElementById('aRightType').value
+        };
+
+        state.b = {
+            leftType: document.getElementById('bLeftType').value,
+            leftVal: Math.min(bLv, bRv),
+            rightVal: Math.max(bLv, bRv),
+            rightType: document.getElementById('bRightType').value
+        };
+
+        updateUI();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        loadPreset(0);
+    });
+</script>
+
+</body>
+</html>

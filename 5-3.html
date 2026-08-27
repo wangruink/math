@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-baqh{text-align:center;vertical-align:top}
+			.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+			.tg .tg-hjji{font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-6ibf{border-color:inherit;font-size:24px;text-align:center;vertical-align:top}
+			ul.bbb li{font-size:34px} 
+			ul.bbc li{font-size:28px} 
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.3$ **诱导公式** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+		<section  data-transition="convex">
+			
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>三角函数的对称性</strong></h3>
+
+					前面利用圆的几何性质，得到了同角三角函数之间的基本关系。
+					
+					<br>
+					我们知道，圆的最重要的性质是对称性，而对称性也是函数的重要性质。
+					
+					<br>
+					由此想到，可以利用圆的对称性，研究三角函数的对称性。
+
+
+				</section>
+
+		</section>
+
+
+
+
+
+
+		
+
+
+
+		<section  data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				作$P_1$关于原点的对称点$P_2$，以$OP_2$为终边的角$\beta$与角$\alpha$有什么关系？
+
+				角$\beta,\alpha$的三角函数值之间有什么关系
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				设$P_1,P_2$的坐标分别为$(x_1,y_1),(x_2,y_2)$，由对称性和三角函数的定义：
+
+				$$x_1=-x_2,y_1=-y_2,\alpha+\pi=\beta $$
+
+				
+
+				$$\sin\alpha = y_1=-y_2=-\sin\beta $$
+
+				$$\cos\alpha = x_1=-x_2=-\cos\beta $$
+
+
+				$$\tan\alpha = \frac{y_1}{x_1}=\frac{y_2}{x_2}=\tan\beta $$
+	
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式2</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\pi+\alpha)=-\sin\alpha $
+					</li>
+					<li>
+						$\cos(\pi+\alpha)=-\cos\alpha $
+					</li>
+					<li>
+						$\tan(\pi+\alpha)=\tan\alpha $
+					</li>
+				</ul>
+
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式2</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\pi+\alpha)=-\sin\alpha $
+					</li>
+					<li>
+						$\cos(\pi+\alpha)=-\cos\alpha $
+					</li>
+					<li>
+						$\tan(\pi+\alpha)=\tan\alpha $
+					</li>
+				</ul>
+
+				$$\cos 225^{\circ}=? $$
+
+			</section>
+
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				作$P_1$关于$x$轴的对称点$P_3$，则以$OP_3$为终边的角为$\gamma$。角$\gamma,\alpha$的三角函数值之间有什么关系？
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				设$P_1,P_3$的坐标分别为$(x_1,y_1),(x_3,y_3)$，由对称性和三角函数的定义：
+
+				$$x_1=x_3,y_1=-y_3,\alpha =-\gamma $$
+
+
+				$$\sin\alpha = y_1=-y_3=-\sin\gamma $$
+
+				$$\cos\alpha = x_1= x_3= \cos\gamma $$
+
+
+				$$\tan\alpha = \frac{y_1}{x_1}=-\frac{y_3}{x_3}=-\tan\gamma $$
+	
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式3</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(-\alpha)=-\sin\alpha $
+					</li>
+					<li>
+						$\cos(-\alpha)=\cos\alpha $
+					</li>
+					<li>
+						$\tan(-\alpha)=-\tan\alpha $
+					</li>
+				</ul>
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式3</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(-\alpha)=-\sin\alpha $
+					</li>
+					<li>
+						$\cos(-\alpha)=\cos\alpha $
+					</li>
+					<li>
+						$\tan(-\alpha)=-\tan\alpha $
+					</li>
+				</ul>
+
+				$$\sin(-\frac{7\pi}{6})=? $$
+
+				$$\tan(-1140^{\circ})=? $$
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				作$P_1$关于$y$轴的对称点$P_4$，则以$OP_4$为终边的角为$\theta $。角$\theta,\alpha$的三角函数值之间有什么关系？
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>探究</strong></h3>
+
+				设$P_1,P_4$的坐标分别为$(x_1,y_1),(x_4,y_4)$，由对称性和三角函数的定义：
+
+				$$x_1=-x_4,y_1=y_4,\alpha+\theta=\pi $$
+
+
+				$$\sin\alpha = y_1=y_4=\sin\theta $$
+
+				$$\cos\alpha = x_1= -x_4= \cos\theta $$
+
+
+				$$\tan\alpha = \frac{y_1}{x_1}=-\frac{y_4}{x_4}=-\tan\theta $$
+	
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式4</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\pi-\alpha)=\sin\alpha $
+					</li>
+					<li>
+						$\cos(\pi-\alpha)=-\cos\alpha $
+					</li>
+					<li>
+						$\tan(\pi-\alpha)=-\tan\alpha $
+					</li>
+				</ul>
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式4</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin(\pi-\alpha)=\sin\alpha $
+					</li>
+					<li>
+						$\cos(\pi-\alpha)=-\cos\alpha $
+					</li>
+					<li>
+						$\tan(\pi-\alpha)=-\tan\alpha $
+					</li>
+				</ul>
+
+				$$\sin(\frac{8\pi}{3})=? $$
+
+				$$\sin(-\frac{16\pi}{3})=? $$
+	
+			</section>
+		
+
+
+		</section>
+
+	
+
+	
+
+
+		<section data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+
+				<h6>
+				<div style="display: flex;">
+					<ul class="bbb">
+						<li>
+							<font color="red">公式1</font>
+							<ul>
+								<li>
+									$\sin(\alpha+2k\pi)=\sin\alpha $
+								</li>
+								<li>
+									$\cos(\alpha+2k\pi)=\cos\alpha $
+								</li>
+								<li>
+									$\tan(\alpha+2k\pi)=\tan\alpha $
+								</li>
+							</ul>
+	
+						</li>
+						<li>
+							<font color="red">公式2</font>
+							<ul>
+								<li>
+									$\sin(\pi+\alpha)=-\sin\alpha $
+								</li>
+								<li>
+									$\cos(\pi+\alpha)=-\cos\alpha $
+								</li>
+								<li>
+									$\tan(\pi+\alpha)=\tan\alpha $
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="bbb">
+						<li>
+							<font color="red">公式3</font>
+							<ul>
+								<li>
+									$\sin(-\alpha)=-\sin\alpha $
+								</li>
+								<li>
+									$\cos(-\alpha)=\cos\alpha $
+								</li>
+								<li>
+									$\tan(-\alpha)=-\tan\alpha $
+								</li>
+							</ul>
+	
+						</li>
+						<li>
+							<font color="red">公式4</font>
+							<ul>
+								<li>
+									$\sin(\pi-\alpha)=\sin\alpha $
+								</li>
+								<li>
+									$\cos(\pi-\alpha)=-\cos\alpha $
+								</li>
+								<li>
+									$\tan(\pi-\alpha)=-\tan\alpha $
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+			</h6>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+				公式一~四可用下面的话来概括：
+
+				<br>
+				<br>
+				
+				$\alpha+2k\pi,-\alpha,\pi\pm\alpha$的三角函数值，等于角$\alpha $的同名函数值，
+				前面加上一个把$\alpha $看成锐角时原函数值的符号。
+
+
+				<br>
+
+				<font color="red">
+					函数名不变 &nbsp 符号看象限
+				</font>
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+				使用诱导公式求下列式子的值：
+
+				<br>
+
+				<ol>
+					<li>
+						$\cos 225^{\circ} $
+					</li>
+					<li>
+						$\sin\frac{8\pi}{3} $
+					</li>
+					<li>
+						$\sin(-\frac{16\pi}{3}) $
+					</li>
+					<li>
+						$\tan(-2040^{\circ}) $
+					</li>
+				</ol>
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+				化简
+
+				$$
+				\frac{\cos(\alpha+\pi )\sin(\alpha+2\pi) }{\tan(-\alpha-\pi)\cos(\alpha-\pi    ) }
+				$$
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+				已知$\cos(\pi-\alpha)=-\frac{3}{5}$，且$\alpha$是第一象限角，则$\sin(-2\pi-\alpha)$的值是？
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+				已知$\cos(\frac{\pi}{6}-\alpha)=\frac{\sqrt{3}}{3}$，则$\cos(\alpha+\frac{5\pi}{6})=$ 
+
+			
+	
+			</section>
+		
+
+
+		</section>
+
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>探究</strong></h3>
+
+				作$P_1$关于$y=x$的对称点$P_5$，则以$OP_5$为终边的角为$\beta $。角$\beta,\alpha$的三角函数值之间有什么关系？
+
+				<div class="main">
+					<div id="box5" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>探究</strong></h3>
+
+				设$P_1,P_5$的坐标分别为$(x_1,y_1),(x_5,y_5)$，由对称性和三角函数的定义：
+
+				$$x_1=y_5,y_1=x_5,\beta=\frac{\pi}{2}-\alpha $$
+
+
+				$$\sin\alpha = y_1=x_5=\cos\beta $$
+
+				$$\cos\alpha = x_1= y_5= \sin\beta $$
+
+
+				$$\tan\alpha = \frac{y_1}{x_1}=\frac{x_5}{y_5}=\frac{1}{\tan\beta}(\alpha\neq\frac{k\pi}{2}) $$
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式5</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$$\sin(\frac{\pi}{2}-\alpha)=\cos\alpha $$
+					</li>
+					<li>
+						$$\cos(\frac{\pi}{2}-\alpha)=\sin\alpha $$
+					</li>
+				</ul>
+
+				
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>探究</strong></h3>
+
+				作$P_5$关于$y$轴的对称点$P_6$，则以$OP_6$为终边的角为$\gamma $。角$\gamma,\alpha$的三角函数值之间有什么关系？
+
+				<div class="main">
+					<div id="box6" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>探究</strong></h3>
+
+				设$P_1,P_6$的坐标分别为$(x_1,y_1),(x_6,y_6)$，由对称性和三角函数的定义：
+
+				$$x_1=y_6,y_1=-x_6,\gamma=\frac{\pi}{2}+\alpha $$
+
+
+				$$\sin\alpha = y_1=-x_6=-\cos\gamma $$
+
+				$$\cos\alpha = x_1= y_6= \sin\gamma $$
+
+
+				$$\tan\alpha = \frac{y_1}{x_1}=-\frac{x_6}{y_6}=-\frac{1}{\tan\gamma}(\gamma\neq\frac{k\pi}{2}) $$
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<font color="blue">公式6</font>
+
+				<br>
+
+				<ul>
+					<li>
+						$$\sin(\frac{\pi}{2}+\alpha)=+\cos\alpha $$
+					</li>
+					<li>
+						$$\cos(\frac{\pi}{2}+\alpha)=-\sin\alpha $$
+					</li>
+				</ul>
+
+				
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>诱导公式</strong></h3>
+
+
+				<h6>
+				<div style="display: flex;">
+					<ul class="bbc">
+						<li>
+							<font color="red">公式1</font>
+							<ul>
+								<li>
+									$\sin(\alpha+2k\pi)=\sin\alpha $
+								</li>
+								<li>
+									$\cos(\alpha+2k\pi)=\cos\alpha $
+								</li>
+								<li>
+									$\tan(\alpha+2k\pi)=\tan\alpha $
+								</li>
+							</ul>
+	
+						</li>
+						<li>
+							<font color="red">公式3</font>
+							<ul>
+								<li>
+									$\sin(-\alpha)=-\sin\alpha $
+								</li>
+								<li>
+									$\cos(-\alpha)=\cos\alpha $
+								</li>
+								<li>
+									$\tan(-\alpha)=-\tan\alpha $
+								</li>
+							</ul>
+	
+						</li>
+						<li>
+							<font color="red">公式5</font>
+							<ul>
+								<li>
+									$\sin(\frac{\pi}{2}-\alpha)=\cos\alpha $
+								</li>
+								<li>
+									$\cos(\frac{\pi}{2}-\alpha)=\sin\alpha $
+								</li>
+								
+							</ul>
+	
+						</li>
+						
+					</ul>
+					<ul class="bbc">
+						<li>
+							<font color="red">公式2</font>
+							<ul>
+								<li>
+									$\sin(\pi+\alpha)=-\sin\alpha $
+								</li>
+								<li>
+									$\cos(\pi+\alpha)=-\cos\alpha $
+								</li>
+								<li>
+									$\tan(\pi+\alpha)=\tan\alpha $
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<font color="red">公式4</font>
+							<ul>
+								
+								<li>
+									$\sin(\pi-\alpha)=\sin\alpha $
+								</li>
+								<li>
+									$\cos(\pi-\alpha)=-\cos\alpha $
+								</li>
+								<li>
+									$\tan(\pi-\alpha)=-\tan\alpha $
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<font color="red">公式6</font>
+							<ul>
+								<li>
+									$\sin(\frac{\pi}{2}+\alpha)=\cos\alpha $
+								</li>
+								<li>
+									$\cos(\frac{\pi}{2}+\alpha)=-\sin\alpha $
+								</li>
+								
+							</ul>
+	
+						</li>
+					</ul>
+
+				</div>
+			</h6>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<br>
+
+
+				公式一~公式六都叫<font color="red">诱导公式</font>。
+
+				$$k\cdot\frac{\pi}{2}\pm\alpha(k\in\mathbf{Z})\text{的三角函数值} $$
+
+				<ul>
+					<li>
+						当$k$为偶数时，等于同名的三角函数值，前面加上一个把$\alpha$看作锐角时的原三角函数值的符号。
+					</li>
+					<li>
+						当$k$为奇数时，等于异名的三角函数值，前面加上一个把$\alpha$看作锐角时的原三角函数值的符号。
+					</li>
+				</ul>
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<br>
+
+				<h3>
+
+				
+				<font color="red">
+
+					奇变偶不变，符号看象限。
+
+				</font>
+			    </h3>
+
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<br>
+				证明：
+				<br>
+				
+				<ul>
+					<li>
+						$$\sin(\frac{3\pi}{2}-\alpha)=-\cos\alpha $$
+					</li>
+					<li>
+						$$\cos(\frac{3\pi}{2}+\alpha)=+\sin\alpha $$
+					</li>
+				</ul>
+
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<br>
+
+				化简：
+
+				$$
+				\frac{\sin(2\pi-\alpha)\cos(\pi+\alpha)\cos(\frac{\pi}{2}+\alpha)\cos(\frac{11\pi}{2}-\alpha) }{\cos(\pi-\alpha)\sin(3\pi-\alpha)\sin(-\pi-\alpha)\sin(\frac{9\pi}{2}+\alpha) }
+				$$
+
+
+
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>诱导公式</strong></h3>
+
+				<br>
+
+				已知$\sin(53^{\circ}-\alpha)=\frac{1}{5},-270^{\circ}< \alpha < -90^{\circ}$，求$\sin(37^{\circ}+\alpha) $
+
+
+
+			
+	
+			</section>
+
+			  
+
+		
+
+
+
+
+
+
+
+		</section>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p21 = board2.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5});
+			var p22 = board2.create('point', [1, 0],{name:'$A$',fixed:true,size:1.5});
+			s21 = board2.create('slider',[[0.2,1.2], [1.2,1.2], [0*Math.PI, Math.PI*0.25, 2.0*Math.PI]]);
+
+			var p23 = board2.create('point', [ function(){return Math.cos(s21.Value()) } , function(){return Math.sin(s21.Value()) } ],{name:'$P_1$',size:1.5});
+
+			var p24 = board2.create('point', [ function(){return -Math.cos(s21.Value()) } , function(){return -Math.sin(s21.Value()) } ],{name:'$P_2$',size:1.5});
+			
+			var c21 = board2.create('circle',[p21, p22]);
+
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',});
+
+			var li22 = board2.create('line',[p21,p24], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'green',});
+
+
+			var angle21 = board2.create('angle', [p22, p21, p23],{ radius:0.25 , name: '$\\alpha$' });
+
+			var angle22 = board2.create('angle', [p22, p21, p24],{ radius:0.15 , name: '$\\beta$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p31 = board3.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5});
+			var p32 = board3.create('point', [1, 0],{name:'$A$',fixed:true,size:1.5});
+			s31 = board3.create('slider',[[0.2,1.2], [1.2,1.2], [0*Math.PI, Math.PI*0.25, 2.0*Math.PI]]);
+
+			var p33 = board3.create('point', [ function(){return Math.cos(s31.Value()) } , function(){return Math.sin(s31.Value()) } ],{name:'$P_1$',size:1.5});
+
+			var p34 = board3.create('point', [ function(){return Math.cos(s31.Value()) } , function(){return -Math.sin(s31.Value()) } ],{name:'$P_3$',size:1.5});
+			
+			var c31 = board3.create('circle',[p31, p32]);
+
+			var li31 = board3.create('line',[p31,p33], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',});
+
+			var li32 = board3.create('line',[p31,p34], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'green',});
+
+
+			var angle31 = board3.create('angle', [p32, p31, p33],{ radius:0.25 , name: '$\\alpha$' });
+
+			var angle32 = board3.create('angle', [p34, p31, p32],{ radius:0.25 , name: '$\\gamma$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p41 = board4.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5});
+			var p42 = board4.create('point', [1, 0],{name:'$A$',fixed:true,size:1.5});
+			s41 = board4.create('slider',[[0.2,1.2], [1.2,1.2], [0*Math.PI, Math.PI*0.25, 2.0*Math.PI]]);
+
+			var p43 = board4.create('point', [ function(){return Math.cos(s41.Value()) } , function(){return Math.sin(s41.Value()) } ],{name:'$P_1$',size:1.5});
+
+			var p44 = board4.create('point', [ function(){return -Math.cos(s41.Value()) } , function(){return Math.sin(s41.Value()) } ],{name:'$P_4$',size:1.5});
+			
+			var c41 = board4.create('circle',[p41, p42]);
+
+			var li41 = board4.create('line',[p41,p43], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',});
+
+			var li42 = board4.create('line',[p41,p44], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'green',});
+
+
+			var angle41 = board4.create('angle', [p42, p41, p43],{ radius:0.25 , name: '$\\alpha$' });
+
+			var angle42 = board4.create('angle', [p42, p41, p44],{ radius:0.15 , name: '$\\theta$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p51 = board5.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5});
+			var p52 = board5.create('point', [1, 0],{name:'$A$',fixed:true,size:1.5});
+			s51 = board5.create('slider',[[0.2,1.2], [1.2,1.2], [0*Math.PI, Math.PI*0.15, 2.0*Math.PI]]);
+
+			var p53 = board5.create('point', [ function(){return Math.cos(s51.Value()) } , function(){return Math.sin(s51.Value()) } ],{name:'$P_1$',size:1.5});
+
+			var p54 = board5.create('point', [ function(){return Math.cos(Math.PI/2-s51.Value()) } , function(){return Math.sin((Math.PI/2-s51.Value() )) } ],{name:'$P_5$',size:1.5});
+			
+			var c51 = board5.create('circle',[p51, p52]);
+
+			var li51 = board5.create('line',[p51,p53], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',});
+
+			var li52 = board5.create('line',[p51,p54], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'green',});
+
+			var li53 = board5.create('line',[p51,[1,1]], 
+					{straightFirst:true, straightLast:true, strokeWidth:1.5,strokeColor:'black',name:'$y=x$'});
+
+			var li54 = board5.create('line',[p51,p52], 
+					{straightFirst:true, straightLast:true, strokeWidth:1.5,strokeColor:'black',});
+
+			var angle51 = board5.create('angle', [p52, p51, p53],{ radius:0.35 , name: '$\\alpha$' });
+
+			var angle52 = board5.create('angle', [p52, p51, p54],{ radius:0.15 , name: '$\\beta$' });
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p61 = board6.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5});
+			var p62 = board6.create('point', [1, 0],{name:'$A$',fixed:true,size:1.5});
+			s61 = board6.create('slider',[[0.2,1.2], [1.2,1.2], [0*Math.PI, Math.PI*0.15, 2.0*Math.PI]]);
+
+			var p63 = board6.create('point', [ function(){return Math.cos(s61.Value()) } , function(){return Math.sin(s61.Value()) } ],{name:'$P_1$',size:1.5});
+
+			var p64 = board6.create('point', [ function(){return Math.cos(Math.PI/2+s61.Value()) } , function(){return Math.sin((Math.PI/2+s61.Value() )) } ],{name:'$P_6$',size:1.5});
+			
+			var c61 = board6.create('circle',[p61, p62]);
+
+			var li61 = board6.create('line',[p61,p63], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',});
+
+			var li62 = board6.create('line',[p61,p64], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'green',});
+
+
+			var li64 = board6.create('line',[p61,p62], 
+					{straightFirst:true, straightLast:true, strokeWidth:1.5,strokeColor:'black',});
+
+			var angle61 = board6.create('angle', [p62, p61, p63],{ radius:0.35 , name: '$\\alpha$' });
+
+			var angle62 = board6.create('angle', [p62, p61, p64],{ radius:0.15 , name: '$\\gamma$' });
+
+
+		</script>
+
+
+
+
+
+	
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

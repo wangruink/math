@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				font-weight:normal;overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg .tg-p7sm{border-color:#000000;font-family:inherit;font-size:30px;text-align:center;vertical-align:top}
+				.tg .tg-zbu7{border-color:#000000;font-family:inherit;text-align:left;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					## $\S 5.7 $ **三角函数的应用**
+					
+					王瑞
+					
+					长丰一中
+				</section>
+
+	
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>简谐运动</strong></h3>
+
+				<br>
+
+				简谐运动，即是最基本也是最简单的一种机械振动。
+				
+				<br>
+				<br>
+				当某物体进行简谐运动时，物体所受的力（或物体的加速度）的大小与位移的大小成正比，并且力（或物体的加速度）总是指向平衡位置。
+
+
+				$$
+				F=-kx
+				
+				$$
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>简谐运动 </strong></h3>
+
+				
+
+				简谐运动的位移与时间的关系可以用函数
+
+				$$
+				y = A\sin(\omega t+\varphi ),t\in [0,+\infty),A>0,\omega >0
+				$$
+
+				<ul>
+					<li>
+						其中$A$表示简谐运动的<font color="red">振幅</font>，它是物体离开平衡位置的最大距离。
+					</li>
+					<li>
+						这个简谐运动的<font color="red">周期</font>是$T=\frac{2\pi}{\omega}$，它是物体往返运动一次所需要的时间。
+					</li>
+					<li>
+						这个简谐运动的<font color="red">频率</font>$f=\frac{1}{T}=\frac{\omega}{2\pi}$，它是物体在单位时间内往复运动的次数。
+					</li>
+					<li>
+						$ \omega t+\varphi$ 称为<font color="red">相位</font>，$t=0$时的相位$\varphi$称为<font color="red">初相</font>。
+					</li>
+				</ul>
+
+			
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+
+				<h3><strong>声音</strong></h3>
+
+				<br>
+
+				声音是振动产生的声波，通过介质（气体、固体、液体）传播并能被人或动物听觉器官所感知的波动现象。
+
+
+				<br>
+				<br>
+
+				声音是一种波动，当演奏乐器、拍打一扇门或者敲击桌面时，声音的振动会引起介质——空气分子有节奏的振动，使周围的空气产生疏密变化，形成疏密相间的纵波，这就产生了声波，这种现象会一直延续到振动消失为止。 
+
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>声音 </strong></h3>
+
+				<br>
+
+				声音总可以被分解为不同频率不同强度正弦波的叠加。
+
+
+				<br>
+				<br>
+
+				纯音的数学模型是函数$y=A\sin\omega t$，每一个音都是由多种纯音合成的。
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>声音 </strong></h3>
+
+				<br>
+
+				声音的四要素：
+
+				<br>
+				<br>
+
+				<ul>
+					<li>
+						音调：与声波的振动频率相关
+					</li>
+					<li>
+						响度：与声波的振幅相关
+					</li>
+					<li>
+						音长：与声波的振幅相关
+					</li>
+					<li>
+						音色：与声波的波形相关
+					</li>
+				</ul>
+
+		
+			</section>
+
+		
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>声音 </strong></h3>
+
+				<br>
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:1080px; height:350px;"></div>
+				</div>
+
+				
+
+	
+		
+			</section>
+
+		
+
+			
+
+			
+			
+
+
+		</section>
+
+		<section data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+				所谓音乐，就是按照某种节奏依次连接不同频率的声音。
+
+				<br>
+				
+				而人耳是一种非常灵敏的机械波感受器，并不是随便两个声音连在一起就能觉得好听。在绝大多数情况下，如果两个声音的频率接近简单的整数比，那么它们接连奏响就比较好听。
+
+				<br>
+
+				最简单的比例当然是$1:1$和$1:2$，但这未免太单调了，我们想要在两者之间找到广阔的天地。
+
+
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+				乐音的音高，是由声波的频率所决定的，而频率又由乐器的弦长所决定。
+
+				<br>
+
+				如果一个音的频率为$f$，另一个音的频率是$2f$的话，那么，第二个声音就是第一个声音的“纯八度”高音。
+
+				<br>
+
+				同理，如果一个音的频率为$\frac{f}{2}$，则这个声音就是第一个声音的“纯八度”低音。
+
+				
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+				一件圆径固定，长度固定的发声器所发出的声音是一个定值，如果另一件圆径相同发声器的长度是这件发声器长度的一半的话，那么，另一件发声器所发出的声音，就是一个纯八度的高音。
+
+				<br>
+
+				同理，如果第三件发声器的长度是原来发声器长度的二倍，那么，第三件发声器所发出的声音，就是一个纯八度的低音。
+
+				
+
+	
+		
+			</section>
+
+			
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				
+				<br>
+				<strong>五度相生律 </strong>
+
+				<br>
+				<br>
+
+				先取某个长度的琴弦作为基准，当作C，剪掉C的1/3，得到了G；然后延长G的1/3，得到了D；再剪掉D的1/3，得到了A；再延长A的1/3，得到了E；再剪掉E的1/3，就得到了B，最后把C延长一半， 就得到了F。
+
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+				<strong>五度相生律 </strong>
+
+
+				<br>
+
+				<table><thead>
+					<tr>
+					  <th>音阶</th>
+					  <th>C</th>
+					  <th>D</th>
+					  <th>E</th>
+					  <th>F</th>
+					  <th>G</th>
+					  <th>A</th>
+					  <th>B</th>
+					  <th>C</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>比值</td>
+					  <td>1</td>
+					  <td>9/8</td>
+					  <td>9/8</td>
+					  <td>256/243</td>
+					  <td>9/8</td>
+					  <td>9/8</td>
+					  <td>9/8</td>
+					  <td>256/243</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+
+				<strong>三分损益法 </strong>
+
+				<br>
+				<br>
+
+				相传三分损益法为管仲所发明。
+
+				<br>
+
+				司马迁的《史记》“律书第三”中写到：“……九九八十一以为宫。三分去一，五十四以为徵。三分益一，七十二以为商。三分去一，四十八以为羽。三分益一，六十四以为角。”
+
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+				<br>
+
+				<strong>三分损益法 </strong>
+
+				<br>
+
+				取一根用来定音的竹管，长为81单位，定为“宫音”。然后将81乘上2/3，就得到54单位，定为“徵音”。将徵音的竹管长度54乘上4/3，得到72单位，定为“商音”。
+				
+				将商音72乘2/3，得48单位，为“羽音”。羽音48乘4/3，得64单位，为“角音”。
+				
+				
+				<br>
+				而这宫、商、角、徵、羽五个音高，被称为中国的<font color="red">五音</font>。
+
+				<br>
+				中国古代以“三分损益法”定律，将十二个音逐个导出，统称为<font color="red">五音十二律</font>。
+
+
+				
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>音乐与数学 </strong></h3>
+
+			
+				
+
+				<strong>十二平均律 </strong>
+
+				<br>
+
+				<br>
+
+				五音十二律让人们养成了将二倍的频率分成十二份的习惯，那么在最理想的条件下，就应该将这十二份构成等比数列，这个比值就是
+				
+				$$
+				
+				2^{\frac{1}{12}}
+				
+				$$
+
+				万历十二年，东方百科艺术全书式的人物，朱载堉，用算盘精确计算出了$
+				
+				2^{\frac{1}{12}}
+				
+				$的25位小数，推出了全新的“十二平均律”。
+
+				
+	
+		
+			</section>
+
+		
+
+
+
+
+		</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+
+	
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return Math.sin(x);}, -10*Math.PI, 10*Math.PI],{name:'$y_1=\\sin x $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+			
+			var graph22 = board2.create('functiongraph',
+					[function(x){ return Math.sin(2*x)/2;}, -10*Math.PI, 10*Math.PI],{name:'$y_2=\\frac{1}{2} \\sin 2x $',withLabel:true,dash:2, strokeColor:'red',label:{position:'top', offset:[10,5],color:'red'}}
+					);
+
+			var graph23 = board2.create('functiongraph',
+					[function(x){ return Math.sin(3*x)/3;}, -10*Math.PI, 10*Math.PI],{name:'$y_3=\\frac{1}{3} \\sin 3x $',withLabel:true,dash:2, strokeColor:'green',label:{position:'top', offset:[10,5],color:'green'}}
+					);
+			
+			var graph24 = board2.create('functiongraph',
+					[function(x){ return Math.sin(x)+ Math.sin(2*x)/2+ Math.sin(3*x)/3 ; }, -10*Math.PI, 10*Math.PI],{name:'$y=y_1+y_2+y_3$',withLabel:true, strokeColor:'black',label:{position:'top', offset:[-10,20],color:'black'}}
+					);
+			
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+			s32 = board3.create('slider',[[0.2,-1.2], [1.5,-1.2], [-1*Math.PI, Math.PI*0, 1.0*Math.PI]],{name:'\\varphi'} );
+			s31 = board3.create('slider',[[0.2,-0.8], [1.5,-.8], [-2*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x'} );
+
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return Math.sin(x);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin x,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph32 = board3.create('functiongraph',
+					[function(x){ return Math.sin(x+s32.Value());}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin (x+\\varphi),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+			var p31 = board3.create('point', [ function(){return s31.Value() } , function(){return Math.sin(s31.Value()) } ],{name:'$A$',size:1.5,color:'blue'});
+
+			var p32 = board3.create('point', [ function(){return s31.Value()-s32.Value() } , function(){return Math.sin(s31.Value()) } ],{name:'$B$',size:1.5,color:'red'});
+
+			var li31 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+			s42 = board4.create('slider',[[0.2,-1.2], [1.5,-1.2], [0,1,4]],{name:'\\omega'} );
+			s41 = board4.create('slider',[[0.2,-0.8], [1.5,-.8], [-2*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x'} );
+
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return Math.sin(x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin(x+\\frac{\\pi}{6}),x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph42 = board4.create('functiongraph',
+					[function(x){ return Math.sin(s42.Value()*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin (\\omega x+\\frac{\\pi}{6}),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+			var p41 = board4.create('point', [ function(){return s41.Value() } , function(){return Math.sin(s41.Value()+Math.PI/6) } ],{name:'$A$',size:1.5,color:'blue'});
+
+			var p42 = board4.create('point', [ function(){return s41.Value()/s42.Value() } , function(){return Math.sin(s41.Value()+Math.PI/6) } ],{name:'$B$',size:1.5,color:'red'});
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+
+			s51 = board5.create('slider',[[0.2,1.2], [1.5,1.2], [0*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x_0'} );
+			s52 = board5.create('slider',[[0.2,-1.2], [1.5,-1.2], [0, 1, 4]],{name:'\\omega'} );
+
+
+			var p50 = board5.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,-10]}});
+			var p51 = board5.create('point', [-1, 0],{name:'$O_1$',fixed:true,size:1.5});
+			
+			
+			var p52 = board5.create('point', [ Math.cos(Math.PI/6)-1 , Math.sin(Math.PI/6) ],{name:'$Q_0$',fixed:true,size:1.5,label:{position:'top', offset:[20,5]} });
+
+			var p53 = board5.create('point', [ function(){return Math.cos(Math.PI/6 +s52.Value()*s51.Value())-1 } , function(){return Math.sin(Math.PI/6+s52.Value()*s51.Value()) } ],{name:'$P$',size:1.5});
+
+			
+			var c51 = board5.create('circle',[p51, p52]);
+
+			var li51 = board5.create('line',[p51,p53], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue',trace:false,dash:1});
+			var li53 = board5.create('line',[p51,p52], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',trace:false,dash:1});
+			
+			var p54 = board5.create('point',[ function(){return p53.X()} , 0 ],{name:'',size:1.5});
+
+
+			var li52 = board5.create('line',[p53,p54], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,strokeColor:'blue'});
+
+			
+
+			var p55 = board5.create('point', [ function(){return s51.Value() } , function(){return p53.Y()  } ],{name:'$T(x_0,\\sin x_0)$',size:1.0,trace:true});
+
+			var p56 = board5.create('point', [ function(){return s51.Value() } , 0 ],{name:'$x_0$',size:0.5 });
+
+			
+
+			var li54 = board5.create('line',[p55,p56], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			var li55 = board5.create('line',[p55,p53], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			
+			var angle51 = board5.create('angle', [p52, p51, p53],{ radius:0.25 , name: '$\\omega x_0$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-2.5, 2.5 , 7.0, -2.5], axis:true,showCopyright: false,});
+			s62 = board6.create('slider',[[0.2,-1.2], [1.5,-1.2], [0, 1, 3]],{name:'A'} );
+
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return Math.sin(2*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin(2x+\\frac{\\pi}{6} ) ,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph62 = board6.create('functiongraph',
+					[function(x){ return s62.Value()*Math.sin(2*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=A\\sin(2x+\\frac{\\pi}{6} ),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-2.5, 2.5 , 7.0, -2.5], axis:true,showCopyright: false,});
+			s71 = board7.create('slider',[[0.2,-0.3], [1.5,-0.3], [-1*Math.PI, Math.PI*0, 1.0*Math.PI]],{name:'\\varphi'} );
+			s72 = board7.create('slider',[[0.2,-1.0], [1.5,-1.0], [0, 1, 3]],{name:'\\omega'} );
+			s73 = board7.create('slider',[[0.2,-2.0], [1.5,-2.], [0, 1, 3]],{name:'A'} );
+
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return Math.sin(x);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin x ,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph72 = board7.create('functiongraph',
+					[function(x){ return s73.Value()*Math.sin(s72.Value()*x+s71.Value()) ;}, -10*Math.PI, 10*Math.PI],{name:'$y=A\\sin(\\omega x+\\varphi ),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+			
+			
+		
+
+
+		</script>
+	
+
+
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

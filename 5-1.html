@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-baqh{text-align:center;vertical-align:top}
+			.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+			.tg .tg-hjji{font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-6ibf{border-color:inherit;font-size:24px;text-align:center;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.1$ **任意角和弧度制** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+		<section  data-transition="convex">
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>角的概念</strong></h3>
+
+						<br>
+
+						回忆初中所学的角的概念？
+
+
+					
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>角的概念</strong></h3>
+
+					<ul>
+						<li>
+							从静态角度来看，角是由一个点出发的两条射线组成的图形。
+						</li>
+						<li>
+							从动态角度来看，角是一条射线绕着它的顶点旋转到另一个位置，由这两条射线组成的图形。
+						</li>
+					</ul>
+
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>角的概念</strong></h3>
+
+				
+
+				<br>
+
+				由初中知识可知，射线$OA$绕端点$O$按逆时针方向旋转一周回到起始位置，
+				
+				在这个过程中可以得到$0^{\circ}\sim360^{\circ}  $范围内的角，如果继续旋转，那么所得到的角就超出这个范围了。
+
+				<br>
+
+				但现实生活中随处可见超出$0^{\circ}\sim360^{\circ}  $范围的角。
+				
+				例如，体操中有“前空翻转体540度”“后空翻转体720度”这样的动作名称。这里不仅角度范围超出了360度，而且旋转的方向也不相同。
+
+
+
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>角的概念</strong></h3>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+
+			</section>
+	
+
+		</section>
+
+
+
+		<section  data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				我们规定，一条射线绕其端点按<font color="red">逆时针</font>方向旋转形成的角叫做
+				<font color="red">正角</font>，按<font color="red">顺时针</font>方向旋转形成的角叫做<font color="red">负角</font>。
+
+				<br>
+				<br>
+
+				如果一条射线没有做任何旋转，就称它形成了一个零角。这样，零角的始边与终边重合。如果$\alpha$是零角，那么$\alpha=0^{\circ} $。
+
+
+	
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+
+
+
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				这样，我们就把角的概念推广到了<font color="red">任意角</font>(any angle)，包括正角、负角和零角。
+
+
+
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				设角$\alpha$由射线$OA$绕端点$O$旋转而成，角$\beta$由射线$O'A'$绕端点$O'$旋转而成。如果它们的旋转方向相同且旋转量相等，那么就称$\alpha=\beta$。
+
+				<br>
+
+				设$\alpha,\beta$是任意两个角，我们规定，把角$\alpha$的终边旋转角$\beta$，这时终边对应的角就是$\alpha+\beta$。
+
+
+
+
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				对于实数$a,b$的减法，$a-b= a+(-b)$
+
+				<br>
+				<br>
+
+				类似的，引入任意角$\alpha$的相反角，我们把射线$OA$绕端点$O$按不同方向旋转相同的量所成的两个角叫做互为相反角，角$\alpha$的相反角记为$-\alpha$。
+
+
+				$$ \alpha- \beta =  \alpha+(-\beta)$$
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				我们通常在直角坐标系内讨论角。
+				为了方便，使角的顶点与原点重合，角的始边与$x$轴的非负半轴重合。那么，角的终边在第几象限，就说这个角是第几象限角。
+
+				<br>
+				<br>
+
+				如果角的终边落在坐标轴上，认为这个角不属于任何一个象限。
+	
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				将角按上述方法放在直角坐标系中后，给定一个角，就有唯一的终边与它对应。
+
+				<br>
+
+				但是反之，对于直角坐标系内的任意一条射线$OB$，以它为终边的角是唯一的么？如果不唯一，这些角有什么关系？
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+				<font color="blue">
+					所有与角$\alpha$终边相同的角，连同角$\alpha$在内，可以构成一个集合
+
+					$$\{\beta|\beta=\alpha+k\cdot 360^{\circ},k\in\mathbb{Z} \}$$
+
+					即任一与角$\alpha$终边相同的角，都可以表示成角$\alpha$与数个周角的和。
+ 
+
+				</font>
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				例1  在$0^{\circ}\sim360^{\circ} $范围内，找出与$-950^{\circ} 12'$角终边相同的角，并判定它是第几象限的角。
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				例2 写出终边在$y$轴上的角的集合，和终边在$x$轴上的角的集合。
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				例3 写出终边在直线$y=x$的角的集合$S$，$S$中满足不等式$-360^{\circ}\leqslant\beta< 720^{\circ}$的元素$\beta$有哪些？
+
+				
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>任意角</strong></h3>
+
+				<br>
+
+				<ul>
+					<li>
+						若角$2\alpha$的终边与$240^{\circ}$的终边相同，则角$\alpha$可以表示为？
+					</li>
+					<li>
+						若角$\alpha$是第四象限角，则角$\frac{\alpha}{2}$的终边在哪个象限？
+					</li>
+				</ul>
+				
+
+				
+				
+
+
+			</section>
+
+
+
+
+
+		
+
+		</section>
+
+	
+
+	
+
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<br>
+
+				度量长度有哪些单位？度量质量有哪些单位？
+				
+				<br>
+				
+	
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<br>
+
+				度量长度有哪些单位？度量质量有哪些单位？
+				
+				<br>
+				<br>
+				
+				国际单位制：米；英制：英尺；天文：光年；航海：海里
+
+				<br>
+
+				国际单位制：克；英制：磅；市制：斤
+	
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				角可以用度为单位进行度量，1度的角等于周角的$\frac{1}{360}$
+				
+				<br>
+				<br>
+
+
+				这种用度作为单位来度量角的单位制叫做角度制，角度制起源于古巴比伦人对圆周的分割。
+
+				
+
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<br>
+
+				度量长度可以用米、英尺等不同的单位制，度量质量可以用千克、磅等不同的单位制。
+				
+				<br>
+				
+				不同的单位制能给解决问题带来方便。角的度量是否也能用不同的单位制呢？能否像度量长度那样，用十进制的实数来度量角的大小呢？
+
+				
+			</section>
+
+			
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<div class="main">
+					<div id="box5" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+				
+	
+	
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+				如上图所示，射线$OA$绕端点$O$旋转到$OB$形成角$\alpha$，在旋转过程中，射线$OA$上的一点$P$(不同于点$O$)的轨迹是一条圆弧，这条圆弧对应于圆心角$\alpha$。
+
+
+				$$\alpha=n^{\circ},OP=r $$
+
+				$$l=\overset{\LARGE{\frown}}{PP_1}=\frac{n\pi r}{180} $$
+
+				$$\frac{l}{r} =n\frac{\pi}{180} $$
+	
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				可以发现，圆心角$\alpha$所对应的弧长与半径的比值只与$\alpha$的大小有关。也就是说，这个比值随角$\alpha$的确定而唯一确定。
+
+				<br>
+
+				<br>
+
+				这启发我们可以利用圆弧长与半径的关系度量圆心角。
+				
+	
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+				<br>
+				我们规定：长度等于半径长的圆弧所对的圆心角叫做1弧度(radian)的角，弧度单位用符号rad表示，读作弧度。
+
+
+				<div class="main">
+					<div id="box6" class="jxgbox" style="width:400px; height:400px;"></div>
+				</div>
+				
+	
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				根据上述规定，在半径为$r$的圆中，弧长为$l$的弧所对的圆心角为$\alpha$ rad。
+
+				$$|\alpha|=\frac{l}{r} $$
+
+				其中，$\alpha$的正负由角的终边的旋转方向决定，即逆时针旋转为正，顺时针旋转为负。
+				
+				
+				当角的终边旋转一周后继续旋转，就可以得到弧度数大于$2\pi$或小于$-2\pi$的角。这样就可以得到弧度为任意大小的角。
+
+				
+	
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+				<br>
+				
+				<font color="red">
+
+					一般地，正角的弧度数是一个正数，负角的弧度数是一个负数，零角的弧度数是0。
+
+				</font>
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+				
+				$$1^{\circ}=?\quad\text{rad} $$
+
+				$$1\quad\text{rad}=?^{\circ} $$
+	
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<ul>
+					<li>
+						$\pi\quad\text{rad}=180^{\circ} $
+					</li>
+					<li>
+						$1\quad\text{rad}=\frac{180}{\pi} ^{\circ} $
+					</li>
+					<li>
+						$\frac{\pi}{180} \quad\text{rad}=1^{\circ}$
+					</li>
+				</ul>
+				
+	
+	
+				
+			
+	
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				<ul>
+					<li>
+						把$67^{\circ}30'$转化为弧度制。
+					</li>
+					<li>
+						$-630^{\circ}$转化为弧度是多少？
+					</li>
+				</ul>
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				$\alpha=15^{\circ},\beta=\frac{\pi}{10},\gamma=1,\theta=105^{\circ},\phi=\frac{7\pi}{12} $
+
+				<br>
+				<br>
+
+				比较上述几个角的大小。
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				$$\{\beta|\beta=\alpha+k\cdot 360^{\circ},k\in\mathbb{Z} \}$$
+
+				在弧度制下可以写成什么？
+
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				$$\{\beta|\beta=\alpha+2k\pi,k\in\mathbb{Z} \}$$
+
+				
+			
+	
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<table><thead>
+					<tr>
+					  <th>角度</th>
+					  <th>$0^{\circ}$</th>
+					  <th>$30^{\circ}$</th>
+					  <th>$45^{\circ}$</th>
+					  <th>$60^{\circ}$</th>
+					  <th>$90^{\circ}$</th>
+					  <th>$120^{\circ}$</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>弧度</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>角度</td>
+					  <td>$135^{\circ}$</td>
+					  <td>$150^{\circ}$</td>
+					  <td>$180^{\circ}$</td>
+					  <td>$270^{\circ}$</td>
+					  <td>$360^{\circ}$</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>弧度</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+				  </tbody>
+				  </table>
+				
+	
+	
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+
+				<table><thead>
+					<tr>
+					  <th>角度</th>
+					  <th>$0^{\circ}$</th>
+					  <th>$30^{\circ}$</th>
+					  <th>$45^{\circ}$</th>
+					  <th>$60^{\circ}$</th>
+					  <th>$90^{\circ}$</th>
+					  <th>$120^{\circ}$</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>弧度</td>
+					  <td>0</td>
+					  <td>$\frac{\pi}{6}$</td>
+					  <td>$\frac{\pi}{4}$</td>
+					  <td>$\frac{\pi}{3}$</td>
+					  <td>$\frac{\pi}{2}$</td>
+					  <td>$\frac{2\pi}{3}$</td>
+					</tr>
+					<tr>
+					  <td>角度</td>
+					  <td>$135^{\circ}$</td>
+					  <td>$150^{\circ}$</td>
+					  <td>$180^{\circ}$</td>
+					  <td>$270^{\circ}$</td>
+					  <td>$360^{\circ}$</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>弧度</td>
+					  <td>$\frac{3\pi}{4}$</td>
+					  <td>$\frac{5\pi}{6}$</td>
+					  <td>$\pi$</td>
+					  <td>$\frac{3\pi}{2}$</td>
+					  <td>$2\pi$</td>
+					  <td></td>
+					</tr>
+				  </tbody>
+				  </table>
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				角的概念推广后，在弧度制下，角的集合与实数集$\mathbb{R} $之间建立起一一对应的关系：每一个角都有唯一的一个实数（等于这个角的弧度数）与它对应；
+				
+				反过来，每一个实数也都有唯一的一个角（即弧度数等于这个实数的角）与它对应。
+
+				
+			
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				
+
+				利用弧度制证明下列关于扇形的公式，其中$R$是圆的半径，$\alpha(0< \alpha< 2\pi) $为圆心角，$l$是扇形的弧长，$S$是扇形的面积。
+
+				<br>
+				<ol>
+					<li>
+						$l=\alpha R$
+					</li>
+					<li>
+						$S=\frac{1}{2}\alpha R^2 $
+					</li>
+					<li>
+						$S=\frac{1}{2}lR $
+					</li>
+				</ol>
+
+				
+			
+	
+			</section>
+
+
+			
+			
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>弧度制</strong></h3>
+
+				<br>
+
+				已知相互啮合的两个齿轮，大轮有48齿，小轮有20齿。
+
+
+
+				<br>
+
+				<ul>
+					<li>
+						当大轮转动一周时，求小轮转动的角度
+					</li>
+					<li>
+						如果大轮的转速为180r/min（转/分），小轮的半径为10.5cm，那么小轮周上一点每1s转过的弧长是多少？
+					</li>
+				</ul>
+				
+
+				
+			
+	
+			</section>
+	
+	
+
+
+		</section>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p11 = board1.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p12 = board1.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p13 = board1.create('point', [0.8,0.6 ],{name:'$B$'});
+			
+			var c11 = board1.create('circle',[p11, p12]);
+			var li11 = board1.create('line',[p11,p13], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li12 = board1.create('line',[p11,p12], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			s11 = board1.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.25, 6*Math.PI]]);
+
+			var angle11 = board1.create('angle', [p12, p11, p13],{ radius:0.75 , name: function() {
+						return parseInt(s11.Value()*180/Math.PI) + '°';}});
+
+			angle11.setAngle(function() {
+    			return s11.Value(); });
+			
+			
+
+			board1.update();
+
+
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p21 = board2.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p22 = board2.create('point', [1, 0],{name:'$A$',fixed:true});
+			 
+			s21 = board2.create('slider',[[-1.4,1.2], [-0.5,1.2], [-6*Math.PI, -Math.PI*0.25, 0*Math.PI]]);
+
+			var p23 = board2.create('point', [ function(){return Math.cos(s21.Value()) } , function(){return Math.sin(s21.Value()) } ],{name:'$B$'});
+			
+			var c21 = board2.create('circle',[p21, p22]);
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li22 = board2.create('line',[p21,p22], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var angle21 = board2.create('angle', [p23, p21, p22],{ radius:0.75 , name: function() {
+						return parseInt(s21.Value()*180/Math.PI) + '°';}});
+
+			board2.update();
+
+				
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p31 = board3.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p32 = board3.create('point', [1, 0],{name:'$A$',fixed:true});
+			
+			s31 = board3.create('slider',[[-1.4,1.2], [-0.5,1.2], [-2*Math.PI, Math.PI*0.25, 2*Math.PI]]);
+			s32 = board3.create('slider',[[-1.4,1.0], [-0.5,1.0], [-2*Math.PI, Math.PI*0.5, 2*Math.PI]]);
+			s33 = board3.create('slider',[[-1.4,0.8], [-0.5,0.8], [-2*Math.PI, Math.PI*0.15, 2*Math.PI]]);
+
+			var p33 = board3.create('point', [ function(){return Math.cos(s31.Value()) } , function(){return Math.sin(s31.Value()) } ],{name:'$B$'});
+			var p34 = board3.create('point', [ function(){return Math.cos(s32.Value()) } , function(){return Math.sin(s32.Value()) } ],{name:'$C$'});
+			var p35 = board3.create('point', [ function(){return Math.cos(s33.Value()) } , function(){return Math.sin(s33.Value()) } ],{name:'$D$'});
+			
+			var c31 = board3.create('circle',[p31, p32]);
+			var li31 = board3.create('line',[p31,p33], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li32 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			var li33 = board3.create('line',[p31,p34], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			var li34 = board3.create('line',[p31,p35], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var angle31 = board3.create('angle', [p32, p31, p33],{ radius:0.75 , name: function() {
+						return parseInt(s31.Value()*180/Math.PI) + '°';}});
+			
+			var angle32 = board3.create('angle', [p33, p31, p34],{ radius:0.65 , name: function() {
+							return parseInt((s32.Value()-s31.Value())*180/Math.PI) + '°';}});
+			
+			var angle33 = board3.create('angle', [p35, p31, p33],{ radius:0.5 , name: function() {
+								return parseInt((s31.Value()-s33.Value())*180/Math.PI) + '°';}});
+
+			board3.update();
+
+				
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p41 = board4.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p42 = board4.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p43 = board4.create('point', [0.8,0.6 ],{name:'$B$'});
+			
+			var c41 = board4.create('circle',[p41, p42]);
+			var li41 = board4.create('line',[p41,p43], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li42 = board4.create('line',[p41,p42], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			s41 = board4.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.25, 6*Math.PI]]);
+
+			var angle41 = board4.create('angle', [p42, p41, p43],{ radius:0.75 , name: function() {
+						return parseInt(s41.Value()*180/Math.PI) + '°';}});
+
+			angle41.setAngle(function() {
+				return s41.Value(); });
+			
+	
+			board4.update();
+
+
+						
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-.2, 1.5 , 1.5, -.2], axis:true,showCopyright: false,});
+			
+			var p51 = board5.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p52 = board5.create('point', [1, 0],{name:'$P$',fixed:true});
+			s51 = board5.create('slider',[[0.2,1.2], [1.0,1.2], [0*Math.PI, Math.PI*0, 0.5*Math.PI]],{name:'\\alpha',fixed:false});
+			var p53 = board5.create('point', [ function(){return Math.cos(s51.Value()) } , function(){return Math.sin(s51.Value()) } ],{name:'$P_1$'});
+
+			
+			var li51 = board5.create('line',[p51,p53], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li52 = board5.create('line',[p51,p52], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			
+
+			var angle51 = board5.create('angle', [p52, p51, p53],{ radius:0.25 });
+
+			var arc51 = board5.create('arc', [p51, p52, p53],{strokeWidth:1.5 } );
+
+			s52 = board5.create('slider',[[0.2,1.0], [1.0,1.0], [0, 0.5, 1.5]],{name:'OQ',fixed:false});
+
+			var p54 = board5.create('point', [ function(){return s52.Value() } , 0 ],{name:'$Q$'});
+			var p55 = board5.create('point', [ function(){return Math.cos(s51.Value())*s52.Value() } , function(){return Math.sin(s51.Value())*s52.Value() } ],{name:'$Q_1$'});
+
+			var arc52 = board5.create('arc', [p51, p54, p55],{strokeWidth:1.5 } );
+
+			
+			
+
+
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:false,showCopyright: false,});
+			
+			var p61 = board6.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p62 = board6.create('point', [1, 0],{name:'$A$',fixed:true});
+
+			
+			var p63 = board6.create('point', [0.8 ,0.6 ],{name:'$B$',fixed:false});
+			var c61 = board6.create('circle',[p61, p62], {strokeColor:'black'});
+			//
+			
+			var li61 = board6.create('line',[p61,p63], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 });
+
+			var li62 = board6.create('line',[p61,p62], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 });
+			
+
+			var angle61 = board6.create('angle', [p62, p61, p63],{ name:'$\\alpha=1$rad' , radius:0.35 });
+
+			
+			angle61.setAngle(1);
+
+			var arc61 = board6.create('arc', [p61, p62, p63],{strokeWidth:1.5,name:'AB',strokeColor: '#FF0000' } );
+			
+			board6.create('text', [1, 0.5, "$OA=\\overset{\\frown}{AB}$"]);
+			
+
+
+						
+		</script>
+
+		
+		
+
+
+		
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

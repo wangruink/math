@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>函数的概念与性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第三章**	
+					### $\S 3.3$ **幂函数** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+				<section  data-transition="convex">
+					<section  data-transition="convex">
+						<h3><strong>回顾</strong></h3>
+
+						<br>
+
+						<strong>函数的单调性</strong>
+
+						<br>
+
+						<br>
+
+						<br>
+
+						<strong>函数的奇偶性</strong>
+
+				</section>
+
+				
+				<section  data-transition="convex" data-auto-animate>
+						<h3><strong>导入</strong></h3>
+
+						<ol>
+							<li>
+								如果张红购买了每千克1元的蔬菜$w$千克，那么她需要支付$p＝w$元，这里$p$是$w$的函数。 
+							</li>
+							<li>
+								如果正方形的边长为$a$，那么正方形的面积$S=a^2$，这里$S$是$a$的函数。
+							</li>
+							<li>
+								如果正方体的边长为$a$，那么正方体的体积$V=a^3$，这里$V$是$a$的函数。
+							</li>
+							<li>
+								如果一个正方形场地的面积为$S$，那么这个正方形的边长$a=\sqrt{S} $ ，这里$a$是$S$的函数。
+							</li>
+							<li>
+								如果某人$t$ s内骑车行进了1m，那么他骑车的平速度$v=\frac{1}{t}$m/s，这里$v$是$t$的函数。
+							</li>
+						</ol>
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate>
+						<h3><strong>导入</strong></h3>
+						观察上例中1~5的解析式，有什么共同特征？
+
+						<ol>
+							<li>
+								$y=x$
+							</li>
+							<li>
+								$y=x^2$
+							</li>
+							<li>
+								$y=x^3$
+							</li>
+							<li>
+								$y=\sqrt{x}=x^{\frac{1}{2}} $
+							</li>
+							<li>
+								$y=\frac{1}{x}=x^{-1} $
+							</li>
+							
+							
+						</ol>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>导入</strong></h3>
+				
+
+				<ol>
+					<li>
+						都具有幂的形式
+					</li>
+					<li>
+						均是以幂的底数为自变量
+					</li>
+					<li>
+						幂的指数都是常数
+					</li>
+					<li>
+						自变量前的系数都是1
+					</li>
+				</ol>
+				<br>
+				<br>
+
+				上述问题中涉及的函数，都是形如$y=x^{\alpha} $的函数。
+
+			</section>
+
+		</section>
+
+
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+				
+				一般地，函数$y=x^{\alpha}$叫做<font color="red">幂函数</font>，其中$ x$是自变量，$\alpha$是常数。
+				<br>
+				<q>自乘之数曰幂</q>&#8212徐光启
+				<br>
+				<br>
+
+				<Ul>
+					<li>
+						我们学过的函数中哪些是幂函数？
+					</li>
+					<li>
+						一次函数、二次函数都是幂函数吗？
+					</li>
+				</Ul>
+				
+
+			</section>
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<div class="main">
+					<img src="3-3-1.png" alt="幂函数" width="1000px"/>
+				</div>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<ul>
+					<li>
+						图象都过点$(1,1) $
+					</li>
+					<li>
+						图像一定会出现在第一象限，一定不会出现在第四象限
+						<ul>
+							<li>
+								奇函数的图像在第一和第三象限
+							</li>
+							<li>
+								偶函数的图像在第一和第二象限
+							</li>
+
+						</ul>
+						
+					</li>
+					<li>
+						$\alpha >0$时图象过原点，$\alpha \leqslant 0$时图象不过原点 
+					</li>
+					<li>
+						$\alpha >0$时函数在$(0,+\infty)$单调递增，$\alpha \leqslant 0 $时函数在$(0,+\infty)$单调递减
+					</li>
+
+					</li>
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+				
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<ul>
+					<li>
+						所有的幂函数在$(0,+\infty)$上都有定义，并且图象都过点$(1,1) $。
+					</li>
+					<li>
+						如果$\alpha >0 $ ，那么幂函数的图象过原点，并且在区间$[0,+\infty)$上单调递增。
+					</li>
+					<li>
+						当$\alpha >1 $时，幂函数的图象下凸；当$\alpha =1$时，幂函数的解析式为$y=x$； 当$0 <\alpha < 1 $ 时，幂函数的图象上凸。
+					</li>
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<ul>
+					<li>
+						如果$\alpha < 0 $ ，那么幂函数在原点处无意义，其在区间$(0,+\infty)$上单调递减。
+					</li>
+					<li>
+						在第一象限内，当$x$从右侧趋向于原点时，图象在$y$轴右方无限接近$y$轴，当$x$从原点趋向于$+\infty$时，图象在
+						$x$轴上方无限接近$x$轴。
+					</li>
+					<li>
+						在第一象限，作直线$x=a(a>1)$，它同各幂函数图象相交，按交点从下到上的顺序，幂指数按从小到大的顺序排列。
+					</li>
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>幂函数</strong></h3>
+
+				幂函数$y=x^{\alpha} $的图像特征
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+			
+			</section>
+
+
+		</section>
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>幂函数的应用</strong></h3>
+
+				<br>
+
+				比较各组中两个数的大小：
+
+				<br>
+
+				<ul>
+					<li>
+						$(\frac{2}{5})^{0.3},(\frac{1}{3})^{0.3} $
+					</li>
+					<li>
+						$(\frac{2}{5})^{0.3},(\frac{1}{3})^{-0.3} $
+					</li>
+					<li>
+						$(-\frac{2}{3})^{-1},(-\frac{3}{5})^{-1} $
+					</li>
+					<li>
+						$(\frac{2}{5})^{0.3},(\frac{2}{5})^{\frac{2}{5}} $
+					</li>
+					<li>
+						$(\frac{2}{5})^{0.3},(\frac{3}{10})^{\frac{2}{5}} $
+					</li>
+				</ul>
+			
+			</section>
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2" data-markdown>
+				### **幂函数的应用**
+
+				利用幂函数的性质比较大小
+
+				| 分类 | 比较对象 | 方法 |
+				| :-----------: | :-----------: | :-----------: |
+				| 底数不同，指数相同 | $x_1^a,x_2^a $ | 幂函数$y=x^a$的性质 |
+				| 底数相同，指数不同 | $x_1^a,x_1^b $ | 不等式的性质 |
+				| 底数不同，指数不同 | $x_1^a,x_2^b $ | 借助中间变量，例如$x_1^b$或$x_2^a$ |
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>幂函数的应用</strong></h3>
+
+				<br>
+
+				函数$f(x)=(2m-1)x^{m^2+m+1}$是幂函数
+				<br>
+
+				<ul>
+					<li>
+						求$m$的值。
+
+					</li>
+					<li>
+						证明$f(x)$在定义域上是增函数。
+
+					</li>
+				</ul>
+				
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>幂函数的应用</strong></h3>
+
+				<br>
+				已知幂函数$f(x)=x^{9-3m},m\in N^*$的图象关于原点对称，并且在$R$上是单调递增的
+
+				<ul>
+					<li>
+						求$f(x)$的解析式。
+
+					</li>
+					<li>
+						$f(a+1)+f(3a-4)< 0 $，求$a$的取值范围。
+					</li>
+				</ul>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>幂函数的应用</strong></h3>
+
+				<br>
+
+				<ul>
+					<li>
+						$(a+1)^3< (1-2a)^3$，求$a$的取值范围。
+
+					</li>
+					<li>
+						$(a+1)^4 > (1-2a)^4$，求$a$的取值范围。
+					</li>
+				</ul>
+
+			</section>
+		
+		</section>
+
+
+			
+
+
+			
+
+
+
+
+
+
+			
+
+
+				
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-5, 5, 5, -5], axis:true,showCopyright: false,});
+			var graph1 = board1.create('functiongraph',
+                       [function(x){ return x*x;}, -5, 5],{name:'$f(x)=x^2$',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+                    );
+			var graph2 = board1.create('functiongraph',
+                       [function(x){ return x;}, -5, 5],{name:'$f(x)=x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+                    );
+			var graph4 = board1.create('functiongraph',
+                       [function(x){ return 1/x;}, -5, 5],{name:'$f(x)=\\frac{1}{x} $',strokeColor:'green', withLabel:true,label:{position:'top', offsets:[10,10]}}
+                    );
+			var graph3 = board1.create('functiongraph',
+                       [function(x){ return x*x*x;}, -5, 5],{name:'$f(x)=x^3$',strokeColor:'purple', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+                    );
+			var graph5 = board1.create('functiongraph',
+                       [function(x){ return Math.sqrt(x) ;}, -5, 5],{name:'$f(x)=\\sqrt{x} $',strokeColor:'orange', withLabel:true,label:{position:'top', offsets:[10,10]}}
+                    );
+			
+			var p11 = board1.create('point', [1,1],{name: ''});
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.5, 5, 5, -0.5], axis:true,showCopyright: false,});
+			var a21 = board2.create('slider', [[1.5, .5], [3.5, .5], [-5.0, 1, 5.0]]);
+			
+			var graph22 = board2.create('functiongraph',
+					[function(x){ return Math.pow(x,a21.Value() )  ;}, 0, 5]
+					);
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-0.5, 5, 5, -.5], axis:true,showCopyright: false,});
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return x*x;}, 0, 5],{name:'$f(x)=x^2$',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph32 = board3.create('functiongraph',
+					[function(x){ return x;}, 0, 5],{name:'$f(x)=x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph34 = board3.create('functiongraph',
+					[function(x){ return 1/x;}, 0, 5],{name:'$f(x)=\\frac{1}{x} $',strokeColor:'green', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph33 = board3.create('functiongraph',
+					[function(x){ return x*x*x;}, 0, 5],{name:'$f(x)=x^3$',strokeColor:'purple', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph35 = board3.create('functiongraph',
+					[function(x){ return Math.sqrt(x) ;}, 0, 5],{name:'$f(x)=\\sqrt{x} $',strokeColor:'orange', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph36 = board3.create('functiongraph',
+					[function(x){ return Math.pow(x,1/3) ;}, 0, 5],{name:'$f(x)=\\sqrt[3]{x} $',strokeColor:'#34a3d4', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph37 = board3.create('functiongraph',
+					[function(x){ return Math.pow(x,-2) ;}, 0, 5],{name:'$f(x)=\\frac{1}{x^2} $',strokeColor:'black', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var a31 = board3.create('slider', [[2.5, .5], [4.5, .5], [1.0, 2, 5.0]]);
+			var li31 = board3.create('line',[[function(){return a31.Value()},10 ],[function(){return a31.Value()},0]], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var p33 = board3.create('intersection', [graph33, li31]);
+			var p31 = board3.create('intersection', [graph31, li31]);
+			var p32 = board3.create('intersection', [graph32, li31]);
+			
+			
+			var p35 = board3.create('intersection', [graph35, li31]);
+			var p36 = board3.create('intersection', [graph36, li31]);
+			var p34 = board3.create('intersection', [graph34, li31]);
+			var p37 = board3.create('intersection', [graph37, li31]);
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-0.1, 1, 1, -.1], axis:true,showCopyright: false,});
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return x*x;}, 0, 1],{name:'$f(x)=x^2$',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph42 = board4.create('functiongraph',
+					[function(x){ return x;}, 0, 1],{name:'$f(x)=x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph44 = board4.create('functiongraph',
+					[function(x){ return 1/x;}, 0, 1],{name:'$f(x)=\\frac{1}{x} $',strokeColor:'green', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph43 = board4.create('functiongraph',
+					[function(x){ return x*x*x;}, 0, 1],{name:'$f(x)=x^3$',strokeColor:'purple', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph45 = board4.create('functiongraph',
+					[function(x){ return Math.sqrt(x) ;}, 0, 1],{name:'$f(x)=\\sqrt{x} $',strokeColor:'orange', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph46 = board4.create('functiongraph',
+					[function(x){ return Math.pow(x,1/3) ;}, 0, 1],{name:'$f(x)=\\sqrt[3]{x} $',strokeColor:'#34a3d4', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var a41 = board4.create('slider', [[.1, -.05], [.5, -.05], [0.0, 0.5, 1.0]]);
+			var li41 = board4.create('line',[[function(){return a41.Value()},10 ],[function(){return a41.Value()},0]], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var p43 = board4.create('intersection', [graph43, li41]);
+			var p41 = board4.create('intersection', [graph41, li41]);
+			var p42 = board4.create('intersection', [graph42, li41]);
+			
+			
+			var p45 = board4.create('intersection', [graph45, li41]);
+			var p46 = board4.create('intersection', [graph46, li41]);
+			
+
+		</script>
+
+
+
+		<script type="text/javascript">
+			// Create board template
+			JXG.Options.text.useKatex = true;
+			(function() {
+				var board = JXG.JSXGraph.initBoard('cubic1', {
+					boundingbox: [-3, 4, 3, -4],
+					axis: true,
+					showCopyright: false,
+					showNavigation: false
+				});
+			
+				// Create function plot
+				var f1 = board.create('functiongraph', [function(x) {
+					return x * x * x;
+				}, -3, 3], {
+					strokeColor: '#EF233C'
+				});
+				var f2 = board.create('functiongraph', [function(x) {
+					return x * x * x;
+				}, -3, 0]);
+			
+				// Label point of inflection/rotation
+				var ip = board.create('point', [0, 0], {
+					fixed: true,
+				});
+			
+				// Create slider for rotation of functiongraph
+				var r = board.create('slider', [
+					[0.5, -2],
+					[2, -2],
+					[0, 0, 180]
+				], {
+					name: '旋转角度',
+					snapWidth: 10,
+					highline: {
+						strokeColor: '#ED7D31'
+					},
+					label: {
+						strokeColor: '#ED7D31'
+					},
+					fillColor: '#ED7D31',
+					highlightStrokeColor: '#ED7D31'
+				});
+			
+				// Rotate functiongraph
+				var rot = board.create('transform', [function() {
+					return r.Value() * Math.PI / 180
+				}, ip], {
+					type: 'rotate'
+				});
+				var rotatedf2 = board.create('curve', [f2, rot], {
+					strokeWidth: 2,
+					strokeColor: '#ED7D31',
+					fixed: false
+				});
+				rot.bindto(f2);
+			
+				// Inset equation text
+				var text = board.create('text', [-4.5, -2.5, function() {
+					var equationText = 'y=x^3';
+			
+					return '$$' + equationText + '$$';
+				}], {
+					fontSize: 14
+				});
+			})();
+		</script>
+
+
+
+		<script type="text/javascript">
+			// Create board template
+			JXG.Options.text.useKatex = true;
+			(function() {
+				var board5 = JXG.JSXGraph.initBoard('rotate2', {
+					boundingbox: [-3, 4, 3, -4],
+					axis: true,
+					showCopyright: false,
+					showNavigation: false
+				});
+			
+				// Create function plot
+				var f51 = board5.create('functiongraph', [function(x) {
+					return  1/x;
+				}, -4, 4], {
+					strokeColor: '#EF233C'
+				});
+				var f52 = board5.create('functiongraph', [function(x) {
+					return 1/x;
+				}, -4, 0]);
+			
+				// Label point of inflection/rotation
+				var ip5 = board5.create('point', [0, 0], {
+					fixed: true,
+				});
+			
+				// Create slider for rotation of functiongraph
+				var r5 = board5.create('slider', [
+					[0.5, -2],
+					[2, -2],
+					[0, 0, 180]
+				], {
+					name: '旋转角度',
+					snapWidth: 10,
+					highline: {
+						strokeColor: '#ED7D31'
+					},
+					label: {
+						strokeColor: '#ED7D31'
+					},
+					fillColor: '#ED7D31',
+					highlightStrokeColor: '#ED7D31'
+				});
+			
+				// Rotate functiongraph
+				var rot5 = board5.create('transform', [function() {
+					return r5.Value() * Math.PI / 180
+				}, ip5], {
+					type: 'rotate'
+				});
+				var rotatedf52 = board5.create('curve', [f52, rot5], {
+					strokeWidth: 2,
+					strokeColor: '#ED7D31',
+					fixed: false
+				});
+				rot5.bindto(f52);
+			
+				// Inset equation text
+				var text5 = board5.create('text', [-1, -1, function() {
+					return '$f(x)=1x $' ;
+				}], {
+					fontSize: 14
+				});
+
+			})();
+		</script>
+
+
+
+		<script>
+			// 引入继承节点，引入 core 包后，会自动挂载 window.Core 
+			// const { RectNode, RectNodeModel } = Core;
+			
+			// 准备图数据
+		
+			const data = {
+			// 节点
+			nodes: [
+				{
+				id: '1',
+				type: 'rect',
+				x: 350,
+				y: 100,
+				text: '求函数的\n定义域',
+				},
+				{
+				id: '2',
+				type: 'rect',
+				x: 350,
+				y: 225,
+				text: '判断定义域是否\n 关于原点对称',
+				},
+				{
+				id: '3',
+				type: 'rect',
+				x: 550,
+				y: 250,
+				text: 'f(x)不是偶函数\n 也不是奇函数 ',
+				},
+				{
+				id: '3.5',
+				type: 'rect',
+				x: 350,
+				y: 350,
+				text: '判断f(x)与\n f(-x)的关系',
+				},
+				{
+				id: '4',
+				type: 'rect',
+				x: 150,
+				y: 425,
+				text: 'f(x)=f(-x)\n 偶函数 ',
+				},
+				{
+				id: '5',
+				type: 'rect',
+				x: 550,
+				y: 425,
+				text: 'f(x)=-f(-x)\n 奇函数 ',
+				},
+				{
+				id: '6',
+				type: 'rect',
+				x: 350,
+				y: 455,
+				text: 'f(x)=-f(-x)=-f(x) \n f(x)=0 ',
+				},
+			],
+			// 边
+			edges: [
+				{
+				type: 'polyline',
+				sourceNodeId: '1',
+				targetNodeId: '2',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '2',
+				targetNodeId: '3',
+				},
+				{
+				type: 'polyline',
+				sourceNodeId: '2',
+				targetNodeId: '3.5',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '4',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '5',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '3',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '5',
+				targetNodeId: '6',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '4',
+				targetNodeId: '6',
+				},
+			],
+			}
+			
+			// 创建画布实例，也可以 new Core.LogicFLow
+			const lf = new Core.default({
+			container: document.querySelector('#container'),
+			width: 700,
+			height: 500,
+			grid: false,
+			background: {
+				     backgroundColor: '#F0F1EB', 
+					},
+			});
+
+			lf.setTheme({
+				rect: {
+					fill: "#F0F1EB",
+					stroke: "#000000",
+					strokeWidth: 2,
+				},
+			});
+
+			lf.setTheme({
+				nodeText: {
+					color: "#000000",
+					overflowMode: "default",
+					lineHeight: 1.2,
+					fontSize: 14,
+				},
+				});
+
+
+			lf.setTheme({
+				text: {
+					color: "#000000",
+					fontSize: 24 ,
+					background: {
+					fill: "transparent",
+					},
+				},
+				});
+
+
+			
+			// 渲染画布实例
+			lf.render(data)
+			</script>
+
+
+
+
+		
+  
+	
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

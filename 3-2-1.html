@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>函数的概念与性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第三章**	
+					## **函数的基本性质**
+					### $\S 3.2.1$ **单调性与最大（小）值** 
+					王瑞
+					
+					长丰一中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+					<section data-markdown data-transition="convex" data-auto-animate>
+						### **函数的基本性质**
+
+						函数描述了客观世界中变量之间的对应关系，我们可以通过研究函数的变化规律来把握客观世界中事物的变化规律。
+
+						因此，研究函数的性质是认识客观规律的重要方法。
+
+						**变化中的不变性就是性质，变化中的规律性也是性质。**
+
+						函数的性质：随着自变量的增大，函数值是增大还是减小；有没有最大值或者最小值；函数图像有什么特征。
+				
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>函数的基本性质</strong></h3>
+
+						<div class="main">
+							<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>函数的基本性质</strong></h3>
+
+						$y=2x+1$
+
+						<div class="main">
+							<div id="box2" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>函数的基本性质</strong></h3>
+
+						<div class="main">
+							<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>	
+	
+				</section>
+
+				<section  data-transition="convex" >
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>函数的单调性</strong></h3>
+
+						先研究二次函数$y=x^2$的单调性。
+
+						<div class="main">
+							<div id="box4" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>函数的单调性</strong></h3>
+
+						当$x\leqslant 0$时，$y$随$x$的增大而减小。用符号语言描述：
+
+						$$\forall x_1,x_2\in (-\infty,0],\text{当}x_1< x_2$$ 
+						$$ \text{有} f(x_1)=x_1^2 > f(x_2)=x_2^2 $$
+
+						我们说函数$f(x)=x^2$在区间$ (-\infty,0] $上单调递减。
+
+						
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>函数的单调性</strong></h3>
+
+						类似的，当$x\geqslant 0$时，$y$随$x$的增大而增大。用符号语言描述：
+
+						$$\forall x_1,x_2\in [0,+\infty),\text{当}x_1 > x_2$$ 
+						$$ \text{有} f(x_1)=x_1^2 > f(x_2)=x_2^2 $$
+
+						我们说函数$f(x)=x^2$在区间$ [0,+\infty) $上单调递增。
+
+						思考：函数$f(x) =|x|,f(x)=-x^2 $各有怎样的单调性？
+
+					</section>	
+
+
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>函数的单调性</strong></h3>
+						设函数$f(x)$的定义域为$D$，区间$I\subseteq D$：
+						<br>
+						如果$\forall x_1,x_2\in I,\text{当}x_1< x_2\text{时，都有}f(x_1) < f(x_2) $，就称函数$f(x) $在区间$I$上<font color="red">单调递增 </font> 。
+
+						<div class="main">
+							<div id="box5" class="jxgbox" style="width:350px; height:300px;"></div>
+						</div>
+
+						特别的，当函数$f(x)$在定义域上单调递增时，我们称它是<font color="red">增函数</font>。
+
+						
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>函数的单调性</strong></h3>
+						如果$\forall x_1,x_2\in I,\text{当}x_1< x_2\text{时，都有}f(x_1) > f(x_2) $，就称函数$f(x) $在区间$I$上<font color="red">单调递减 </font> 。
+
+						<div class="main">
+							<div id="box6" class="jxgbox" style="width:350px; height:300px;"></div>
+						</div>
+
+						特别的，当函数$f(x)$在定义域上单调递减时，我们称它是<font color="red">减函数</font>。
+						
+					</section>	
+
+					
+
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+
+						如果函数$y=f(x)$在某个区间$I$上单调递增或单调递减，那么就说函数$y=f(x)$在这一区间具有(严格的)单调性，区间$I$叫做$y=f(x)$的<font color="red">单调区间</font>。
+
+						<br>
+						1. 函数的单调性是针对定义域内的某个区间而言的，是函数的一个<font color="red">  局部性质 </font>；
+						<br>
+						2. 必须是对于区间$D$内的<font color="red">任意</font>两个自变量$x_1,x_2$；当$x_1 < x_2$时，总有$f(x_1) < f(x_2)$或 $f(x_1) > f(x_2)$ 分别是单调递增和单调递减。
+
+
+
+						
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" data-markdown="">
+						### **函数的单调性**
+
+						1. 根据定义，研究函数$f(x)=kx+b(k\neq 0) $的单调性。
+
+						2. 波意耳定律$p=\frac{k}{V}$（$k$为正常数），对于一定质量的气体，当其温度不变时，体积$V$减小，压强$p$将增大。试用函数的单调性证明。
+
+						3. 根据定义证明函数$y=x+\frac{1}{x}$在区间$(0,1]$，$(1,+\infty)$上的单调性。
+						
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" data-markdown="">
+						### **函数的单调性**
+
+						1.函数$ f(x)=kx+b(k\neq 0)$的定义域是$R$，$\forall x_1,x_2\in R$，且$x_1< x_2$，则
+
+						$$ f(x_1)-f(x_2)=(kx_1+b)-(kx_2+b)=k(x_1-x_2) $$
+
+						- $k> 0,k(x_1-x_2)< 0,f(x_1)< f(x_2)$，$ f(x)=kx+b$是增函数。
+
+						- $k< 0,k(x_1-x_2)> 0,f(x_1)> f(x_2)$，$ f(x)=kx+b$是减函数。
+
+						
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" data-markdown="">
+						### **函数的单调性**
+
+						2.$p=\frac{k}{V}$的定义域根据物理意义$V\in (0,+\infty)$，$\forall V_1,V_2\in (0,+\infty) $，且$V_1< V_2$，则
+
+						$$p_1-p_2=\frac{k}{V_2}-\frac{k}{V_2} =k\frac{V_2-V_1}{V_1V_2} $$
+
+						$$k > 0,V_2-V_1>0,p_1-p_2>0 $$
+
+						所以函数$p=\frac{k}{V}$在$V\in (0,+\infty)$上是减函数，即当体积$V$减小时，压强$p$将增大。
+
+					
+						
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+
+						3.$\forall x_1,x_2\in (0,+\infty) $，且$x_1< x_2$，则
+
+						\[\small \begin{aligned} y_1-y_2 &=(x_1+\frac{1}{x_1})-(x_2+\frac{1}{x_2}) \\ 
+						&=\frac{x_1-x_2}{x_1x_2}(x_1x_2-1) \end{aligned} \]
+
+						<ul>
+							<li>
+								$x_1,x_2\in (0,1] $时，$x_1x_2< 1,y_1>y_2$，函数$y=x+\frac{1}{x}$在区间$(0,1]$上单调递减。
+							</li>
+
+							<li>
+								$x_1,x_2\in (1,+\infty) $时，$x_1x_2> 1,y_1< y_2$，函数$y=x+\frac{1}{x}$在区间$ (1,+\infty) $上单调递减。
+							</li>
+
+						</ul>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+
+						定义法证明函数$f(x)$在给定的区间$D$上的单调性一般步骤：
+						<br>
+
+						<ul>
+							<li>
+								$\forall x_1,x_2\in D$，且$x_1< x_2 $
+							</li>
+							<li>
+								作差$f(x_1)-f(x_2)$，化简代数式
+							</li>
+							<li>
+								判断差$f(x_1)-f(x_2)$的正负
+							</li>
+							<li>
+								判断函数$f(x)$在该区间上的增减性
+							</li>
+
+
+						</ul>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+						判断单调性的方法：
+
+						<br>
+
+						<ul>
+							<li>
+								定义法
+							</li>
+							<li>
+								图像法
+							</li>
+							<li>
+								单调性的四则运算法则
+							</li>
+						</ul>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+						单调性的四则运算法则
+						<br>
+						
+
+						<ul>
+							<li>
+								$f(x)$与$f(x)+C $单调性相同（$C$为常数）
+							</li>
+							<li>
+								$a>0,af(x)$与$f(x)$单调性相同
+							</li>
+							<li>
+								$a< 0,af(x)$与$f(x)$单调性相反
+							</li>
+							<li>
+								$f(x) > 0,\frac{1}{f(x)}$与$f(x)$单调性相反
+							</li>
+							<li>
+								$f(x) < 0,\frac{1}{f(x)}$与$f(x)$单调性相反
+							</li>
+							<li>
+								$f(x) \geqslant 0,\sqrt{f(x)}$与$f(x)$单调性相同
+							</li>
+						</ul>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1" >
+						<h3><strong>函数的单调性</strong></h3>
+						单调性的四则运算法则
+						<br>
+						假设$f(x),g(x)$在区间$I$上单调，则
+
+						<ul>
+							<li>
+								增函数+增函数=增函数
+							</li>
+							<li>
+								减函数+减函数=减函数
+							</li>
+							<li>
+								$f(x),g(x)$在区间$I$上单调性相同，则复合函数$f(g(x))$在区间$I$上是单调递增的
+							</li>
+							<li>
+								$f(x),g(x)$在区间$I$上单调性相反，则复合函数$f(g(x))$在区间$I$上是单调递减的
+							</li>
+						</ul>
+
+					</section>
+
+				</section>	
+
+				<section data-transition="convex">
+					<section  data-transition="convex" data-auto-animate data-markdown data-auto-animate-id="2">
+						### **函数的单调性**
+
+						练习：求下列函数的单调区间
+
+						1. $f(x)=x^2-4|x|+3 $
+
+						2. $ f(x)=-x^2+2|x|+1 $
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-markdown data-auto-animate-id="2">
+						### **函数的单调性**
+
+						练习：求下列函数的单调区间
+
+						1. $f(x)=\frac{2x+1}{x+1} $
+
+						2. $f(x)=\frac{3x}{x-1}$
+
+					</section>
+
+
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="2">
+						<h3><strong>函数的单调性</strong></h3>
+
+						练习
+
+						\[ f(x)=\begin{cases} 
+						(3a-1)x+4a & x< 1\\
+						-ax & x\geqslant 1 
+						\end{cases} \]
+
+						函数$f(x)$在定义域上单调递减，求$a$的取值范围？
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="2">
+						<h3><strong>函数的单调性</strong></h3>
+
+						练习
+						<br>
+
+						已知函数$f(x)$在$(-2,2) $上单调递增，且$f(2m+1)>f(-m+1) $，求$m$的取值范围？
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-markdown="" data-auto-animate-id="2" >
+						### **函数的单调性**
+
+						练习
+						
+
+						已知函数$f(x)=x^2+(2a-1)x+1在(-\infty,2] $上单调递减，求$a$的取值范围？
+
+						- 变式1.函数$f(x)$的单调递减区间是$(-\infty,2]$，求$a$的取值范围？
+
+						- 变式2.函数$f(x)$在区间$[1,2] $上不单调，求$a$的取值范围？
+
+						- 变式3.函数$f(x)$在区间$[1,2] $上单调，求$a$的取值范围？
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="2" >
+						<h3><strong>函数的单调性</strong></h3>
+
+						练习
+						<br>
+
+						已知函数$f(x)=x^2+(2a-1)x+1在(-\infty,2] $上单调递减，求$a$的取值范围？
+
+						<div class="main">
+							<div id="box7" class="jxgbox" style="width:450px; height:400px;"></div>
+						</div>
+
+						
+					</section>
+
+				</section>
+
+
+				<section data-auto-animate="convex">
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的最值</strong></h3>
+
+						观察函数$y=x^2$的图像，发现有最低点$(0,0)$，即$\forall x\in R,f(x)\geqslant 0$。
+
+						<div class="main">
+							<div id="box8" class="jxgbox" style="width:450px; height:400px;"></div>
+						</div>
+
+						
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的最值</strong></h3>
+
+						观察函数$y=-x^2$的图像，发现有最高点$(0,0)$，即$\forall x\in R,f(x)\leqslant 0$。
+
+						<div class="main">
+							<div id="box9" class="jxgbox" style="width:450px; height:400px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的最值</strong></h3>
+
+						<ul>
+							
+								一般的，设函数$y=f(x)$的定义域为$D$，如果存在实数$M$满足：
+								<ul>
+									<li>
+										$\forall x\in D,f(x)\leqslant M $
+									</li>
+									<li>
+										$\exist x_0\in D,f(x_0)=M $
+									</li>
+								</ul>
+								那么我们称$M$是函数$y=f(x)$的最大值。
+								<ul>
+									<li>
+										$\forall x\in D,f(x)\geqslant M $
+									</li>
+									<li>
+										$\exist x_0\in D,f(x_0)=M $
+									</li>
+								</ul>
+								那么我们称$M$是函数$y=f(x)$的最小值。
+							
+						</ul>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的最值</strong></h3>
+						判断下列命题是否为真命题：
+
+						<ol>
+							<li>
+								若$\forall x\in I,f(x)\leqslant M $，则$M$是函数$f(x)$的最大值。
+							</li>
+							<li>
+								一个函数有多个最小值。
+							</li>
+							<li>
+								如果函数有最值，则最值一定是值域中的一个元素。
+							</li>
+							<li>
+								如果函数的值域是确定的，则它一定有最值。
+							</li>
+							<li>
+								因为$x^2>-1$恒成立，所以$-1$是$f(x)=x^2 $的最小值。
+							</li>
+						</ol>
+
+					</section>
+
+				</section>
+
+				<section data-transition="convex">
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="3">
+						<h3><strong>函数的最值</strong></h3>
+						<strong>求最值的方法 </strong> 
+						<br>
+						图像法
+
+						\[
+						y=
+						\begin{cases}
+						\frac{1}{x} & x\geqslant 1\\
+						-x^2+2 & x< 1
+						\end{cases}
+						\]
+
+					
+
+						
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="3">
+						<h3><strong>函数的最值</strong></h3>
+						<strong>求最值的方法 </strong>
+						<br>
+						换元法
+
+						<ol>
+							<li>
+								函数$y=2x-\sqrt{x+1} $的最小值是多少？
+							</li>
+							<li>
+								函数$y=x+\sqrt{2x-1} $有最大值或者最小值么？
+							</li>
+							<li>
+								函数$f(x)=-\sqrt{x-x^2}+\sqrt{x}+\sqrt{1-x}$的最大值为？
+							</li>
+							<li>
+								函数$y=\sqrt{x-1}+\sqrt{4-x} $的最大值为？
+							</li>
+						</ol>
+
+
+
+						
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  data-auto-animate-id="3">
+						<h3><strong>函数的最值</strong></h3>
+						<strong>求最值的方法 </strong> 
+						<br>
+						单调性法 
+
+						<ol>
+							<li>
+								$f(x)=\frac{x-1}{x+2},x\in [3,5]$，求$f(x)$的值域
+							</li>
+							<li>
+								$y=x+\sqrt{2x-1}$有最大值或者最小值么？
+							</li>
+
+
+						</ol>
+
+					</section>
+
+					
+
+				</section>
+
+				<section data-transition="convex">
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的单调性</strong></h3>
+						<strong>最值的应用 </strong> 
+						<br>
+						恒成立问题
+
+						<ol>
+							<li>
+								$x\in [0,2],a< -x^2+2x$恒成立，求$a$的取值范围？
+							</li>
+							<li>
+								$x\in [0,3),a< -x^2+2x$恒成立，求$a$的取值范围？
+							</li>
+							<li>
+								$x\in [0,2],a\geqslant -x^2+2x$恒成立，求$a$的取值范围？
+							</li>
+
+
+						</ol>
+
+						
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的单调性</strong></h3>
+						<strong>最值的应用 </strong> 
+						<br>
+						二次函数的最值问题
+						<br>
+						$f(x)=x^2-2x-3$
+
+						<br>
+						<ol>
+							<li>
+								$x\in R,f(x)$的值域
+							</li>
+							<li>
+								$x\in (-\infty,2),f(x)$的值域
+							</li>
+							<li>
+								$x\in (-1,0),f(x)$的值域
+							</li>
+							<li>
+								$x\in [0,2],f(x)$的值域
+							</li>
+							<li>
+								$x\in (-1,a),f(x)$的值域
+							</li>
+
+						</ol>
+						
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate  >
+						<h3><strong>函数的单调性</strong></h3>
+						<strong>最值的应用 </strong> 
+						<br>
+						二次函数的最值问题
+						<br>
+						<ol>
+							<li>
+								$f(x)=x^2-2ax+2,x\in [2,4]$，求$f(x)$的值域
+							</li>
+							<li>
+								$f(x)=x^2-2x-3,x\in[t,1] $的值域是$[-4,-3]$，求$t$的取值范围
+							</li>
+							<li>
+								$f(x)=x^2-4x+6,x\in [m,n],f(x)$的值域是$ [m,n] $，求$m,n$
+							</li>
+							<li>
+								$f(x)=x^2-2ax-2,\forall x\in [2,4],f(x)\leqslant 0$，求$a$的取值范围？
+							</li>
+					
+						</ol>
+						
+
+					</section>
+
+
+
+
+				</section>
+
+
+
+
+
+
+			
+
+
+				
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-7, 100, 7, -100], axis:true});
+			var graph1 = board1.create('functiongraph',
+                       [function(x){ return x*x*x;}, -7, 7]
+                    );
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1, 10, 5, -1], axis:true});
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return 0.2+0.4*x*x+0.5*x*Math.sin(2*x)   ;}, -1, 5]
+					);
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-5, 10, 5, -1], axis:true});
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return x*x*x*x-3*x*x+2  ;}, -5, 5]
+					);
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-5, 10, 5, -1], axis:true});
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return x*x  ;}, -5, 5]
+					);
+			var a41 = board4.create('slider', [[-5, 0.5], [-3, 0.5], [-3.5, -1, 3.5]]);
+			var a42 = board4.create('slider', [[-5, 1.5], [-3, 1.5], [-3.5, -0.5, 3.5]]);
+			var p41 = board4.create('point', [function(){return a41.Value()},function(){return a41.Value()*a41.Value() }],{name: '$(x_1,f(x_1)) $'});
+			var p42 = board4.create('point', [function(){return a42.Value()},function(){return a42.Value()*a42.Value() }],{name: '$(x_2,f(x_2)) $'});
+		</script>
+
+		<script type="text/javascript">  
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [0, 2.0, 6, 0], axis:true});
+			var graph51 = board5.create('functiongraph',
+					[function(x){ return -1/(x-5.5)   ;}, 0.5, 5],{name:'$y=f(x)$',withLabel:true,label:{position:'left', offsets:[0,0]}}
+					);
+			var p51 = board5.create('point', [2,1/3.5 ],{name: '$(x_1,f(x_1)) $'});
+			var p52 = board5.create('point', [4.5,1/1],{name: '$(x_2,f(x_2)) $',withLabel:true,label:{position:'top', offsets:[0,0]}});
+			var li51 = board5.create('line',[p51,[2,0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li52 = board5.create('line',[p51,[0,1/3.5]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li53 = board5.create('line',[p52,[4.5,0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li54 = board5.create('line',[p52,[0,1/1]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li55 = board5.create('line',[p52,p51], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+
+		</script>
+
+		<script type="text/javascript">  
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [0, 2.0, 5, 0], axis:true});
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return 1/(x-0.25)  ;}, 0.5, 5],{name:'$y=f(x)$',withLabel:true,label:{position:'top', offsets:[0,0]}}
+					);
+			var p61 = board6.create('point', [1,1/.75 ],{name: '$(x_1,f(x_1)) $'});
+			var p62 = board6.create('point', [3.5,1/3.25],{name: '$(x_2,f(x_2)) $'});
+			var li61 = board6.create('line',[p61,[1,0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li62 = board6.create('line',[p61,[0,1/0.75]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li63 = board6.create('line',[p62,[3.5,0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li64 = board6.create('line',[p62,[0,1/3.25]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li65 = board6.create('line',[p62,p61], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-2, 5, 5, -8], axis:true});
+			var a71 = board7.create('slider', [[-1.5, 0.5], [-0.5, 0.5], [-3.5, -1.5, 1]]);
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return x*x+(2*a71.Value()-1)*x+1  ;}, -4, 10]
+					);
+			var p72 = board7.create('point', [function(){return (1-2*a71.Value())/2},0],{name: '$x=\\frac{1-2a}{2} $',size:2 });
+			var li71 = board7.create('line',[p72,[function(){return (1-2*a71.Value())/2},1 ]], 
+				{straightFirst:true, straightLast:true, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board8 = JXG.JSXGraph.initBoard('box8', {boundingbox: [-5, 10, 5, -1], axis:true});
+			var graph81 = board8.create('functiongraph',
+					[function(x){ return x*x  ;}, -5, 5]
+					);
+			var a81 = board8.create('slider', [[-5, 0.5], [-3, 0.5], [-3.5, -1, 3.5]]);
+			var p81 = board8.create('point', [0,0],{name: '$(0,0) $'});
+			var p82 = board8.create('point', [function(){return a81.Value()},function(){return a81.Value()*a81.Value() }],{name: '$(x_1,f(x_1)) $'});
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board9 = JXG.JSXGraph.initBoard('box9', {boundingbox: [-5, 1, 5, -10], axis:true});
+			var graph91 = board9.create('functiongraph',
+					[function(x){ return -x*x  ;}, -5, 5]
+					);
+			var a91 = board9.create('slider', [[-5, 0.5], [-3, 0.5], [-3.5, -1, 3.5]]);
+			var p91 = board9.create('point', [0,0],{name: '$(0,0) $'});
+			var p92 = board9.create('point', [function(){return a91.Value()},function(){return -a91.Value()*a91.Value() }],{name: '$(x_1,f(x_1)) $'});
+		</script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

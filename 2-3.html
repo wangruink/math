@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>二次函数与一元二次方程、不等式</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+			.three-cases {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				gap: 20px;
+			}
+			.three-cases div {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **一元二次函数、方程和不等式**
+
+					### **$\S$ 2.3 二次函数与一元二次方程、不等式**
+
+					### 王瑞
+
+					### 合肥六中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.3.1 二次函数与一元二次方程、不等式**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **一次函数与方程、不等式**
+
+					回忆初中知识，
+					
+					一元一次方程、一元一次不等式，一次函数三者之间有什么联系？
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **一次函数与方程、不等式**
+
+
+					**一次函数：** 一次函数（线性函数）是只拥有一个变量的一次多项式函数，因为在直角坐标系中这些函数的图形是直线。
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **一次函数与方程、不等式**
+
+
+					**一次函数：** 一次函数（线性函数）是只拥有一个变量的一次多项式函数，因为在直角坐标系中这些函数的图形是直线。
+					
+					一次函数的解析式可以表示为 $y = kx + b\ (k, b \in \mathbb{R},\ k \neq 0)$（斜截式）。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **一次函数与方程、不等式**
+
+
+					**一次函数与方程、不等式：** 一次函数 $y = kx + b$ 与 $x$ 轴的交点的横坐标与方程 $kx + b = 0$ 的关系？与不等式 $kx + b > 0$ 的关系？
+					</textarea>
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>一次函数与方程、不等式 </strong></h3>
+
+					函数$y=2x+1$与方程$2x+1=0$ <br>
+					与
+					不等式$2x+1>0$的关系
+
+					<div class="main">
+							<div id="box2" class="jxgbox" style="width:450px; height:400px;"></div>
+					</div>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **二次函数**
+
+					类比上述过程，对于二次函数、一元二次方程和一元二次不等式，是否也有这样的联系呢？
+					</textarea>
+				</section>
+
+				
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **二次函数**
+
+					在数学中，二次函数表示形为 
+					
+					$y = ax^2 + bx + c\ (a \neq 0,\ a, b, c \text{ 为常数})$ 的多项式函数，其中 $x$ 为自变量。
+
+					$a, b, c$ 分别是函数解析式的二次项系数、一次项系数和常数项。
+					
+					二次函数的图像是一条对称轴平行于 $y$ 轴的抛物线。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **二次函数**
+
+
+					$$\begin{aligned} y &= ax^2 + bx + c \\\\ &= a\left(x^2 + \frac{b}{a}x\right) + c \\\\ &= a\left(x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}\right) + c \\\\ &= a\left(x + \frac{b}{2a}\right)^2 + \frac{4ac - b^2}{4a} \end{aligned}$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **二次函数**
+
+
+					$$\begin{aligned} y &=  a\left(x + \frac{b}{2a}\right)^2 + \frac{4ac - b^2}{4a} \end{aligned}$$
+
+					该抛物线的对称轴为直线 $x = -\frac{b}{2a}$，顶点为 $\left(-\frac{b}{2a},\ \frac{4ac - b^2}{4a}\right)$，$a > 0$ 时开口向上，$a < 0$ 时开口向下。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **二次函数**
+
+					8月19日07时35分，朱雀三号遥二运载火箭在东风商业航天创新试验区发射升空，运载火箭全程飞行正常，一子级成功着陆于回收场预定位置，飞行试验任务取得圆满成功。
+
+					假设火箭一子级的飞行轨迹可以看成是抛物线，一子级的最高点为130km，一子级的着陆地点距离发射场390km，请用恰当的二次函数把火箭的飞行轨迹表示出来。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+
+					二次函数 $y = ax^2 + bx + c$ 与 一元二次方程 $ax^2 + bx + c = 0$ 的根有什么关系？
+
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+
+					二次函数 $y = ax^2 + bx + c$ 与 一元二次方程 $ax^2 + bx + c = 0$ 的根有什么关系？
+
+					二次函数 $y = ax^2 + bx + c$ 与 $x$ 轴交点的横坐标就是方程 $ax^2 + bx + c = 0$ 的根。
+					
+					</textarea>
+				</section>
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3" >
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+	
+
+					一元二次方程 $ax^2 + bx + c = 0$ 的根的数量与对应二次函数 $y = ax^2 + bx + c$ 图像的关系是什么？
+
+
+					</textarea>
+				</section>
+
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3" >
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+	
+
+					一元二次方程 $ax^2 + bx + c = 0$ 的根的数量与对应二次函数 $y = ax^2 + bx + c$ 图像的关系是什么？
+
+
+					一元二次方程 $ax^2 + bx + c = 0$ 的根的数量等于对应二次函数 $y = ax^2 + bx + c$ 与$x$轴交点的数量。
+
+			
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3" >
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+
+					解一元二次方程的常用方法：
+
+					+ 配方法
+					+ 求根公式
+					+ 因式分解
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3" >
+					<textarea data-template>
+					### **二次函数与一元二次方程**
+
+					解一元二次方程的常用方法：
+
+					+ 配方法
+					+ 求根公式
+					+ 因式分解
+					+ 二次函数
+					</textarea>
+				</section>
+
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **一元二次不等式**
+
+					**例 1.** 园艺师打算在绿地上用栅栏围一个矩形区域种植花卉。若栅栏的长度是 24m，围成的矩形区域的面积要大于 $20m^2$，则这个矩形的边长为多少米？
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **一元二次不等式**
+
+					**例 1.** 园艺师打算在绿地上用栅栏围一个矩形区域种植花卉。若栅栏的长度是 24m，围成的矩形区域的面积要大于 $20m^2$，则这个矩形的边长为多少米？
+
+					**解答：** 设矩形一边长 $xm$，另一条边长 $(12 - x)m$，则矩形的面积是 $x(12 - x)m^2$。
+
+					由题意得：$x(12 - x) > 20$，即 $x^2 - 12x + 20 < 0$，$x > 0$，$12 - x > 0$。
+
+					**如何解这个不等式？**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **一元二次不等式**
+
+					一般地，我们把只含有一个未知数，并且未知数的最高次数是 2 的不等式，称为**一元二次不等式**。
+
+					一元二次不等式的一般形式是 $ax^2 + bx + c > 0$ 或者 $ax^2 + bx + c < 0$，其中 $a, b, c$ 均为常数，且 $a \neq 0$。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **一元二次不等式**
+
+					在初中，我们学习了从一次函数的观点看一元一次方程、一元一次不等式的思想方法。
+
+					类似地，能否从二次函数的观点看一元二次不等式，进而得到一元二次不等式的求解方法呢？
+					</textarea>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4" >
+					<h3><strong>一元二次不等式</strong></h3>
+
+					<p style="font-size:0.8em;">观察函数 $y = x^2 - 12x + 20$ 与不等式 $x^2 - 12x + 20 < 0$ 的关系。</p>
+
+					
+					<div class="main">
+							<div id="box3" class="jxgbox" style="width:450px; height:400px;"></div>
+					</div>
+
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4" >
+					<h3><strong>一元二次不等式</strong></h3>
+
+					<p style="font-size:0.8em;">观察函数 $y = x^2 - 12x + 20$ 与不等式 $x^2 - 12x + 20 < 0$ 的关系。</p>
+
+
+					<p style="font-size:0.8em;">$x^2 - 12x + 20 < 0$ 的解集即抛物线在 $x$ 轴下方的部分对应的 $x$ 范围。</p>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4" >
+					<h3><strong>一元二次不等式</strong></h3>
+
+					<p style="font-size:0.8em;">二次函数 $y = ax^2 + bx + c\ (a > 0)$ 的图象与 $x$ 轴的位置关系有哪些可能？
+
+					<div class="main">
+							<div id="box4" class="jxgbox" style="width:450px; height:400px;"></div>
+					</div>
+
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4"  >
+					<textarea data-template>
+					### **一元二次不等式**
+
+					| $\Delta = b^2 - 4ac$ | $\Delta > 0$ | $\Delta = 0$ | $\Delta < 0$ |
+					| --- | --- | --- | --- |
+					| 对应二次方程的根 |  |  |  |
+					| $ax^2 + bx + c > 0(a>0)$ 的解集 |  |  |  |
+					| $ax^2 + bx + c < 0(a>0)$ 的解集 | |  |  |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4"  >
+					<textarea data-template>
+					### **一元二次不等式**
+
+					| $\Delta = b^2 - 4ac$ | $\Delta > 0$ | $\Delta = 0$ | $\Delta < 0$ |
+					| --- | --- | --- | --- |
+					| $ax^2 + bx + c > 0(a>0)$ 的解集 | $\\{x \mid x < x_1 \text{ 或 } x > x_2\\}$ | $\\{x \mid x \neq -\frac{b}{2a}\\}$ | $\mathbb{R}$ |
+					| $ax^2 + bx + c < 0(a>0)$ 的解集 | $\\{x \mid x_1 < x < x_2\\}$ | $\varnothing$ | $\varnothing$ |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **例题**
+
+					1. 求 $x^2 - 5x + 6 > 0$ 的解集
+					2. 求 $9x^2 - 6x + 1 > 0$ 的解集
+					3. 求 $-x^2 + 2x - 3 > 0$ 的解集
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **例题**
+
+					1. 求 $x^2 - 5x + 6 > 0$ 的解集
+					2. 求 $9x^2 - 6x + 1 > 0$ 的解集
+					3. 求 $-x^2 + 2x - 3 > 0$ 的解集
+
+					对于二次项系数是负数（即 $a < 0$）的不等式，可以先把二次项系数化为正数，再求解。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **总结**
+
+					求解一元二次不等式的方法：
+
+					1. 将原不等式转化为 $a > 0$ 的不等式
+					2. 计算 $\Delta = b^2 - 4ac$，判断正负与方程 $ax^2 + bx + c = 0$ 的根的数量
+					3. 结合图像求解不等式的解集
+					</textarea>
+				</section>
+			
+				</section>
+
+				<section data-transition="convex">
+
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.3.2 一元二次不等式的应用**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾**
+
+					+ 如何判断二次函数 $y = ax^2 + bx + c\ (a < 0)$ 的图像与 $x$ 轴的位置关系？
+					+ 若不等式 $ax^2 + x - 1 > 0$ 的解集为 $\mathbb{R}$，求实数 $a$ 的取值范围？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **分式不等式**
+
+					解下列不等式：
+
+					1. $\frac{x + 2}{1 - x} < 0$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **分式不等式**
+
+					解下列不等式：
+
+					2. $\frac{x - 2}{x + 1} \leqslant 2$
+					</textarea>
+				</section>
+
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **分式不等式**
+
+					$$\frac{f(x)}{g(x)} > 0 \Leftrightarrow f(x)g(x) > 0$$
+
+					$$\frac{f(x)}{g(x)} < 0 \Leftrightarrow f(x)g(x) < 0$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **分式不等式**
+
+
+					$$\frac{f(x)}{g(x)} \geqslant 0 \Leftrightarrow f(x)g(x) \geqslant 0,\ g(x) \neq 0$$
+
+					$$\frac{f(x)}{g(x)} \leqslant 0 \Leftrightarrow f(x)g(x) \leqslant 0,\ g(x) \neq 0$$
+
+					+ 对于简单的分式不等式，直接转化为一元二次不等式或者一元一次不等式组求解，注意分母不为零。
+					+ 对于较复杂的分式不等式，移项后再通分，转化为简单形式再用上述方法求解。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **恒成立问题**
+
+					1. 不等式 $ax^2 + (a - 1)x + a - 1 < 0$ 对于所有的实数 $x$ 都成立，求 $a$ 的取值范围。
+					2. 当 $1 \leqslant x \leqslant 2$ 时，不等式 $x^2 + mx + 4 < 0$ 恒成立，求 $m$ 的取值范围。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **练习**
+
+					关于 $x$ 的不等式 $ax^2 - 3x + 2 > 0$ 的解集为 $\\{x \mid x < 1 \text{ 或 } x > b\\}\ (b > 1)$。
+
+					1. 求 $a, b$ 的值。
+					2. 当 $x, y > 0$，$\frac{x}{a} + \frac{y}{b} = 1$ 时，有 $2x + y \geqslant k^2 + k + 2$，求 $k$ 的取值范围。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **练习**
+
+					证明下列不等式：
+
+					1. 已知 $bc - ad \geqslant 0, bd > 0$，求证：$\frac{a}{b} \leqslant \frac{c}{d}$
+					2. 已知 $a > b > c$，求证：$a^2 b + b^2 c + c^2 a > ab^2 + bc^2 + ca^2$
+					</textarea>
+				</section>
+			</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script type="text/javascript">
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-3, 3, 3, -3], axis:true,showCopyright: false,});
+			
+			
+			var p21 = board2.create('point', [0, 2], { size: 1, visible: false });
+			var p22 = board2.create('point', [-0.5, 0], { size: 1, visible: false });
+			var l21 = board2.create('line', [p1, p2]);
+
+
+			var p23 = board2.create('glider', [l21], {
+					name: 'C',
+					color: 'red',
+					size:2
+				});
+
+			
+		</script>
+		<script type="text/javascript">
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-1, 3, 12, -18], axis:true,showCopyright: false,});
+				
+			var graph31 = board3.create('functiongraph',
+                       [function(x){ return x*x-12*x+20;}, 0, 12]
+                    );
+			var p31 = board3.create('point', [2, 0], { size: 2, visible: true });
+			var p32 = board3.create('point', [10, 0], { size: 2, visible: true });
+			var p33 = board3.create('glider', [0,-4,graph31], {
+					name: 'C',
+					color: 'red',
+					size:2
+				});
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2, 10, 8, -10], axis:true,showCopyright: false,});
+
+			s41 = board4.create('slider',[[6.0,-2.2], [8.0,-2.2], [-5, 0, 10]],{name:'\\Delta'} );
+
+			var l41 = board4.create('line', [[0, 0], [2, 0]],{visible: false});
+
+				
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return (x-3)*(x-3)-s41.Value();}, -10, 10],{name:'$y=ax^2+bx+c $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+			var p41 = board4.create('intersection', [l41, graph41, 0],{name:'$x_1$'}); 
+			var p42 = board4.create('intersection', [l41, graph41, 1],{name:'$x_2$'}); 
+		</script>
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

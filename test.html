@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>立体几何初步</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+			  overflow:hidden;padding:12px 12px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+			  font-weight:normal;overflow:hidden;padding:12px 12px;word-break:normal;}
+			.tg .tg-c6xa{border-color:#ffffff;font-family:inherit;font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-2y37{border-color:#ffffff;font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-pr0b{border-color:#ffffff;font-family:inherit;font-size:20px;font-weight:bold;text-align:center;vertical-align:top}
+			.tg .tg-fvgg{border-color:#ffffff;font-size:20px;font-weight:bold;text-align:center;vertical-align:middle}
+			</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第八章**
+					## **立体几何初步**
+					### $\S 8.5.2$ **直线与平面平行** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+		<section  data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>知识回顾</strong></h3>
+
+				
+				<br>
+				直线与平面的位置关系有哪些？
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>知识回顾</strong></h3>
+
+				<br>
+				直线与平面的位置关系有哪些？
+
+				<br>
+				<br>
+
+				<ul>
+					<li>
+						直线在平面内
+					</li>
+
+					<li>
+						直线与平面相交
+					</li>
+
+					<li>
+						直线与平面平行
+					</li>
+				</ul>
+
+			</section>
+
+		
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>知识回顾</strong></h3>
+
+				<br>
+				直线与平面的位置关系有哪些？
+
+				<br>
+				<br>
+
+				
+
+				<table class="tg"><thead>
+					<tr>
+					  <th class="tg-fvgg">种类</th>
+					  <th class="tg-c6xa">直线$a$在平面$\alpha$内</th>
+					  <th class="tg-c6xa">直线$a$与平面$\alpha$相交</th>
+					  <th class="tg-c6xa">直线$a$与平面$\alpha$平行</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td class="tg-fvgg">符号表达</td>
+					  <td class="tg-2y37">$a \subset \alpha$</td>
+					  <td class="tg-2y37">$a \cap \alpha =A $ </td>
+					  <td class="tg-2y37">$a \text{//} \alpha $ </td>
+					</tr>
+					<tr>
+					  <td class="tg-fvgg">交点</td>
+					  <td class="tg-2y37">无数个交点</td>
+					  <td class="tg-2y37">有且仅有一个交点</td>
+					  <td class="tg-2y37">无交点</td>
+					</tr>
+					<tr>
+						<td class="tg-fvgg">图形表达</td>
+						<td class="tg-c6xa"> <div class="main">
+							<img src="8-1.png" alt="pic1" width="120px"/>
+						</div></td>
+						<td class="tg-c6xa"> <div class="main">
+							<img src="8-2.png" alt="pic1" width="120px"/>
+						</div> </td>
+						<td class="tg-c6xa"> <div class="main">
+							<img src="8-3.png" alt="pic1" width="120px"/>
+						</div> </td>
+					  </tr>
+				  </tbody>
+				  </table>
+
+			</section>
+
+			
+
+		</section>
+
+
+
+
+
+		<section  data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+
+				<br>
+
+				如何判定直线是否与平面平行？
+
+			
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+
+				<br>
+
+				判定直线与平面有无公共点？
+
+				<br>
+				<br>
+
+				直线和平面都是可以无限延伸的，如何保证直线与平面没有公共点？
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+
+				<br>
+
+
+				观察课室天花板和灯管，它们有什么位置关系？
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+
+				<br>
+
+				如果你来安装灯管，你如何使日光灯与天花板平行？需要什么工具？
+
+
+				<br>
+
+				<div class="main">
+					<img src="8-4.png" alt="pic1" width="600px"/>
+				</div>
+
+
+
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+				将课本的一边紧贴桌面，沿着这条边转动课本。
+
+
+				<br>
+
+				<div class="main">
+					<div id="jxgbox1" class="jxgbox" style="width:600px; height:500px;"></div>
+				</div>
+
+				
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+				<br>
+
+				根据上面的探究，如何判断直线与平面的平行？
+
+
+				
+				
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>问题探究 </strong></h3>
+
+				<br>
+
+				根据上面的探究，如何判断直线$a$与平面$\alpha$的平行？
+
+				<br>
+				<br>
+
+				在平面$\alpha$里找到一条直线$b$，使得直线$b$与直线$a$平行。
+
+				<br>
+
+				则直线$a$平行于平面$\alpha$。
+
+
+	
+			</section>
+
+
+			
+
+	</section>
+
+	<section  data-transition="convex">
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+			<h3><strong>直线与平面平行判定定理 </strong></h3>
+
+			<br>
+
+			
+			<strong>
+			<font color="red">
+				如果平面外直线与此平面内的一条直线平行，那么该直线与此平面平行。
+
+
+			</font>
+
+				
+			</strong> 
+
+			$$
+			
+			a\not\subset \alpha,b\subset \alpha,a\text{//}b \Rightarrow a\text{//}\alpha
+			$$
+
+			<div class="main">
+				<img src="8-5.png" alt="pic1" width="300px"/>
+			</div>
+
+			
+
+
+			
+			
+
+
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+			<h3><strong>直线与平面平行判定定理 </strong></h3>
+
+			<br>
+
+			<strong>
+				<font color="red">
+					如果平面外直线与此平面内的一条直线平行，那么该直线与此平面平行。
+	
+	
+				</font>
+	
+					
+			</strong> 
+
+			<br>
+			<br>
+
+			如何证明呢？
+
+
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+			<h3><strong>直线与平面平行判定定理 </strong></h3>
+
+			<br>
+
+			<strong>
+				<font color="red">
+					如果平面外直线与此平面内的一条直线平行，那么该直线与此平面平行。
+	
+	
+				</font>
+	
+					
+			</strong> 
+
+			<br>
+			<br>
+
+			反证法：假设有$a\not\subset \alpha,b\subset \alpha,a\text{//}b, a\cap \alpha =A$
+			<br>
+
+			在平面$\alpha$内过点$A$作直线$c,c\text{//}b$。直线$a$和$c$都平行于直线$b$，则$a\text{//}c$，但$a$和$c$相交于$A$点，矛盾。
+
+			<br>
+
+			所以$a // \alpha$。
+
+
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+			<h3><strong>直线与平面平行判定定理 </strong></h3>
+
+			<br>
+
+			判断下列命题是否正确：
+
+			<br>
+			<br>
+
+			<ul>
+				<li>
+					若$a\not\subset\alpha,a//b$，则$a// \alpha $
+				</li>
+				<li>
+					若$ b\subset \alpha,a//b$，则$a// \alpha $
+				</li>
+			</ul>
+			
+
+
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+			<h3><strong>直线与平面平行判定定理 </strong></h3>
+
+			<br>
+			<strong>
+				例2 
+			</strong>
+			
+			求证：空间四边形相邻两边中点的连线平行于经过另外两边的平面。
+			<br>
+
+			<div class="main">
+				<div id="jxgbox2" class="jxgbox" style="width:600px; height:450px;"></div>
+			</div>
+
+			
+
+		</section>
+		
+		
+
+
+
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		
+
+	
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+
+			var board = JXG.JSXGraph.initBoard('jxgbox1', {
+				boundingbox: [-8, 8, 8, -8],
+				keepaspectratio: true,
+				showCopyright: false,
+				axis: false
+			});
+
+			var view = board.create('view3d',
+				[[-3, -3], [8, 8],             // 2D box of view
+				[[-5, 5], [-5, 5], [-0, 5]]],  // 3D bounding cube
+				{
+				axesPosition: 'none',
+
+            	xPlaneRear: { visible: false },
+            	yPlaneRear: { visible: false },
+				zPlaneRear: { visible: false }
+
+					},
+		);
+		
+			var p1 = view.create('point3d', [1, 2, 2], { name:'$A$', size: 2 });
+
+			var p2 = view.create('point3d', [1, 6, 2], { name:'$B$', size: 2 });
+
+			var p3 = view.create('point3d', [6, 2, 2], { name:'$D$', size: 2 });
+
+			var p4 = view.create('point3d', [6, 6, 2], { name:'$C$', size: 2 });
+
+			var C = view.create('polygon3d', [p1, p2, p4,p3], {
+		        highlight: false,
+		        gradient: 'linear',
+		        gradientSecondColor: 'white',
+		        fillColor: 'blue',
+		        borders: { strokecolor: 'blue', strokeWidth: 1 }
+		    });
+
+			var p5 = view.create('point3d', [3, 3, 6], { name:'$E$', size: 2 });
+
+			var p6 = view.create('point3d', [
+		        () => p5.X(),
+		        () => p5.Y()+4,
+		        () => p5.Z(),
+		    ], { name:'$F$', size: 2 });
+
+			var C2 = view.create('polygon3d', [p5, p6, p2,p1], {
+		        highlight: false,
+		        gradient: 'linear',
+		        gradientSecondColor: 'white',
+		        fillColor: 'blue',
+		        borders: { strokecolor: 'blue', strokeWidth: 1 }
+		    });
+
+
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+
+			var board1 = JXG.JSXGraph.initBoard('jxgbox2', {
+				boundingbox: [-8, 8, 8, -8],
+				keepaspectratio: true,
+				showCopyright: false,
+				axis: false
+			});
+
+			var view1 = board1.create('view3d',
+				[[-3, -3], [8, 8],             // 2D box of view
+				[[-5, 5], [-5, 5], [-0, 5]]],  // 3D bounding cube
+				{
+				axesPosition: 'none',
+
+				xPlaneRear: { visible: false },
+				yPlaneRear: { visible: false },
+				zPlaneRear: { visible: false }
+
+					},
+		);
+
+			var p11 = view1.create('point3d', [1, 2, 2], { name:'$A$', size: 2 });
+
+			var p12 = view1.create('point3d', [1, 5, 6], { name:'$B$', size: 2 });
+
+			var p13 = view1.create('point3d', [6, 2, 2], { name:'$D$', size: 2 });
+
+			var p14 = view1.create('point3d', [6, 7, 2], { name:'$C$', size: 2 });
+
+			var C11 = view1.create('polygon3d', [p11, p14,p13], {
+				highlight: false,
+				gradient: 'linear',
+				gradientSecondColor: 'white',
+				fillColor: 'blue',
+				borders: { strokecolor: 'blue', strokeWidth: 1 }
+			});
+
+			
+
+			var C12 = view1.create('polygon3d', [p11, p14, p12], {
+				highlight: false,
+				gradient: 'linear',
+				gradientSecondColor: 'white',
+				fillColor: 'red',
+				borders: { strokecolor: 'red', strokeWidth: 1 }
+			});
+
+			var p16 = view1.create('point3d', [
+		        () => (p11.X()+p12.X())/2 ,
+		        () => (p11.Y()+p12.Y())/2,
+		        () => (p11.Z()+p12.Z())/2,
+		    ], { name:'$E$', size: 2 });
+
+			var p17 = view1.create('point3d', [
+		        () => (p14.X()+p12.X())/2 ,
+		        () => (p14.Y()+p12.Y())/2,
+		        () => (p14.Z()+p12.Z())/2,
+		    ], { name:'$F$', size: 2 });
+
+			var l12 = view1.create('line3d', [p16, p17],{dash:1} );
+
+
+
+		</script>
+
+
+		
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

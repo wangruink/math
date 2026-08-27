@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				font-weight:normal;overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg .tg-p7sm{border-color:#000000;font-family:inherit;font-size:30px;text-align:center;vertical-align:top}
+				.tg .tg-zbu7{border-color:#000000;font-family:inherit;text-align:left;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.6$ **函数$y=A\sin(\omega x+\varphi ) $** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+	
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>圆周运动</strong></h3>
+
+				<br>
+
+				筒车是我国古代发明的一种水利灌溉工具。
+
+				<br>
+
+				假定在水流量稳定的情况下，筒车上的每一个盛水筒都做匀速圆周运动。
+				
+				<br>
+				你能用一个合适的函数模型来刻画盛水筒(视为质点)距离水面的相对高度与时间的关系吗？
+
+
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>圆周运动</strong></h3>
+
+				<br>
+
+				匀速圆周运动，是指物体以等速率沿着圆周作运动。在这种情况下速度的大小保持不变，但方向不断的改变。
+
+				<br>
+				<br>
+
+				角速度是在物理学中定义为角位移的变化率，描述物体转动時，在单位时间内转过多少角度以及转动方向的向量。
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>圆周运动</strong></h3>
+
+				<br>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>圆周运动</strong></h3>
+
+				<br>
+
+				设$t=0$时，盛水筒$M$位于点$P_0$，以$Ox$为始边，$OP_0$为终边的角为$\varphi$。
+
+				<br>
+				
+				$t$秒后运动到点$P(x,y)$，于是以$Ox$为始边，$OP$为终边的角为$\omega t+\varphi $，并且有
+
+				$$
+				y=r\sin(\omega t+\varphi ) \\
+
+				H = r\sin(\omega t+\varphi )+h
+				$$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>圆周运动</strong></h3>
+
+				<br>
+
+				上面我们利用三角函数的知识建立了一个形如
+				
+				$$
+				y=A\sin(\omega x+\varphi ),( A>0,\omega >0)
+				$$
+				
+				的函数。
+
+				<br>
+				
+				
+				显然，这个函数由参数$A,\omega,\varphi$所确定，因此，只要了解这些参数的意义，知道它们的变化对函数图象的影响，就能把握这个函数的性质。
+
+		
+			</section>
+
+
+
+	</section>
+
+
+	<section data-transition="convex">
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+			
+
+			探索$\varphi$对$y=A\sin(\omega x+\varphi ) $图象的影响。
+
+			<br>
+			取$A=\omega=1$
+
+			<div class="main">
+				<div id="box2" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+			$y=\sin(x+\varphi)$与$y=\sin x$的关系
+
+	
+			<br>
+
+			<div class="main">
+				<div id="box3" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+	
+			<br>
+
+			把正弦曲线$y=\sin x$上的所有点向左(当$\varphi >0$时)或向右(当$\varphi < 0$时)平移$|\varphi|$个单位长度，就得到函数$y=\sin(x+\varphi) $的图象.
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+	
+			
+
+			探索$\omega$对$y=A\sin(\omega x+\varphi ) $图象的影响。
+
+			<br>
+			取$A=1,\varphi=\frac{\pi}{6} $
+
+			<div class="main">
+				<div id="box5" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+
+		
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+			$y=\sin(x+\frac{\pi}{6} )$与$y=\sin(\omega x+\frac{\pi}{6})$的关系
+
+	
+			<br>
+
+			<div class="main">
+				<div id="box4" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+	
+			<br>
+
+			函数$y=\sin(\omega x+\varphi)$的周期是$\frac{2\pi}{\omega} $。
+
+			<br>
+			<br>
+			
+			把$y=\sin(\omega x)$图象上所有点的横坐标缩短(当$\omega >1$时)或伸长(当$0 < \omega < 1$时)到原来的$\frac{1}{\omega} $倍(纵坐标不变)，就得到$y=\sin(\omega x+\varphi)$的图象。
+			
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+		
+			探索$A(A>0)$对$y=A\sin(\omega x+\varphi ) $图象的影响。
+	
+			<br>
+
+			取$\omega=2,\varphi=\frac{\pi}{6} $
+
+			<div class="main">
+				<div id="box6" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+			
+
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+		
+
+			<br>
+
+			一般地，函数$y=A\sin(\omega x+\varphi ) $的图象，可以看作把$y=\sin(\omega x+\varphi ) $图象上所有点的纵坐标伸长(当$A>1$时)或缩短(当$0< A< 1$时)到原来的$A$倍(横坐标不变)。
+			
+			<br>
+			从而，函数$y=A\sin(\omega x+\varphi ) $的值域是$[-A,A]$最大值是$A$，最小值是$-A$。
+			
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+	
+			
+
+			函数$y=A\sin(\omega x+\varphi ),(A>0,\omega>0) $的图象：
+
+			<br>
+
+			<font color="#0675B4">
+
+			
+			
+			<ol>
+				<li>
+					画出$y=\sin x$的图象。
+				</li>
+				<li>
+					把正弦曲线向左（或右）平移$|\varphi|$个单位长度，得到函数$y=\sin (x+\varphi) $的图象。
+				</li>
+				<li>
+					把曲线上各点的横坐标变为原来的$\frac{1}{\omega}$倍（纵坐标不变），得到$y=\sin(\omega x+\varphi )$的图象。
+				</li>
+				<li>
+					最后把曲线上各点的纵坐标变为原来的$A$倍（横坐标不变），得到$y=A\sin(\omega x+\varphi )$的图象。
+				</li>
+			</ol>
+
+		</font>
+	
+		</section>
+
+		<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+			<h3><strong>$y=A\sin(\omega x+\varphi ) $</strong></h3>
+
+	
+			<br>
+
+			<div class="main">
+				<div id="box7" class="jxgbox" style="width:1080px; height:350px;"></div>
+			</div>
+			
+	
+		</section>
+
+		
+
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p11 = board1.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p12 = board1.create('point', [Math.cos(0.5), Math.sin(0.5)],{name:'$P_0$',fixed:true});
+			var p13 = board1.create('point', [0.8,0.6 ],{name:'$P$'});
+			
+			var c11 = board1.create('circle',[p11, p12],{strokeColor:'black' });
+			var li11 = board1.create('line',[p11,p13], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5,strokeColor:'black' });
+
+			var li12 = board1.create('line',[p11,p12], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5,strokeColor:'black' });
+			
+			var li13 = board1.create('line',[[0,-0.750],[-0.75,-0.75]], 
+					{straightFirst:true, straightLast:true, strokeWidth:1.5,dash:2 });
+		
+			var li14 = board1.create('line',[p11,[0,-0.75]], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5, });
+
+			var li15 = board1.create('line',[p13,[function(){return p13.X() } , 0]], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+			
+			s11 = board1.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.25, 6*Math.PI]]);
+
+			var c1 = board1.create('comb', [[-3, -0.75], [3, -0.75]],{angle: -Math.PI/4,strokeColor:'#0675B4'} );
+
+
+			var angle11 = board1.create('angle', [p12, p11, p13],{ radius:0.25 , name: '$\\alpha$' });
+
+			angle11.setAngle(function() {
+    			return s11.Value(); });	
+
+			board1.update();
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+
+			var p20 = board2.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,-10]}});
+			var p21 = board2.create('point', [-1, 0],{name:'$O_1$',fixed:true,size:1.5});
+			
+			s21 = board2.create('slider',[[0.2,1.2], [1.5,1.2], [0*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x_0'} );
+			s22 = board2.create('slider',[[0.2,-1.2], [1.5,-1.2], [-1*Math.PI, Math.PI*0, 1.0*Math.PI]],{name:'\\varphi'} );
+
+			var p22 = board2.create('point', [ function(){return Math.cos(s22.Value())-1 } , function(){return Math.sin(s22.Value()) } ],{name:'$Q_0$',fixed:true,size:1.5,label:{position:'top', offset:[10,-10]} });
+
+			var p23 = board2.create('point', [ function(){return Math.cos(s22.Value()+s21.Value())-1 } , function(){return Math.sin(s22.Value()+s21.Value()) } ],{name:'$P$',size:1.5});
+
+			
+			var c21 = board2.create('circle',[p21, p22]);
+
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue',trace:false,dash:1});
+			var li23 = board2.create('line',[p21,p22], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',trace:false,dash:1});
+			
+			var p24 = board2.create('point',[ function(){return p23.X()} , 0 ],{name:'',size:1.5});
+
+
+			var li22 = board2.create('line',[p23,p24], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+
+			
+
+			var p25 = board2.create('point', [ function(){return s21.Value() } , function(){return p23.Y()  } ],{name:'$T(x_0,\\sin x_0)$',size:1.5,trace:true});
+
+			var p26 = board2.create('point', [ function(){return s21.Value() } , 0 ],{name:'$x_0$',size:0.5 });
+
+			
+
+			var li24 = board2.create('line',[p25,p26], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			var li25 = board2.create('line',[p25,p23], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			
+			var angle21 = board2.create('angle', [p22, p21, p23],{ radius:0.25 , name: '$x_0$' });
+			var angle21 = board2.create('angle', [p20, p21, p22],{ radius:0.35 , name: '$\\varphi$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+			s32 = board3.create('slider',[[0.2,-1.2], [1.5,-1.2], [-1*Math.PI, Math.PI*0, 1.0*Math.PI]],{name:'\\varphi'} );
+			s31 = board3.create('slider',[[0.2,-0.8], [1.5,-.8], [-2*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x'} );
+
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return Math.sin(x);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin x,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph32 = board3.create('functiongraph',
+					[function(x){ return Math.sin(x+s32.Value());}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin (x+\\varphi),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+			var p31 = board3.create('point', [ function(){return s31.Value() } , function(){return Math.sin(s31.Value()) } ],{name:'$A$',size:1.5,color:'blue'});
+
+			var p32 = board3.create('point', [ function(){return s31.Value()-s32.Value() } , function(){return Math.sin(s31.Value()) } ],{name:'$B$',size:1.5,color:'red'});
+
+			var li31 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+			s42 = board4.create('slider',[[0.2,-1.2], [1.5,-1.2], [0,1,4]],{name:'\\omega'} );
+			s41 = board4.create('slider',[[0.2,-0.8], [1.5,-.8], [-2*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x'} );
+
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return Math.sin(x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin(x+\\frac{\\pi}{6}),x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph42 = board4.create('functiongraph',
+					[function(x){ return Math.sin(s42.Value()*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin (\\omega x+\\frac{\\pi}{6}),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+			var p41 = board4.create('point', [ function(){return s41.Value() } , function(){return Math.sin(s41.Value()+Math.PI/6) } ],{name:'$A$',size:1.5,color:'blue'});
+
+			var p42 = board4.create('point', [ function(){return s41.Value()/s42.Value() } , function(){return Math.sin(s41.Value()+Math.PI/6) } ],{name:'$B$',size:1.5,color:'red'});
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-2.5, 1.5 , 7.0, -1.5], axis:true,showCopyright: false,});
+
+			s51 = board5.create('slider',[[0.2,1.2], [1.5,1.2], [0*Math.PI, Math.PI*0, 2.0*Math.PI]],{name:'x_0'} );
+			s52 = board5.create('slider',[[0.2,-1.2], [1.5,-1.2], [0, 1, 4]],{name:'\\omega'} );
+
+
+			var p50 = board5.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,-10]}});
+			var p51 = board5.create('point', [-1, 0],{name:'$O_1$',fixed:true,size:1.5});
+			
+			
+			var p52 = board5.create('point', [ Math.cos(Math.PI/6)-1 , Math.sin(Math.PI/6) ],{name:'$Q_0$',fixed:true,size:1.5,label:{position:'top', offset:[20,5]} });
+
+			var p53 = board5.create('point', [ function(){return Math.cos(Math.PI/6 +s52.Value()*s51.Value())-1 } , function(){return Math.sin(Math.PI/6+s52.Value()*s51.Value()) } ],{name:'$P$',size:1.5});
+
+			
+			var c51 = board5.create('circle',[p51, p52]);
+
+			var li51 = board5.create('line',[p51,p53], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue',trace:false,dash:1});
+			var li53 = board5.create('line',[p51,p52], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red',trace:false,dash:1});
+			
+			var p54 = board5.create('point',[ function(){return p53.X()} , 0 ],{name:'',size:1.5});
+
+
+			var li52 = board5.create('line',[p53,p54], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,strokeColor:'blue'});
+
+			
+
+			var p55 = board5.create('point', [ function(){return s51.Value() } , function(){return p53.Y()  } ],{name:'$T(x_0,\\sin x_0)$',size:1.0,trace:true});
+
+			var p56 = board5.create('point', [ function(){return s51.Value() } , 0 ],{name:'$x_0$',size:0.5 });
+
+			
+
+			var li54 = board5.create('line',[p55,p56], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			var li55 = board5.create('line',[p55,p53], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 ,trace:false});
+			
+			var angle51 = board5.create('angle', [p52, p51, p53],{ radius:0.25 , name: '$\\omega x_0$' });
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-2.5, 2.5 , 7.0, -2.5], axis:true,showCopyright: false,});
+			s62 = board6.create('slider',[[0.2,-1.2], [1.5,-1.2], [0, 1, 3]],{name:'A'} );
+
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return Math.sin(2*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin(2x+\\frac{\\pi}{6} ) ,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph62 = board6.create('functiongraph',
+					[function(x){ return s62.Value()*Math.sin(2*x+Math.PI/6);}, -10*Math.PI, 10*Math.PI],{name:'$y=A\\sin(2x+\\frac{\\pi}{6} ),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-2.5, 2.5 , 7.0, -2.5], axis:true,showCopyright: false,});
+			s71 = board7.create('slider',[[0.2,-0.3], [1.5,-0.3], [-1*Math.PI, Math.PI*0, 1.0*Math.PI]],{name:'\\varphi'} );
+			s72 = board7.create('slider',[[0.2,-1.0], [1.5,-1.0], [0, 1, 3]],{name:'\\omega'} );
+			s73 = board7.create('slider',[[0.2,-2.0], [1.5,-2.], [0, 1, 3]],{name:'A'} );
+
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return Math.sin(x);}, -10*Math.PI, 10*Math.PI],{name:'$y=\\sin x ,x\\in\\mathbf{R} $',withLabel:true,dash:2, strokeColor:'blue',label:{position:'top', offset:[10,5],color:'blue'}}
+					);
+
+			var graph72 = board7.create('functiongraph',
+					[function(x){ return s73.Value()*Math.sin(s72.Value()*x+s71.Value()) ;}, -10*Math.PI, 10*Math.PI],{name:'$y=A\\sin(\\omega x+\\varphi ),x\\in\\mathbf{R} $',withLabel:true, strokeColor:'red',label:{position:'top', offset:[-10,-10],color:'red'}}
+					);
+			
+			
+		
+
+
+		</script>
+	
+
+
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

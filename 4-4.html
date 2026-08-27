@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>指数函数与对数函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第四章**
+					## **指数函数与对数函数**
+					### $\S 4.4$ **对数函数** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+		<section  data-transition="convex">
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>问题回顾</strong></h3>
+						当生物死亡后，它机体内原有的碳14含量会按确定的比率衰减（称为衰减率），
+						大约每经过5730年衰减为原来的一半，这个时间称为“半衰期”。按照上述变化规律，生物体内碳14含量$y$与死亡年数$x$之间有怎样的关系？
+						<br>
+						设死亡生物体内碳14含量的年衰减率为p，如果把刚死亡的生物体内碳14含量看成1个单位，那么：
+						$$y=((\frac{1}{2})^{\frac{1}{5730}})^x,x\in[0,+\infty) $$
+
+
+					
+
+				</section>
+
+				
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>问题回顾</strong></h3>
+
+						在问题中，我们已经研究了死亡生物体内碳14的含量$y$随死亡时间$x$的变化而衰减的规律。
+
+						<br>
+						
+						反过来，已知死亡生物体内碳14的含量，如何得知它死亡了多长时间呢？进一步地，死亡时间$x$是碳14的含量$y$的函数吗？
+
+						<br>
+
+						根据指数与对数的关系，由$y=((\frac{1}{2})^{\frac{1}{5730}})^x,x\in[0,+\infty) $得到
+
+						$$x=\text{log}_{(\frac{1}{2})^{\frac{1}{5730}}}y,y\in(0,1] $$
+
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>问题回顾</strong></h3>
+
+					作$y=((\frac{1}{2})^{\frac{1}{5730}})^x,x\in[0,+\infty) $的图象。
+
+					<div class="main">
+						<div id="box2" class="jxgbox" style="width:450px; height:450px;"></div>
+					</div>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>问题回顾</strong></h3>
+
+				由图像可知，对于任意一个$y\in(0,1]$，通过对应关系$x=\text{log}_{(\frac{1}{2})^{\frac{1}{5730}}}y$，
+				在$[0,+\infty)$都有唯一确定的$x$和$y$对应，所以$x$也是$y$的函数。
+				
+				<br>
+
+				也就是说，函数$x=\text{log}_{(\frac{1}{2})^{\frac{1}{5730}}}y,y\in(0,1]$刻画了时间$x$随碳14含量$y$的衰减而变化的规律。
+
+				
+
+			</section>
+
+				
+				
+
+		</section>
+
+
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数函数</strong></h3>
+
+				<font color="red">思考</font>：一般的指数函数$y=a^x(a>0,a\neq 1)$也能表示成$x$是$y$的函数吗？
+
+				
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数函数</strong></h3>
+
+				$y=a^x(a>0,a\neq 1)\iff x=\text{log}_ay$
+
+				
+				<br>
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数函数</strong></h3>
+				结合指数函数的图像知，上式中$x$与$y$是一一对应的，故由$x=\text{log}_ay( a>0,a\neq 1)$知$x$也是$y$的函数。 
+
+				
+				<br>
+
+				通常，我们用$x$表示自变量，$y$表示函数，故我们把上式写成$$y=\text{log}_ax ( a>0,a\neq 1)$$
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数函数</strong></h3>
+
+				一般地，函数$y=\text{log}_ax ( a>0,a\neq 1)$叫做<font color="red">对数函数</font>，自变量是$x$，定义域是$(0,+\infty)$。 
+
+				
+				<br>
+
+				
+
+			</section>
+
+			
+
+			
+
+		
+
+
+		</section>
+
+		<section data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>对数函数的应用</strong></h3>
+
+				求下列函数的定义域：
+
+				
+				<br>
+
+				<ul>
+					<li>
+						$y=\text{log}_3x^2 $
+					</li>
+					<li>
+						$y=\text{log}_a(4-x)(a>0,a\neq 1) $
+					</li>
+				</ul>
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>对数函数的应用</strong></h3>
+
+				求下列函数的定义域：
+				<br>
+
+				<ul>
+					<li>
+						$y=\frac{1}{\text{log}_2x} $
+					</li>
+					<li>
+						$y=\text{log}_2(16-4^x) $
+					</li>
+					<li>
+						$y=\sqrt{\text{lg}(x-3)} $
+					</li>
+					<li>
+						$y=\text{log}_{x+1}(2-x)$
+					</li>
+				</ul>
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>对数函数的应用</strong></h3>
+
+				对数类型函数求定义域注意的点：
+
+				
+				<br>
+
+				<ul>
+					<li>
+						分母不为0。
+					</li>
+					<li>
+						开偶次根式时，根号下非负。
+					</li>
+					<li>
+						底数大于0且不为1，真数大于0。
+					</li>
+				</ul>
+
+				
+
+			</section>
+
+			
+
+
+
+		</section>
+
+		<section data-transition="convex">
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				类比研究指数函数图象的方法，我们使用描点法画出函数$y=\text{log}_2x$的图象。
+
+				
+				<br>
+
+				<table><thead>
+					<tr>
+					  <th>$x$</th>
+					  <th>0.25</th>
+					  <th>0.5</th>
+					  <th>1</th>
+					  <th>2</th>
+					  <th>4</th>
+					  <th>8</th>
+					  <th>16</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>$y$</td>
+					  <td>-2</td>
+					  <td>-1</td>
+					  <td>0</td>
+					  <td>1</td>
+					  <td>2</td>
+					  <td>3</td>
+					  <td>4</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+				
+				
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				底数互为倒数的两个指数函数$y=a^x$和$y=\frac{1}{a}^x$的图象关于$y$轴对称，那么底数互为倒数的两个对数函数图象是否有类似的对称性？
+
+				
+				<br>
+
+				例如，对于$y=\text{log}_2x $和$y=\text{log}_{\frac{1}{2}}x$。
+
+				$$y=\text{log}_{\frac{1}{2}}x =\text{log}_{2^{-1}}x=\frac{1}{-1}\text{log}_2x=-\text{log}_2x $$
+
+				由此可知，$y=\text{log}_2x $和$y=\text{log}_{\frac{1}{2}}x$的图象关于$x$轴对称。
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				
+				<div class="main">
+					<div id="box5" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				
+				<video width="600" height="600" controls>
+					<source src="Log2x.mp4" type="video/mp4">
+				  </video>
+				  
+
+				
+
+			</section> 
+
+			
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				
+				<br>
+
+				<div class="main">
+					<div id="box6" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				
+				<div class="main">
+					<img src="4-4-1.png" alt="表格1" width="900px"/>
+				</div>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				<div class="main">
+					<div id="box7" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+				
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				<ul>
+					<li>
+						函数$y=\text{log}_a(x+1)-2(a>0,a\neq 1)$的图象恒过哪个点？
+					</li>
+					<li>
+						函数$y=\text{log}_a\frac{2x+1}{x-1} +2x(a>0,a\neq 1)$的图象恒过哪个点？
+					</li>
+				</ul>
+				
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+
+				<ul>
+					<li>
+						画出函数$y=\text{lg}(x-1)$的图象
+					</li>
+					<li>
+						画出函数$y=\text{lg}|x-1|$的图象
+					</li>
+				</ul>
+				
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>对数函数的图象</strong></h3>
+				函数$ y=\text{log}_2(x-a)$的图象
+
+				<div class="main">
+					<div id="box8" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+		
+				
+
+			</section> 
+
+
+
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				画出下列函数的图象
+
+				<br>
+
+				<ul>
+					<li>
+						$y=\text{lg}10^x$
+					</li>
+					<li>
+						$y=10^{\text{lg}x}  $
+					</li>
+				</ul>
+
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				比较下列各数的大小
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_23.4,\quad \text{log}_28.5$
+					</li>
+					<li>
+						$\text{log}_{0.3}1.8,\quad\text{log}_{0.3}2.7$
+					</li>
+					<li>
+						$\text{log}_a5.1,\quad\text{log}_a5.9(a>0,a\neq1)$
+					</li>
+					<li>
+						$\text{log}_50.4,\quad\text{log}_60.4$
+					</li>
+					<li>
+						$\text{log}_23,\quad\text{log}_{0.3}2$
+					</li>
+				</ul>
+
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				溶液酸碱度的测量，溶液酸碱度是通过pH计量的，pH的计算公式为$\text{pH}=-\text{lg[H]}^+ $。
+
+				其中$\text{[H]}^+$表示溶液中氢离子的浓度，单位是摩尔/升。
+
+				<br>
+
+				<ul>
+					<li>
+						根据对数函数性质及上述pH的计算公式，说明溶液酸碱度与溶液中氢离子的浓度之间的变化关系。
+					</li>
+					<li>
+						已知纯净水中氢离子的浓度为$\text{[H]}^+10^{-7} $摩尔/升，计算纯净水的pH。
+					</li>
+				</ul>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				
+
+				已知函数
+
+				$$f(x)=\begin{cases} 
+				2^x & x\leqslant 1\\
+				\text{log}_{0.5}x & x>1
+				\end{cases} $$
+
+				试画出函数$y=f(1-x)$的图象。
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				
+				若函数$f(x)=\text{log}_3(x^2-ax+3a)$在区间$(1,+\infty)$上单调递增，则实数$a$的取值范围是多少？
+
+				<br>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				研究函数$y=\text{log}_af(x)$的单调性的方法
+
+				<br>
+
+				<ul>
+					<li>
+						求定义域，使$f(x)>0 $
+					</li>
+					<li>
+						考虑$a>1$或$0< a< 1$
+					</li>
+					<li>
+						复合函数的单调性，同增异减
+					</li>
+				</ul>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>对数函数的性质</strong></h3>
+				
+
+				<ul>
+					<li>
+						求函数$f(x)=\text{log}_3{x^2+2x+4} $的值域。
+					</li>
+					<li>
+						求函数$f(x)=\text{ln}(1+x)-\text{ln}(1-x)$的值域。
+					</li>
+				</ul>
+
+				
+
+			</section> 
+
+
+			
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>反函数</strong></h3>
+
+				$$y=2x+3\iff x=\frac{y-3}{2} $$
+
+
+				$$ y=x^3 \iff x=y^{\frac{1}{3}} $$
+
+
+				$$y=x^2(x\geqslant 0)\iff x=\sqrt{y} $$
+				
+
+				$$y=2^x \iff x=\text{log}_2y $$
+
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>反函数</strong></h3>
+
+				若有一个函数$f$，其定义域为$A$，值域为$B$。若存在一个函数$g$，其定义域为$B$，值域为$A$。
+
+				<br>
+
+				$$\forall x\in A,g(f(x))=x,\forall y\in B,f(g(y))=y $$
+
+				则称$g$是$f$的反函数，记为$f^{-1} $。
+
+				<br>
+
+				反之，$f$也是$g$的反函数。
+
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>反函数</strong></h3>
+
+				$y=2^x$与$y=\text{log}_2x$互为反函数
+
+				<br>
+
+				<div class="main">
+					<div id="box9" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+
+				
+
+			</section> 
+
+
+
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				在前面的学习中我们看到，一次函数与指数函数的增长方式存在很大差异。
+				事实上，这种差异正是不同类型现实问题具有不同增长规律的反映。
+				
+				<br>
+				因此，如果把握了不同函数增长方式的差异，那么就可以根据现实问题的增长情况，
+				选择合适的函数模型刻画其变化规律．下面就来研究一次函数、指数函数和对数函数增长方式的差异。
+
+
+				
+
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				<div class="main">
+					<div id="box10" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+				
+
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				虽然函数$y=2^x$与$y=2x$在区间$[0,+\infty)$上都单调递增，
+				但它们的增长速度不同，而且不在同一个“档次”上。
+				随着$x$的增大，$y=2^x$的增长速度越来越快，会超过并远远大于$y=2x$的增长速度。
+				<br>
+				尽管在$x$的一定变化范围内，$2^x$会小于$2x$，但由于$y=2^x$的增长最终会快于$y=2x$的增长，
+				因此总会存在一个$x_0$，当$x>x_0$时，恒有$2^x>2x$。
+
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				对于一般的指数函数$y=a^x(a>1)$和一次函数$y=kx(k>0)$都有类似的增长情况。
+
+				<br>
+
+				即使$k$远远大于$a$，最终也是指数函数的增长速度大大超过一次函数的增长速度。
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				<div class="main">
+					<div id="box11" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				可以看到，虽然它们在$(0,+\infty)$上都单调递增，但增长速度存在着明显的差异，函数$y=\frac{1}{10}x$的增长速度保持不变，而$y=\text{lg}x $的增长速度在变化。
+				
+				<br>
+
+				随着$x$的增大，函数$y=\text{lg}x $的图象越来越平缓，其增长速度越来越小了。
+
+				
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				对于一般的对数函数$y=\text{log}_ax(a>1)$和一次函数$y=kx(k>0)$都有类似的增长情况。
+				<br>
+
+				随着$x$的增大，一次函数$y=kx(k>0)$保持固定的增长速度，而对数函数$y=\text{log}_ax(a>1)$的增长速度越来越慢。
+
+				<br>
+
+				因此也总会存在一个$x_0$，当$x>x_0$时，恒有$kx> \text{log}_ax$。
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				<div class="main">
+					<div id="box12" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+
+				
+
+			</section> 
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>函数增长的差异</strong></h3>
+
+				
+
+				
+
+			</section> 
+
+
+
+			
+		</section>
+
+		
+
+
+
+			
+
+
+		
+
+
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1000, 2 , 10000, -0.5], axis:true,showCopyright: false,});
+			
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return Math.pow(Math.pow(0.5,1/5730),x);}, 0, 10000],{name:'$y=((\\frac{1}{2})^{\\frac{1}{5730}})^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			
+			var a = Math.pow(0.5,1/5730);
+			var a21 = board2.create('slider', [[2000, .1], [5000, .1], [0.0, 1000, 10000]]);
+
+			var p21 = board2.create('point',
+					[function(x){ return a21.Value() },function(x){ return Math.pow( Math.pow(0.5,1/5730),a21.Value() )}],{name:'$(x_0,y_0)$'}
+					);
+			
+			var p22 = board2.create('point',
+					[0 ,function(x){ return Math.pow( Math.pow(0.5,1/5730),a21.Value() )}],{name:'$y_0$'}
+					);
+			
+			var p23 = board2.create('point',
+					[function(x){ return a21.Value() } ,0],{name:'$x_0$'}
+					);
+
+			var li21 = board2.create('line',[[function(){return a21.Value()},0 ],p21], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+			
+			var li22 = board2.create('line',[[0,function(){return Math.pow(a,a21.Value())}],p21], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+					
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-5, 15 , 5, -1.5], axis:true,showCopyright: false,});
+			
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -8, 8],{name:'$y=a^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			
+			var a31 = board3.create('slider', [[-3, 2.1], [-1, 2.1], [-5.0, 0, 5]]);
+
+			var p31 = board3.create('point',
+					[function(x){ return a31.Value() },function(x){ return Math.pow( 2,a31.Value() )}],{name:'$(x_0,y_0)$'}
+					);
+			
+			var p32 = board3.create('point',
+					[0 ,function(x){ return Math.pow( 2,a31.Value() )}],{name:'$y_0$'}
+					);
+			
+			var p33 = board3.create('point',
+					[function(x){ return a31.Value() } ,0],{name:'$x_0$'}
+					);
+
+			var li31 = board3.create('line',[p32,p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li32 = board3.create('line',[p33,p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+			
+			
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-1, 4.5 , 16.5, -2.5], axis:true,showCopyright: false,});
+			
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_2x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var p41 = board4.create('point',
+					[0.25,-2],{name:''}
+					);
+			
+			var p42 = board4.create('point',
+					[0.5,-1],{name:''}
+					);
+			var p43 = board4.create('point',
+					[1,0],{name:''}
+					);
+			var p44 = board4.create('point',
+					[2,1],{name:''}
+					);
+			var p45 = board4.create('point',
+					[4,2],{name:''}
+					);
+			var p46 = board4.create('point',
+					[8,3],{name:''}
+					);
+			var p47 = board4.create('point',
+					[16,4],{name:''}
+					);	
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-1, 8.5 , 4.5, -8.5], axis:true,showCopyright: false,});
+			
+			var graph51 = board5.create('functiongraph',
+					[function(x){ return Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_2x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var graph52 = board5.create('functiongraph',
+					[function(x){ return -Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_{0.5}x $',strokeColor:'red',withLabel:true,label:{position:'top', offsets:[10,10]} }
+					);
+			
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-1, 4.5 , 4.5, -4.5], axis:true,showCopyright: false,});
+			
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_2x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var graph62 = board6.create('functiongraph',
+					[function(x){ return -Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_{\\frac{1}{2}}x $',strokeColor:'red',withLabel:true,label:{position:'top', offset:[10,20]} }
+					);
+
+			var graph63 = board6.create('functiongraph',
+					[function(x){ return Math.log2(x)/Math.log2(3) ;}, 0, 32],{name:'$y=\\text{log}_3x $',withLabel:true,label:{position:'top', offset:[0,10]}}
+					);
+
+			var graph64 = board6.create('functiongraph',
+					[function(x){ return Math.log2(x)/Math.log2(4);}, 0, 32],{name:'$y=\\text{log}_4x $',withLabel:true,label:{position:'top', offset:[0,-5]}}
+					);
+			
+			var graph65 = board6.create('functiongraph',
+					[function(x){ return -Math.log2(x)/Math.log2(3) ;}, 0, 32],{name:'$y=\\text{log}_{\\frac{1}{3}}x $',strokeColor:'red',withLabel:true,label:{position:'bottom', offset:[0,0]}}
+					);
+
+			var graph66 = board6.create('functiongraph',
+					[function(x){ return -Math.log2(x)/Math.log2(4);}, 0, 32],{name:'$y=\\text{log}_{\\frac{1}{4}}x $',strokeColor:'red',withLabel:true,label:{offset:[-70,-80]}}
+					);
+						
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-1, 4.5 , 4.5, -4.5], axis:true,showCopyright: false,});
+			
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_ax $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var graph72 = board7.create('functiongraph',
+					[function(x){ return -Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_{b}x $',strokeColor:'red',withLabel:true,label:{position:'top', offset:[10,20]} }
+					);
+
+			
+
+			var graph74 = board7.create('functiongraph',
+					[function(x){ return Math.log2(x)/Math.log2(4);}, 0, 32],{name:'$y=\\text{log}_cx $',withLabel:true,label:{position:'top', offset:[0,-5]}}
+					);
+			
+			
+
+			var graph76 = board7.create('functiongraph',
+					[function(x){ return -Math.log2(x)/Math.log2(4);}, 0, 32],{name:'$y=\\text{log}_{d}x $',strokeColor:'red',withLabel:true,label:{offset:[-60,-100]}}
+					);
+
+			var li71 = board7.create('line',[[0,1],[1,1]], 
+					{straightFirst:true, straightLast:true, strokeWidth:2, dash:1 });
+
+			var p71 = board7.create('intersection', [graph71, li71, 0],{name:'$(a,1)$'});
+
+			var p72 = board7.create('intersection', [graph72, li71, 0],{name:'$(b,1)$'});
+
+			var p73 = board7.create('intersection', [graph74, li71, 0],{name:'$(c,1)$'});
+
+			var p76 = board7.create('intersection', [graph76, li71, 0],{name:''});
+
+
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board8 = JXG.JSXGraph.initBoard('box8', {boundingbox: [-1, 2 , 4, -8], axis:true,showCopyright: false,});
+
+			var a81 = board8.create('slider', [[2, -1.5], [4, -1.5], [-2.0, 0, 2.0]]);
+			
+			var graph81 = board8.create('functiongraph',
+					[function(x){ return Math.log2((x-a81.Value()));}, function(){return a81.Value()} ,10 ],{name:'$y=\\text{log}_2(x-a) $',withLabel:true,label:{position:'bottom'}}
+					);
+			var p81 =board8.create('point',[function(x){return a81.Value()+1},0]);
+			
+	
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board9 = JXG.JSXGraph.initBoard('box9', {boundingbox: [-4.5, 16.5 , 16.5, -4.5], axis:true,showCopyright: false,});
+			
+			var graph91 = board9.create('functiongraph',
+					[function(x){ return Math.log2(x);}, 0, 32],{name:'$y=\\text{log}_2x $',withLabel:true,label:{position:'top', offset:[10,-10]}}
+					);
+			var graph92 = board9.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -4, 4],{name:'$y=2^x $',withLabel:true,label:{position:'top', offset:[10,-10]}}
+					);
+			
+			var li91 = board9.create('line',[[0,0],[1,1]], 
+					{straightFirst:true, straightLast:true, strokeWidth:2, dash:1,strokeColor:'red' });
+			
+			var a91 = board9.create('slider', [[2, -1.5], [6, -1.5], [-4.0, 0, 4.0]]);
+
+			var p91 =board9.create('point',[function(x){return a91.Value()}, function(x){return Math.pow(2,a91.Value())} ] ,{name:'$(x_0,y_0)$'});
+
+			var p92 =board9.create('point',[ function(x){return Math.pow(2,a91.Value())} ,function(x){return a91.Value()}],{name:'$(y_0,x_0)$'} );
+			
+			var li92 = board9.create('line',[p91,p92], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1,strokeColor:'red' });	
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board10 = JXG.JSXGraph.initBoard('box10', {boundingbox: [-1, 16.5 , 4.5, -1.0], axis:true,showCopyright: false,});
+			
+			var graph101 = board10.create('functiongraph',
+					[function(x){ return 2*x ;}, 0, 100],{name:'$y=2x $',withLabel:true,label:{position:'bottom', offset:[-20,-30]}}
+					);
+			var graph102 = board10.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, 0, 100],{name:'$y=2^x $',strokeColor:'red',withLabel:true,label:{position:'bottom', offset:[10,10]}}
+					);
+			
+			var p101 = board10.create('intersection', [graph101, graph102, 0],{name:'$(1,2)$'});
+
+			var p102 = board10.create('intersection', [graph101, graph102, 1],{name:'$(2,4) $'});
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board11 = JXG.JSXGraph.initBoard('box11', {boundingbox: [-1, 6.5 , 60, -1.0], axis:true,showCopyright: false,});
+			
+			var graph111 = board11.create('functiongraph',
+					[function(x){ return 0.1*x ;}, 0, 100],{name:'$y=\\frac{1}{10}x $',withLabel:true,label:{position:'bottom', offset:[100,120]}}
+					);
+			var graph112 = board11.create('functiongraph',
+					[function(x){ return Math.log10(x);}, 0, 100],{name:'$y=\\text{lg} x $',strokeColor:'red',withLabel:true,label:{position:'bottom', offset:[10,10]}}
+					);
+			
+			var p111 = board11.create('intersection', [graph111, graph112, 0],{name:''});
+
+			var p112 = board11.create('intersection', [graph111, graph112, 1],{name:''});
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board12 = JXG.JSXGraph.initBoard('box12', {boundingbox: [-1, 60.5 , 60, -1.0], axis:true,showCopyright: false,});
+			
+			var graph121 = board12.create('functiongraph',
+					[function(x){ return 2*x ;}, 0, 100],{name:'$y=2x $',withLabel:true,label:{position:'bottom', offset:[100,120]}}
+					);
+			var graph122 = board12.create('functiongraph',
+					[function(x){ return Math.log10(x);}, 0, 100],{name:'$y=\\text{lg} x $',strokeColor:'red',withLabel:true,label:{position:'bottom', offset:[10,10]}}
+					);
+			
+			var graph123 = board12.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, 0, 100],{name:'$y=2^x $',strokeColor:'purple',withLabel:true,label:{position:'bottom', offset:[-30,10]}}
+					);
+			
+			var graph124 = board12.create('functiongraph',
+					[function(x){ return x*x;}, 0, 100],{name:'$y=x^2 $',strokeColor:'green',withLabel:true,label:{position:'bottom', offset:[30,10]}}
+					);
+		</script>
+
+
+
+		
+
+
+		
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

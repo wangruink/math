@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>集合的概念与表示</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第一章**
+
+					## **集合**
+
+					### **$\S 1.1 $  集合的概念与表示**
+
+					### 王瑞
+
+					### 合肥六中
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### $\S 1.1 $ **集合的概念与表示**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **发明人**
+
+					* **康托尔 (Cantor)** ，出生于俄国的德国数学家，创立了现代集合论。
+
+					+ **戴德金 (Dedekind)** ，德国数学家，现代集合论的先驱，最重要的贡献是通过戴德金分割概念定义实数。
+ 
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **发明人**
+
+					现代集合论的研究开始于 1870 年代由康托尔及理察·戴德金提出的朴素集合论。一般数学主题的出现及发展都是由多名研究者的互动中产生的。
+
+					1873 年 12 月 7 日，康托尔写信给戴德金，说他已能成功地证明实数的“集体”是不可数的了，这一天也因此成为了集合论的诞生日。1874 年，康托尔将他的发现系统性的整理成论文并发表。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **例子**
+
+					1. 1 ∼ 10 之间的所有偶数
+					2. 合肥六中 2026 年入学的全体高一学生
+					3. 所有的正方形
+					4. 到直线 $l$ 距离等于定长 $d$ 的所有点
+					5. 方程 $x^2 - 3x + 2 = 0$ 的所有实数根
+					6. 地球上的四大洋
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的概念**
+
+					一般地，我们把研究对象统称为**元素**（element），把一些元素组成的总体叫做**集合**（set）（简称为集）。
+
+					
+					</textarea>
+				</section>
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的概念**
+
+					一般地，我们把研究对象统称为**元素**（element），把一些元素组成的总体叫做**集合**（set）（简称为集）。
+
+					集合里的元素可以是任何类型的数学对象：数字、函数、空间中的点、线、面，甚至是其他集合。
+
+					
+					</textarea>
+				</section>
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的概念**
+
+					集合的性质
+
+					+ 给定的集合，元素必须是**确定的**。反过来说，某个概念不能确定元素则不构成集合。
+					+ 一个给定集合中的元素是**互不相同**的，也就是说，集合中的元素是不重复出现的。
+					+ 只要构成两个集合的元素是一样的，我们就称这两个集合是**相等的**。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="two">
+					<textarea data-template>
+					### **集合的符号表示**
+
+					我们通常用大写拉丁字母 $A, B, C \cdots$ 表示集合，
+					
+					用小写拉丁字母 $a, b, c \cdots$ 表示集合中的元素。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="two">
+					<textarea data-template>
+					### **集合的符号表示**
+
+
+					如果 $a$ 是集合 $A$ 的元素，就说 $a$ **属于**（belong to）集合 $A$，记作 $a \in A$；
+					
+					如果 $a$ 不是集合 $A$ 中的元素，就说 $a$ **不属于**（not belong to）集合 $A$，记作 $a \notin A$。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **一些常用数集及其记法**
+
+					| 名称 | 记法 |
+					| --- | --- |
+					| 非负整数集（自然数集） | $\mathbb{N}$ |
+					| 正整数集 | $\mathbb{N}^{*}$ 或 $\mathbb{N}_{+}$ |
+					| 整数集 | $\mathbb{Z}$ |
+					| 有理数集 | $\mathbb{Q}$ |
+					| 实数集 | $\mathbb{R}$ |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的表示方法 —— 列举法**
+
+					把集合的所有元素一一列举出来，并用花括号 “{}” 括起来表示集合的方法叫做**列举法**。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的表示方法 —— 列举法**
+
+					**例 1** 用列举法表示下列集合：
+
+					(1) 小于 10 的所有自然数组成的集合
+
+					(2) 方程 $x^2 = x$ 的所有实数根组成的集合
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **集合的表示方法 —— 列举法**
+
+					**例 1**  **解：**
+
+					(1) 设小于 10 的所有自然数组成的集合为 $A$，那么
+
+					$$A = \\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\\}$$
+
+					(2) 设方程 $x^2 = x$ 的所有实数根组成的集合为 $B$，那么
+
+					$$B = \\{0, 1\\}$$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex"  data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **集合的表示方法 —— 描述法**
+
+					一般地，设 $A$ 是一个集合，我们把集合 $A$ 中所有具有共同特征 $P(x)$ 的元素 $x$ 所组成的集合表示为
+
+					$$\\{x \in A \mid P(x)\\}$$
+
+					这种表示集合的方法称为**描述法**。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex"  data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **集合的表示方法 —— 描述法**
+
+					$$\\{x \in A \mid P(x)\\}$$
+
+
+					> 你能用这样的方法表示奇数、偶数集及有理数集吗？
+					</textarea>
+				</section>
+
+				
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **用描述法表示数集**
+
+					**偶数集：**
+
+					$$\\{x \in \mathbb{Z} \mid x = 2k,\ k \in \mathbb{Z}\\}$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **用描述法表示数集**
+
+					**奇数集：**
+
+					$$\\{x \in \mathbb{Z} \mid x = 2k + 1,\ k \in \mathbb{Z}\\}$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **用描述法表示数集**
+
+					**有理数集 $\mathbb{Q}$：**
+
+					$$\\{x \in \mathbb{R} \mid x = \frac{q}{p},\ p, q \in \mathbb{Z},\ p \neq 0\\}$$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **课堂练习**
+
+					用适当的方法表示下列集合：
+
+					（1）由方程 $x^2 - 9 = 0$ 的所有实数根组成的集合
+
+					（2）一次函数 $y = x + 3$ 与 $y = -2x + 6$ 图象的交点组成的集合
+
+					（3）不等式 $4x - 5 \le 3$ 的解集
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾**
+
+					+ 集合中的元素具有哪些性质？
+					+ 元素与集合有哪些关系？
+					+ 描述集合有哪些方法？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **集合论发明的背景**
+
+					**“无穷”之间也有大小之分么？**
+
+					几个经典的命题：
+
+					+ 偶数和整数一样多么？
+					+ 整数和有理数一样多么？
+					+ 有理数和实数一样多么？
+					</textarea>
+				</section>
+
+				
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

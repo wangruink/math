@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>函数的概念与性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第三章**	
+					## **函数的基本性质**
+					### $\S 3.2.2$ **函数的奇偶性** 
+					王瑞
+					
+					长丰一中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						“对称美”是自古以来中国的一种审美形式，实际生活中、传统文化里、自然界中对称的例子比比皆是，体现着数学的“对称美”。
+
+						<div class="main">
+							<img src="3-2-2.png" alt="对称1" width="400px"/>
+						</div>
+				
+				</section>
+
+
+				
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						<div class="main">
+							<img src="3-1-1.svg" alt="对称1" width="400px"/>
+						</div>
+
+						<div class="main">
+							<img src="3-2-1.png" alt="对称1" width="400px"/>
+						</div>
+
+						这种“对称美”也体现在我们的函数图象中，反映着函数的重要性质。
+
+				
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						<div class="main">
+							<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						<div class="main">
+							<div id="box2" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+						观察上述两个函数图象，有什么共同的特征？
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						<div class="main">
+							<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						<div class="main">
+							<div id="box4" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+						观察上述两个函数图象，有什么共同的特征？
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						观察$f(x)=x^3$的旋转
+
+						<div class="main">
+							<div id="cubic1" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>对称性</strong></h3>
+
+						观察$f(x)=\frac{1}{x} $的旋转
+
+						<div class="main">
+							<div id="rotate2" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+
+					</section>
+	
+				</section>
+
+				<section  data-transition="convex" >
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>偶函数与奇函数</strong></h3>
+
+						<ul>
+							<li>
+								一般地，设函数$f(x)$的定义域为$D$，如果$$\forall x\in D,-x\in D,f(x)=f(-x) $$ 那么函数$f(x)$就叫做偶函数
+							</li>
+							<li>
+								一般地，设函数$f(x)$的定义域为$D$，如果$$\forall x\in D,-x\in D,f(x)=-f(-x) $$ 那么函数$f(x)$就叫做奇函数
+							</li>
+						</ul>
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>偶函数与奇函数</strong></h3>
+
+						<ul>
+							<li>
+								如果一个函数是偶函数，则这个函数的图象是以$y$轴为对称轴的轴对称图形；反之，如果一个函数的图象关于$y$轴对称，则这个函数是偶函数。
+							</li>
+							<li>
+								如果一个函数是奇函数，则这个函数的图象是以坐标原点为对称中心的中心对称图形；反之，如果一个函数的图象关于坐标原点成中心对称图形，则这个函数是奇函数。
+							</li>
+						</ul>
+
+						<strong>思考：</strong>是否存在既是偶函数又是奇函数的函数？
+
+
+					</section>	
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>偶函数与奇函数</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">分类</th>
+									<th style="text-align: center">前提</th>
+									<th style="text-align: center">定义</th>
+									<th style="text-align: center">图象特点</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">偶函数</td>
+									<td style="text-align: center">定义域$I$关于原点对称</td>
+									<td style="text-align: center">$f(x)=f(-x) $ </td>
+									<td style="text-align: center">关于$y$轴对称 </td>
+								</tr>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">奇函数</td>
+									<td style="text-align: center">定义域$I$关于原点对称</td>
+									<td style="text-align: center">$f(x)=-f(-x) $ </td>
+									<td style="text-align: center">关于原点对称 </td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>	
+
+
+
+				</section>	
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>偶函数与奇函数</strong></h3>
+
+						<ul>
+							<li>
+								具有奇偶性的函数的定义域关于原点对称。
+							</li>
+							<li>
+								不能用特殊值判断奇偶性。
+							</li>
+							<li>
+								已知奇偶性可代特殊值求参数。
+							</li>
+							<li>
+								若$f(x)$为奇函数且在$x=0$有定义，则必有$f(0)=0$。
+							</li>
+						</ul>
+
+				</section>	
+
+			
+				</section>	
+
+
+				<section data-auto-animate="convex">
+					<section data-transition="convex" data-auto-animate>
+						<h3><strong>奇偶性的应用</strong></h3>
+						判断下列函数的奇偶性：
+						<br>
+
+						<ol>
+							<li>
+								$f(x)=x^4$
+
+							</li>
+							<li>
+								$f(x)=x^5$
+
+							</li>
+							<li>
+								$f(x)=x+\frac{1}{x}$
+							</li>
+							<li>
+								$f(x)=\frac{1}{x^2}$
+							</li>
+
+
+						</ol>
+	
+					</section>
+
+					<section data-transition="convex" data-auto-animate>
+						<h3><strong>奇偶性的应用</strong></h3>
+						判断下列函数的奇偶性：
+						<br>
+
+						<ol>
+							<li>
+								$f(x)=x^3+x$
+
+							</li>
+							<li>
+								$f(x)=\frac{2x^2+2}{x+1} $
+								
+							</li>
+							<li>
+								$f(x)=\sqrt{1-x^2}+\sqrt{x^2-1} $
+							</li>
+							<li>
+								$f(x)=\begin{cases}x+1 &x>0 \\
+								 -x+1 & x < 0
+								\end{cases} $
+							</li>
+						</ol>
+	
+					</section>
+
+					<section data-transition="convex" data-auto-animate="">
+						<h3><strong>奇偶性的应用</strong></h3>
+						如何判断奇偶性：
+						<br>
+
+						<div class="main">
+							<div id="container"></div>
+						</div>
+						
+	
+						
+	
+					</section>
+
+					<section data-transition="convex" data-auto-animate="">
+						<h3><strong>奇偶性的应用</strong></h3>
+						如何判断奇偶性：
+
+						<br>
+
+						<ol>
+							<li>
+								定义法
+							</li>
+							<li>
+								图像法
+							</li>
+							<li>
+								奇函数与偶函数的四则运算法则
+							</li>
+						</ol>
+
+					</section>
+
+					<section data-transition="convex" data-auto-animate="">
+						<h3><strong>奇偶性的应用</strong></h3>
+						奇函数与偶函数的四则运算法则
+
+						<br>
+						$f(x),g(x)$为偶函数
+						<br>
+
+						<ul>
+							<li>
+								$f(x)\pm g(x)$为偶函数
+							</li>
+							<li>
+								$f(x)g(x)$为偶函数
+							</li>
+							<li>
+								$g(x)\neq 0,\frac{f(x)}{g(x)}$为偶函数
+							</li>
+						</ul>
+						<br>
+						
+
+
+
+					</section>
+
+					<section data-transition="convex" data-auto-animate="">
+						<h3><strong>奇偶性的应用</strong></h3>
+						奇函数与偶函数的四则运算法则
+
+						<br>
+						
+						$f(x),g(x)$为奇函数
+						<br>
+						<ul>
+							<li>
+								$f(x)\pm g(x)$为奇函数
+							</li>
+							<li>
+								$f(x)g(x)$为偶函数
+							</li>
+							<li>
+								$g(x)\neq 0,\frac{f(x)}{g(x)}$为偶函数
+							</li>
+
+						</ul>
+
+					</section>
+
+					<section data-transition="convex" data-auto-animate="">
+						<h3><strong>奇偶性的应用</strong></h3>
+						奇函数与偶函数的四则运算法则
+
+						<br>
+						
+						$f(x)$为偶函数，$g(x)$为奇函数
+						<br>
+						<ul>
+							<li>
+								$f(x)g(x)$为奇函数
+							</li>
+							<li>
+								$g(x)\neq 0,\frac{f(x)}{g(x)}$为奇函数
+							</li>
+
+						</ul>
+
+					</section>
+		
+
+				</section>
+
+				<section data-transition="convex">
+					<section data-transition="convex" data-auto-animate data-auto-animate-id="3">
+						<h3><strong>练习</strong></h3>
+				
+
+				
+
+
+
+
+					</section>
+
+					<section data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				
+
+				
+
+
+
+
+					</section>
+
+					<section data-transition="convex">
+				
+
+				
+
+
+
+
+					</section>
+				
+
+				
+
+
+
+
+				</section>
+
+
+
+
+
+
+			
+
+
+				
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-6, 25, 6, -1], axis:true,showCopyright: false,});
+			var graph1 = board1.create('functiongraph',
+                       [function(x){ return x*x;}, -5, 5],{name:'$f(x)=x^2$',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+                    );
+			var a11 = board1.create('slider', [[-5, 0.5], [-3, 0.5], [-5.5, -1, 5.5]]);
+			var p11 = board1.create('point', [function(){return a11.Value()},function(){return a11.Value()*a11.Value() }],{name: '$(x, f(x))$'});
+			var p12 = board1.create('point', [function(){return -a11.Value()},function(){return a11.Value()*a11.Value() }],{name: '$(-x, f(-x))$'});
+			var li11 = board1.create('line',[p11,[function(){return a11.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li12 = board1.create('line',[p12,[function(){return -a11.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li13 = board1.create('line',[p11,[0,function(){return a11.Value()*a11.Value()}]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li14 = board1.create('line',[p12,[0,function(){return a11.Value()*a11.Value()}]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-5, 5, 5, -5], axis:true,showCopyright: false,});
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return x+2  ;}, -5, 0]
+					);
+			var graph22 = board2.create('functiongraph',
+					[function(x){ return -x+2  ;}, 0, 5],{name:'$f(x) =2-|x|$',withLabel:true,label:{position:'left', offsets:[0,0]}}
+					);
+			var a21 = board2.create('slider', [[-5, 0.5], [-3, 0.5], [0, 1, 5.0]]);
+			var p21 = board2.create('point', [function(){return a21.Value()},function(){return -a21.Value()+2 }],{name: '$(x, f(x))$'});
+			var p22 = board2.create('point', [function(){return -a21.Value()},function(){return -a21.Value()+2 }],{name: '$(-x, f(-x))$'});
+			var li21 = board2.create('line',[p21,[function(){return a21.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li22 = board2.create('line',[p22,[function(){return -a21.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li23 = board2.create('line',[p21,[0,function(){return p21.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li24 = board2.create('line',[p22,[0,function(){return p21.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-5, 100, 5, -100], axis:true,showCopyright: false,});
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return x*x*x  ;}, -5, 5],{name:'$f(x) =x^3$',withLabel:true,label:{position:'bottom', offsets:[0,0]}}
+					);
+			var a31 = board3.create('slider', [[-5, 3.5], [-3, 3.5], [0, 1, 5.0]]);
+			var p31 = board3.create('point', [function(){return a31.Value()},function(){return a31.Value()**3 }],{name: '$(x, f(x))$'});
+			var p32 = board3.create('point', [function(){return -a31.Value()},function(){return -(a31.Value()**3) }],{name: '$(-x, f(-x))$'});
+			var li31 = board3.create('line',[p31,[function(){return a31.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li32 = board3.create('line',[p32,[function(){return -a31.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li33 = board3.create('line',[p31,[0,function(){return p31.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li34 = board3.create('line',[p32,[0,function(){return p32.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2, 2, 2, -2], axis:true,showCopyright: false,});
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return 1/x ;}, -5, 5],{name:'$f(x) =\\frac{1}{x} $',withLabel:true,label:{position:'bottom', offsets:[0,0]}}
+					);
+			var a41 = board4.create('slider', [[-2, 0.5], [-1, .5], [0, 1, 2.0]]);
+			var p41 = board4.create('point', [function(){return a41.Value()},function(){return 1/a41.Value() }],{name: '$(x, f(x))$'});
+			var p42 = board4.create('point', [function(){return -a41.Value()},function(){return -1/(a41.Value()) }],{name: '$(-x, f(-x))$'});
+			var li41 = board4.create('line',[p41,[function(){return a41.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li42 = board4.create('line',[p42,[function(){return -a41.Value()},0]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li43 = board4.create('line',[p41,[0,function(){return p41.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li44 = board4.create('line',[p42,[0,function(){return p42.Y() }]], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+		</script>
+
+		<script type="text/javascript">
+			// Create board template
+			JXG.Options.text.useKatex = true;
+			(function() {
+				var board = JXG.JSXGraph.initBoard('cubic1', {
+					boundingbox: [-3, 4, 3, -4],
+					axis: true,
+					showCopyright: false,
+					showNavigation: false
+				});
+			
+				// Create function plot
+				var f1 = board.create('functiongraph', [function(x) {
+					return x * x * x;
+				}, -3, 3], {
+					strokeColor: '#EF233C'
+				});
+				var f2 = board.create('functiongraph', [function(x) {
+					return x * x * x;
+				}, -3, 0]);
+			
+				// Label point of inflection/rotation
+				var ip = board.create('point', [0, 0], {
+					fixed: true,
+				});
+			
+				// Create slider for rotation of functiongraph
+				var r = board.create('slider', [
+					[0.5, -2],
+					[2, -2],
+					[0, 0, 180]
+				], {
+					name: '旋转角度',
+					snapWidth: 10,
+					highline: {
+						strokeColor: '#ED7D31'
+					},
+					label: {
+						strokeColor: '#ED7D31'
+					},
+					fillColor: '#ED7D31',
+					highlightStrokeColor: '#ED7D31'
+				});
+			
+				// Rotate functiongraph
+				var rot = board.create('transform', [function() {
+					return r.Value() * Math.PI / 180
+				}, ip], {
+					type: 'rotate'
+				});
+				var rotatedf2 = board.create('curve', [f2, rot], {
+					strokeWidth: 2,
+					strokeColor: '#ED7D31',
+					fixed: false
+				});
+				rot.bindto(f2);
+			
+				// Inset equation text
+				var text = board.create('text', [-4.5, -2.5, function() {
+					var equationText = 'y=x^3';
+			
+					return '$$' + equationText + '$$';
+				}], {
+					fontSize: 14
+				});
+			})();
+		</script>
+
+
+
+		<script type="text/javascript">
+			// Create board template
+			JXG.Options.text.useKatex = true;
+			(function() {
+				var board5 = JXG.JSXGraph.initBoard('rotate2', {
+					boundingbox: [-3, 4, 3, -4],
+					axis: true,
+					showCopyright: false,
+					showNavigation: false
+				});
+			
+				// Create function plot
+				var f51 = board5.create('functiongraph', [function(x) {
+					return  1/x;
+				}, -4, 4], {
+					strokeColor: '#EF233C'
+				});
+				var f52 = board5.create('functiongraph', [function(x) {
+					return 1/x;
+				}, -4, 0]);
+			
+				// Label point of inflection/rotation
+				var ip5 = board5.create('point', [0, 0], {
+					fixed: true,
+				});
+			
+				// Create slider for rotation of functiongraph
+				var r5 = board5.create('slider', [
+					[0.5, -2],
+					[2, -2],
+					[0, 0, 180]
+				], {
+					name: '旋转角度',
+					snapWidth: 10,
+					highline: {
+						strokeColor: '#ED7D31'
+					},
+					label: {
+						strokeColor: '#ED7D31'
+					},
+					fillColor: '#ED7D31',
+					highlightStrokeColor: '#ED7D31'
+				});
+			
+				// Rotate functiongraph
+				var rot5 = board5.create('transform', [function() {
+					return r5.Value() * Math.PI / 180
+				}, ip5], {
+					type: 'rotate'
+				});
+				var rotatedf52 = board5.create('curve', [f52, rot5], {
+					strokeWidth: 2,
+					strokeColor: '#ED7D31',
+					fixed: false
+				});
+				rot5.bindto(f52);
+			
+				// Inset equation text
+				var text5 = board5.create('text', [-1, -1, function() {
+					return '$f(x)=1x $' ;
+				}], {
+					fontSize: 14
+				});
+
+			})();
+		</script>
+
+
+
+		<script>
+			// 引入继承节点，引入 core 包后，会自动挂载 window.Core 
+			// const { RectNode, RectNodeModel } = Core;
+			
+			// 准备图数据
+		
+			const data = {
+			// 节点
+			nodes: [
+				{
+				id: '1',
+				type: 'rect',
+				x: 350,
+				y: 100,
+				text: '求函数的\n定义域',
+				},
+				{
+				id: '2',
+				type: 'rect',
+				x: 350,
+				y: 225,
+				text: '判断定义域是否\n 关于原点对称',
+				},
+				{
+				id: '3',
+				type: 'rect',
+				x: 550,
+				y: 250,
+				text: 'f(x)不是偶函数\n 也不是奇函数 ',
+				},
+				{
+				id: '3.5',
+				type: 'rect',
+				x: 350,
+				y: 350,
+				text: '判断f(x)与\n f(-x)的关系',
+				},
+				{
+				id: '4',
+				type: 'rect',
+				x: 150,
+				y: 425,
+				text: 'f(x)=f(-x)\n 偶函数 ',
+				},
+				{
+				id: '5',
+				type: 'rect',
+				x: 550,
+				y: 425,
+				text: 'f(x)=-f(-x)\n 奇函数 ',
+				},
+				{
+				id: '6',
+				type: 'rect',
+				x: 350,
+				y: 455,
+				text: 'f(x)=-f(-x)=-f(x) \n f(x)=0 ',
+				},
+			],
+			// 边
+			edges: [
+				{
+				type: 'polyline',
+				sourceNodeId: '1',
+				targetNodeId: '2',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '2',
+				targetNodeId: '3',
+				},
+				{
+				type: 'polyline',
+				sourceNodeId: '2',
+				targetNodeId: '3.5',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '4',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '5',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '3.5',
+				targetNodeId: '3',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '5',
+				targetNodeId: '6',
+				},
+				{
+				type: 'bezier',
+				sourceNodeId: '4',
+				targetNodeId: '6',
+				},
+			],
+			}
+			
+			// 创建画布实例，也可以 new Core.LogicFLow
+			const lf = new Core.default({
+			container: document.querySelector('#container'),
+			width: 700,
+			height: 500,
+			grid: false,
+			background: {
+				     backgroundColor: '#F0F1EB', 
+					},
+			});
+
+			lf.setTheme({
+				rect: {
+					fill: "#F0F1EB",
+					stroke: "#000000",
+					strokeWidth: 2,
+				},
+			});
+
+			lf.setTheme({
+				nodeText: {
+					color: "#000000",
+					overflowMode: "default",
+					lineHeight: 1.2,
+					fontSize: 14,
+				},
+				});
+
+
+			lf.setTheme({
+				text: {
+					color: "#000000",
+					fontSize: 24 ,
+					background: {
+					fill: "transparent",
+					},
+				},
+				});
+
+
+			
+			// 渲染画布实例
+			lf.render(data)
+			</script>
+
+
+
+
+		
+  
+	
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

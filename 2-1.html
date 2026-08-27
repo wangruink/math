@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>等式性质与不等式性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第二章**
+
+					## **一元二次函数、方程和不等式**
+
+					### **$\S2.1$ 等式性质与不等式性质**
+
+					### 王瑞
+
+					### 合肥六中
+
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.1.1 相等关系与不等关系**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					在现实世界和日常生活中，大量存在着相等关系和不等关系，例如多与少、大与小、长与短、高与矮、远与近、快与慢、涨与跌、轻与重，不超过或不少于等。类似于这样的问题，反映在数量关系上，就是相等与不等。相等用**等式**表示，不等用**不等式**表示。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					你能用不等式或不等式组表示下列问题中的不等关系吗？
+
+					1. 某段路限速 40km/h
+					2. 某品牌酸奶的质量检查规定，酸奶中脂肪的含量 $f$ 应不少于 2.5%，蛋白质含量 $p$ 应不少于 2.3%
+					3. 三角形两边之和大于第三边、两边之差小于第三边
+					4. 连接直线外一点与直线上各点的所有线段中，垂线段最短
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **应用**
+
+					1. 某公司准备对一项目进行投资，提出两个投资方案：方案 $A$ 为一次性投资 300 万；方案 $B$ 为第一年投资 80 万，以后每年投资 20 万。如何用不等式表示“经过 $n$ 年之后，方案 $B$ 的投入不少于方案 $A$ 的投入”？
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **应用**
+
+
+					2. 用一段长为 30m 的篱笆围成一个一边靠墙的矩形菜园，墙长 18m，要求菜园的面积不小于 $96m^2$，靠墙的一边长为 $xm$。试用不等式（组）表示其中的不等关系。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **应用**
+
+					3. 某种杂志原以每本 2.5 元的价格销售，可以售出 8 万本。据市场调查，杂志的单价每提高 0.1 元，销售量就可能减少 2000 本。如何定价才能使提价后的销售总收入不低于 20 万元？
+					</textarea>
+				</section>
+
+				<section data-transition="convex">
+					<h3><strong>不等式的性质</strong></h3>
+
+					<p style="font-size:0.8em;">由于数轴上的点与实数一一对应，所以可以利用数轴上点的位置关系来规定实数的大小关系：如图，设 $a, b$ 是两个实数，它们在数轴上所对应的点分别是 $A, B$。</p>
+
+					<p style="font-size:0.8em;">当点 $A$ 在点 $B$ 的左边时，$a < b$：</p>
+
+					<svg viewBox="0 0 300 60" width="300" height="60">
+						<line x1="15" y1="30" x2="285" y2="30" stroke="#333" stroke-width="2"/>
+						<polygon points="285,30 276,24 276,36" fill="#333"/>
+						<circle cx="90" cy="30" r="4" fill="#333"/>
+						<text x="80" y="52" font-size="16" text-anchor="middle" font-family="serif">A</text>
+						<text x="80" y="18" font-size="16" text-anchor="middle" font-family="serif">a</text>
+						<circle cx="205" cy="30" r="4" fill="#333"/>
+						<text x="195" y="52" font-size="16" text-anchor="middle" font-family="serif">B</text>
+						<text x="195" y="18" font-size="16" text-anchor="middle" font-family="serif">b</text>
+					</svg>
+
+					<p style="font-size:0.8em;">当点 $A$ 在点 $B$ 右边时，$a > b$：</p>
+
+					<svg viewBox="0 0 300 60" width="300" height="60">
+						<line x1="15" y1="30" x2="285" y2="30" stroke="#333" stroke-width="2"/>
+						<polygon points="285,30 276,24 276,36" fill="#333"/>
+						<circle cx="205" cy="30" r="4" fill="#333"/>
+						<text x="195" y="52" font-size="16" text-anchor="middle" font-family="serif">A</text>
+						<text x="195" y="18" font-size="16" text-anchor="middle" font-family="serif">a</text>
+						<circle cx="90" cy="30" r="4" fill="#333"/>
+						<text x="80" y="52" font-size="16" text-anchor="middle" font-family="serif">B</text>
+						<text x="80" y="18" font-size="16" text-anchor="middle" font-family="serif">b</text>
+					</svg>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **不等式的性质**
+
+					关于实数 $a, b$ 大小的比较，有下列基本事实：
+
+					如果 $a - b$ 是正数，那么 $a > b$；
+					
+					如果 $a - b$ 等于 0，那么 $a = b$；
+					
+					如果 $a - b$ 是负数，那么 $a < b$。
+					
+					反过来也对。
+
+				
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **不等式的性质**
+
+					这个基本事实可以表示为：
+
+					$$a > b \Leftrightarrow a - b > 0$$
+
+					$$a = b \Leftrightarrow a - b = 0$$
+
+					$$a < b \Leftrightarrow a - b < 0$$
+
+					要比较两个实数的大小，
+					
+					可以转化为比较它们的**差与 0 的大小**。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **课堂练习**
+
+					1. 比较下列各组中两个代数式的大小：
+
+						- $(x + 2)(x + 3)$ 与 $(x + 1)(x + 4)$
+
+						- $2x^2 + 5x + 3$ 与 $x^2 + 4x + 2$
+
+						- $x^2 + y^2 + 1$ 与 $2(x + y - 1)$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **课堂练习**
+
+				
+
+					2. 已知 $a > 0, b > 0$，求证 $a^3 + b^3 > a^2 b + ab^2$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **课堂练习**
+
+
+					3. 证明：圆的面积大于与它具有相同周长的正方形的面积。
+					</textarea>
+				</section>
+
+			
+
+				<section data-transition="convex">
+					<h3><strong>探索</strong></h3>
+
+					<p style="font-size:0.8em;">下图是 2002 年在北京召开的第 24 届国际数学家大会的会标：</p>
+
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="300" height="300">
+						<defs>
+							<linearGradient id="blade-top" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="#c81a20" />
+							<stop offset="25%" stop-color="#d6292b" />
+							<stop offset="55%" stop-color="#df504d" />
+							<stop offset="85%" stop-color="#ee7c79" />
+							<stop offset="100%" stop-color="#f89895" />
+							</linearGradient>
+							<linearGradient id="blade-right" x1="0%" y1="0%" x2="0%" y2="100%">
+							<stop offset="0%" stop-color="#c81a20" />
+							<stop offset="25%" stop-color="#d6292b" />
+							<stop offset="55%" stop-color="#df504d" />
+							<stop offset="85%" stop-color="#ee7c79" />
+							<stop offset="100%" stop-color="#f89895" />
+							</linearGradient>
+							<linearGradient id="blade-bottom" x1="100%" y1="0%" x2="0%" y2="0%">
+							<stop offset="0%" stop-color="#c81a20" />
+							<stop offset="25%" stop-color="#d6292b" />
+							<stop offset="55%" stop-color="#df504d" />
+							<stop offset="85%" stop-color="#ee7c79" />
+							<stop offset="100%" stop-color="#f89895" />
+							</linearGradient>
+							<linearGradient id="blade-left" x1="0%" y1="100%" x2="0%" y2="0%">
+							<stop offset="0%" stop-color="#c81a20" />
+							<stop offset="25%" stop-color="#d6292b" />
+							<stop offset="55%" stop-color="#df504d" />
+							<stop offset="85%" stop-color="#ee7c79" />
+							<stop offset="100%" stop-color="#f89895" />
+							</linearGradient>
+						</defs>
+						<g id="logo-group">
+							<polygon points="210,50 210,210 450,210" fill="url(#blade-top)" />
+							<polygon points="450,210 290,210 290,450" fill="url(#blade-right)" />
+							<polygon points="290,450 290,290 50,290" fill="url(#blade-bottom)" />
+							<polygon points="50,290 210,290 210,50" fill="url(#blade-left)" />
+						</g>
+						</svg>
+
+					<p style="font-size:0.8em;">会标是根据中国古代数学家<b>赵爽</b>的弦图设计的，颜色的明暗使它看上去像一个风车，代表中国人民热情好客。</p>
+					<p style="font-size:0.8em;">你能在这个图中找出一些相等关系和不等关系吗？</p>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **重要不等式**
+
+					$$\forall a, b \in \mathbb{R},\ a^2 + b^2 \geqslant 2ab \quad (\text{当且仅当 } a = b \text{ 取等号})$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **重要不等式**
+
+					$$\forall a, b \in \mathbb{R},\ a^2 + b^2 \geqslant 2ab \quad (\text{当且仅当 } a = b \text{ 取等号})$$
+
+					**练习：**
+
+					1. $a^2 + b^2 = 4$，则 $ab$ 最大值是多少？
+					2. $\forall x \in \mathbb{R},\ x \neq 0$，$x^2 + \frac{4}{x^2}$ 最小值是多少？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾总结**
+
+					+ 从实际问题中抽象出不等关系，表示不等式。
+					+ 要比较（证明）两个实数的大小，可以转化为比较它们的差与 0 的大小。
+
+					$$a > b \Leftrightarrow a - b > 0$$
+
+					$$a = b \Leftrightarrow a - b = 0$$
+
+					$$a < b \Leftrightarrow a - b < 0$$
+					</textarea>
+				</section>
+
+				</section>
+
+				<section  data-transition="convex">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.1.2 等式性质与不等式性质**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **背景**
+
+					等式有以下基本性质：
+
+					+ 若 $a = b$，则 $b = a$
+					+ 若 $a = b, b = c$，则 $a = c$
+					+ 若 $a = b$，则 $a + c = b + c$
+					+ 若 $a = b$，则 $ac = bc$
+					+ 若 $a = b, c \neq 0$，则 $\frac{a}{c} = \frac{b}{c}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **不等式的性质**
+
+					思考：类比等式的基本性质，你能猜想不等式的基本性质，并加以证明吗？
+
+					1. **对称性**：$a > b \Leftrightarrow b < a$
+					2. **传递性**：若 $a > b, b > c$，则 $a > c$
+					3. **可加性**：$a > b \Leftrightarrow a + c > b + c$
+					4. **可乘性**：若 $a > b, c > 0$，则 $ac > bc$；若 $a > b, c < 0$，则 $ac < bc$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **不等式的性质**
+
+					思考：类比等式的基本性质，你能猜想不等式的基本性质，并加以证明吗？
+
+					3. **可加性**：$a > b \Leftrightarrow a + c > b + c$
+
+					由性质 3 可得，
+					
+					$a + b > c \Leftrightarrow a + b + (-b) > c - b \Leftrightarrow a > c - b$
+					
+					这表明，不等式中任何一项可以改变符号后移到不等号的另一边。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **不等式的性质**
+
+					思考：类比等式的基本性质，你能猜想不等式的基本性质，并加以证明吗？
+
+					5. **同向可加性**：若 $a > b, c > d$，则 $a + c > b + d$
+					6. **同向同正可乘性**：若 $a > b > 0, c > d > 0$，则 $ac > bd$
+					7. **同乘方性**：若 $a > b > 0$，则 $a^n > b^n$，$n \in \mathbb{N}^{*}$
+					8. **同开方性**：若 $a > b > 0$，则 $\sqrt[n]{a} > \sqrt[n]{b}\ (n \geqslant 2)$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **例题**
+
+					1. 已知 $a > b > 0, c < 0$，求证 $ac < bc$
+					2. 已知 $a > b > 0, c < d < 0$，求证 $\sqrt[3]{ad} < \sqrt[3]{bc}$
+					3. 已知 $1 < a < 4$，$2 < b < 8$，求 $a - b$，$ab$ 的取值范围
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **例题**
+
+					4. 已知 $1 \leqslant a - b \leqslant 2$ 且 $2 \leqslant a + b \leqslant 4$，
+					求 $4a - 2b$ 的取值范围
+					5. 若 $a < 0$ 且 $a \neq b$，试比较 $a$ 与 $2b - \frac{b^2}{a}$ 的大小
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **总结**
+
+					证明不等式的两种思路：
+
+					+ 由已知条件推理出结论，**综合法**
+					+ 由结论倒推出所需条件，**分析法**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **总结**
+
+					1. 用不等式（组）表示不等关系的步骤：
+
+						+ 审清题意，明确条件中的不等关系的个数
+						+ 适当设未知数表示变量
+						+ 用不等式表示每一个不等关系，并写成不等式组的形式
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **总结**
+
+
+					2. 用不等式表示不等关系的注意点：
+
+						+ 利用不等式表示不等关系时，应注意必须是具有相同性质，可以比较大小的两个量才可用，没有可比性的两个量之间不能用不等式来表示。
+						+ 在用不等式表示实际问题时，一定要注意单位统一。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **总结**
+
+					比较两个实数（代数式）大小的步骤：
+
+					+ **作差**：对要比较大小的两个实数（多项式）作差
+					+ **变形**：对差进行变形
+					+ **判断差的符号**：结合变形的结果及题设条件判断差的符号
+					+ **得出结论**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **总结**
+
+					+ 比较大小的方法（作差法）
+					+ 等式和不等式的基本性质
+					</textarea>
+				</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+	</html>

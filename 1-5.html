@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>全称量词与存在量词</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第一章**
+
+					## **逻辑用语**
+
+					### **$\S1.5$ 全称量词与存在量词**
+
+					### 王瑞
+
+					### 合肥六中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§1.5.1 全称量词与存在量词**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					思考下列语句是命题么？
+					1. $x > 3$
+					2. $2x + 1$ 是整数
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					思考下列语句是命题么？比较 1 和 3，2 和 4，你有什么发现？
+
+					1. $x > 3$
+					2. $2x + 1$ 是整数
+					3. 对所有的 $x \in \mathbb{R}$，$x > 3$
+					4. 对任意一个 $x \in \mathbb{Z}$，$2x + 1$ 是整数
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					命题是可以判断真假的陈述句。但是在数学中，会遇到一些含有变量的陈述句，由于不知道变量代表什么数，不能判断真假，因此不是命题。
+
+					但是如果在原语句的基础上，用一个短语对变量的取值范围进行限定，就可以使原语句成为一个命题，我们把这样的短语称为**量词**。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词**
+
+					短语“所有的”“任意一个”在逻辑中通常叫做**全称量词**（universal quantifier），并用符号 $\forall$ 表示，含有全称量词的命题，叫做**全称量词命题**。
+
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词**
+
+					短语“所有的”“任意一个”在逻辑中通常叫做**全称量词**（universal quantifier），并用符号 $\forall$ 表示，含有全称量词的命题，叫做**全称量词命题**。
+
+					例如，命题“对任意的 $n \in \mathbb{Z}$，$2n + 1$ 是奇数”，“所有的正方形都是矩形”都是全称量词命题。常见的全称量词还有“一切”、“每一个”、“任给”等。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词**
+
+					通常，将含有变量 $x$ 的语句用 $p(x), q(x), r(x), \cdots$ 表示，变量 $x$ 的取值范围用 $M$ 表示。那么，全称量词命题“对 $M$ 中任意一个 $x$，$p(x)$ 成立”可用符号简记为
+
+					$$\forall x \in M,\ p(x)$$
+
+					$\forall$ 是大写字母 $A$ 的颠倒，单词 *arbitrary* 或者 *all* 的首字母都是 $A$。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3"> 
+					<textarea data-template>
+					### **全称量词命题**
+
+					**全称量词命题怎么判断真假？**
+
+					要判定全称量词命题“$\forall x \in M, p(x)$”是真命题，需要对集合 $M$ 中的每个元素 $x$，证明 $p(x)$ 成立。
+
+					反之，如果在集合 $M$ 中找到一个元素 $x_0$，使得 $p(x_0)$ 不成立，那么这个全称量词命题就是假命题，这个方法就是**举反例**。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **全称量词命题**
+
+					判断下列全称量词命题的真假：
+
+					1. 所有的素数都是奇数
+					2. $\forall x \in \mathbb{R}$，$|x| + 1 \geqslant 1$
+					3. 对任意一个无理数 $x$，$x^2$ 也是无理数
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **背景**
+
+					思考下列语句是命题吗？
+
+					1. $2x + 1 = 3$
+					2. $x$ 能被 2 和 3 整除
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **背景**
+
+					思考下列语句是命题吗？比较 1 和 3，2 和 4 的关系。
+
+					1. $2x + 1 = 3$
+					2. $x$ 能被 2 和 3 整除
+					3. 存在一个 $x \in \mathbb{R}$，使得 $2x + 1 = 3$
+					4. 至少有一个 $x \in \mathbb{Z}$，使得 $x$ 能被 2 和 3 整除
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **存在量词**
+
+					短语“存在一个”“至少有一个”在逻辑中通常叫做**存在量词**（existential quantifier），并用符号 $\exists$ 表示。含有存在量词的命题，叫做**存在量词命题**。
+
+					例如，命题“有的平行四边形是菱形”，“有一个素数不是奇数”都是存在量词命题。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **存在量词**
+
+					存在量词命题“存在 $M$ 中的元素 $x$，$p(x)$ 成立”可用符号简记为
+
+					$$\exists x \in M,\ p(x)$$
+
+					常见的存在量词还有“有些”“有一个”“对某些”“有的”等。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **存在量词命题**
+
+					**存在量词命题如何判断真假？**
+
+					要判定存在量词命题“$\exists x \in M, p(x)$”是真命题，只需在集合 $M$ 中找到一个元素 $x$，使 $p(x)$ 成立即可；
+					
+					反之，如果在集合 $M$ 中，使 $p(x)$ 成立的元素 $x$ 不存在，那么这个存在量词命题是假命题。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **存在量词命题**
+
+					判断下列存在量词命题的真假：
+
+					1. 有一个实数 $x$，使 $x^2 + 2x + 3 = 0$。
+					2. 平面内存在两条相交直线垂直于同一条直线。
+					3. 有些平行四边形是菱形。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="7">
+					<textarea data-template>
+					### **课堂练习**
+
+
+					1. 判断真假：$\forall n \in \mathbb{N}^{*}$，$2n^2 + 5n + 2$ 不能被 2 整除是假命题。
+					2. 判断真假：$\exists n \in \mathbb{N}^{*}$，$2n^2 + 5n + 2$ 不能被 2 整除是真命题。
+					3. 判断真假：$\exists n \in \mathbb{N}^{*}$，$2n^2 + 5n + 2$ 能被 2 整除是假命题。
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="7">
+					<textarea data-template>
+					### **课堂练习**
+
+					4. 用“$\forall, \exists$”改写下列命题：有一个实数乘上任意实数都等于 0。
+					5. 设 $A, B$ 为集合，用“$\forall, \exists$”给 $A \subseteq B$，$A \nsubseteq B$ 下定义。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="7">
+					<textarea data-template>
+					### **课堂练习**
+
+					6. $\forall x \in \mathbb{R}$，$x^2 + 4x + a = 0$ 有实数解，求 $a$ 的取值范围？
+					7. 命题“$\forall x \in \mathbb{R}$，$ax^2 - ax - 2 \leqslant 0$”是真命题，求 $a$ 的取值范围？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="7">
+					<textarea data-template>
+					### **课堂练习**
+
+					1. 已知集合 $A = \\{x \mid -2 \leqslant x \leqslant 5\\}$，$B = \\{x \mid m + 1 \leqslant x \leqslant 2m - 1\\}$，$B \neq \varnothing$
+
+					(1) 命题：“$\forall x \in B, x \in A$”是真命题，求 $m$ 取值范围。
+
+					(2) 命题：“$\exists x \in A, x \in B$”是真命题，求 $m$ 取值范围。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="7">
+					<textarea data-template>
+					### **课堂练习**
+
+					2. 已知命题 $p : \forall x \in \mathbb{R}$，$x^2 + 2m - 3 > 0$，命题 $q : \exists x \in \mathbb{R}$，$x^2 - 2mx + m + 2 < 0$
+
+					(1) 若命题 $p$ 为真命题，求 $m$ 取值范围。
+
+					(2) 若命题 $p, q$ 至少有一个为真命题，求 $m$ 取值范围。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾总结**
+
+					+ 全称量词与全称量词命题
+					+ 存在量词与存在量词命题
+					+ 如何判断全称量词命题的真假？
+					+ 如何判断存在量词命题的真假？
+					</textarea>
+				</section>
+
+				</section>
+
+				<section  data-transition="convex">
+
+				
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§1.5.2 全称量词命题和存在量词命题的否定**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **命题的否定**
+
+					一般地，对一个命题进行否定，就可以得到一个新的命题，这一新命题称为原命题的**否定**。
+
+					原命题为“若 $p$，则 $q$”，
+					
+					命题的否定为“若 $p$，则 $\neg q$”。
+
+					一个命题和它的否定只能一真一假，不能同真同假。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **命题的否定**
+
+
+					| 原命题 | 命题的否定 |
+					| --- | --- |
+					| 56 是 7 的倍数 |  |
+					| 空集是非空集合 $A$ 的真子集 |  |
+					| 小明月考数学能考 130 分以上 |  |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **命题的否定**
+
+
+					| 原命题 | 命题的否定 |
+					| --- | --- |
+					| 56 是 7 的倍数 | 56 不是 7 的倍数 |
+					| 空集是非空集合 $A$ 的真子集 | 空集不是非空集合 $A$ 的真子集 |
+					| 小明月考数学能考 130 分以上 | 小明月考数学不能考 130 分以上 |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+					探究：写出下列命题的否定，并分析它们与原命题在形式上有什么变化？
+
+					1. 所有的矩形都是平行四边形
+					2. 每一个素数都是奇数
+					3. $\forall x \in \mathbb{R}$，$|x| + x \geqslant 0$
+
+					这三个命题都是全称量词命题，即具有“$\forall x \in M, p(x)$”的形式。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+					这三个命题都是全称量词命题，即具有“$\forall x \in M, p(x)$”的形式。
+
+					命题（1）的否定是“并非所有的矩形都是平行四边形”，也就是说，**存在一个矩形不是平行四边形**。
+
+					命题（2）的否定是“并非每一个素数都是奇数”，也就是说，**存在一个素数不是奇数**。
+
+					命题（3）的否定是“并非所有的 $\forall x \in \mathbb{R}$，$|x| + x \geqslant 0$”，也就是说，$\exists x \in \mathbb{R}$，$|x| + x < 0$。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+					从命题形式看，这三个全称量词命题的否定都变成了存在量词命题。
+
+					一般来说，对含有一个量词的全称量词命题进行否定，只需把“所有的”“任意一个”等全称量词，变成“并非所有的”“并非任意一个”等短语即可。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+					也就是说，假定全称量词命题为“$\forall x \in M, p(x)$”，则它的否定为“并非 $\forall x \in M, p(x)$”，
+					
+					也就是“$\exists x \in M$，$p(x)$ 不成立”。通常，用符号“$\neg p(x)$”表示“$p(x)$ 不成立”。
+
+					全称量词命题：
+					$\forall x \in M,\ p(x)$
+
+					它的否定：
+					$\exists x \in M,\ \neg p(x)$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+					否定全称量词命题的步骤：
+
+					+ **更换量词**：把全称量词变成存在量词
+					+ **否定结论**：把全称量词命题的结论否定
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **全称量词命题的否定**
+
+			
+					写出下列全称量词命题的否定：
+
+					1. 所有能被 3 整除的整数都是奇数
+					2. 每一个四边形的四个顶点在同一个圆上
+					3. 对 $\forall x \in \mathbb{Z}$，$x^2$ 的个位数字不等于 3
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3"  >
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+					探究：写出下列命题的否定，并分析它们与原命题在形式上有什么变化？
+
+					1. 存在一个实数的绝对值是正数
+					2. 有些平行四边形是菱形
+					3. $\exists x \in \mathbb{R}$，$x^2 - 2x + 3 = 0$
+
+					这三个命题都是存在量词命题，即具有“$\exists x \in M, p(x)$”的形式。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3"  >
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+
+					命题（1）的否定是“不存在一个实数，它的绝对值是正数”，也就是说，**所有实数的绝对值都不是正数**。
+
+					命题（2）的否定是“没有一个平行四边形是菱形”，也就是说，**每一个平行四边形都不是菱形**。
+
+					命题（3）的否定是“不存在 $x \in \mathbb{R}$，$x^2 - 2x + 3 = 0$”，也就是说，$\forall x \in \mathbb{R}$，$x^2 - 2x + 3 \neq 0$。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+					从命题形式看，这三个存在量词命题的否定都变成了全称量词命题。
+
+					一般来说，对含有一个量词的存在量词命题进行否定，只需把“存在一个”“至少有一个”“有些”等存在量词，变成“不存在一个”“没有一个”等短语即可。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+
+					也就是说，假定存在量词命题为“$\exists x \in M, p(x)$”，则它的否定为“不存在 $x \in M$，$p(x)$ 成立”，也就是“$\forall x \in M$，$p(x)$ 不成立”。
+
+					存在量词命题：
+
+					$$\exists x \in M,\ p(x)$$
+
+					它的否定：
+
+					$$\forall x \in M,\ \neg p(x)$$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+					否定存在量词命题的步骤：
+
+					+ **更换量词**：把存在量词变成全称量词
+					+ **否定结论**：把存在量词命题的结论否定
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **存在量词命题的否定**
+
+
+					写出下列存在量词命题的否定：
+
+					1. $\exists x \in \mathbb{R}$，$x + 2 \leqslant 0$
+					2. 有的三角形是等边三角形
+					3. 有一个偶数是素数
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+					1. 已知命题 $p : \forall x$，$1 \leqslant x \leqslant 3$，都有 $m \geqslant x$。命题 $q : \exists x$，$1 \leqslant x \leqslant 3$，使得 $m \geqslant x$。若命题 $p$ 为真，命题 $q$ 的否定为真，求 $m$ 的取值范围。
+
+				
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **课堂练习**
+
+
+					2. 已知命题 $p :$ “$\exists x \in \mathbb{R}$，使不等式 $mx^2 - mx - 1 \geqslant 0$ 成立”是假命题
+
+						+ 求实数 $m$ 的取值范围。
+
+						+ 若 $q : -4 < m - a < 4$ 是 $\neg p$ 的必要不充分条件，求实数 $a$ 的取值范围。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **总结：常见词语的否定**
+
+					| 词语 | 词语的否定 |
+					| --- | --- |
+					| 等于 | 不等于 |
+					| 大于 | 小于或等于 |
+					| 小于 | 大于或等于 |
+					| 是 | 不是 |
+					| 都是 | 不都是（和都不是不一样） |
+					| 至多一个 | 至少两个 |
+					| 至少一个 | 一个也没有 |
+					| 任意 | 某个 |
+					| 所有 | 某些 |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **总结**
+
+					+ 全称量词命题的否定是一个存在量词命题。给出全称量词命题的否定时，既要否定全称量词，又要否定结论，所以找出全称量词，明确命题所提供的结论是对全称量词命题否定的关键。
+					+ 存在量词命题的否定是一个全称量词命题。给出存在量词命题的否定时，既要否定存在量词，又要否定结论，所以找出存在量词，明确命题所提供的结论是对存在量词命题否定的关键。
+					</textarea>
+				</section>
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				font-weight:normal;overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg .tg-p7sm{border-color:#000000;font-family:inherit;font-size:30px;text-align:center;vertical-align:top}
+				.tg .tg-zbu7{border-color:#000000;font-family:inherit;text-align:left;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.5$ **三角恒等变换** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+	
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				任意角$\alpha$与$\beta$的和(或差)的三角函数与$\alpha,\beta$的三角函数会有什么关系呢？
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				平面上任意两点间距离公式：
+
+				$$P_1(x_1,y_1),P_2(x_2,y_2) $$
+
+				$$P_1P_2=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2} $$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				
+
+				<br>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+			
+
+				探究$\cos(\alpha-\beta)$与角$\alpha,\beta$的正弦，余弦之间的关系。
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+	
+		
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+				$$A_1P_1=AP $$
+
+				$$
+				[\cos(\alpha-\beta)-1 ]^2+[\sin(\alpha-\beta)-0 ]^2 \\= (\cos\alpha-\cos\beta )^2+(\sin\alpha-\sin\beta )^2
+				$$
+
+				$$
+				\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+				$$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				对于任意角$\alpha,\beta$都有
+
+				<font color="red">
+					$$
+				\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+				$$
+
+				</font>
+
+				该公式称为差角的余弦公式，简记为$C_{\alpha-\beta }$。
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				使用公式$C_{\alpha-\beta }$证明：
+
+				<br>
+
+				<ul>
+					<li>
+						$$\cos(\frac{\pi}{2}-\alpha)=\sin\alpha $$
+					</li>
+					<li>
+						$$\cos(\pi-\alpha)=-\cos\alpha $$
+					</li>
+				</ul>
+			
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				已知$\sin\alpha=\frac{4}{5},\alpha\in(\frac{\pi}{2},\pi),\cos\beta=-\frac{5}{13},\beta$是第三象限角
+				<br>
+
+				求$\cos(\alpha-\beta)$
+
+				
+		
+			</section>
+
+			
+
+
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>两角和的余弦公式</strong></h3>
+
+				<br>
+
+				$$
+				\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+				$$
+
+
+				$$
+				\alpha+\beta=\alpha-(-\beta)
+				$$
+
+				$$
+				\begin{aligned}
+				\cos(\alpha+\beta)&=\cos(\alpha-(-\beta) )\\
+				
+				&=\cos\alpha\cos(-\beta)+\sin\alpha\sin(-\beta)\\
+
+				&=\cos\alpha\cos\beta-\sin\alpha\sin\beta
+				\end{aligned}
+				$$
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>两角和的余弦公式</strong></h3>
+
+				<br>
+
+				对于任意角$\alpha,\beta$都有
+
+				<font color="red">
+					$$
+				\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta
+				$$
+
+				</font>
+
+				该公式称为两角和的余弦公式，简记为$C_{\alpha+\beta }$。
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>两角和与差的正弦公式</strong></h3>
+
+				<br>
+
+				$$
+				\begin{aligned}
+					\sin(\alpha+\beta) &= \cos(\frac{\pi}{2}-(\alpha+\beta)) \\
+					&= \cos((\frac{\pi}{2}-\alpha)-\beta) \\
+					&= \cos((\frac{\pi}{2}-\alpha))\cos\beta+\sin((\frac{\pi}{2}-\alpha))\sin\beta \\
+					&= \sin\alpha\cos\beta+\cos\alpha\sin\beta
+				\end{aligned}
+				$$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>两角和与差的正弦公式</strong></h3>
+
+				<br>
+
+				$$
+				\begin{aligned}
+					\sin(\alpha-\beta) &= \sin(\alpha+(-\beta))   \\
+					&= \sin\alpha\cos(-\beta)+\cos\alpha\sin(-\beta) \\
+					&= \sin\alpha\cos\beta-\cos\alpha\sin\beta
+				\end{aligned}
+				$$
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>两角和与差的正弦公式</strong></h3>
+
+				<br>
+
+				<font color="red">
+
+				$$
+				S_{\alpha+\beta }\quad  \sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta \\
+				S_{\alpha-\beta }\quad  \sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta \\
+				$$
+
+			</font>
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>两角和与差的正切公式</strong></h3>
+
+				<br>
+
+				$$
+				
+				\begin{aligned}
+					\tan(\alpha+\beta) &= \frac{\sin(\alpha+\beta) }{ \cos(\alpha+\beta) }   \\
+					&= \frac{ \sin\alpha\cos\beta+\cos\alpha\sin\beta }{ \cos\alpha\cos\beta-\sin\alpha\sin\beta }  \\
+					&= \frac{\tan\alpha+\tan\beta }{1-\tan\alpha\tan\beta }
+				\end{aligned}
+				$$
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>两角和与差的正切公式</strong></h3>
+
+				<br>
+
+				$$
+				
+				\begin{aligned}
+					\tan(\alpha-\beta) &= \tan(\alpha+(-\beta))  \\
+					&= \frac{\tan\alpha+\tan(-\beta) }{1-\tan\alpha\tan(-\beta) }\\
+					&= \frac{\tan\alpha-\tan\beta }{1+\tan\alpha\tan\beta }
+				\end{aligned}
+				$$
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>两角和与差的正切公式</strong></h3>
+
+				<br>
+
+				<font color="red">
+				$$
+				T_{\alpha+\beta}\quad\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta }{1-\tan\alpha\tan\beta } \\
+				T_{\alpha-\beta}\quad\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta }{1+\tan\alpha\tan\beta }
+				$$
+				</font>
+				
+				
+			</section>
+
+	
+
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>应用</strong></h3>
+
+				<br>
+				已知$\sin\alpha=-\frac{3}{5},\alpha$是第四象限角，
+				<br>
+				求$\sin(\frac{\pi}{4}-\alpha),\cos(\frac{\pi}{4}+\alpha),\tan(\alpha-\frac{\pi}{4}) $
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>应用</strong></h3>
+
+				<br>
+
+				<ul>
+					<li>
+						$\sin72^{\circ}\cos42^{\circ}-\cos72^{\circ}\sin42^{\circ} $
+					</li>
+					<li>
+						$\cos70^{\circ}\cos20^{\circ}-\sin70^{\circ}\sin20^{\circ}  $
+					</li>
+					<li>
+						$$\frac{1+\tan15^{\circ}}{1-\tan15^{\circ}}  $$
+					</li>
+				</ul>
+				
+
+
+				
+		
+			</section>
+
+
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+
+				<br>
+
+				$$
+				\begin{aligned}
+					\sin(2\alpha)&=\sin(\alpha+\alpha)  \\
+					&= \sin\alpha\cos\alpha+\cos\alpha\sin\alpha \\
+					&= 2\sin\alpha\cos\alpha
+				\end{aligned}
+				
+				 
+				
+				$$
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+				<br>
+
+				$$
+				\begin{aligned}
+					\cos(2\alpha)&=\cos(\alpha+\alpha)  \\
+					&= \cos\alpha\cos\alpha-\sin\alpha\sin\alpha \\
+					&= \cos^2\alpha-\sin^2\alpha \\
+					&= 2\cos^2\alpha-1\\
+					&= 1-2\sin^2\alpha
+				\end{aligned}
+				
+				 
+				
+				$$
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+				<br>
+				
+				$$
+				\begin{aligned}
+					\tan(2\alpha)&=\tan(\alpha+\alpha)  \\
+					&= \frac{\tan\alpha+\tan\alpha }{1-\tan\alpha\tan\alpha } \\
+					&= \frac{2\tan\alpha }{1-\tan^2\alpha }
+				\end{aligned}
+							 
+				
+				$$
+		
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+
+				<font color="red">
+					 $$
+
+					 \sin(2\alpha)= 2\sin\alpha\cos\alpha $$
+
+					 $$
+					 \cos(2\alpha)= \cos^2\alpha-\sin^2\alpha 
+					 $$
+					 $$
+					 \tan(2\alpha)=\frac{2\tan\alpha }{1-\tan^2\alpha }
+
+					$$
+
+				</font>
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+ 
+				<br>
+
+				$$
+				\cos^2\alpha =\frac{1+\cos2\alpha }{2}
+				$$
+
+				$$
+				\sin^2\alpha =\frac{1-\cos2\alpha }{2}
+				$$
+		
+			</section>
+			
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+
+				<br>
+
+				已知$\sin2\alpha=\frac{5}{13},\frac{\pi}{4}< \alpha<\frac{\pi}{2},$求$\sin4\alpha,\cos4\alpha,\tan4\alpha $
+
+				<br>
+				<br>
+
+				变式：求$\sin\alpha,\cos\alpha$
+ 
+		
+			</section>
+
+			
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+
+				<br>
+
+				在$\triangle ABC$中，$\cos A=\frac{4}{5},\tan B=2$，求$\tan(2A+2B) $
+
+				<br>
+				<br>
+
+				变式：求$\tan 2C $
+ 
+		
+			</section>
+
+			
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>二倍角公式</strong></h3>
+
+				<br>
+
+				$$
+				\cos 20^{\circ}\cdot\cos 40^{\circ}\cdot\cos 80^{\circ}
+				$$
+ 
+		
+			</section>
+
+			
+			
+	
+	
+		</section>
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>半角公式</strong></h3>
+
+				<br>
+				$$
+				\cos\alpha=2\cos^2\frac{\alpha}{2}-1
+				$$
+
+				$$
+				\cos\alpha=1-2\sin^2\frac{\alpha}{2}
+				$$
+
+
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>半角公式</strong></h3>
+
+				<br>
+
+				$$
+				\sin^2\frac{\alpha}{2}=\frac{1-\cos\alpha}{2} 
+				$$
+				$$
+				\cos^2\frac{\alpha}{2}=\frac{1+\cos\alpha}{2} 
+				$$
+				$$
+				\tan^2\frac{\alpha}{2}=\frac{1-\cos\alpha}{1+\cos\alpha }
+				$$
+
+
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>积化和差</strong></h3>
+
+				<br>
+
+				$$
+				\sin\alpha\cos\beta=\frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta) ]
+				$$
+
+
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="5">
+				<h3><strong>积化和差</strong></h3>
+
+				<br>
+
+				$$
+				\cos\alpha\sin\beta=\frac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta) ]
+				$$
+
+				$$
+				\cos\alpha\cos\beta=\frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta) ]
+				$$
+
+				$$
+				\sin\alpha\sin\beta=\frac{1}{2}[\cos(\alpha+\beta)-\cos(\alpha-\beta) ]
+				$$
+
+
+ 
+		
+			</section>
+
+			
+
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>和差化积</strong></h3>
+
+				<br>
+
+				$$
+				\sin\theta+\sin\varphi =2\sin\frac{\theta+\varphi}{2}\cos\frac{\theta-\varphi}{2}  
+				$$
+
+
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="6">
+				<h3><strong>和差化积</strong></h3>
+
+				<br>
+
+				$$
+				\sin\theta-\sin\varphi =2\cos\frac{\theta+\varphi}{2}\sin\frac{\theta-\varphi}{2}  
+				$$
+
+				$$
+				\cos\theta+\cos\varphi =2\cos\frac{\theta+\varphi}{2}\cos\frac{\theta-\varphi}{2}  
+				$$
+
+				$$
+				\cos\theta-\cos\varphi =-2\sin\frac{\theta+\varphi}{2}\sin\frac{\theta-\varphi}{2}  
+				$$
+
+
+ 
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>恒等变换</strong></h3>
+
+				<br>
+
+				求下列函数的周期、最值：
+
+				<br>
+				<br>
+
+				<ul>
+					<li>
+						$y=\sin x+\sqrt{3}\cos x$
+					</li>
+					<li>
+						$y= 3\sin x+4\cos x$
+					</li>
+				</ul>
+
+
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>恒等变换</strong></h3>
+
+				<br>
+
+				辅助角公式：
+
+				$$
+				
+				a\sin x+b\cos x= 
+
+				$$
+
+				$$
+				
+				\sqrt{a^2+b^2}(\frac{a}{\sqrt{a^2+b^2}}\sin x+\frac{b}{\sqrt{a^2+b^2}}\cos x ) 
+
+				$$
+
+				$$
+
+				= \sqrt{a^2+b^2}\sin(x+\varphi )
+				
+				$$
+
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="7">
+				<h3><strong>恒等变换</strong></h3>
+
+				求矩形$ABCD$面积的最大值。
+
+				<br>
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+		
+
+
+ 
+		
+			</section>
+
+
+
+
+		</section>
+
+
+
+		
+		
+
+			
+
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+	</section>
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-3.5, 3.5 , 3.5, -3.5], axis:true,showCopyright: false,});
+			
+			var p11 = board1.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,0]}});
+			var p12= board1.create('point', [-2, 2.5],{name:'$P_1(x_1,y_1)$',fixed:false,size:1.5});
+			var p13= board1.create('point', [1, -1.5],{name:'$P_2(x_2,y_2)$',fixed:false,size:1.5});
+			var li11 = board1.create('line',[p12,p13], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,});
+			var p14= board1.create('point', [function(){return p12.X() },function(){return p13.Y() } ],{name:'$Q$',fixed:true,size:1.5});
+			var li12 = board1.create('line',[p12 ,p14], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+			var li13 = board1.create('line',[p13 ,p14], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+			
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p21 = board2.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p22 = board2.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p23 = board2.create('point', [0.8,0.6 ],{name:'$P_1$'});
+			var p24 = board2.create('point', [0.6,0.8 ],{name:'$A_1$'});
+			var p25 = board2.create('point', [0.6,0.8 ],{name:'$P$'});
+			
+			var c21 = board2.create('circle',[p21, p22]);
+
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li22 = board2.create('line',[p21,p22], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var li23 = board2.create('line',[p21,p24], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var li24 = board2.create('line',[p21,p25], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li25 = board2.create('line',[p23,p24], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			var li26 = board2.create('line',[p22,p25], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			s21 = board2.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.35, 2*Math.PI]],{name:'\\alpha'} );
+
+			s22 = board2.create('slider',[[-1.4,0.8], [-0.5,0.8], [0*Math.PI, Math.PI*0.25, 2*Math.PI]],{name:'\\beta'} );
+
+			var angle21 = board2.create('angle', [p22, p21, p23],{ radius:0.25 , name: '$\\alpha$' });
+
+			var angle22 = board2.create('angle', [p22, p21, p24],{ radius:0.35 , name: '$\\beta$' });
+
+			var angle23 = board2.create('angle', [p22, p21, p25],{ radius:0.45 , name: '$\\alpha-\\beta$' });
+
+			angle21.setAngle(function() {
+				return s21.Value(); });	
+
+		    angle22.setAngle(function() {
+					return s22.Value(); });	
+
+			angle23.setAngle(function() {
+						return s21.Value()-s22.Value(); });	
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-0.5, 1.5 , 1.5, -0.5], axis:false,showCopyright: false,});
+			
+			var p31 = board3.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,-10]}});
+			var p32= board3.create('point', [1, 0],{name:'$P$',fixed:true,size:1.5});
+			var p33= board3.create('point', [0.5, Math.sqrt(3)/2],{name:'$Q$',fixed:true,size:1.5});
+
+			var li31 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'black' });
+			
+			var li32 = board3.create('line',[p31,p33], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'black' });
+			
+			var arc31 = board3.create('arc', [p31, p32, p33],{ strokeColor:'black',strokeWidth:1.5 });
+
+			s31 = board3.create('slider',[[0.1,1.2], [0.8,1.2], [0*Math.PI, Math.PI*0.15, Math.PI/3]],{name:' \\alpha '});
+
+			var p34 = board3.create('point', [ function(){return Math.cos(s31.Value()) } , function(){return Math.sin(s31.Value()) } ],{name:'$C$',size:1.5});
+
+			var li33 = board3.create('line',[p31,p34], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			var p35 = board3.create('point', [ function(){return p34.X() } , 0 ],{name:'$B$',size:1.5});
+
+			var p36 = board3.create('point', [ function(){return p34.Y()/Math.sqrt(3) } , function(){return p34.Y() }   ],{name:'$D$',size:1.5});
+
+			var p37 = board3.create('point', [ function(){return p36.X() } , 0 ],{name:'$A$',size:1.5});
+
+			var li34 = board3.create('line',[p35,p34], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue' });
+			var li35 = board3.create('line',[p34,p36], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue' });
+			var li36 = board3.create('line',[p36,p37], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'blue' });
+
+		    var angle31 = board3.create('angle', [p32, p31, p34],{ radius:0.25 , name: '$\\alpha$' });
+
+
+		</script>
+
+
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

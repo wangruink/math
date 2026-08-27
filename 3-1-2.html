@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>函数的概念与性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第三章**	
+					## **函数的概念与性质**
+					### $\S 3.1.2$ **函数的表示方法** 
+					王瑞
+					
+					长丰一中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+					<section data-markdown data-transition="convex" data-auto-animate>
+						### **函数的表示法**
+
+						- 解析法：用解析式表示两个变量之间的对应关系。
+
+						- 列表法：列出表格表示两个变量之间的对应关系。
+
+						- 图像法：用图像表示两个变量之间的对应关系。
+				
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>函数的表示法</strong></h3>
+
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">表示法</th>
+									<th style="text-align: center">优点</th>
+									<th style="text-align: center">缺点</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center">解析法</td>
+									<td style="text-align: center">简明，全面，准确</td>
+									<td style="text-align: center">不够形象直观</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">图像法</td>
+									<td style="text-align: center">直观，形象</td>
+									<td style="text-align: center">只能近似求函数值</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">列表法</td>
+									<td style="text-align: center">直接，不需要计算</td>
+									<td style="text-align: center">只能表示有限个数</td>
+								</tr>
+								
+							</tbody>
+						</table>
+				
+					</section>
+
+					<section data-markdown data-transition="convex" data-auto-animate>
+						### **函数的表示法**
+
+						例1.某种笔记本的单价为5元，买$x(1 \leqslant x \leqslant 5)$本笔记本需要$y$元。
+						
+						试用函数的三种表示法表示函数$y=f(x)$。
+
+					
+					
+					</section>
+
+					<section data-markdown data-transition="convex" data-auto-animate="">
+						### **函数的表示法**
+
+						例1.函数的定义域是{$1,2,3,4,5$}
+
+						解析法：
+						
+						$y=5x,x\in${$1,2,3,4,5$}
+					
+					
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例1.表格法表示：
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">笔记本数$x$(本)</th>
+									<th style="text-align: center">钱数$y$(元)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center">1</td>
+									<td style="text-align: center">5</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2</td>
+									<td style="text-align: center">10</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">3</td>
+									<td style="text-align: center">15</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">4</td>
+									<td style="text-align: center">20</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">5</td>
+									<td style="text-align: center">25</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+						
+						例1. 图像法表示：
+
+						
+						<div class="main">
+							<div id="box" class="jxgbox" style="width:500px; height:500px;"></div>
+						</div>
+					
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例2.画出函数$y=|x|$的图像
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例2.画出函数$y=|x|$的图像
+
+						\[
+						f(x)=
+						\begin{cases}
+						-x& x< 0 \\
+						x& x\geqslant 0
+						\end{cases}
+						\]
+		
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例2.函数$y=|x|$的图像
+
+						<div class="main">
+							<div id="box2" class="jxgbox" style="width:800px; height:500px;"></div>
+						</div>
+
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="" data-markdown=""="">
+						### **函数的表示法**
+
+						例3.给定函数$f(x)=x+1,g(x)=(x+1)^2,x\in R$
+
+						1. 在同一直角坐标系中画出函数$f(x),g(x) $的图像。
+
+						2. $\forall x\in R,$用$M(x)$表示$f(x),g(x) $中的最大者，记为$$M(x)=max(f(x),g(x)) $$用图像法和解析法表示函数$M(x)$。
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例3.1 函数$f(x),g(x) $的图像
+
+						<div class="main">
+							<div id="box3" class="jxgbox" style="width:800px; height:500px;"></div>
+						</div>
+
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例3.2 函数$M(x) $的图像
+
+						<div class="main">
+							<div id="box4" class="jxgbox" style="width:800px; height:500px;"></div>
+						</div>
+
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例3.2 函数$M(x) $的解析式为
+
+						\[
+						M(x)=
+						\begin{cases}
+						(x+1)^2& x\leqslant -1 \\
+						x+1& -1< x\leqslant 0 \\
+						(x+1)^2& x > 0
+						\end{cases}
+						\]
+
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate="">
+						<h3><strong>函数的表示法</strong></h3>
+
+						例4. 已知函数$f(x),g(x) $由下表给出：
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">$x$</th>
+									<th style="text-align: center">$f(x)$</th>
+									<th style="text-align: center">$g(x)$</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center">1</td>
+									<td style="text-align: center">2</td>
+									<td style="text-align: center">3</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2</td>
+									<td style="text-align: center">1</td>
+									<td style="text-align: center">2</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">3</td>
+									<td style="text-align: center">1</td>
+									<td style="text-align: center">1</td>
+								</tr>
+								
+							</tbody>
+						</table>
+
+						试求$f(g(1))$和$g(f(x))=2$时$x$的值？
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>函数的表示法</strong></h3>
+
+						下图表示高一某班3位同学六次数学测试的成绩及班级平均分：
+
+						<div style="height: 400px;text-align:center;margin-left: auto;margin-right: auto;">
+							<div style="width:90%; display: inline-block;">
+								<canvas id="myChart"></canvas>
+							</div>
+						</div>	
+
+					</section>
+
+
+				</section>
+
+
+				<section  data-transition="convex">
+
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					### **函数的解析式**
+
+					例5.求下列函数的解析式
+
+					1. $f(x+1)=x^2-3x+2 ,$求$f(x)$
+
+					2. 已知$f(x)$是二次函数，满足$f(0)=1,f(x+1)-f(x)=2x, $求$f(x)$
+
+					3. $\forall x\in R,f(x)+2f(-x)=3x-2,$求$f(x)$
+					
+					</section>
+
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						### **函数的解析式**
+	
+						例6.求下列函数的解析式
+	
+						1. $f(x) $是一次函数，且$f(f(x))=2x-1 ,$求$f(x)$
+	
+						2. 已知$f(\sqrt{x}+1)=x+2\sqrt{x},$求$f(x)$
+	
+						3. $\forall x\in R,x\neq 0,f(x)+2f(\frac{1}{x} )=x,$求$f(x)$
+						
+					</section>
+
+					
+	
+				</section>
+
+				<section data-transition="convex">
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>几何中的函数问题</strong></h3>
+
+						例7.如下图，把半径为25cm的圆柱形木头锯成直截面为矩形的木料，如果矩形的一边长为$x(cm)$，面积为$y(cm^2)$，把$y$表示为$x$的函数。
+
+						<div class="main">
+							<div id="box5" class="jxgbox" style="width:800px; height:500px;"></div>
+						</div>
+			
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>几何中的函数问题</strong></h3>
+
+						例8.如图，在矩形$ABCD$中，$BA=3,CB=4$，点$P$在$AD$上移动，$CQ\perp BP$，$Q$为垂足。设$BP=x$，$CQ=y$，试求$y$关于$x$的函数解析式，并画出函数的图象。
+
+						<div class="main">
+							<div id="box6" class="jxgbox" style="width:600px; height:380px;"></div>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>几何中的函数问题</strong></h3>
+
+						例9.某天早上，小明骑车上学，出发时感到时间较紧，然后加速前进，后来发现时间还比较充裕，于是放慢了速度，与以上事件吻合得最好的图象是？
+
+						<div class="main">
+							<img src="3-2.png" alt="运动" width="800px"/>
+						</div>
+					
+					</section>
+									
+				</section>
+
+				<section data-transition="convex">
+					<section  data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						### **分段函数**
+
+						如果函数$y=f(x),x\in A$，根据自变量$x$在定义域$A$中的不同取值范围，有不同的对应关系，则称这样的函数为分段函数。
+
+						1. 分段函数是一个函数，不是多个函数。
+
+						2. 处理分段函数问题时，要首先确定自变量的取值属于哪一个范围，然后选取相应的对应关系。要注意写解析式时各区间的端点能否取到，做到不重复、不遗漏。
+
+						3. 分段函数的定义域是各段定义域的并集，值域是分别求出各段上的值域后取并集。
+
+
+					</section>
+
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例10.已知函数$f(x)$解析式如下：
+
+						\[
+						f(x)=
+						\begin{cases}
+						x+2& x < 0 \\
+						x^2 & 0 \leqslant x < 2 \\
+						0.5x& x \geqslant 2
+						\end{cases}
+						\]
+						
+						1. 求$f(f(f(-\frac{1}{2})))$
+						<br>
+
+						2. $f(x)=2,x=?$
+						<br>
+						3. $f(x)>0$，求$x$的取值范围？
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例11.画出下列函数的图像，并写出它们的值域：
+
+						\[1.
+						f(x)=
+						\begin{cases}
+						\frac{1}{x} & 0 < x < 1 \\
+						
+						2x & x \geqslant 1
+						\end{cases}
+						\]
+
+						\[
+						2. f(x)= |x+1|+|x-3|
+						\]
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例11.1 画出下列函数的图像，并写出它们的值域：
+						<br>
+
+						1.$f(x)\in (1,+\infty)$
+
+						<div class="main">
+							<div id="box7" class="jxgbox" style="width:600px; height:380px;"></div>
+						</div>
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例11.2 画出下列函数的图像，并写出它们的值域：
+						<br>
+
+						2.$f(x)\in [4,+\infty)$
+
+						<div class="main">
+							<div id="box8" class="jxgbox" style="width:600px; height:380px;"></div>
+						</div>
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例12.个人所得税
+						<br>
+						2023年中国个人所得税征收14775亿元，占全部税收的$8.1\%$。
+						<br>
+						作为对比，美国2022年个人所得税征收2.69万亿美元，占联邦税收的$55.3\%$。
+						<br>
+						<strong>个税税额$=$应纳税所得额$\times$税率$-$速算扣除数 </strong>
+						<br>
+						<strong>应纳税所得额$=$综合所得收入额$-$基本减除费用$-$专项扣除$-$专项附加扣除$-$依法确定的其他扣除 </strong> 
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例12.个人所得税
+						<br>
+
+						$$f(t)=0.03t,0 \leqslant t \leqslant 3.6 $$
+						$$f(t)=0.03\times 3.6\times 10^4 +(t-3.6\times 10^4)\times 0.1$$
+						$$ 3.6\times 10^4 < t \leqslant 1.44\times 10^5 $$
+						$$ f(t)=1080+10800+(t-1.44\times 10^5)\times 0.2 $$
+						$$ 1.44\times 10^5 < t \leqslant 3\times 10^5 $$
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例12.个人所得税
+						<br>
+						<div class="main">
+							<div id="box9" class="jxgbox" style="width:600px; height:380px;"></div>
+						</div>
+
+
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例13.取整函数
+						<br>
+						函数$y=[x]$称为取整函数，也称高斯函数。 其中不超过实数$x$的最大整数称为$x$的整数部分，记作$[x]$，试作出取整函数的图像。
+						
+
+
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+						<h3><strong>分段函数</strong></h3>
+
+						例13.取整函数
+						<br>
+						<div class="main">
+							<div id="box10" class="jxgbox" style="width:600px; height:380px;"></div>
+						</div>
+
+
+						
+					</section>
+
+				</section>
+
+
+				
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script type="text/javascript">
+			var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-1, 26, 6, -2], axis:true});
+			var p1 = board.create('point', [1, 5], {name: ''});
+			var p2 = board.create('point', [2, 10], {name: ''});
+			var p3 = board.create('point', [3, 15], {name: ''});
+			var p4 = board.create('point', [4, 20], {name: ''});
+			var p5 = board.create('point', [5, 25], {name: ''});
+		</script>
+
+		<script type="text/javascript">
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-5, 6, 6, -1], axis:true});
+			
+			var graph = board2.create('functiongraph',
+                       [function(x){ return -x;}, -5, 0]
+                    );
+			var graph2 = board2.create('functiongraph',
+                       [function(x){ return x;}, 0, 5], {name:'$y=|x|$',withLabel:true}
+                    );
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-6, 6, 6, -2], axis:true});
+			
+			var graph = board3.create('functiongraph',
+					[function(x){ return x+1;}, -5, 5],{name:'$f(x)=x+1$',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph2 = board3.create('functiongraph',
+					[function(x){ return (x+1)*(x+1);}, -5, 5], {name:'$g(x)=(x+1)^2 $',withLabel:true,strokeColor: 'red',label:{position:'top', offsets:[0,10]}}
+					);
+			var i = board3.create('intersection', [graph, graph2, 0]);
+			var j = board3.create('intersection', [graph, graph2, 1]);
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-6, 6, 6, -2], axis:true});
+			
+			var graph = board4.create('functiongraph',
+					[function(x){ return x+1;}, -1, 0]
+					);
+			var graph2 = board4.create('functiongraph',
+					[function(x){ return (x+1)*(x+1);}, -5, -1],{strokeColor: 'red'}
+					);
+			var graph3 = board4.create('functiongraph',
+					[function(x){ return (x+1)*(x+1);}, 0, 2], {name:'$M(x) $',strokeColor: 'red',withLabel:true, label:{position:'top', offsets:[0,0]}}
+					);	
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-6, 6, 6, -1]});
+			var a1 = board5.create('slider', [[-2, 0.5], [2, 0.5], [-2, 0.1, 2]]);
+			var p1 = board5.create('point', [0.0, 3.0],{name: '$O$'});
+			var c1 = board5.create('circle', [p1, 2.0]);
+			var p11 = board5.create('point', [function(){return a1.Value()},function(){return 3+Math.sqrt(4-a1.Value()*a1.Value())}],{name: '$A$'});
+			var p12 = board5.create('point', [function(){return -p11.X()},function(){return p11.Y() }],{name: '$B$'});
+			var p13 = board5.create('point', [function(){return -p11.X()},function(){return 6-p11.Y()}],{name: '$C$'});
+			var p14 = board5.create('point', [function(){return p11.X()},function(){return 6-p11.Y()}],{name: '$D$'});
+			rect = board5.create('polygon',[p11,p12,p13,p14],{hasInnerPoints:false});
+			var li2 = board5.create('line',[p11,p1], 
+				{straightFirst:false, straightLast:false, strokeWidth:2, dash:2,name:'$r=25cm$',withLabel:true,label:{position:'top', offsets:[1,1]}});		
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-5, 5, 5, -1]});
+			var p21 = board6.create('point', [-2.0, 3.0],{name: '$A$'});
+			var p22 = board6.create('point', [-2.0, 0.0],{name: '$B$'});
+			var p23 = board6.create('point', [2.0, 0.0],{name: '$C$'});
+			var p24 = board6.create('point', [2.0, 3.0],{name: '$D$'});
+			rect = board6.create('polygon',[p21,p22,p23,p24],{hasInnerPoints:false});
+			var a2 = board6.create('slider', [[-1, 4.0], [1, 4.0], [-2, 0.1, 2]]);
+			var p2  = board6.create('point', [function(){return a2.Value()},function(){return p21.Y() }],{name: '$P$'});
+			var li21 = board6.create('line',[p22,p2], 
+				{straightFirst:false, straightLast:false, strokeWidth:1,name:'$x$',withLabel:true,label:{position:'top', offsets:[1,1]}});	
+			var p25 = board6.create('perpendicularpoint', [p23, li21],{name:'$Q$'});
+			var li22 = board6.create('line',[p25,p23], 
+				{straightFirst:false, straightLast:false, strokeWidth:1,name:'$y$',withLabel:true,label:{position:'top', offsets:[1,1]}});
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-1, 6, 4, -1], axis:true});
+			
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return 1/x;}, 0, 0.99],{name:'$f(x)=\\frac{1}{x} $',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph72 = board7.create('functiongraph',
+					[function(x){ return 2*x;}, 1, 5], {name:'$f(x) =2x $',withLabel:true,label:{position:'top', offsets:[0,10]}}
+					);
+			var p71 = board7.create('point', [1, 1], {name: '',trace: true,size:1,face: 'o',fillOpacity:0});
+
+		</script>
+
+		
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board8 = JXG.JSXGraph.initBoard('box8', {boundingbox: [-3, 6, 4, -1], axis:true});
+			
+			var graph81 = board8.create('functiongraph',
+					[function(x){ return -2*x+2;}, -3, -1],{name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph82 = board8.create('functiongraph',
+					[function(x){ return 4;}, -1, 3], {name:'$y=|x+1|+|x-3|$',withLabel:true,label:{position:'top', offsets:[0,0]}}
+					);
+			var graph83 = board8.create('functiongraph',
+					[function(x){ return 2*x-2;}, 3, 8], {name:'',withLabel:true,label:{position:'top', offsets:[0,10]}}
+					);
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board9 = JXG.JSXGraph.initBoard('box9', {boundingbox: [-1, 280000, 1100000, -1], axis:true});
+			
+			var graph91 = board9.create('functiongraph',
+					[function(x){ return 0.03*x;}, 0,36000 ],{color:'red',name:'',withLabel:true,label:{position:'top', offsets:[0,0]}}
+					);
+			var graph92 = board9.create('functiongraph',
+					[function(x){ return 0.1*x-2520;}, 36000,144000 ],{color:'#fc03e8', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph93 = board9.create('functiongraph',
+					[function(x){ return 0.2*x-16920;}, 144000,300000 ],{color:'#9003fc', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph94 = board9.create('functiongraph',
+					[function(x){ return 0.25*x-31920;}, 300000,420000 ],{color:'#0f03fc', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph95 = board9.create('functiongraph',
+					[function(x){ return 0.3*x-52920;}, 420000,660000 ],{color:'#03e3fc', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph96 = board9.create('functiongraph',
+					[function(x){ return 0.35*x-85920;}, 660000,960000 ],{color:'#03fc7b', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+			var graph97 = board9.create('functiongraph',
+					[function(x){ return 0.45*x-181920;}, 960000,1100000 ],{color:'#fcca03', name:'',withLabel:true,label:{position:'top', offsets:[0,11]}}
+					);
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board10 = JXG.JSXGraph.initBoard('box10', {boundingbox: [-5, 5, 5, -5], axis:true});
+			var graph101 = board10.create('functiongraph',
+					[function(x){ return Math.floor(x);}, -9,10 ],{color:'red',name:'',withLabel:true,label:{position:'top', offsets:[0,0]}}
+					);
+			var p101 = board10.create('point', [1, 0], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p102 = board10.create('point', [0, -1], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p103 = board10.create('point', [-1, -2], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p104 = board10.create('point', [-2, -3], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p105 = board10.create('point', [-3, -4], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p106 = board10.create('point', [-4, -5], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p107 = board10.create('point', [2, 1], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p108 = board10.create('point', [3, 2], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p109 = board10.create('point', [4, 3], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+			var p1010 = board10.create('point', [5, 4], {name: '',trace: true,size:2,face: 'o',fillOpacity:0});
+
+			
+
+			var p1011 = board10.create('point', [1,1], {size:2,face: 'o',fillOpacity:1});
+			var p1012 = board10.create('point', [2,2], {size:2,face: 'o',fillOpacity:1});
+			var p1013 = board10.create('point', [3,3], {size:2,face: 'o',fillOpacity:1});
+			var p1014 = board10.create('point', [4,4], {size:2,face: 'o',fillOpacity:1});
+			var p1015 = board10.create('point', [0,0], {size:2,face: 'o',fillOpacity:1});
+			var p1016 = board10.create('point', [-1,-1], {size:2,face: 'o',fillOpacity:1});
+			var p1017 = board10.create('point', [-2,-2], {size:2,face: 'o',fillOpacity:1});
+			var p1018 = board10.create('point', [-3,-3], {size:2,face: 'o',fillOpacity:1});
+			var p1019 = board10.create('point', [-4,-4], {size:2,face: 'o',fillOpacity:1});
+			
+		</script>
+
+		<script>
+			const data = {
+			labels: [0,1,2,3,4,5,6,7],
+			datasets: [{
+				label: '班级平均分',
+				data: [ ,88.2, 78.3, 85.4, 80.3, 75.7, 82.6,],
+				fill: false,
+				borderDash:[3,3],
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1,
+				pointRadius:8
+			},
+			{
+				label: '王伟',
+				data: [ ,98, 87, 91, 92, 88, 95,],
+				fill: false,
+				borderDash:[3,3],
+				borderColor: 'rgb(19, 223, 121)',
+				tension: 0.1,
+				pointStyle:'cross',
+				pointRadius:8
+			},
+			{
+				label: '张城',
+				data: [ ,90, 76, 88, 75, 86, 80,],
+				fill: false,
+				borderDash:[3,3],
+				borderColor: 'rgb(175, 92, 12)',
+				tension: 0.1,
+				pointStyle:'crossRot',
+				pointRadius:8
+			},
+			{
+				label: '赵磊',
+				data: [ ,68, 65, 73, 72, 75, 82,],
+				fill: false,
+				borderDash:[3,3],
+				borderColor: 'rgb(175, 92, 192)',
+				tension: 0.1,
+				pointStyle:'rect',
+				pointRadius:8
+			}	]
+			};
+
+			const config = {
+					type: 'line',
+					data: data,
+					options: {
+						plugins: {
+							legend: {
+								display: true,
+								labels: {
+									color: 'rgb(1, 1, 1)'
+								}
+							}
+						}
+    				}
+					};
+			
+			var myChart = new Chart(
+				document.getElementById('myChart'),
+				config
+			);
+
+
+
+		</script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

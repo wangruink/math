@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>函数的概念与性质</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第三章**	
+					## **函数的概念与性质**
+					### $\S 3.1.1$ **函数的概念** 
+					王瑞
+					
+					长丰一中
+					</textarea>
+				</section>
+
+				<section data-transition="convex">
+
+					<section data-markdown data-transition="convex">
+						<textarea data-template>
+						### **函数是什么**？
+
+						</textarea>
+					</section> 
+
+					<section data-markdown data-transition="convex">
+						<textarea data-template>
+							### 变量间的对应关系
+							- 长征五号火箭发射高度与时间的关系
+							- 蓄水池使用时水面高度与使用时间的关系
+							- 高铁票价与路程的关系
+							- 炮弹的射高与时间的关系
+							- 受台风影响的面积与半径的关系
+						</textarea>
+					</section>
+					<section data-auto-animate data-transition="convex">
+						<h3>初中函数的概念 </h3>
+					  </section>
+					<section data-auto-animate data-transition="convex">
+						<h3>初中函数的概念 </h3>
+						<h4>一般地，如果在一个变化过程中有两个<font color='red'> 变量 </font>$x$和$y$，
+							对于$x$的每一个确定的值，$y$都有 <font color='red'> 唯一 </font> 确定的值与其对应，就说$y$是$x$的 <font color='red'> 函数 </font>。
+							其中$x$是自变量，$y$是因变量。</h4>
+					  </section>
+					<section data-markdown data-transition="convex">
+						<textarea data-template>
+							### 已经学习过的函数模型：
+							- $y=kx+b,k\not= 0$
+							- $y=\frac{k}{x},k\not = 0$
+							- $y=ax^2+bx+c,a\not= 0$
+						</textarea>
+					</section>
+
+					<section data-markdown data-transition="convex" data-auto-animate>
+						<textarea data-template>
+							**问题1** 某“复兴号”高速列车加速到350km/h后保持匀速运行半小时。
+							这段时间内，列车行进的路程$S$(单位:km)与运行时间$t$(单位:h)的关系可以表示为函数么？
+						</textarea>
+					</section>
+					<section data-markdown data-transition="convex" data-auto-animate >
+						<textarea data-template>
+							**问题1** 某“复兴号”高速列车加速到350km/h后保持匀速运行半小时。
+							这段时间内，列车行进的路程$S$(单位:km)与运行时间$t$(单位:h)的关系可以表示为函数么？
+
+							**思考**：有人说“这趟列车加速到350km/h后，每运行1h就前进了350km。”你认为这个说法正确吗？
+						</textarea>
+					</section>
+					
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="two">
+						<textarea data-template>
+							**问题2** 某电器维修公司要求工人每周工作至少1天，至多不超过6天.如果公司确定的工资标准是每人每天350元，
+							而且每周付一次工资，那么一个工人的工资$W$是他工作天数的$d$的函数吗？
+						</textarea>
+					</section>
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="two">
+						<textarea data-template>
+							**问题2** 某电器维修公司要求工人每周工作至少1天，至多不超过6天.如果公司确定的工资标准是每人每天350元，
+							而且每周付一次工资，那么一个工人的工资$W$是他工作天数的$d$的函数吗？
+
+							**思考**：问题1和2中函数的对应关系相同（对应关系以解析式给出），你认为它们是同一函数吗？为什么？
+						</textarea>
+					</section>
+					
+					<section data-markdown data-transition="convex"  >
+						<textarea data-template>
+							**问题3** 某两种股票近一千天的股价走势图
+
+							<div style="height: 400px;text-align:center;">
+								<div style="width:90%; display: inline-block;">
+									<canvas id="myChart"></canvas>
+								</div>
+							</div>	
+							<button onClick="window.location.reload();">重新生成</button>
+
+							**思考** 股票1的价格$P_1$是时间$t$的函数么？股票1的价格$P_1$是股票2的价格$P_2$的函数么？
+						</textarea>
+					</section>
+						
+
+					<section data-transition="convex">
+						
+
+						<h4><strong>问题4</strong> 我国城镇居民恩格尔系数</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>年份$y$</th>
+									<th style="text-align: center">恩格尔系数$r$(%)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center">2016</td>
+									<td style="text-align: center">29.3</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2017</td>
+									<td style="text-align: center">28.6</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2018</td>
+									<td style="text-align: center">27.7</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2019</td>
+									<td style="text-align: center">27.6</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2020</td>
+									<td style="text-align: center">29.2</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">2021</td>
+									<td style="text-align: center">28.6</td>
+								</tr>
+							</tbody>
+						</table>
+						恩格尔系数$r$是年份$y$的函数么？
+					</section>
+
+					<section data-markdown data-auto-animate>
+						**归纳**：
+						上述问题1至问题4中的函数有哪些共同特征？由此你能概括出函数的本质特征吗？
+					</section>
+					<section data-markdown data-auto-animate data-transition="convex" >
+						**归纳**：
+						上述问题1至问题4中的函数有哪些共同特征？由此你能概括出函数的本质特征吗？
+
+						### 共同特征
+
+						- 自变量取值范围和函数值的范围都可以用集合表示
+						- 都有一个对应关系
+						- 都有唯一的函数值与每个自变量对应
+					</section>
+				</section>
+				 
+				<section data-transition="convex">
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="three">
+						###	**函数的概念**
+							
+						一般地，设$A,B$是非空的实数集，如果对于集合$A$中的任意一个实数$x$，按照某种确定的对应关系$f$，在集合$B$中都有唯一确定的数$y$和它对应，那么就称
+		
+						$f:A\rightarrow B$为从集合$A$到集合$B$的一个函数。
+		
+						记作：$y=f(x),x\in A$
+					</section>
+					<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="three">
+						###	**函数的概念**
+
+						这其中，$x$叫做自变量，$x$的取值范围$A$叫做函数的定义域；与$x$的值相对应的$y$值叫做函数值，函数值的集合{$ \{ f(x)|x\in A \}$}叫做函数的值域。显然，值域是集合$B$的子集。
+					</section>
+					<section data-transition="convex" data-auto-animate data-auto-animate-id="three">
+						<h3><strong>函数的概念</strong> </h3>
+
+						<h4>可见，构成函数的要素为：
+						<font color="red">定义域</font>，<font color="red">对应关系</font>和<font color="red">值域</font>。因为值域是由定义域和对应关系决定的，所以如果两个函数的定义域相同，
+						且对应关系完全一致，即相同的自变量对应的函数值相同，那么这两个函数是同一个函数。</h4>
+					</section>
+					<section data-markdown="" data-transition="convex" data-auto-animate data-auto-animate-id="three">
+						###	**函数的概念**
+						- 集合A，B为非空实数集。
+						- 集合A中的数具有任意性，集合B中的数具有唯一性。
+						- 符号"$f$"：它表示对应关系，在不同的函数中$f$的具体含义不一样。
+						- $f(x)$是一个整体符号，不表示$f$与$x$的乘积。$f(a)$表示函数$f(x)$自变量$x$取$a$时的函数值
+						- 定义域、对应关系、值域是函数的三要素。
+					</section>
+
+					<section data-transition="convex" data-markdown data-auto-animate>
+						### **函数的由来**
+
+						"function"始于1530年代，意为"one's proper work or purpose"，其意义不外乎“履行任务、执行某项功能、功能、职责”。
+
+						而表示“彼变化由此变化引起”的这种数学概念发生于公元17世纪。笛卡尔在《几何学》中，使用这个概念来描述很多数学关系。
+						
+						"function"这个术语在几年后由莱布尼茨引入数学中，最后由欧拉进一步规范，并且欧拉发明了$y=f(x)$这种记法。
+					</section>
+					<section data-transition="convex" data-markdown data-auto-animate>
+						### **函数的由来**
+
+						清代数学家李善兰(1811-1882)在1859年和英国传教士伟烈亚力(Alexander Wylie)合译的《代微积拾级》
+						中首次将“function”译作“函数”。
+
+						> 凡此变量中函彼变量者，则此为彼之函数。
+					</section>
+
+
+				</section>
+
+				<section>
+				
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>练习</strong></h3>
+	
+						辨析下列对应关系是函数么？
+	
+						<div>
+							<img src="g1.png" alt="对应关系1" width="500px"/>
+						</div>
+					</section>
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>练习</strong></h3>
+	
+						辨析下列对应关系是函数么？
+	
+						<div>
+							<img src="g2.png" alt="对应关系1" width="500px"/>
+						</div>
+					</section>
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>练习</strong></h3>
+	
+						辨析下列对应关系是函数么？
+	
+						<div>
+							<img src="g3.png" alt="对应关系1" width="500px"/>
+						</div>
+					</section>
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>练习</strong></h3>
+	
+						辨析下列对应关系是函数么？
+	
+						<div>
+							<img src="g4.png" alt="对应关系1" width="500px"/>
+						</div>
+						
+					</section>
+
+					<section  data-transition="convex" data-auto-animate data-markdown>
+						### **练习**
+						判断下列等式里$y$是$x$的函数么？
+						1. $y=|x|$
+
+						2. $|y|=x$
+						
+						3. $y=x^2$
+						
+						4. $y^2=x$
+						
+						5. $y^2+x^2=1$
+						
+						6. $y^2-x^2=1$
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						判断下列图像里$y$是$x$的函数么？
+
+						<div>
+							<img src="f1.png" alt="对应关系2" width="500px"/>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						判断下列图像里$y$是$x$的函数么？
+
+						<div>
+							<img src="f2.png" alt="对应关系2" width="500px"/>
+						</div>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						如果记圆周率$\pi$小数点后第$n$位上的数字为$y$，那么$y$是$n$的函数么？如果是，该函数的定义域，值域和对应关系是什么？
+
+
+					</section>
+
+					<section  data-transition="convex"  >
+						<h3><strong>扩展</strong></h3>
+
+						
+						
+
+						BBP算法
+
+						<br>
+
+						$ \pi =\sum _{k=0}^{\infty }\left[{\frac {1}{16^{k}}}\left({\frac {4}{8k+1}}-{\frac {2}{8k+4}}-{\frac {1}{8k+5}}-{\frac {1}{8k+6}}\right)\right] $
+
+
+						$k=5,\pi\approx	 3.1415926532$
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						一次函数，二次函数，反比例函数的定义域，值域，对应关系分别是什么？
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=kx+b,k\not=0$</td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=kx+b,k\not=0$</td>
+									<td style="text-align: center">$R$</td>
+									<td style="text-align: center">$R$</td>
+									<td style="text-align: center">把$R$里面任意数$x$对应到唯一的数$kx+b$</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=ax^2+bx+c,(a \neq 0)$</td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=ax^2+bx+c,(a>0)$</td>
+									<td style="text-align: center">$R$</td>
+									<td style="text-align: center">$y\geqslant \frac{4ac-b^2}{4a} $</td>
+									<td style="text-align: center">把$R$里面任意数$x$对应到唯一的数$ax^2+bx+c$</td>
+								</tr>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=ax^2+bx+c,(a< 0)$</td>
+									<td style="text-align: center">$R$</td>
+									<td style="text-align: center">$y\leqslant \frac{4ac-b^2}{4a} $</td>
+									<td style="text-align: center">把$R$里面任意数$x$对应到唯一的数$ax^2+bx+c$</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=\frac{k}{x},k\not=0$</td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+									<td style="text-align: center"></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section  data-transition="convex" data-auto-animate >
+						<h3><strong>练习</strong></h3>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">函数</th>
+									<th style="text-align: center">定义域</th>
+									<th style="text-align: center">值域</th>
+									<th style="text-align: center">对应关系</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">$y=\frac{k}{x},k\neq 0$</td>
+									<td style="text-align: center">$x\neq 0$</td>
+									<td style="text-align: center">$y\neq 0$</td>
+									<td style="text-align: center">把不等于0的任意数$x$对应到唯一的数$\frac{k}{x}$</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+
+				</section>
+
+
+
+				<section data-transition="convex">
+
+				
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="four">
+					<h3><strong>总结</strong></h3>
+					
+					<strong>函数三要素</strong>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">概念</th>
+									<th style="text-align: center">含义</th>
+									<th style="text-align: center">性质</th>
+									<th style="text-align: center">表示</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="text-align: center">
+									<td class="text1" style="text-align: center">自变量</td>
+									<td style="text-align: center">$x$</td>
+									<td style="text-align: center">任意性</td>
+									<td style="text-align: center">小写拉丁字母</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">函数值</td>
+									<td style="text-align: center">$f(x)$</td>
+									<td style="text-align: center">唯一性（多对一或一对一）</td>
+									<td style="text-align: center">$f(x),F(x)$等</td>
+								</tr>
+							</tbody>
+						</table>
+					
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="four">
+					<h3><strong>总结</strong></h3>
+
+					<strong>函数三要素</strong>
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">概念</th>
+									<th style="text-align: center">含义</th>
+									<th style="text-align: center">性质</th>
+									<th style="text-align: center">表示</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center">定义域</td>
+									<td style="text-align: center">使函数有意义的自变量的取值集合</td>
+									<td style="text-align: center">非空数集$A$</td>
+									<td style="text-align: center">集合</td>
+								</tr>
+								<tr>
+									<td style="text-align: center">值域</td>
+									<td style="text-align: center">函数值的取值集合	</td>
+									<td style="text-align: center">{$f(x)|x\in A$}$\subseteq B$ </td>
+									<td style="text-align: center">集合</td>
+								</tr>
+							</tbody>
+						</table>
+					
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="four">
+					<h3><strong>总结</strong></h3>
+
+					对于$y=f(x),x\in A$的理解
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">概念</th>
+									<th style="text-align: center">含义</th>
+									<th style="text-align: center">备注</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="text-align: center"><font size=10px>$x\in A$</font></td>
+									<td style="text-align: center">函数的定义域为$A$</td>
+									<td style="text-align: center">研究函数先看定义域</td>
+									
+								</tr>
+								<tr>
+									<td style="text-align: center"><font size=10px>$y = f(x)$</font></td>
+									<td style="text-align: center">函数符号，表示$x$在对应关系$f$的作用下可得对应的函数值$y$</td>
+									<td style="text-align: center">不能理解为“$y$等于$f$乘$x$”</td>
+						
+								</tr>
+							</tbody>
+						</table>
+					
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="four">
+					<h3><strong>总结</strong></h3>
+
+					
+
+						<table>
+							<thead>
+								<tr>
+									<th style="text-align: center">概念</th>
+									<th style="text-align: center">含义</th>
+									<th style="text-align: center">备注</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								
+								<tr>
+									<td style="text-align: center"><font size=10px>$f$</font></td>
+									<td style="text-align: center">对应法则，表示对$x$实施“对应”操作的方式
+									</td>
+									<td style="text-align: center">可为解析式、图象、表格等</td>
+						
+								</tr>
+
+								<tr>
+									<td style="text-align: center"><font size=10px>$f(x)$</font></td>
+									<td style="text-align: center">函数值$y$，或函数$y=f (x)$的简记</td>
+									<td style="text-align: center">$f(x)=x^2+2x+1,g(x)=\frac{1}{x^3} $ </td>
+									
+								</tr>
+								<tr>
+									<td style="text-align: center"><font size=10px>$f(a)$</font></td>
+									<td style="text-align: center">当$x=a$时函数$f(x)$的取值</td>
+									<td style="text-align: center">$f(a) $是$f(x) $的一个特殊取值 </td>
+									
+								</tr>
+							</tbody>
+						</table>
+					
+				</section>
+
+
+			</section>
+
+			<section data-transition="convex">
+				<section data-transition="convex"  data-auto-animate>
+					<h3><strong>区间</strong></h3>
+
+
+					设$a,b\in R,a < b$，我们规定：
+
+					<br>
+
+
+					1.满足不等式$a\leqslant x \leqslant b $的实数$x$的集合叫做<font color="red">闭区间</font> ，表示为$[a,b]$;
+					<br>
+
+
+					2.满足不等式$a < x < b $的实数$x$的集合叫做<font color="red">开区间</font>，表示为$(a,b)$;
+					<br>
+
+					3.满足不等式$a\leqslant x < b $或$a< x \leqslant b $的实数$x$的集合叫做<font color="red">半开半闭区间</font>，表示为$[a,b),(a,b]$;
+					<br>
+
+					$a,b$叫做相应区间的<font color="red">端点</font>。
+
+
+				</section>
+
+				<section data-transition="convex" data-auto-animate>
+					<h3><strong>区间</strong></h3>
+
+					<div>
+						<img src="1.jpg" alt="区间" width="700px"/>
+					</div>
+
+
+
+					
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-markdown="">
+					### **区间**
+
+					<textarea>
+
+					1. 不是任何数集都能用区间表示，如集合{0}就不能用区间表示；
+
+					
+
+					2. $\infty $读作“无穷大”，是一个符号，不是数．以“$+\infty$”或“$-\infty$”作为区间一端时，这一端必须是小括号；
+
+					
+
+					3. 区间两个端点必须左小右大。
+
+
+					</textarea>
+
+					
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-markdown="">
+					### **区间**
+
+					用区间表示下列集合：
+
+					<textarea>
+
+					1. {$x|10< x\leqslant 100$}
+
+					2. {$x|x> -1$}
+
+					3. {$x|x\not= -2$}
+
+					4. {$x|x< 1$或$3< x\leqslant 5 $}
+
+
+					</textarea>
+
+					
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-markdown="">
+					### **区间**
+
+					用区间表示下列函数的定义域：
+
+					<textarea>
+
+					1. $f(x)=\sqrt{x+3}+ \frac{1}{x+2} $
+
+					2. $f(x)=\frac{\sqrt{5-x} }{|x|-3} $
+
+					3. $f(x)=\frac{\sqrt{x+1} }{\sqrt{-x^2-3x+4} }$
+
+					4. $f(x)=\frac{x+1}{x^2-1} $
+
+					</textarea>
+
+					
+				</section>
+
+				<section data-transition="convex" data-markdown >
+					### **区间与定义域**
+
+					1. $f(x)$是整式, 则函数的定义域为$；
+
+					2. $f(x)$是分式, 则函数的定义域要求分母不等于0；
+
+					3. $f(x)$是二次根式, 则函数的定义域要使根号下的式子$\geqslant 0$；
+
+					4. 若函数$f(x)$是由几个式子构成, 定义域要使得各式子都有意义（取各部分的交集）；
+
+					5. 定义域是一个集合, 要用集合或区间表示。
+					
+				</section>
+
+
+			</section>
+
+			<section data-transition="convex">
+
+				<section data-transition="convex" data-markdown data-auto-animate="">
+					### **练习**
+
+					$f(x)= 2x^2+2,g(x)=\frac{1}{x+2} $
+
+					1. 求$f(2),f(a+3) $
+
+					2. 求$g(a)+g(0)(a\not = -2),g(f(2))$
+
+					2. 求$g(f(x))$
+					
+				</section>
+
+				<section data-transition="convex" data-markdown data-auto-animate="">
+					### **练习**
+
+					判断下列函数是否与函数$y=x$相同？
+
+					1. $y=(\sqrt{x})^2 $
+
+					2. $u=\sqrt[3]{v^3} $
+
+					3. $y=\sqrt{x^2} $
+
+					4. $m=\frac{n^2}{n} $
+					
+				</section>
+
+				<section data-transition="convex" data-markdown data-auto-animate="">
+					### **练习**
+
+					下列各组函数是否为同一个函数?
+
+					1. $f(x)=\sqrt{-2x^3},g(x)=x\sqrt{-2x} $
+
+					2. $f(x)=x^2-2x-1,g(t)=t^2-2t-1$
+
+					3. $f(x)=x^0,g(x)=\frac{1}{x^0} $
+
+					
+				</section>
+
+					
+			</section>
+
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		<script>
+    
+			const data = [];
+			const data2 = [];
+			let prev = 100;
+			let prev2 = 80;
+			for (let i = 0; i < 1000; i++) {
+				prev += 5 - Math.random() * 10;
+				prev = Math.max(0,prev);
+				data.push({x: i, y: prev});
+				prev2 += 5 - Math.random() * 10;
+				prev2 = Math.max(0,prev2);
+				data2.push({x: i, y: prev2});
+			}
+			// Data-----
+		
+			// Animation-----
+			const totalDuration = 10000;
+			const delayBetweenPoints = totalDuration / data.length;
+			const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+			const animation = {
+				x: {
+					type: 'number',
+					easing: 'linear',
+					duration: delayBetweenPoints,
+					from: NaN, // the point is initially skipped
+					delay(ctx) {
+						if (ctx.type !== 'data' || ctx.xStarted) {
+							return 0;
+						}
+						ctx.xStarted = true;
+						return ctx.index * delayBetweenPoints;
+					}
+				},
+				y: {
+					type: 'number',
+					easing: 'linear',
+					duration: delayBetweenPoints,
+					from: previousY,
+					delay(ctx) {
+						if (ctx.type !== 'data' || ctx.yStarted) {
+							return 0;
+						}
+						ctx.yStarted = true;
+						return ctx.index * delayBetweenPoints;
+					}
+				}
+			};
+			// Animation-----
+		
+			// Config-----
+			const config = {
+				type: 'line',
+				data: {
+					datasets: [{
+						label: "股票1",
+						borderColor: "#ff0000",
+						borderWidth: 1,
+						radius: 0,
+						data: data,
+					},
+					{
+						    label: "股票2",
+							borderColor: "#00FFFF",
+							borderWidth: 1,
+							radius: 0,
+							data: data2,
+						}]
+				},
+				options: {
+					animation,
+					interaction: {
+						intersect: false
+					},
+					plugins: {
+						legend: {
+							display: true,
+							labels: {
+									color: 'black'
+								}
+						}
+					},
+					scales: {
+						x: {
+							type: 'linear'
+						}
+					}
+				}
+			};
+			// Config-----
+		
+		
+			var myChart = new Chart(
+				document.getElementById('myChart'),
+				config
+			);
+		</script>
+	</body>
+</html>

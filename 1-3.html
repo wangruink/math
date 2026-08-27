@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>集合的基本运算</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					border-radius: 20px;
+					height: 350px;
+					margin: auto;
+					position: absolute;
+					left: 0;
+					right: 0;
+				}
+			.text1 td {
+				writing-mode: horizontal-tb;
+				}
+			.two-col {
+				display: flex;
+				justify-content: space-around;
+				gap: 40px;
+				text-align: left;
+				font-size: 0.8em;
+			}
+			.two-col ul {
+				list-style: none;
+				padding: 0;
+			}
+			.two-col li {
+				margin: 4px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-transition="convex">
+
+				
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第一章**
+					## **集合**
+
+					### **$\S1.3$ 集合的基本运算**
+
+					### 王瑞
+
+					### 合肥六中
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **$\S1.3.1$ 集合的并集**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+					实数有加减乘除等运算，集合是否也有类似的运算呢？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+
+					观察下面的例子，说说集合 $A, B$ 与集合 $C$ 有什么关系？
+
+					1. $A = \\{1, 2, 3\\}$,$B = \\{4, 5, 6\\}$,
+					
+					$C = \\{1, 2, 3, 4, 5, 6\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景**
+
+
+					观察下面的例子，说说集合 $A, B$ 与集合 $C$ 有什么关系？
+
+					
+					2. $A = \\{x \mid x\text{是有理数}\\}$,$B = \\{x \mid x\text{是无理数}\\}$,
+					
+					$C = \\{x \mid x\text{是实数}\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **集合的运算——并集**
+
+					一般地，由所有属于集合 $A$ <font color="red">或</font>属于集合 $B$ 的元素组成的集合，称为集合 $A$ 与 $B$ 的**并集**，记作 $A \cup B$，读作“$A$ 并 $B$”，即
+
+					$$A \cup B = \\{x \mid x \in A,\ \text{ 或  } x \in B\\}$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<h3><strong>集合的运算——并集</strong></h3>
+					并集的 Venn 图
+					<br>
+
+					<svg viewBox="0 0 440 280" width="440" height="280" >
+						<path d="M 105 145 A 80 80 0 1 0 265 145 A 80 80 0 1 0 105 145 Z
+								M 185 145 A 80 80 0 1 0 345 145 A 80 80 0 1 0 185 145 Z"
+							fill="rgba(120,180,255,.45)" stroke="none"/>
+    					<circle cx="185" cy="145" r="80" fill="none" stroke="#2a6" stroke-width="2.5"/>
+    					<circle cx="265" cy="145" r="80" fill="none" stroke="#2a6" stroke-width="2.5"/>
+						<text x="150" y="140" font-size="26" font-family="serif" font-weight="bold">A</text>
+						<text x="285" y="140" font-size="26" font-family="serif" font-weight="bold">B</text>
+						<foreignObject x="110" y="238" width="220" height="42" pointer-events="none">
+							<div xmlns="http://www.w3.org/1999/xhtml" class="katex-legend" data-formula="A \cup B" style="width:100%;text-align:center;font-size:24px;"></div>
+    					</foreignObject>
+  					</svg>
+					
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **并集的性质**
+
+					1. $A \cup B = B \cup A$
+					2. $A \cup A = A$
+					3. $A \cup \varnothing = A$
+					4. $A \subseteq A \cup B$，$B \subseteq A \cup B$
+					5. 若 $A \cup B = A$，则 $B \subseteq A$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **并集的性质**
+
+					
+					5. 若 $A \cup B = A$，则 $B \subseteq A$
+
+					如何证明？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **并集的性质**
+
+					
+					5. 若 $A \cup B = A$，则 $B \subseteq A$
+					
+					证明：
+
+					任取$x\in B$，则$x\in A\cup B=A$，
+					
+					即$x\in A$，所以$B\subseteq A$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **练习**
+
+					1. 设集合 $A = \\{x \mid -1 < x < 2\\}$，$B = \\{x \mid 1 < x < 3\\}$，求 $A \cup B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **练习**
+
+					2. 集合 $M = \\{1, 3\\}$，且 $M \cup N = \\{1, 3, 5, 7\\}$，则集合 $N$ 可能的个数有多少个？
+					</textarea>
+				</section>
+
+				</section>
+
+				<section data-transition="convex">
+
+				
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **$\S1.3.2$ 集合的交集**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **背景**
+
+					观察下面的集合，集合 $C$ 与集合 $A, B$ 有什么关系？
+
+					1. $A = \\{2, 4, 6, 8\\}$，$B = \\{8, 10, 12\\}$，$C = \\{8\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **背景**
+
+					观察下面的集合，集合 $C$ 与集合 $A, B$ 有什么关系？
+
+					2. $A = \\{x \mid x\text{是等腰三角形}\\}$，
+					
+					$B = \\{x \mid x\text{是直角三角形}\\}$，
+					
+					$C = \\{x \mid x\text{是等腰直角三角形}\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **集合的运算——交集**
+
+					一般地，由所有属于集合 $A$ <font color="red">且</font> 属于集合 $B$ 的元素组成的集合，称为集合 $A$ 与 $B$ 的**交集**，记作 $A \cap B$，读作“$A$ 交 $B$”，即
+
+					$$A \cap B = \\{x \mid x \in A,\ \text{且 } x \in B\\}$$
+
+					</textarea>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<h3><strong>集合的运算——交集</strong></h3>
+
+					交集的 Venn 图
+
+					<br>
+
+					<svg viewBox="0 0 440 280" width="440" height="280" role="img" aria-label="A∩B Venn图">
+   		 			<circle cx="185" cy="145" r="80" fill="rgba(120,180,255,.25)" stroke="#2a6" stroke-width="2.5"/>
+    				<circle cx="265" cy="145" r="80" fill="rgba(120,180,255,.25)" stroke="#2a6" stroke-width="2.5"/>
+    				<path d="M 225 75.718 A 80 80 0 0 0 225 214.282 A 80 80 0 0 0 225 75.718 Z" fill="rgba(120,180,255,.95)" stroke="none"/>
+    				<text x="150" y="140" font-size="26" font-family="serif" font-weight="bold">A</text>
+    				<text x="285" y="140" font-size="26" font-family="serif" font-weight="bold">B</text>
+					<foreignObject x="110" y="238" width="220" height="42" pointer-events="none">
+      						<div xmlns="http://www.w3.org/1999/xhtml" class="katex-legend" data-formula="A \cap B" style="width:100%;text-align:center;font-size:24px;"></div>
+    				</foreignObject>
+  					</svg>
+					
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **交集的性质**
+
+					1. $A \cap B = B \cap A$
+					2. $A \cap A = A$
+					3. $A \cap \varnothing = \varnothing$
+					4. $A \cap B \subseteq A \cup B$
+					5. $A \cap B \subseteq A$，$A \cap B \subseteq B$
+					6. 若 $A \cap B = A$，则 $A \subseteq B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="5">
+					<textarea data-template>
+					### **交集的性质**
+
+					6. 若 $A \cap B = A$，则 $A \subseteq B$
+
+					如何证明？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **练习**
+
+					1. 设集合 $A = \\{x \mid -1 < x < 2\\}$，$B = \\{x \mid 1 < x < 3\\}$，求 $A \cap B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="6">
+					<textarea data-template>
+					### **练习**
+
+					2. 平面内直线 $l_1$ 上的点的集合为 $L_1$，直线 $l_2$ 上的点的集合为 $L_2$，试用集合的运算表示 $l_1, l_2$ 的位置关系
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **思考**
+
+					已知集合 $A = \\{1, 2\\}$，$B = \\{x \mid (x^2 + ax)(x^2 + ax + 2) = 0\\}$，记集合 $A$ 中元素的个数为 $n(A)$，定义
+
+					$$f(A, B) = \begin{cases} n(A) - n(B), & n(A) \ge n(B) \\\\ n(B) - n(A), & n(A) < n(B) \end{cases}$$
+
+					若 $f(A, B) = 1$，求实数 $a$ 的取值集合。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **回顾**
+
+					+ 并集的定义与性质
+					+ 交集的定义与性质
+					</textarea>
+				</section>
+
+				</section>
+
+				<section data-transition="convex">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **$\S1.3.3$ 集合的补集**
+					</textarea>
+				</section>
+
+				
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景：数的扩充**
+
+					$$\text{自然数} \rightarrow \text{整数} \rightarrow \text{有理数} \rightarrow \text{实数}$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **背景：数的扩充**
+
+					$$\text{自然数} \rightarrow \text{整数} \rightarrow \text{有理数} \rightarrow \text{实数}$$
+
+					方程 $(x^2 - 4)(x^2 - 3) = 0$ 的解集？
+
+					+ 在**自然数**范围内的解集：$\\{2\\}$
+					+ 在**整数或有理数**范围内的解集：$\\{-2, 2\\}$
+					+ 在**实数**范围内的解集：$\\{-2, 2, \sqrt{3}, -\sqrt{3}\\}$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" >
+					<textarea data-template>
+					### **全集**
+
+					在不同的范围内研究同一个问题，结果也可能不同。通常把研究问题前给定的范围所对应的集合称为**全集**。
+
+					一般的，如果一个集合含有所研究问题中涉及的所有元素，那么就称这个集合为**全集**（Universe），通常记作 $U$。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **补集**
+
+					对于一个集合 $A$，由全集 $U$ 中的不属于 $A$ 的所有元素组成的集合称为集合 $A$ 相对于全集 $U$ 的**补集**（Complement），简称为集合 $A$ 的补集，
+					
+					记作 $\complement_{U} A$，即
+
+					$$\complement_{U} A = \\{x \mid x \in U,\ \text{且 } x \notin A\\}$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<h3><strong>补集</strong></h3>
+
+					补集的 Venn 图
+
+					<br>
+
+					<svg viewBox="0 0 440 280" width="440" height="280" >
+						<rect x="20" y="20" width="400" height="220" fill="rgba(120,180,255,.5)" stroke="#2a6" stroke-width="2.5"/>
+						<circle cx="210" cy="135" r="70" fill="#fff" stroke="#a52" stroke-width="2.5"/>
+						<text x="180" y="142" font-size="26" font-family="serif" font-weight="bold">A</text>
+						<text x="390" y="45" font-size="24" font-family="serif" font-weight="bold">U</text>
+						<text x="120" y="45" font-size="20" font-family="serif" font-style="italic">∁<tspan dy="4" font-size="14">U</tspan>A</text>
+						<text x="220" y="265" font-size="22" text-anchor="middle" font-family="serif" font-style="italic">∁<tspan dy="4" font-size="14">U</tspan>A</text>
+					</svg>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **补集的性质**
+
+					1. $A \subseteq U$
+					2. $\complement_{U} A \subseteq U$
+					3. $(\complement_{U} A) \cup A = U$
+					4. $(\complement_{U} A) \cap A = \varnothing$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **例题**
+
+					1. 设 $U = \\{x \mid x\text{是小于 } 9 \text{ 的正整数}\\}$，$A = \\{1, 2, 3\\}$，$B = \\{3, 4, 5, 6\\}$，求 $\complement_{U} A$，$\complement_{U} B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **例题**
+
+					2. 设 $U = \mathbb{R}$，$A = \\{x \mid -1 < x \le 2\\}$，$B = \\{x \mid x < 3\\}$，求 $\complement_{U} A$，$\complement_{U} B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **例题**
+
+					3. 全集 $U = \\{x \mid x < 10,\ x \in \mathbb{N}^{*}\\}$，$A \subseteq U$，$B \subseteq U$，$(\complement_{U} B) \cap A = \\{1, 9\\}$，$A \cap B = \\{3\\}$，$(\complement_{U} A) \cap (\complement_{U} B) = \\{4, 6, 7\\}$，求集合 $A, B$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **例题**
+
+					4. 已知集合 $A = \\{x \mid 3 \le x < 7\\}$，$B = \\{x \mid 5 < x < 10\\}$，求 $\complement_{\mathbb{R}} (A \cup B)$，$\complement_{\mathbb{R}} (A \cap B)$，$(\complement_{\mathbb{R}} A) \cap B$，$A \cup (\complement_{\mathbb{R}} B)$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **课堂练习**
+
+					已知 $A = \\{x \mid 2 \le x \le 8\\}$，$B = \\{x \mid 2 \le x \le 6 - m\\}$，$C = \\{x \mid m - 1 \le x \le 1 + 2m\\}$，$U = \mathbb{R}$。
+
+					1. $(\complement_{U} A) \cap B = \varnothing$，求 $m$ 取值范围
+					2. $B \cap C \ne \varnothing$，求 $m$ 取值范围
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **总结**
+
+					+ 解决集合的混合运算问题时，一般先运算括号内的部分。
+					+ 数轴与 Venn 图都可以直观地表示数集，所以进行集合的交、并、补运算时，经常借助数轴、Venn 图求解，注意端点值的取舍。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate>
+					<textarea data-template>
+					### **总结**
+
+					+ 在集合的交并运算中，若运算结果为空集，则不要忽视含参数集合为空集的讨论。
+					+ 已知集合运算，求参数，根据集合的运算结果，并借助数轴，建立关于参数的不等式（组）求解，注意端点值的取舍。
+					</textarea>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<h3><strong>空集</strong></h3>
+
+					<div style="font-size:0.8em; text-align:left; max-width:900px; margin:0 auto;">
+						<ol style="margin-bottom:0.5em;">
+							<li>一般的非空集合可以理解为装了东西的塑料袋</li>
+							<li>空集 $\varnothing$ 可以理解为空塑料袋</li>
+							<li>集合 $A = \{\varnothing\}$ 可以理解为装了塑料袋的塑料袋，自然是非空集合。有 $\varnothing \in A$，$\varnothing \subseteq A$</li>
+						</ol>
+					</div>
+
+					
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<h3><strong>空集</strong></h3>
+
+
+					<p style="font-size:0.8em;">集合 $A = \{a, \{b\}, \{a, b\}, \varnothing\}$，下列描述正确的是：</p>
+
+					<div class="two-col">
+						<ul>
+							<li>1. $a \in A$</li>
+							<li>2. $a \subseteq A$</li>
+							<li>3. $\{a\} \in A$</li>
+							<li>4. $\{a\} \subseteq A$</li>
+							<li>5. $b \in A$</li>
+							<li>6. $b \subseteq A$</li>
+							<li>7. $\{b\} \in A$</li>
+						</ul>
+						<ul>
+							<li>8. $\{b\} \subseteq A$</li>
+							<li>9. $\{a, b\} \in A$</li>
+							<li>10. $\{a, b\} \subseteq A$</li>
+							<li>11. $\varnothing \in A$</li>
+							<li>12. $\varnothing \subseteq A$</li>
+							<li>13. $\{\varnothing\} \in A$</li>
+							<li>14. $\{\varnothing\} \subseteq A$</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<h3><strong>空集</strong></h3>
+
+					
+
+					<p style="font-size:0.8em;">集合 $A = \{a, \{b\}, \{a, b\}, \varnothing\}$，下列描述正确的是：</p>
+
+					<div class="two-col">
+						<ul>
+							<li>1. $a \in A$</li>
+							<li><font color="red"> 2. $a \subseteq A$ </font></li>
+							<li><font color="red">3. $\{a\} \in A$</font></li> 
+							<li>4. $\{a\} \subseteq A$</li>
+							<li><font color="red">5. $b \in A$</font></li>
+							<li><font color="red">6. $b \subseteq A$</font></li>
+							<li>7. $\{b\} \in A$</li>
+						</ul>
+						<ul>
+							<li><font color="red">8. $\{b\} \subseteq A$</font></li>
+							<li>9. $\{a, b\} \in A$</li>
+							<li><font color="red">10. $\{a, b\} \subseteq A$</font></li>
+							<li>11. $\varnothing \in A$</li>
+							<li>12. $\varnothing \subseteq A$</li>
+							<li><font color="red">13. $\{\varnothing\} \in A$</font></li>
+							<li>14. $\{\varnothing\} \subseteq A$</li>
+						</ul>
+					</div>
+				</section>
+
+				</section>
+
+			</div>
+		</div>
+		<script>
+			(function () {
+				document.querySelectorAll('.katex-legend').forEach(function (box) {
+				var tex = box.getAttribute('data-formula') || 'A \\cap B';
+				if (typeof katex !== 'undefined') {
+					katex.render(tex, box, { throwOnError: false });
+				} else {
+					box.textContent = tex.replace(/\\cap/g, '∩').replace(/\\cup/g, '∪');
+				}
+				});
+			})();
+		</script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>目录</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"></script>
+		<style type="text/css">
+			.chapter-list {
+				text-align: left;
+				width: fit-content;
+				margin: 8px auto 0;
+				font-size: 20px;
+				line-height: 1.3;
+				max-height: 580px;
+				overflow-y: auto;
+				scrollbar-width: thin;
+				padding-right: 4px;
+			}
+			details.chapter {
+				margin: 8px 0;
+				border: 1px solid rgba(0, 0, 0, 0.18);
+				border-radius: 8px;
+				background: rgba(255, 255, 255, 0.6);
+				overflow: hidden;
+				text-align: left;
+			}
+			details.chapter > summary {
+				cursor: pointer;
+				padding: 8px 16px;
+				font-weight: bold;
+				font-size: 1.1em;
+				list-style: none;
+				user-select: none;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			details.chapter > summary::-webkit-details-marker { display: none; }
+			details.chapter > summary::after {
+				content: "＋";
+				font-size: 1em;
+				color: rgba(0, 0, 0, 0.5);
+			}
+			details.chapter[open] > summary::after {
+				content: "－";
+			}
+			details.chapter > summary:hover {
+				background: rgba(0, 0, 0, 0.06);
+			}
+			details.chapter ul {
+				margin: 0;
+				padding: 2px 16px 8px 40px;
+			}
+			details.chapter li {
+				margin: 2px 0;
+				font-size: 1em;
+				line-height: 1.3;
+			}
+			details.chapter li a {
+				color: inherit;
+				text-decoration: none;
+				display: block;
+				padding: 1px 0;
+				border-radius: 4px;
+			}
+			details.chapter li a:hover {
+				text-decoration: underline;
+				color: #1a56db;
+				background: rgba(26, 86, 219, 0.08);
+			}
+			.main{
+				text-align: center;
+				border-radius: 20px;
+				height: 350px;
+				margin: auto;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			.text1 td {
+				writing-mode: horizontal-tb;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section  data-transition="fade">
+					<h3><b><a href="0-1.html">开学第一课</a></b></h3>
+				</section>
+
+			
+				<section data-transition="fade" data-auto-animate>
+						<h3><b> 必修一</b></h3>
+						<div class="chapter-list">
+							<details class="chapter">
+								<summary>第一章 集合与常用逻辑用语</summary>
+								<ul>
+									<li><a href="1-1.html">1.1 集合的概念</a></li>
+									<li><a href="1-2.html">1.2 集合间的基本关系</a></li>
+									<li><a href="1-3.html">1.3 集合的基本运算</a></li>
+									<li><a href="1-4.html">1.4 充分条件与必要条件</a></li>
+									<li><a href="1-5.html">1.5 全称量词与存在量词</a></li>
+								</ul>
+							</details>
+							<details class="chapter">
+								<summary>第二章 一元二次函数、方程和不等式</summary>
+								<ul>
+									<li><a href="2-1.html">2.1 等式性质与不等式性质</a></li>
+									<li><a href="2-2.html">2.2 基本不等式</a></li>
+									<li><a href="2-3.html">2.3 二次函数与一元二次方程、不等式</a></li>
+								</ul>
+							</details>
+							<details class="chapter">
+								<summary>第三章 函数的概念与性质</summary>
+								<ul>
+									<li><a href="3-1-1.html">3.1.1 函数的概念</a></li>
+									<li><a href="3-1-2.html">3.1.2 函数的表示法</a></li>
+									<li><a href="3-2-1.html">3.2.1 单调性与最大（小）值</a></li>
+									<li><a href="3-2-2.html">3.2.2 函数的奇偶性</a></li>
+									<li><a href="3-3.html">3.3 幂函数</a></li>
+								</ul>
+							</details>
+							<details class="chapter">
+								<summary>第四章 指数函数与对数函数</summary>
+								<ul>
+									<li><a href="4-1.html">4.1 指数</a></li>
+									<li><a href="4-2.html">4.2 指数函数</a></li>
+									<li><a href="4-3.html">4.3 对数</a></li>
+									<li><a href="4-4.html">4.4 对数函数</a></li>
+									<li><a href="4-5.html">4.5 函数的应用（二）</a></li>
+								</ul>
+							</details>
+							<details class="chapter">
+								<summary>第五章 三角函数</summary>
+								<ul>
+									<li><a href="5-1.html">5.1 任意角和弧度制</a></li>
+									<li><a href="5-2.html">5.2 三角函数的概念</a></li>
+									<li><a href="5-3.html">5.3 诱导公式</a></li>
+									<li><a href="5-4.html">5.4 三角函数的图象与性质</a></li>
+									<li><a href="5-5.html">5.5 三角恒等变换</a></li>
+									<li><a href="5-6.html">5.6 函数 y=Asin(ωx+φ)</a></li>
+									<li><a href="5-7.html">5.7 三角函数的应用</a></li>
+								</ul>
+							</details>
+						</div>
+					</section> 
+
+					
+
+				
+
+				
+
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+
+		<script>
+			// 展开式章节列表的辅助逻辑：
+			// 1) 列表可滚动时，鼠标滚轮先滚动列表，而不是切换幻灯片；
+			// 2) 展开某一章时，若列表需要滚动，将该章滚动到列表可视区域的中间。
+			(function () {
+				var list = document.querySelector('.chapter-list');
+				if (!list) return;
+
+				list.addEventListener('wheel', function (e) {
+					var canScrollDown = list.scrollTop + list.clientHeight < list.scrollHeight - 1;
+					var canScrollUp = list.scrollTop > 0;
+					if ((e.deltaY > 0 && canScrollDown) || (e.deltaY < 0 && canScrollUp)) {
+						e.stopPropagation();
+					}
+				}, { passive: true });
+
+				list.querySelectorAll('details.chapter').forEach(function (d) {
+					d.addEventListener('toggle', function () {
+						if (!d.open) return;
+						var dr = d.getBoundingClientRect();
+						var lr = list.getBoundingClientRect();
+						var target = dr.top - lr.top + list.scrollTop - (list.clientHeight - dr.height) / 2;
+						target = Math.max(0, Math.min(target, list.scrollHeight - list.clientHeight));
+						list.scrollTo({ top: target, behavior: 'smooth' });
+					});
+				});
+			})();
+		</script>
+
+	</body>
+</html>

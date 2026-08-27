@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>基本不等式</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
+			font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-baqh{text-align:center;vertical-align:top}
+			.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+			.tg .tg-hjji{font-size:24px;text-align:center;vertical-align:top}
+			.tg .tg-6ibf{border-color:inherit;font-size:24px;text-align:center;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					## **第二章**
+					
+					## **一元二次函数、方程和不等式**
+
+					### **$\S$ 2.2 基本不等式**
+
+					### 王瑞
+
+					### 合肥六中
+					</textarea>
+				</section>
+
+				<section  data-transition="convex">
+
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.2.1 基本不等式**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **重要不等式**
+
+					$$\forall a, b \in \mathbb{R},\ a^2 + b^2 \geqslant 2ab \quad (\text{当且仅当 } a = b \text{ 取等号})$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **重要不等式**
+
+					$$\forall a, b \in \mathbb{R},\ a^2 + b^2 \geqslant 2ab \quad (\text{当且仅当 } a = b \text{ 取等号})$$
+
+					**思考：**
+
+					如果 $a > 0, b > 0$，能否用 $\sqrt{a}, \sqrt{b}$ 代替上式中的 $a, b$，可以得到什么结论？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **基本不等式**
+
+					$$\text{若 } a > 0, b > 0, \text{则 } \frac{a + b}{2} \geqslant \sqrt{ab} \quad $$
+					
+					$$(\text{当且仅当 } a = b \text{ 时取等号})$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **基本不等式**
+
+					$$\text{若 } a > 0, b > 0, \text{则 } \frac{a + b}{2} \geqslant \sqrt{ab} \quad $$
+					
+					$$(\text{当且仅当 } a = b \text{ 时取等号})$$
+
+					**思考：**
+
+					+ 一定要 $a > 0, b > 0$ 么？
+					+ 当且仅当是什么意思？
+					+ 如何证明这个不等式是成立的？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **基本不等式的证明方法**
+
+					1. **作差法：**
+
+					$$\frac{a + b}{2} - \sqrt{ab} = \frac{a + b - 2\sqrt{ab}}{2} = \frac{(\sqrt{a} - \sqrt{b})^2}{2} \geqslant 0$$
+
+					</textarea>
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					
+					<h3><b>基本不等式的证明方法</b> </h3>
+
+					2. <b>几何法：</b>
+
+					
+
+					<div class="main">
+						<div id="box4" class="jxgbox" style="width:500px; height:300px;"></div>
+					</div>
+
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **基本不等式**
+
+					$\frac{a + b}{2}$ 叫做**算术平均数**（arithmetic mean），
+					
+					$\sqrt{ab}$ 叫做**几何平均数**（geometric mean）。
+					
+					基本不等式又叫做**算术-几何平均值不等式**。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **基本不等式**
+
+
+					| | 重要不等式 | 基本不等式 |
+					| --- | --- | --- |
+					| 不等式 | $a^2 + b^2 \geqslant 2ab$ | $\frac{a + b}{2} \geqslant \sqrt{ab}$ |
+					| 适用范围 | $a, b \in \mathbb{R}$ | $a, b > 0$ |
+					| 文字叙述 | 两数的平方和不小于它们积的 2 倍 | 两个正数的算术平均数不小于它们的几何平均数 |
+					| 等号成立 | $a = b$ | $a = b$ |
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **例题**
+
+					**例 1.** 已知 $x < 0$，求函数 $y = x + \frac{1}{x}$ 的最大值。
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **例题**
+
+
+					**例 2.** 已知 $a, b > 0$，$ab = 6$，求 $a + b$ 的最小值。
+
+					**例 3.** 已知 $a, b > 0$，$a + b = 18$，求 $ab$ 的最大值。
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **例题**
+
+					**思考：** 函数 $y = x^2 + 2 + \frac{1}{x^2 + 2}$ 能否用基本不等式求最小值？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **适用范围**
+
+					怎么知道关于不等式的证明中能否使用基本不等式呢？
+
+					+ **正数**：$a > 0, b > 0$
+					+ **定值**：$a + b$ 或者 $ab$ 由条件给出了定值
+					+ **相等**：当且仅当 $a = b$ 时取等号
+
+					利用基本不等式求最值的问题，适用条件：**一正，二定，三相等**。
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **总结**
+
+					+ 重要不等式与基本不等式
+					+ $x, y > 0$，已知 $x + y$，求 $xy$ 最大值
+					+ $x, y > 0$，已知 $xy$，求 $x + y$ 最小值
+					+ 基本不等式应用条件：一正、二定、三相等
+					</textarea>
+				</section>
+
+				</section>
+
+				<section  data-transition="convex">
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **§2.2.2 基本不等式在实际问题中的应用**
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **回顾**
+
+					重要不等式：
+
+					$$\forall a, b \in \mathbb{R},\ a^2 + b^2 \geqslant 2ab$$
+
+					基本不等式：
+
+					$$\forall a, b > 0,\ \frac{a + b}{2} \geqslant \sqrt{ab}$$
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<textarea data-template>
+					### **回顾**
+
+					基本不等式的变形：
+
+					$$\forall a, b > 0,\ a + b \geqslant 2\sqrt{ab}$$
+
+					$$\forall a, b > 0,\ ab \leqslant \left(\frac{a + b}{2}\right)^2$$
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **基本不等式的应用**
+
+					**例 1.** 一段长为 30m 的篱笆围成一个一边靠墙的矩形菜园，墙长 18m，该矩形的长、宽各为多少时，矩形菜园的面积最大？最大面积多少？
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="2">
+					<textarea data-template>
+					### **基本不等式的应用**
+
+
+					**例 2.** 某单位用 2160 万元购得一块空地，计划在该地块上建造一栋至少 10 层、每层 2000 平方米的楼房。经测算，若将楼房建为 $x$ 层，则每平方米的平均建筑费用为 $560 + 48x$（单位：元）。为了使楼房每平方米的平均综合费用最少，该楼房应建为多少层？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **基本不等式的应用**
+
+					**不等式链：**
+
+					$$\frac{2}{\frac{1}{a} + \frac{1}{b}} \leqslant \sqrt{ab} \leqslant \frac{a + b}{2} \leqslant \sqrt{\frac{a^2 + b^2}{2}}$$
+
+					$$ab \leqslant \left(\frac{a + b}{2}\right)^2 \leqslant \frac{a^2 + b^2}{2}$$
+
+					
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="3">
+					<textarea data-template>
+					### **基本不等式的应用**
+
+					**常用思路：**
+
+					+ 配凑
+					+ 换元
+					+ 消元
+					+ 巧用“1”
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **基本不等式的应用——配凑法**
+
+					1. $x > 1$，$y = 2x + \frac{1}{x - 1}$ 的最小值是多少？
+					2. $x > 2y > 0$，$\frac{3y}{x - 2y} + \frac{x}{y}$ 的最小值是多少？
+					3. $0 < x < \frac{2}{5}$，$3x(2 - 5x)$ 的最大值是多少？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **基本不等式的应用——利用“1”的代换求最值**
+
+					1. $x, y > 0$，$4x + y = 4$，$\frac{1}{x} + \frac{1}{y}$ 的最小值是多少？
+					2. $x, y > 0$，$\frac{1}{x} + \frac{2}{y} = 2$，$2x + y$ 的最小值是多少？
+					3. $0 < x < \frac{1}{2}$，$\frac{1}{x} + \frac{1}{1 - 2x}$ 的最小值是多少？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex" data-auto-animate data-auto-animate-id="4">
+					<textarea data-template>
+					### **基本不等式的应用——利用“1”的代换求最值**
+
+					4. $x > 1, y > 0$，$x + \frac{2}{y} = 2$，$\frac{1}{x - 1} + y$ 的最小值是多少？
+					5. $x, y > 0$，$\frac{1}{x} + \frac{2}{y} = 1$，$2xy - 3x$ 的最小值是多少？
+					6. $m, n > 0$，$m + n = 1$，$\frac{m}{m + 2} + \frac{n}{n + 4}$ 的最大值是多少？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **基本不等式的应用——换元法**
+
+					1. $a, b > 0$，$2ab + a + 2b = 3$，$a + 2b$ 的最小值是多少？
+					2. $a^2 + b^2 = ab + 4$，$a + b$ 的最大值是多少？
+					3. $x > 1$，$\frac{x^2}{3x - 3} - x + 1$ 的最大值是多少？
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="convex">
+					<textarea data-template>
+					### **基本不等式的应用——消元法**
+
+					1. $x > 1$，$xy - y = x + 3$，$x + 2y$ 的最小值是多少？
+					2. $x, y > 0$，$x^2 - 2xy + 2 = 0$，$x + y$ 的最小值是多少？
+					</textarea>
+				</section>
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-2.5, 2.5 , 2.5, -0.5], axis:false,showCopyright: false,});
+			
+			var p41 = board4.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p42 = board4.create('point', [2, 0],{name:'$A$',fixed:true});
+			var p45 = board4.create('point', [-2, 0],{name:'$B$',fixed:true});
+			var p43 = board4.create('point', [1.6,1.6 ],{name:'$ $'});
+			
+			var c41 = board4.create('semicircle',[p45, p42],{strokeWidth:1.5});
+
+			var li41 = board4.create('line',[p41,p43], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var p44 = board4.create('intersection',[li41,c41],{name:'$C$'});
+
+
+			var p46 = board4.create('point',[ function(){return p44.X()} , 0 ],{name:'$D$'});
+
+			var li42 = board4.create('line',[p42,p44], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 });
+			
+			var li43 = board4.create('line',[p45,p44], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 });
+			
+			var li44 = board4.create('line',[p46,p44], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5 });
+
+			
+
+			var li46 = board4.create('line',[p45,p46], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,name:'$a$' });
+				
+			var li47 = board4.create('line',[p42,p46], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,name:'$b$' });
+			var t1 = board4.create('text',[-1,-0.15,"$b$"]);
+
+			var t2 = board4.create('text',[1.6,-0.15,"$a$"]);
+
+
+		</script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() }	// downlad chalkboard drawing when 'd' is pressed
+				},
+				mouseWheel: true,
+				touch: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls, RevealMath.KaTeX, RevealChart]
+			});
+		</script>
+
+	</body>
+</html>

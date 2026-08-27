@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数轴上的集合交并集 · JSXGraph</title>
+<link rel="stylesheet" href="jsxgraph.css">
+<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #eef1f5;
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+    color: #2c3e50;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 28px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.09);
+    padding: 24px 30px 30px;
+  }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  .sub { color: #555; font-size: 14px; line-height: 1.8; margin: 0 0 12px; }
+  .legend {
+    font-size: 13px; color: #444; line-height: 1.9;
+    background: #f7f9fc; border: 1px solid #e3e8f0; border-radius: 8px;
+    padding: 10px 14px; margin: 0 0 12px;
+  }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; }
+  .buttons button {
+    border: 1px solid #cfd6df; background: #fafbfc; border-radius: 8px;
+    padding: 8px 14px; font-size: 14px; cursor: pointer; color: #2c3e50;
+    transition: all .15s;
+  }
+  .buttons button:hover { background: #eef4ff; border-color: #9db8e8; }
+  #box {
+    width: 100%; height: 580px; position: relative; overflow: hidden;
+    border: 1px solid #e2e6ec; border-radius: 10px; background: #fff;
+  }
+  .tip { font-size: 13px; color: #7f8c8d; line-height: 1.8; margin: 12px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>数形结合：用数轴求集合的交集与并集</h1>
+  <p class="sub">
+    把集合 A（<span style="color:#e74c3c;font-weight:700">红</span>）和集合 B（<span style="color:#3498db;font-weight:700">蓝</span>）画在数轴上：
+    <b>交集 A∩B</b> 是两条色带重叠的部分，<b>并集 A∪B</b> 是两条色带覆盖到的全部部分。
+  </p>
+  <div class="legend">
+    操作：<b>拖动</b>端点改变集合范围；<b>点击</b>端点圆圈，在“闭区间（包含端点，实心）”和“开区间（不包含端点，空心）”之间切换。
+  </div>
+  <div class="buttons">
+    <button onclick="preset(1)">示例 1：A=[-2,3]，B=[1,5]（部分重叠）</button>
+    <button onclick="preset(2)">示例 2：A=[-4,-1]，B=[2,4]（完全分离）</button>
+    <button onclick="preset(3)">示例 3：A=[-3,2]，B=(2,5]（端点相接）</button>
+    <button onclick="preset(4)">示例 4：A=(-2,4)，B=[2,6)（含开区间）</button>
+  </div>
+  <div id="box" class="jxgbox"></div>
+  <p class="tip">
+    提示：交集为空时显示 ∅；当两个集合没有公共部分时，并集显示为两段。
+    试试拖动端点使两集合分开、重叠或端点重合，并点击端点切换开闭区间，观察公式随之变化。
+  </p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var cA = '#e74c3c', cB = '#3498db', cI = '#27ae60', cU = '#f39c12';
+  var yA = 0, yB = -1, yI = -2, yU = -3;
+
+  if (typeof JXG === 'undefined') {
+    document.getElementById('box').innerHTML = 'JSXGraph 库加载失败：请检查网络或 jsxgraphcore.js 是否存在。';
+    return;
+  }
+
+  var board = JXG.JSXGraph.initBoard('box', {
+    boundingbox: [-11.6, 2.6, 11.6, -4.15],
+    axis: false,
+    grid: false,
+    pan: { needTwoFingers: true },
+    zoom: { wheel: false },
+    showNavigation: false,
+    showCopyright: false
+  });
+
+  // ---- 数轴 ----
+  function makeNumberLine(y) {
+    var main = board.create('line', [[-10, y], [10, y]], {
+      straightFirst: false, straightLast: false,
+      strokeColor: '#556', strokeWidth: 1.3
+    });
+    board.create('line', [[-10, y], [-10.4, y]], {
+      straightFirst: false, straightLast: false,
+      lastArrow: true, strokeColor: '#556', strokeWidth: 1.3
+    });
+    board.create('line', [[10, y], [10.4, y]], {
+      straightFirst: false, straightLast: false,
+      lastArrow: true, strokeColor: '#556', strokeWidth: 1.3
+    });
+    board.create('ticks', [main], {
+      ticksDistance: 2,
+      anchor: 'middle',
+      drawLabels: true,
+      minorTicks: 1,
+      majorHeight: 6,
+      minorHeight: 3,
+      strokeColor: '#888',
+      label: { offset: [-3, -14], fontSize: 11, color: '#777' }
+    });
+    return main;
+  }
+
+  makeNumberLine(yA);
+  makeNumberLine(yB);
+  makeNumberLine(yI);
+  makeNumberLine(yU);
+
+  // ---- 行标签 ----
+  board.create('text', [-11.2, yA + 0.5, '集合 A'], { fontSize: 17, bold: true, color: cA, anchorX: 'left', anchorY: 'middle' });
+  board.create('text', [-11.2, yB + 0.5, '集合 B'], { fontSize: 17, bold: true, color: cB, anchorX: 'left', anchorY: 'middle' });
+  board.create('text', [-11.2, yI + 0.5, 'A ∩ B'], { fontSize: 17, bold: true, color: cI, anchorX: 'left', anchorY: 'middle' });
+  board.create('text', [-11.2, yU + 0.5, 'A ∪ B'], { fontSize: 17, bold: true, color: cU, anchorX: 'left', anchorY: 'middle' });
+
+  // ---- 集合端点（可拖动，点击切换开/闭）----
+  var ptA1 = board.create('point', [-2, yA], { name: 'A₁', face: 'circle', size: 5, strokeColor: cA, fillColor: cA, highlight: false, label: { fontSize: 13, offset: [0, 10], color: cA } });
+  var ptA2 = board.create('point', [3, yA], { name: 'A₂', face: 'circle', size: 5, strokeColor: cA, fillColor: cA, highlight: false, label: { fontSize: 13, offset: [0, 10], color: cA } });
+  var ptB1 = board.create('point', [1, yB], { name: 'B₁', face: 'circle', size: 5, strokeColor: cB, fillColor: cB, highlight: false, label: { fontSize: 13, offset: [0, 10], color: cB } });
+  var ptB2 = board.create('point', [5, yB], { name: 'B₂', face: 'circle', size: 5, strokeColor: cB, fillColor: cB, highlight: false, label: { fontSize: 13, offset: [0, 10], color: cB } });
+
+  var openA1 = false, openA2 = false, openB1 = false, openB2 = false;
+
+  // ---- 色带 ----
+  function makeBar(y, color) {
+    var pL = board.create('point', [0, y], { visible: false, fixed: true, withLabel: false });
+    var pR = board.create('point', [0, y], { visible: false, fixed: true, withLabel: false });
+    var seg = board.create('segment', [pL, pR], { strokeColor: color, strokeWidth: 16, strokeOpacity: 0.35, highlight: false });
+    var cL = board.create('point', [0, y], { visible: false, fixed: true, withLabel: false, face: 'circle', size: 4.5, strokeColor: color, fillColor: color, highlight: false });
+    var cR = board.create('point', [0, y], { visible: false, fixed: true, withLabel: false, face: 'circle', size: 4.5, strokeColor: color, fillColor: color, highlight: false });
+    return { y: y, color: color, pL: pL, pR: pR, seg: seg, cL: cL, cR: cR };
+  }
+
+  var barA = makeBar(yA, cA);
+  var barB = makeBar(yB, cB);
+  var barI = makeBar(yI, cI);
+  var barU1 = makeBar(yU, cU);
+  var barU2 = makeBar(yU, cU);
+  var ptI = board.create('point', [0, yI], { visible: false, fixed: true, withLabel: false, face: 'circle', size: 5, strokeColor: cI, fillColor: cI, highlight: false });
+
+  function setMarker(pt, x, y, open, color) {
+    pt.setPosition(JXG.COORDS_BY_USER, [x, y]);
+    pt.setAttribute({
+      visible: true,
+      face: 'circle',
+      fillColor: open ? '#ffffff' : color,
+      strokeColor: color,
+      strokeWidth: open ? 2.2 : 1.5
+    });
+  }
+
+  function placeBar(bar, x1, x2, openL, openR) {
+    bar.pL.setPosition(JXG.COORDS_BY_USER, [x1, bar.y]);
+    bar.pR.setPosition(JXG.COORDS_BY_USER, [x2, bar.y]);
+    bar.seg.setAttribute({ visible: true });
+    setMarker(bar.cL, x1, bar.y, openL, bar.color);
+    setMarker(bar.cR, x2, bar.y, openR, bar.color);
+  }
+
+  function hideBar(bar) {
+    bar.seg.setAttribute({ visible: false });
+    bar.cL.setAttribute({ visible: false });
+    bar.cR.setAttribute({ visible: false });
+  }
+
+  // ---- 交集 / 并集端点是否包含 ----
+  function leftInc(L) {
+    var a1 = ptA1.X(), b1 = ptB1.X();
+    if (a1 > b1) return !openA1;
+    if (b1 > a1) return !openB1;
+    return !openA1 && !openB1;
+  }
+  function rightInc(R) {
+    var a2 = ptA2.X(), b2 = ptB2.X();
+    if (a2 < b2) return !openA2;
+    if (b2 < a2) return !openB2;
+    return !openA2 && !openB2;
+  }
+
+  // ---- 刷新所有色带 ----
+  function refresh() {
+    var a1 = ptA1.X(), a2 = ptA2.X(), b1 = ptB1.X(), b2 = ptB2.X();
+
+    placeBar(barA, a1, a2, openA1, openA2);
+    placeBar(barB, b1, b2, openB1, openB2);
+
+    var L = Math.max(a1, b1), R = Math.min(a2, b2);
+    ptI.setAttribute({ visible: false });
+    if (L > R) {
+      hideBar(barI);
+    } else if (L === R) {
+      hideBar(barI);
+      if (leftInc(L) && rightInc(R)) {
+        ptI.setPosition(JXG.COORDS_BY_USER, [L, yI]);
+        ptI.setAttribute({ visible: true });
+      }
+    } else {
+      placeBar(barI, L, R, !leftInc(L), !rightInc(R));
+    }
+
+    if (a2 < b1) {
+      placeBar(barU1, a1, a2, openA1, openA2);
+      placeBar(barU2, b1, b2, openB1, openB2);
+    } else if (b2 < a1) {
+      placeBar(barU1, b1, b2, openB1, openB2);
+      placeBar(barU2, a1, a2, openA1, openA2);
+    } else if (a2 === b1 && openA2 && openB1) {
+      placeBar(barU1, a1, a2, openA1, openA2);
+      placeBar(barU2, b1, b2, openB1, openB2);
+    } else if (b2 === a1 && openB2 && openA1) {
+      placeBar(barU1, b1, b2, openB1, openB2);
+      placeBar(barU2, a1, a2, openA1, openA2);
+    } else {
+      hideBar(barU2);
+      var uL = Math.min(a1, b1), uR = Math.max(a2, b2), lo, ro;
+      if (a1 < b1) lo = openA1; else if (b1 < a1) lo = openB1; else lo = openA1 && openB1;
+      if (a2 > b2) ro = openA2; else if (b2 > a2) ro = openB2; else ro = openA2 && openB2;
+      placeBar(barU1, uL, uR, lo, ro);
+    }
+  }
+
+  // ---- 公式文本 ----
+  function numStr(x) {
+    var n = Math.round(x * 100) / 100;
+    if (Object.is(n, -0)) n = 0;
+    return String(n);
+  }
+  function iv(x1, x2, ol, orr) {
+    if (x1 > x2) return '∅';
+    if (x1 === x2) return (!ol && !orr) ? '{' + numStr(x1) + '}' : '∅';
+    return (ol ? '(' : '[') + numStr(x1) + ', ' + numStr(x2) + (orr ? ')' : ']');
+  }
+  function interStr() {
+    var a1 = ptA1.X(), a2 = ptA2.X(), b1 = ptB1.X(), b2 = ptB2.X();
+    var L = Math.max(a1, b1), R = Math.min(a2, b2);
+    if (L > R) return '∅';
+    if (L === R) return (leftInc(L) && rightInc(R)) ? '{' + numStr(L) + '}' : '∅';
+    return iv(L, R, !leftInc(L), !rightInc(R));
+  }
+  function unionStr() {
+    var a1 = ptA1.X(), a2 = ptA2.X(), b1 = ptB1.X(), b2 = ptB2.X();
+    if (a2 < b1) return iv(a1, a2, openA1, openA2) + ' ∪ ' + iv(b1, b2, openB1, openB2);
+    if (b2 < a1) return iv(b1, b2, openB1, openB2) + ' ∪ ' + iv(a1, a2, openA1, openA2);
+    if (a2 === b1 && openA2 && openB1) return iv(a1, a2, openA1, openA2) + ' ∪ ' + iv(b1, b2, openB1, openB2);
+    if (b2 === a1 && openB2 && openA1) return iv(b1, b2, openB1, openB2) + ' ∪ ' + iv(a1, a2, openA1, openA2);
+    var uL = Math.min(a1, b1), uR = Math.max(a2, b2), lo, ro;
+    if (a1 < b1) lo = openA1; else if (b1 < a1) lo = openB1; else lo = openA1 && openB1;
+    if (a2 > b2) ro = openA2; else if (b2 > a2) ro = openB2; else ro = openA2 && openB2;
+    return iv(uL, uR, lo, ro);
+  }
+
+  board.create('text', [-10.7, 2.3, function () { return 'A = ' + iv(ptA1.X(), ptA2.X(), openA1, openA2); }], { fontSize: 16, bold: true, color: cA, anchorX: 'left' });
+  board.create('text', [-10.7, 1.92, function () { return 'B = ' + iv(ptB1.X(), ptB2.X(), openB1, openB2); }], { fontSize: 16, bold: true, color: cB, anchorX: 'left' });
+  board.create('text', [-10.7, 1.54, function () { return 'A ∩ B = ' + interStr(); }], { fontSize: 16, bold: true, color: cI, anchorX: 'left' });
+  board.create('text', [-10.7, 1.16, function () { return 'A ∪ B = ' + unionStr(); }], { fontSize: 16, bold: true, color: cU, anchorX: 'left' });
+
+  // ---- 拖动 / 点击交互 ----
+  var downPos = {};
+  function clampPt(key) {
+    var pt = key === 'A1' ? ptA1 : key === 'A2' ? ptA2 : key === 'B1' ? ptB1 : ptB2;
+    var other = key === 'A1' ? ptA2 : key === 'A2' ? ptA1 : key === 'B1' ? ptB2 : ptB1;
+    var y = key.charAt(0) === 'A' ? yA : yB;
+    var x = pt.X();
+    if (x < -10) x = -10;
+    if (x > 10) x = 10;
+    if (key === 'A1' || key === 'B1') { if (x > other.X()) x = other.X(); }
+    else { if (x < other.X()) x = other.X(); }
+    pt.setPosition(JXG.COORDS_BY_USER, [x, y]);
+  }
+
+  function hookPoint(pt, key) {
+    pt.on('down', function () { downPos[key] = [pt.X(), pt.Y()]; });
+    pt.on('drag', function () {
+      clampPt(key);
+      refresh();
+    });
+    pt.on('up', function () {
+      var d = downPos[key];
+      if (d && Math.hypot(pt.X() - d[0], pt.Y() - d[1]) < 0.05) {
+        if (key === 'A1') openA1 = !openA1;
+        else if (key === 'A2') openA2 = !openA2;
+        else if (key === 'B1') openB1 = !openB1;
+        else openB2 = !openB2;
+      }
+      clampPt(key);
+      refresh();
+      board.update();
+    });
+  }
+
+  hookPoint(ptA1, 'A1');
+  hookPoint(ptA2, 'A2');
+  hookPoint(ptB1, 'B1');
+  hookPoint(ptB2, 'B2');
+
+  // ---- 预设示例 ----
+  function setState(cfg) {
+    ptA1.setPosition(JXG.COORDS_BY_USER, [cfg.a1, yA]);
+    ptA2.setPosition(JXG.COORDS_BY_USER, [cfg.a2, yA]);
+    ptB1.setPosition(JXG.COORDS_BY_USER, [cfg.b1, yB]);
+    ptB2.setPosition(JXG.COORDS_BY_USER, [cfg.b2, yB]);
+    openA1 = !!cfg.oa1; openA2 = !!cfg.oa2;
+    openB1 = !!cfg.ob1; openB2 = !!cfg.ob2;
+    refresh();
+    board.update();
+  }
+
+  function preset(n) {
+    var cfgs = {
+      1: { a1: -2, a2: 3, b1: 1, b2: 5 },
+      2: { a1: -4, a2: -1, b1: 2, b2: 4 },
+      3: { a1: -3, a2: 2, b1: 2, b2: 5, oa2: true, ob1: true },
+      4: { a1: -2, a2: 4, b1: 2, b2: 6, oa1: true, oa2: true, ob2: true }
+    };
+    setState(cfgs[n] || cfgs[1]);
+  }
+  window.preset = preset;
+
+  refresh();
+  board.update();
+})();
+</script>
+</body>
+</html>

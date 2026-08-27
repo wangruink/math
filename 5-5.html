@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>三角函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}		
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				font-weight:normal;overflow:hidden;padding:12px 12px;word-break:normal;}
+				.tg .tg-p7sm{border-color:#000000;font-family:inherit;font-size:30px;text-align:center;vertical-align:top}
+				.tg .tg-zbu7{border-color:#000000;font-family:inherit;text-align:left;vertical-align:top}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第五章**
+					## **三角函数**
+					### $\S 5.5$ **三角恒等变换** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+	
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				$\cos 15^{\circ}$如何求其准确的值？
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				$\cos 15^{\circ}$如何求其准确的值？
+
+				<br>
+
+				$ 15^{\circ}=45^{\circ}-30^{\circ}  $
+
+				<br>
+
+				$\cos 15^{\circ}= \cos(45^{\circ}-30^{\circ}  )=?$
+
+				
+		
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				任意角$\alpha$与$\beta$的差或者和的三角函数与$\alpha,\beta$的三角函数会有什么关系呢？
+
+				<br>
+				<br>
+
+				$\cos(\alpha-\beta )=? $
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+			
+
+				探究角$\alpha-\beta $在坐标系中的位置。
+ 
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+	
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				平面上任意两点间距离公式：
+
+				$$P_1(x_1,y_1),P_2(x_2,y_2) $$
+
+				$$P_1P_2=? $$
+
+				教材P216页
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				平面上任意两点间距离公式：
+
+				$$P_1(x_1,y_1),P_2(x_2,y_2) $$
+
+				$$P_1P_2=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2} $$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				
+
+				<br>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+			
+
+				探究$\cos(\alpha-\beta)$与角$\alpha,\beta$的正弦，余弦之间的关系。
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+	
+		
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+				$$A_1P_1=AP $$
+
+				$$
+				[\cos(\alpha-\beta)-1 ]^2+[\sin(\alpha-\beta)-0 ]^2 \\= (\cos\alpha-\cos\beta )^2+(\sin\alpha-\sin\beta )^2
+				$$
+
+				$$
+				\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+				$$
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				对于任意角$\alpha,\beta$都有
+
+				<font color="red">
+					$$
+				\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+				$$
+
+				</font>
+
+				该公式称为差角的余弦公式，简记为$C_{(\alpha-\beta) }$。
+				
+
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				使用公式$C_{(\alpha-\beta) }$求$\cos15^{\circ}$的值
+
+				<br>
+
+				
+			
+				
+
+
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				例1.使用公式$C_{(\alpha-\beta) }$证明：
+
+				<br>
+
+				<ul>
+					<li>
+						$\cos(\frac{\pi}{2}-\alpha)=\sin\alpha $
+					</li>
+					<li>
+						$$\cos(\pi-\alpha)=-\cos\alpha $$
+					</li>
+				</ul>
+			
+				
+
+
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				例2.已知$\sin\alpha=\frac{4}{5},\alpha\in(\frac{\pi}{2},\pi),\cos\beta=-\frac{5}{13},\beta$是第三象限角
+				<br>
+
+				求$\cos(\alpha-\beta)$
+
+				<br>
+				<br>
+
+				
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				练习1. 证明：
+				<br>
+
+				<ul>
+					<li>
+						$$\cos(\frac{3\pi}{2}-\alpha)=-\sin\alpha $$
+					</li>
+					<li>
+						$\cos(-\alpha)=\cos\alpha $
+					</li>
+				</ul>
+
+
+		
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<br>
+
+				练习2. 已知$\alpha,\beta\in(0,\frac{\pi}{2})$
+				<br>
+				且$\sin\alpha=\frac{4}{5},\cos(\alpha+\beta)=-\frac{16}{65} $
+				<br>
+
+				求$\cos\beta $的值
+
+		
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>两角差的余弦公式</strong></h3>
+
+				<h4><strong>总结</strong></h4>
+
+				<ul>
+					<li>
+						$$P_1P_2=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2} $$
+					</li>
+					<li>
+						$$\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$$
+					</li>
+				</ul>
+
+
+		
+			</section>
+
+		
+
+		</section>
+
+	
+
+
+
+
+
+
+
+
+		
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-3.5, 3.5 , 3.5, -3.5], axis:true,showCopyright: false,});
+			
+			var p11 = board1.create('point', [0, 0],{name:'$O$',fixed:true,size:1.5,label:{position:'top', offset:[10,0]}});
+			var p12= board1.create('point', [-2, 2.5],{name:'$P_1(x_1,y_1)$',fixed:false,size:1.5});
+			var p13= board1.create('point', [1, -1.5],{name:'$P_2(x_2,y_2)$',fixed:false,size:1.5});
+			var li11 = board1.create('line',[p12,p13], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,});
+			var p14= board1.create('point', [function(){return p12.X() },function(){return p13.Y() } ],{name:'$Q$',fixed:true,size:1.5});
+			var li12 = board1.create('line',[p12 ,p14], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+			var li13 = board1.create('line',[p13 ,p14], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,dash:1 });
+			
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+			
+			var p21 = board2.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p22 = board2.create('point', [1, 0],{name:'$A$',fixed:true});
+			var p23 = board2.create('point', [0.8,0.6 ],{name:'$P_1$'});
+			var p24 = board2.create('point', [0.6,0.8 ],{name:'$A_1$'});
+			var p25 = board2.create('point', [0.6,0.8 ],{name:'$P$'});
+			
+			var c21 = board2.create('circle',[p21, p22]);
+
+			var li21 = board2.create('line',[p21,p23], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li22 = board2.create('line',[p21,p22], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var li23 = board2.create('line',[p21,p24], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var li24 = board2.create('line',[p21,p25], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li25 = board2.create('line',[p23,p24], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			var li26 = board2.create('line',[p22,p25], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			s21 = board2.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.35, 2*Math.PI]],{name:'\\alpha'} );
+
+			s22 = board2.create('slider',[[-1.4,0.8], [-0.5,0.8], [0*Math.PI, Math.PI*0.25, 2*Math.PI]],{name:'\\beta'} );
+
+			var angle21 = board2.create('angle', [p22, p21, p23],{ radius:0.25 , name: '$\\alpha$' });
+
+			var angle22 = board2.create('angle', [p22, p21, p24],{ radius:0.35 , name: '$\\beta$' });
+
+			var angle23 = board2.create('angle', [p22, p21, p25],{ radius:0.45 , name: '$\\alpha-\\beta$' });
+
+			angle21.setAngle(function() {
+				return s21.Value(); });	
+
+		    angle22.setAngle(function() {
+					return s22.Value(); });	
+
+			angle23.setAngle(function() {
+						return s21.Value()-s22.Value(); });	
+
+
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-1.5, 1.5 , 1.5, -1.5], axis:true,showCopyright: false,});
+
+			//s31 = board3.create('slider',[[-1.4,1.2], [-0.5,1.2], [0*Math.PI, Math.PI*0.35, 2*Math.PI]],{name:'\\alpha'} );
+
+			//s32 = board3.create('slider',[[-1.4,0.8], [-0.5,0.8], [0*Math.PI, Math.PI*0.25, 2*Math.PI]],{name:'\\beta'} );
+
+			
+			var p31 = board3.create('point', [0, 0],{name:'$O$',fixed:true});
+			var p32 = board3.create('point', [1, 0],{name:'$A$',fixed:true});
+			//var p33 = board3.create('point', [function(){ return Math.cos(s31.Value());  } ,function(){ return Math.sin(s31.Value());  } ],{name:'$P_1$'});
+			//var p34 = board3.create('point', [function(){ return Math.cos(s32.Value());  } ,function(){ return Math.sin(s32.Value());  } ],{name:'$A_1$'});
+			
+			//var p35 = board3.create('point', [0.6,0.8 ],{name:'$P$'});
+			
+			var c31 = board3.create('circle',[p31, p32]);
+
+			var p33 = board3.create('point', [0.8, 0.8], {name: '',size:1,color:'black'});
+
+			var p34 = board3.create('point', [0.2, 1.2], {name: '',size:1,color:'black'});
+
+			var li31 = board3.create('line',[p31,p33], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var li32 = board3.create('line',[p31,p32], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			var li33 = board3.create('line',[p31,p34], 
+					{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+			
+			//var li34 = board3.create('line',[p31,p35], 
+			//		{straightFirst:false, straightLast:true, strokeWidth:1.5 });
+
+			var p35 = board3.create('intersection', [c31, li31, 0],{name:'$A_1$',snapValues:[[1,0]],snapValueDistance: 0.5 });
+
+			var p36 = board3.create('intersection', [c31, li33, 0],{name:'$P_1$'});
+
+
+			var li35 = board3.create('line',[p35,p36], 
+					{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			//var li36 = board3.create('line',[p32,p35], 
+			//		{straightFirst:false, straightLast:false, strokeWidth:1.5,strokeColor:'red' });
+
+			
+			
+
+			var angle32 = board3.create('angle', [p32, p31, p34],{ radius:0.35 , name: '$\\alpha$',color:'red' });
+
+			var angle33 = board3.create('angle', [p35, p31, p36],{ radius:0.55 , name: '$\\alpha-\\beta$',color:'black' });
+
+
+			
+		
+			var btn1 = board3.create('button', [-1, 1.2, '滑动', function() {
+
+
+				board3.update();
+
+				var angle31 = board3.create('angle', [p32, p31, p33],{ radius:0.2 , name: '' ,color:'blue'});
+
+				s33 = board3.create('slider',[[-1.4,-1.0], [-0.9,-1.0], [0*Math.PI, 0 ,  angle31.Value() ]],{name:'旋转'} );
+				
+				
+			}]);
+
+			var btn2 = board3.create('button', [-1, 1, '清除', function() {
+
+
+				board3.removeObject(s33);
+
+				board3.removeObject(rot);
+
+				board3.removeObject(angle31);
+
+				board3.update();
+				
+			
+				
+			}]);
+			
+
+			var btn3 = board3.create('button', [-1, 0.8, '旋转', function() {
+
+				var rot = board3.create('transform', [function(){return -s33.Value();},p31 ], {type:'rotate'});
+				rot.bindTo(p33);
+				rot.bindTo(p34);
+			
+    			//s33.startAnimation(1, 100, 50,1);
+				board3.update();
+		
+				
+			}]);
+
+			
+			
+			
+				
+		
+
+			
+		
+
+			
+
+
+		</script>
+
+	
+
+		
+
+
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
+ 

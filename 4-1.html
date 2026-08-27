@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>指数函数与对数函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第四章**
+					## **指数函数与对数函数**
+					### $\S 4.1$ **指数** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+				<section  data-transition="convex">
+					<section  data-transition="convex" data-auto-animate>
+						<h3><strong>导入</strong></h3>
+
+						
+
+						文献中对夏朝的记载虽然丰富，但因年代久远，在考古学方面一直没有多少突破，又因始终未能找到同时代的文字记载而被学界质疑。
+
+						<br>
+
+						1953年，在河南登封市唐庄乡花玉村发现了一处遗址，这便是1960年定名为二里头文化的首处遗址。
+
+						<br>
+
+						二里头文化叠压在商文化之下，龙山、仰韶文化之上。夏朝在文献中的年代概念便是处于新石器时代末期转向青铜时代的过渡期。依碳-14放射性定年法，
+						二里头文化被定于约公元前2395年至前1625年间。
+
+				</section>
+
+				
+				<section  data-transition="convex" data-auto-animate>
+						<h3><strong>导入</strong></h3>
+
+						考古学家所用的碳-14放射性定年法，是一种利用碳的同位素$^{14}\text{C} $
+					   的放射性来对含有有机物质的物品进行年代测定的方法。
+						
+						<br>
+						这种方法蕴含的数学知识就是本章即将要学的指数函数。为了研究指数函数，我们需要把指数的范围拓展到全体实数。
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate>
+						<h3><strong>导入</strong></h3>
+						
+						为了研究指数函数，我们需要把指数的范围拓展到全体实数。初中已经学过整数指数幂。
+
+						$$a^n,n\in N^*$$
+
+						求$n$个相同因数的积的运算，叫做乘方，乘方的结果叫做幂。
+
+						<br>
+
+						$a$叫做底数，$n$叫做指数，$a^n$叫做幂。
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>导入</strong></h3>
+				
+				幂的运算法则：
+				<br>
+
+				<ul>
+					<li>
+						$a^{n_1} \times a^{n_2}=a^{n_1+n_2}$
+					</li>
+					<li>
+						$a^{n_1} \div a^{n_2}=a^{n_1-n_2}$
+					</li>
+					<li>
+						$(a^{n_1})^{n_2}=(a^{n_2})^{n_1} =a^{n_1n_2 }$
+					</li>
+					<li>
+						$(a_1\times a_2)^n=a_1^n\times a_2^n $
+					</li>
+					<li>
+						$(\frac{a_1}{a_2})^n= \frac{a_1^n}{a_2^n} $
+					</li>
+				</ul>
+
+			</section>
+
+	
+
+		</section>
+
+
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根 </strong></h3>
+				
+				<ul>
+					<li>
+						若$x^2=a$，那么$x$叫做$a$的平方根。例如，$\pm2$就是$4$的平方根。
+					</li>
+					<li>
+						若$x^3=a$，那么$x$叫做$a$的立方根。例如，$2$就是$8$的立方根。
+					</li>
+					<li>
+						一般的，若$x^n=a$，那么$x$叫做$a$的<font color="red">$n$次方根</font>。其中$n>1,n\in N^*$。
+					</li>
+				</ul>
+				
+
+			</section>
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+				<ul>
+					<li>
+						当$n$是奇数时，正数的$n$次方根是一个正数，负数的$n$次方根是一个负数。这时，$a$的$n$次方根用符号表示$\sqrt[n]{a}$。
+					</li>
+					<li>
+						当$n$是偶数时，正数的$n$次方根有两个数，这两个数互为相反数。这时，正数$a$的正$n$次方根用符号表示$\sqrt[n]{a}$，负$n$次方根用符号表示$-\sqrt[n]{a}$。
+						可以合并写成$\pm\sqrt[n]{a} $。
+					</li>
+					<li>
+						负数没有偶次方根。
+					</li>
+					<li>
+						0的任何次方根都是0，记作$\sqrt[n]{0}=0$。
+					</li>
+				</ul>
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+				式子$\sqrt[n]{a}$叫做<font color="red">根式</font>，其中$n$叫做<font color="red">根指数</font>， $a$叫做<font color="red">被开方数</font>。
+
+				$$(\sqrt[n]{a})^n = a$$ 
+				
+				$$\sqrt[n]{a^n} = ?$$ 
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+
+				\[
+						\sqrt[n]{a^n} =
+						\begin{cases}
+						 a & n=2k+1,k\in N^*  \\
+						
+						|a| & n=2k,k\in N^*
+						\end{cases}
+						\]
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+				求下列各式的值：
+
+				<br>
+
+
+				<ul>
+					<li>
+						$\sqrt[3]{(-8)^3} $
+					</li>
+					<li>
+						$\sqrt[2]{(-10)^2} $
+					</li>
+					<li>
+						$\sqrt[4]{(3-\pi)^4} $
+					</li>
+					<li>
+						$\sqrt[]{(a-b)^2} $
+					</li>
+					
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+				求下列各式的值：
+
+				<br>
+
+
+				<ul>
+					<li>
+						$(\sqrt[]{a-1})^2+(\sqrt[]{1-a})^2 +\sqrt[3]{(1-a)^3} $
+					</li>
+					<li>
+						$\sqrt{5+2\sqrt{6}}-\sqrt{6-4\sqrt{2}}+\sqrt{7-4\sqrt{3}} $
+					</li>
+				
+					
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+				<h3><strong>$n$次方根</strong></h3>
+
+				若$-3< x< 3$，求
+
+				$$\sqrt{x^2-2x+1}-\sqrt{x^2+6x+9} $$
+
+				
+			</section>
+
+
+		</section>
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+
+				根据$n$次方根的定义和幂的运算规则，我们知道：
+
+				$$\sqrt{a}\times \sqrt{a}=a $$
+
+				我们想把$\sqrt{a}$表示成幂的形式，记$\sqrt{a}=a^x$，则有：
+
+				$$ \sqrt{a}\times \sqrt{a}= a^x\times a^x=a^{2x}=a^1$$ 
+
+				$$x=\frac{1}{2},\sqrt{a}=a^{\frac{1}{2}} $$
+
+							
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+
+				一般的，我们有：
+
+				$$\sqrt[n]{a}=a^{\frac{1}{n}} $$
+
+				若$a>0$，则有：
+
+				$$\sqrt[5]{a^{10}}=\sqrt[5]{(a^2)^5}=a^2=(a^{10})^{\frac{1}{5}}=a^{\frac{10}{5}} $$
+
+				$$\sqrt[4]{a^{12}}=\sqrt[4]{(a^3)^4}=a^3=(a^{12})^{\frac{1}{4}}=a^{\frac{12}{4}} $$
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+
+				我们规定，正数的正分数指数幂的意义是
+
+				<font color="red">$$a^{\frac{m}{n}}=\sqrt[n]{a^m},a>0,m,n\in N^* $$</font>
+
+				<font color="blue">数学中，引进一个新的概念或法则时，总希望它与已有的概念或法则相容。</font>
+
+				<br>
+
+				类似的，我们规定正数的负分数指数幂的意义是
+
+				<font color="red">$$a^{-\frac{m}{n}}=\frac{1}{a^{\frac{m}{n}}}=\frac{1}{\sqrt[n]{a^m}},a>0,m,n\in N^* $$</font>
+
+				
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				与0的整数指数幂的意义相仿，我们规定，
+				<br>
+
+				<font color="red">0的正分数指数幂等于0 <br> 0的负分数指数幂没有意义 </font>
+
+				<br>
+
+				规定了分数指数幂的意义以后，幂$a^x$中的指数$x$的取值范围从整数拓展到了有理数。
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				
+				整数指数幂的运算性质对于有理数也同样适用：
+
+				<ul>
+					<li>
+						$a^{r} \times a^{s}=a^{r+s}(a>0,r,s\in Q)$
+					</li>
+					<li>
+						$(a^{r})^{s}=(a^{s})^{r} =a^{rs}(a>0,r,s\in Q)$
+					</li>
+					<li>
+						$(a_1\times a_2)^r=a_1^r\times a_2^r(a_1,a_2>0,r\in Q) $
+					</li>
+				</ul>
+
+			
+
+
+
+
+				
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				求下列各式的值：
+				<br>
+
+				<ul>
+					<li>
+						$8^{\frac{2}{3}}$
+					</li>
+					<li>
+						$(\frac{16}{81})^{-\frac{3}{4}} $
+					</li>
+					<li>
+						$(2\frac{7}{9})^{0.5}+0.1^{-2}+(2\frac{10}{27})^{-\frac{2}{3}}-3\pi^0+\frac{37}{48} $
+					</li>
+				</ul>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				用分数指数幂表示下列各式：
+				<br>
+
+				<ul>
+					<li>
+						$a^2\cdot\sqrt[3]{a^2} $
+					</li>
+					<li>
+						$\sqrt{a\sqrt[3]{a}} $
+					</li>
+					<li>
+						$\frac{1}{\sqrt[3]{x(\sqrt[5]{x^2})^2}} $
+					</li>
+				</ul>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				已知$a^{0.5}+a^{-0.5}=4$，求：
+				<br>
+
+				<ul>
+					<li>
+						 $a+a^{-1} $
+					</li>
+					<li>
+						$a^2+a^{-2} $
+					</li>
+					<li>
+						$a^{1.5}+a^{-1.5} $
+					</li>
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>分数指数幂</strong></h3>
+				已知$a,b>0,a^b=b^a,b=9a$，求$a$的值。
+				<br>
+
+				
+			</section>
+
+			
+		</section>
+
+		<section  data-transition="convex" >
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+				上面我们将$a^x(a>0)$中指数$x$的取值范围从整数拓展到了有理数。
+				<br>
+
+				 那么，当指数$x$是无理数时，$a^x$的意义是什么？它是一个确定的数吗？如果是，那么它有什么运算性质呢？
+
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+				如何估算$\sqrt{2}$的近似值？
+
+				<br>
+
+				<font color="red">二分法</font>
+				<br>
+
+				$1<\sqrt{2}< 2 $
+				<br>
+				$1<\sqrt{2}< 1.5 $
+				<br>
+				$1.25<\sqrt{2}< 1.5 $
+				<br>
+				$1.375<\sqrt{2}< 1.5 $
+				<br>
+				$1.375<\sqrt{2}< 1.4375 $
+				<br>
+				$1.40625<\sqrt{2}< 1.4375 $
+				<br>
+				$\cdots$
+
+			
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				在初中的学习中，我么通过有理数认识了一些无理数。类似地，也可以通过有理数指数幂来认识无理数指数幂。
+
+				<br>
+
+				根据$\sqrt{2}$的不足近似值$x$和过剩近似值$y$， 利用计算工具计算相应的$5^x,5^y$的近似值。
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3" data-markdown="">
+				### **无理数指数幂**
+
+				|  $\sqrt{2}$不足近似值$x$ | $5^x$ | $\sqrt{2}$过剩近似值$y$  | $5^y$  |
+				|---|---|---|---|
+				| 1.414  |    9.735  | 1.415  | 9.751  |
+				| 1.414213   |  9.738509    |  1.414214 | 9.738525  |
+				| 1.414213562  |   9.738517736   |  1.414213563 | 9.738517752   |
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				可以发现,当$\sqrt{2} $的不足近似值$x$和过剩近似值$y$逐渐逼近时$\sqrt{2} $，$5^x$和$5^y$都趋向于同一个数，这个数就是$5^{\sqrt{2}}$
+
+
+				<br>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:600px; height:100px;"></div>
+				</div>
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				<font color="red">
+					一般地，无理数指数幂$a^x$($a>0$，$x$为无理数)是一个确定的实数。这样，我们就将指数幂中指数的取值范围从整数逐步拓展到了实数， 实数指数幂是一个确定的实数。
+
+				</font>
+
+
+
+				<br>
+
+				
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				整数指数幂的运算性质也适用于实数指数幂，即对于任意实数$r,s$，具有下面的性质：
+
+
+				<br>
+
+				<ul>
+					<li>
+						$a^{r} \times a^{s}=a^{r+s}(a>0,r,s\in R)$
+					</li>
+					<li>
+						$(a^{r})^{s}=(a^{s})^{r} =a^{rs}(a>0,r,s\in R)$
+					</li>
+					<li>
+						$(a_1\times a_2)^r=a_1^r\times a_2^r(a_1,a_2>0,r\in R) $
+					</li>
+				</ul>
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				计算下列各式的值：
+
+
+				<br>
+
+				<ul>
+					<li>
+						$4^{\sqrt{2}+1}\cdot 2^{3-2\sqrt{2}} $
+
+					</li>
+					<li>
+						$(\sqrt[3]{8^{\sqrt{3}}}\times \sqrt[3]{3^{\sqrt{3}}})^{\sqrt{3}} $
+
+					</li>
+					<li>
+						$(\frac{\pi^{\sqrt{2}}}{\sqrt{\pi^{\sqrt{2}}}})^{\frac{\sqrt{2}}{2}} $
+					</li>
+				</ul>
+
+				
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				从盛满1升纯酒精的容器里倒出$\frac{1}{3} $升，
+				然后加满水，再倒出$\frac{1}{3} $升混合溶液后又用水填满，
+				以此继续下去。
+
+				<ul>
+					<li>
+						连续进行五次，容器中的酒精还剩多少？
+					</li>
+					<li>
+						连续进行$n$次，容器中的酒精还剩多少？
+					</li>
+				</ul>
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>无理数指数幂</strong></h3>
+
+				
+
+				<ul>
+					<li>
+						使用计算工具，计算$(1+\frac{1}{n})^n$在$n=1,2,3,10,100,1000,\cdots$时的值，观察规律。
+					</li>
+					<li>
+						当$n$越来越大时，$(1+\frac{1}{n})^n$是否会越来越大？有没有上界？
+					</li>
+				</ul>
+
+
+
+				
+
+				
+			
+			</section>
+			
+		</section>
+
+
+
+			
+
+
+			
+
+
+
+
+
+
+			
+
+
+				
+				
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1',{boundingbox: [9.73, 0.5, 9.755, -0.5], axis:false,showCopyright: false,});
+			var l1 = board1.create('axis', [[9.5, 0.0], [10.0, 0.0]],{anchor: 'right'});
+			var p11 = board1.create('point', [Math.pow(5,1.414), 0], {
+					fixed: true, name:'$5^{1.414}$'
+				});
+
+			var p12 = board1.create('point', [Math.pow(5,1.415), 0], {
+					fixed: true, name:'$5^{1.415}$'
+				});
+
+			var p13 = board1.create('point', [Math.pow(5,1.4142), 0], {
+					fixed: true, name:''
+				});
+			var p14 = board1.create('point', [Math.pow(5,1.4143), 0], {
+					fixed: true, name:'$5^{1.4143}$'
+				});
+			var p14 = board1.create('point', [Math.pow(5,Math.sqrt(2)), 0], {
+					fixed: true, name:'$5^{\\sqrt{2}}$'
+				});
+
+
+		</script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

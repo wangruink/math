@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>指数函数与对数函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第四章**
+					## **指数函数与对数函数**
+					### $\S 4.3$ **对数** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+				<section  data-transition="convex">
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>对数的故事</strong></h3>
+
+						16世纪，随着哥白尼“日心说”的盛行，天文学也蓬勃发展。
+						欧洲人渐渐热衷于地理探险和海洋贸易，特别是地理探险需要更准确的天文知识，
+						需要对庞大的“天文数据”进行快速和准确的计算。
+						但那时候还没有计算机，人们迫切需要找到一种方法提高运算效率。该怎么办呢？
+
+
+				</section>
+
+				
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>对数的故事</strong></h3>
+
+
+						<ul>
+							<li>
+								$32\times 256=2^5\times 2^8=2^{13}$
+							</li>
+							<li>
+								$4096\div 128=2^{12}\div 2^7=2^5 $
+							</li>
+							<li>
+								$\sqrt{16384}=\sqrt{2^{14}}=2^7$
+							</li>
+							<li>
+								$132\times 156=? $
+							</li>
+						</ul>
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>对数的故事</strong></h3>
+
+
+					<ul>
+						<li>
+							$32\times 256=2^5\times 2^8=2^{13}$
+						</li>
+						<li>
+							$4096\div 128=2^{12}\div 2^7=2^5 $
+						</li>
+						<li>
+							$\sqrt{16384}=\sqrt{2^{14}}=2^7$
+						</li>
+						<li>
+							$132\times 156\approx 2^{7.04}\times 2^{7.29}=2^{14.33} $
+						</li>
+					</ul>
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>对数的故事</strong></h3>
+
+					经过多年的探索，苏格兰数学家纳皮尔于1614年出版了他的名著《奇妙的对数定律说明书》，向世人公布了他的这项发明，并且解释了这项发明的特点。
+
+					<br>
+
+					恩格斯在他的著作《自然辩证法》中，曾经把笛卡尔的坐标、纳皮尔的对数、牛顿和莱布尼兹的微积分共同称为十七世纪的三大数学发明。
+					
+					<br>
+
+					法国著名的数学家、天文学家拉普拉斯曾说：对数，可以缩短计算时间，“在实效上等于把天文学家的寿命延长了许多倍”。 
+					
+					伽利略也说过：“给我空间、时间、和对数，我就可以创造一个宇宙。”
+
+			</section>
+
+		</section>
+
+
+
+		<section  data-transition="convex" >
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				<ul>
+					<li>
+						$2^x=1\rightarrow x=0$
+					</li>
+					<li>
+						$2^x=4\rightarrow x=2$
+					</li>
+					<li>
+						$2^x=4\sqrt{2} \rightarrow x=\frac{5}{2} $
+					</li>
+					<li>
+						$2^x=5\rightarrow x=?$
+					</li>
+					<li>
+						$2^x=9.3 \rightarrow x=?$
+					</li>
+				</ul>
+				
+			
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				<div class="main">
+					<div id="box2" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				在4.2.1的问题1中，
+				通过指数幂运算，我们能从$y=1.11^x$中求出经过$x$年后B地景区的游客人次为2001年的倍数$y$，反之，
+				如果要求经过多少年游客人次是2001年的2倍，3倍，4倍。那么该如何解决？
+
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				一般地，如果$a^x=N(a>0,且a\neq 1)$，那么数$x$叫做以$a$为底$N$的<font color="red">对数</font>(logarithm)，记作
+
+				$$x=\text{log}_aN $$
+
+				其中$a$叫做对数的<font color="red">底数</font>，$N$叫做<font color="red">真数</font>。
+
+				<br>
+
+				例如，由于$2=1.11^x$，所以$x$就是以1.11为底的2的对数，记作$x=\text{log}_{1.11}2$。
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				<ul>
+					<li>
+						我们将以10为底的对数叫做常用对数，并把$\text{log}_{10}N $记作$\text{lg}N$。
+					</li>
+					<li>
+						在科技、经济以及社会生活中经常使用以无理数$e=2.71828\cdots$为底数的对数，以$e$为底的对数称为自然对数，并把$\text{log}_eN$记作$\text{ln}N$。
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				根据对数的定义，可以得到指数与对数之间的关系。
+
+				$$a>0,a\neq 1,a^x=N \iff x=\text{log}_aN $$
+
+				<table><thead>
+					<tr>
+					  <th></th>
+					  <th>$a$</th>
+					  <th>$x$</th>
+					  <th>$N$</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>$a^x=N$</td>
+					  <td>底数</td>
+					  <td>指数</td>
+					  <td>幂</td>
+					</tr>
+					<tr>
+					  <td>$\text{log}_aN=x$</td>
+					  <td>底数</td>
+					  <td>对数</td>
+					  <td>真数</td>
+					</tr>
+				  </tbody>
+				  </table>
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				求下列各式的值：
+				<br>
+				<ul>
+					<li>
+						$\text{log}_{3}1 $
+					</li>
+					<li>
+						$\text{log}_{0.5}1 $
+					</li>
+					<li>
+						$\text{lg}1 $
+					</li>
+					<li>
+						$\text{ln}1 $
+					</li>
+				</ul>
+				<br>
+
+				归纳，$\text{log}_{a}1=?(a>0,a\neq 1) $
+				
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				求下列各式的值：
+				<br>
+				<ul>
+					<li>
+						$\text{log}_{3}3 $
+					</li>
+					<li>
+						$\text{log}_{0.5}0.5 $
+					</li>
+					<li>
+						$\text{lg}10 $
+					</li>
+					<li>
+						$\text{ln}e $
+					</li>
+				</ul>
+				<br>
+
+				归纳，$\text{log}_{a}a=?(a>0,a\neq 1) $
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				求下列各式的值：
+				<br>
+				<ul>
+					<li>
+						$2^{\text{log}_{2}3} $
+					</li>
+					<li>
+						$0.5^{\text{log}_{0.5}0.35} $
+					</li>
+					<li>
+						$10^{\text{lg}101} $
+					</li>
+					<li>
+						$e^{\text{ln}\pi} $
+					</li>
+				</ul>
+				<br>
+
+				归纳，$a^{\text{log}_{a}N}=?(a>0,a\neq 1) $
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+				求下列各式的值：
+				<br>
+				<ul>
+					<li>
+						$\text{log}_{3}3^4 $
+					</li>
+					<li>
+						$\text{log}_{0.5}0.5^{0.25} $
+					</li>
+					<li>
+						$\text{lg}10^{5.5} $
+					</li>
+					<li>
+						$\text{ln}e^{e} $
+					</li>
+				</ul>
+				<br>
+
+				归纳，$\text{log}_{a}a^n=?(a>0,a\neq 1) $
+				
+			</section>
+
+			
+
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				$ a>0,a\neq 1$
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_{a}1=? $
+					</li>
+					<li>
+						$\text{log}_{a}a=? $
+					</li>
+					<li>
+						$a^{\text{log}_{a}N}=? $
+					</li>
+					<li>
+						$\text{log}_{a}a^n=? $
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				$ a>0,a\neq 1$
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_{a}1=0 $
+					</li>
+					<li>
+						$\text{log}_{a}a=1 $
+					</li>
+					<li>
+						$a^{\text{log}_{a}N}=N $
+					</li>
+					<li>
+						$\text{log}_{a}a^n=n $
+					</li>
+					<li>
+						负数和零没有对数。
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				把下列指数式化为对数式：
+
+				<br>
+
+				<ul>
+					<li>
+						$5^4=625$
+					</li>
+					<li>
+						$2^{-6}=\frac{1}{64}$
+					</li>
+					<li>
+						$(\frac{1}{3})^m=5.73$
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				把下列对数式化为指数式：
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_{\frac{1}{2}}16=-4 $
+					</li>
+					<li>
+						$\text{lg}0.01=-2 $
+					</li>
+					<li>
+						$\text{ln}10 =n$
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				求下列各式中$x$的值：
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_{64}x=-\frac{2}{3} $
+					</li>
+					<li>
+						$\text{log}_x8=6 $
+					</li>
+					<li>
+						$-\text{ln}e^2 = x$
+					</li>
+					<li>
+						$\text{lg}100 =x$
+					</li>
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				$b=\text{log}_{3a-1}(3-2a)$，求$a$的取值范围。
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				求下列各式的值：
+
+				<br>
+
+				<ul>
+					<li>
+						$2^{\text{log}_23} +2\text{log}_31-3\text{log}_77+3\text{ln}1$
+					</li>
+					<li>
+						$9^{\frac{1}{2}\text{log}_34}$
+					</li>
+					<li>
+						$100^{0.5\text{lg}9-\text{lg}2}$
+					</li>
+					<li>
+						$a^{\text{log}_ab\cdot\text{log}_bc}(a,b,c>0,a,b\neq 1)$
+					</li>
+					
+				</ul>
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>对数的概念</strong></h3>
+
+				求下列各式中$x$的值：
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{log}_2(\text{log}_3x)=0  $
+					</li>
+					<li>
+						$\text{log}_5(\text{log}_2x)=1  $
+					</li>
+					<li>
+						$\text{log}_8[\text{log}_7(\text{log}_2x)]=0  $
+					</li>
+					<li>
+						$\text{log}_2[\text{log}_3(\text{log}_2x)]=1  $
+					</li>
+					
+				</ul>
+				
+			
+
+			</section>
+
+
+		</section>
+
+		<section data-transition="convex">
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				我们知道了对数与指数间的关系，能否利用指数幂运算性质得出相应的对数运算性质呢？
+
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				$$\text{log}_aM+\text{log}_aN=? $$
+
+				$$\text{log}_aM-\text{log}_aN=? $$
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				设$a^m=M,a^n=N,m=\text{log}_aM,n=\text{log}_aN(a>0,a\neq 1)$
+
+				$$a^m\cdot a^n=a^{m+n}=M\cdot N $$
+
+				$$m+n =\text{log}_a(MN)$$
+
+				$$\text{log}_aM+\text{log}_aN=\text{log}_a(MN) $$
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				设$a^m=M,a^n=N,m=\text{log}_aM,n=\text{log}_aN(a>0,a\neq 1)$
+
+				$$a^m\div a^n=a^{m-n}=M\div N $$
+
+				$$m-n =\text{log}_a(\frac{M}{N})$$
+
+				$$\text{log}_aM - \text{log}_aN=\text{log}_a(\frac{M}{N}) $$
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				设$a^m=M,m=\text{log}_aM(a>0,a\neq 1)$
+
+				$$(a^m)^n=a^{mn}=M^n$$
+
+				$$ \text{log}_aM^n = \text{log}_aa^{mn} = mn = n\text{log}_aM    $$
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+				对数的运算性质：
+
+				<br>
+
+				$ a>0,a\neq 1,M,N>0,n\in R $
+
+				<ul>
+					<li>
+						$\text{log}_aM+\text{log}_aN=\text{log}_a(MN) $
+					</li>
+					<li>
+						$\text{log}_aM - \text{log}_aN=\text{log}_a(\frac{M}{N}) $
+					</li>
+					<li>
+						$ \text{log}_aM^n = n\text{log}_aM    $
+					</li>
+				</ul>
+
+				
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				求下列各式的值：
+
+				<br>
+
+				<ul>
+					<li>
+						$\text{lg}\sqrt[5]{100} $
+					</li>
+					<li>
+						$\text{log}_2(4^7\times 2^5)$
+					</li>
+					<li>
+						$\text{log}_345-\text{log}_35 $
+					</li>
+					<li>
+						$\text{lg}25+\frac{2}{3}\text{lg}8+\text{lg}5\times\text{lg}20+(\text{lg}2)^2$
+					</li>
+					<li>
+						$\text{lg}14-2\text{lg}\frac{7}{3}+\text{lg}7-\text{lg}18 $
+					</li>
+				</ul>
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				根据对数的定义，你能用$\text{log}_ca,\text{log}_cb$表示$\text{log}_ab$么？
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				$$x=\text{log}_ab,b=a^x $$
+
+				$$\text{log}_cb= \text{log}_ca^x=x \text{log}_ca $$
+
+				$$ \frac{\text{log}_cb}{\text{log}_ca}=x=\text{log}_ab$$
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				<font color="red">对数换底公式</font> 
+
+				$$a,b,c>0,a,c\neq1$$
+
+				
+
+				$$\text{log}_ab= \frac{\text{log}_cb}{\text{log}_ca}$$
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+				用换底公式证明下列各式：
+				<br>
+
+				<ul>
+					<li>
+						$$\text{log}_{a^m}b^n=\frac{n}{m}\text{log}_ab $$
+					</li>
+					<li>
+						$$\text{log}_ab\cdot\text{log}_ba=1 $$
+					</li>
+					<li>
+						$$\text{log}_ab\cdot\text{log}_bc=\text{log}_ac$$
+					</li>
+				</ul>
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				化简下列各式：
+
+				<ul>
+					<li>
+						$ \text{log}_23\times\text{log}_34\times\text{log}_45\times\text{log}_52 $
+					</li>
+					<li>
+						$2(\text{log}_43+\text{log}_83)(\text{log}_32+\text{log}_92)$
+					</li>
+				</ul>
+
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				地震时释放出的能量E（单位：焦耳）与里氏震级M之间的关系为
+
+				$$\text{lg}E=4.8+1.5M$$
+
+				2011年3月11日，日本东北部海域发生里氏9.0级地震，
+				它所释放出来的能量是2008年5月12日我国汶川发生里氏8.0级地震的多少倍（精确到1）？
+
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				我们用声压级来衡量声音的强弱，定义声压级$L_p=20\times\text{lg}\frac{p}{p_0} $，其中
+				$p_0(P_0>0)$是听觉下限阈值，$p$是实际声压。下表为不同声源的声压级：
+
+				<br>
+
+				<table><thead>
+					<tr>
+					  <th>声源</th>
+					  <th>与声源的距离/m</th>
+					  <th>声压级/dB</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>燃油汽车</td>
+					  <td>10</td>
+					  <td>60~90</td>
+					</tr>
+					<tr>
+					  <td>混动汽车</td>
+					  <td>10</td>
+					  <td>50~60</td>
+					</tr>
+					<tr>
+					  <td>电动汽车</td>
+					  <td>10</td>
+					  <td>40</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+
+				
+
+			</section>
+
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				<table><thead>
+					<tr>
+					  <th>声源</th>
+					  <th>与声源的距离/m</th>
+					  <th>声压级/dB</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>燃油汽车</td>
+					  <td>10</td>
+					  <td>60~90</td>
+					</tr>
+					<tr>
+					  <td>混动汽车</td>
+					  <td>10</td>
+					  <td>50~60</td>
+					</tr>
+					<tr>
+					  <td>电动汽车</td>
+					  <td>10</td>
+					  <td>40</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				  在距离燃油车，混动车，电动车10米处分别测得实际声压为$p_1,p_2,p_3$，则
+
+				  <br>
+
+				  A.$p_1\geqslant p_2$    B.$p_2>10p_3 $
+				  <br>
+
+				  C.$p_3=100p_0 $ D.$p_1\leqslant 100p_2 $
+
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				$e$是什么？
+
+				$$(1+\frac{1}{n})^n$$
+
+				<table><thead>
+					<tr>
+					  <th>$n$</th>
+					  <th>1</th>
+					  <th>2</th>
+					  <th>3</th>
+					  <th>10</th>
+					  <th>100</th>
+					  <th>1000</th>
+					  <th>10000</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td style="text-align: center">$(1+1/n)^n$</td>
+					  <td>2</td>
+					  <td>2.25</td>
+					  <td>2.37</td>
+					  <td>2.59</td>
+					  <td>2.704</td>
+					  <td>2.717</td>
+					  <td>2.71814</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>对数的运算</strong></h3>
+
+				某银行的年利率为100%，存1元，一年后连本带息获得2元。
+
+				<br>
+
+				若存半年后，就将本息取出再存入银行，年底获得多少元？
+
+				<br>
+
+				若每存一个季度，就将本息取出再存入银行，年底获得多少元？
+
+				<br>
+
+				若每天存完，第二天就取出本息再存入银行，年底获得多少元？
+
+				<br>
+				依此类推，若每时每刻都进行一次复利，一年后能得到多少元？
+
+				<br>
+
+				<font color="red">$e$(Euler's number)是增长的极限</font>
+
+
+
+
+
+
+			</section>
+
+			<section data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				
+			</section>
+
+		</section>
+
+
+
+
+
+			
+
+
+		
+
+
+
+
+
+
+	
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-1, 16 , 4, -1], axis:true,showCopyright: false,});
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -4, 4],{name:'$f(x)=2^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var p21 = board2.create('point', [Math.log2(5),5],{name: ''});
+			var p22 = board2.create('point', [Math.log2(9.2),9.2],{name: ''});
+			var li21 = board2.create('line',[[Math.log2(5) ,0 ],p21], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li22 = board2.create('line',[[0 ,5 ],p21], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li23 = board2.create('line',[[Math.log2(9.2) ,0 ],p22], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			var li24 = board2.create('line',[[0 ,9.2 ],p22], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+				
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-3, 8, 3, -1], axis:true,showCopyright: false,});
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3, 3],{name:'$f(x)=2^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph32 = board3.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3, 3],{name:'$g(x)=(\\frac{1}{2})^x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			var a31 = board3.create('slider', [[1.5, .5], [2.5, .5], [-3.0, 1, 3.0]]);
+			
+			var p31 = board3.create('point',
+					[function(x){ return a31.Value() },function(x){ return Math.pow(2,a31.Value() )}],{name:''}
+					);
+
+			var p32 = board3.create('point',
+					[function(x){ return -a31.Value() },function(x){ return Math.pow(0.5,-a31.Value() )}],{name:''}
+					);
+
+			var li31 = board3.create('line',[[function(){return a31.Value()},0 ],p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+
+		    var li33 = board3.create('line',[[function(){return -a31.Value()},0 ],p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+			var li32 = board3.create('line',[[0,function(){return Math.pow(2,a31.Value())}],p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+
+			var li32 = board3.create('line',[[0,function(){return Math.pow(2,a31.Value())}],p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3.5, 3.5],{name:'$y=2^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph42 = board4.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{2})^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph43 = board4.create('functiongraph',
+					[function(x){ return Math.pow(3,x);}, -3.5, 3.5],{name:'$y=3^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+
+			var graph44 = board4.create('functiongraph',
+					[function(x){ return Math.pow(4,x);}, -3.5, 3.5],{name:'$y=4^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			var graph45 = board4.create('functiongraph',
+					[function(x){ return Math.pow(1/3,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{3})^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph46 = board4.create('functiongraph',
+					[function(x){ return Math.pow(1/4,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{4})^x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var a51 = board5.create('slider', [[1.5, .5], [3.5, .5], [0, 1.5, 4.0]]);
+			
+			var graph51 = board5.create('functiongraph',
+					[function(x){ return Math.pow(a51.Value(),x)  ;}, -4, 4], {trace:true}
+					);
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3.5, 3.5],{name:'$y=a^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph62 = board6.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3.5, 3.5],{name:'$y=b^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);		
+
+			var graph63 = board6.create('functiongraph',
+					[function(x){ return Math.pow(4,x);}, -3.5, 3.5],{name:'$y=c^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+	
+			var graph64 = board6.create('functiongraph',
+					[function(x){ return Math.pow(1/4,x);}, -3.5, 3.5],{name:'$y=d^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var li61 = board6.create('line',[[1,0],[1,1]], 
+					{straightFirst:true, straightLast:true, strokeWidth:2, dash:1 });
+			
+
+			var p61 = board6.create('intersection', [graph61, li61, 0],{name:'$(1,a)$'});
+
+			var p62 = board6.create('intersection', [graph62, li61, 0],{name:'$(1,b)$'});
+
+			var p63 = board6.create('intersection', [graph63, li61, 0],{name:'$(1,c)$'});
+
+			var p64 = board6.create('intersection', [graph64, li61, 0],{name:'$(1,d)$'});
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-5, 10, 5, -2], axis:true,showCopyright: false,});
+			var a71 = board7.create('slider', [[1.5, .5], [3.5, .5], [0, 1.5, 4.0]],{name:'a'});
+			var a72 = board7.create('slider', [[1.5, 1.5], [3.5, 1.5], [-4.0, 0, 4.0]],{name:'b'});
+			var a73 = board7.create('slider', [[1.5, 2.5], [3.5, 2.5], [-4, 0, 4.0]],{name:'c'});
+			
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return Math.pow(a71.Value(),x+a72.Value())+a73.Value() ;}, -20, 20],{trace:true}
+					);
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board8 = JXG.JSXGraph.initBoard('box8', {boundingbox: [-5, 10, 5, -2], axis:true,showCopyright: false,});
+			var a81 = board8.create('slider', [[1.5, .5], [3.5, .5], [-4.0, -2.0, 4.0]],{name:'a'});
+			var a82 = board8.create('slider', [[1.5, 1.5], [3.5, 1.5], [-4.0, 2.0, 4.0]],{name:'b'});
+			
+			var graph81 = board8.create('functiongraph',
+					[function(x){ return a81.Value()*Math.pow(0.5,Math.abs(x))+a82.Value() ;}, -20, 20],{trace:false}
+					);
+		</script>
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>

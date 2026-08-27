@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>指数函数与对数函数</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@logicflow/core/dist/index.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@logicflow/core/lib/style/index.min.css" rel="stylesheet">
+		<style type="text/css">
+			.main{
+					text-align: center; 
+					max-width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
+
+				}
+			.katex {
+				font-size: 1.1em;
+				text-indent: 0;
+				text-rendering: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown data-transition="convex">
+					## **第四章**
+					## **指数函数与对数函数**
+					### $\S 4.2$ **指数函数** 
+					王瑞
+					
+					长丰一中
+				</section>
+
+				<section  data-transition="convex">
+					<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>指数的故事</strong></h3>
+
+						古印度有个叫锡塔的大臣发明了一种棋子，国王百玩不厌，决定重赏锡塔。
+						锡塔说：“陛下，我只要一点麦子。
+						请您让人将麦子放在我发明的棋盘的64个格子内，第1格放1粒，第2格放2粒，第3格放4粒，第4格放8粒，第5格放16粒……照这样放下去，
+						每格麦粒数是前1格的2倍，直到把64个棋格放满就行。”
+
+						<br>
+
+						若1000粒米有1g重，折算一下，第64格就需要放9223372036吨米，相当于全球三年多的总粮食产量。
+
+			
+
+				</section>
+
+				
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+						<h3><strong>指数的故事</strong></h3>
+
+						假设现在有一张厚度为1mm的纸，纸质非常的柔软，可以对折无数次。
+						每对折一次，厚度翻一番。已知：地球距离月球约为39万公里，请问对折多少次后厚度能超过地月距离呢？
+
+						<br>
+
+				</section>
+
+				<section  data-transition="convex" data-auto-animate data-auto-animate-id="1">
+					<h3><strong>指数的故事</strong></h3>
+
+					假设现在有一张厚度为1mm的纸，纸质非常的柔软，可以对折无数次。
+					每对折一次，厚度翻一番。已知：地球距离月球约为39万公里，请问对折多少次后厚度能超过地月距离呢？
+
+					<br>
+
+					<h3>42次</h3>
+
+			</section>
+
+		</section>
+
+
+
+		<section  data-transition="convex" >
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+
+				<font color="blue">问题1</font>　随着中国经济高速增长，人民生活水平不断提高，旅游成了越来越多家庭的重要生活方式。
+				由于旅游人数不断增加，Ａ、Ｂ两地景区自2001年起采取了不同的应对措施，Ａ地提高了景区门票价格，而Ｂ地则取消了景区门票。
+
+				
+			
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				下表给出了Ａ、Ｂ两地景区2001年至2015年的游客人次以及逐年增加量。
+
+				<div class="main">
+					<img src="4-2-1.png" alt="表格1" width="800px"/>
+				</div>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				为了有利于观察规律，根据上表，分别画出A、B两地景区采取不同措施后的15年游客人次的图象。
+
+				<div class="main">
+					<img src="4-2-2.png" alt="图象1" width="800px"/>
+				</div>
+
+				观察图象和表格，可以发现，A地景区的游客人次近似于直线上升（线性增长），
+				年增加量大致相等（约为10万次）；B地景区的游客人次则是非线性增长，年增加量越来越大。
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				从2002年起, 将B地景区每年的游客人次除以上一年的游客人次, 可以得到：
+
+				<br>
+
+				<ul>
+					<li>
+						$\frac{{2002年游客人次}}{2001年游客人次}=\frac{309}{278} \approx 1.11$
+					</li>
+					<li>
+						$\frac{{2003年游客人次}}{2002年游客人次}=\frac{344}{309} \approx 1.11 $
+					</li>
+					<li>
+						$\cdots $
+					</li>
+					<li>
+						$\frac{{2015年游客人次}}{2014年游客人次}=\frac{1244}{1118} \approx 1.11 $
+					</li>
+			
+				</ul>
+
+			
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				结果表明, B地景区的游客人次的年增长率都约为$1.11−1=0.11$, 是一个常数。
+
+				<br>
+
+				<font color="red">
+					像这样，增长率为常数的变化方式，我们称为指数增长。
+
+				</font>
+				<br>
+				因此，B地景区的游客人次近似于指数增长。
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				显然, 从2001年开始, B地景区游客人次的变化规律可以近似描述为：
+
+				<br>
+
+				<ul>
+					<li>
+						1年后,游客人次是2001年的$1.11^1$倍
+					</li>
+					<li>
+						2年后,游客人次是2001年的$1.11^2$倍
+					</li>
+					<li>
+						3年后,游客人次是2001年的$1.11^3$倍
+					</li>
+					<li>
+						$x$年后,游客人次是2001年的$1.11^x$倍
+					</li>
+				</ul>
+
+				<br>
+
+				如果设经过$x$年后的游客人次为2001年的$y$倍, 那么
+
+				$$y=1.11^x(x\in[0,+\infty)) $$
+
+				这是一个函数, 其中指数$x$是自变量。
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				<font color="blue">问题２</font>
+				当生物死亡后，它机体内原有的碳14含量会按确定的比率衰减（称为衰减率），大约每经过5730年衰减为原来的一半，这个时间 称为“半衰期”。
+				按照上述变化规律，生物体内碳14含量与死亡年数之间有怎样的关系？
+
+				<br>
+				背景知识：碳14（$^{14}\text{C}$）或放射性碳是碳元素的一种具放射性的同位素。碳14的原子核由6个质子和8个中子构成，其半衰期约为5730年，衰变方式为$\beta$衰变，衰变过程中，
+				碳14原子转变为氮14原子。
+
+
+
+			</section>
+			
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+
+				设死亡生物体内碳14含量的年衰减率为$p$，把刚死亡的生物体内碳14含量看成1个单位，则：
+
+				<ul>
+					<li>
+						死亡1年后，生物体内碳14含量为$(1-p)^1$
+					</li>
+					<li>
+						死亡2年后，生物体内碳14含量为$(1-p)^2$
+					</li>
+					<li>
+						死亡3年后，生物体内碳14含量为$(1-p)^3$
+					</li>
+					<li>
+						$\cdots$
+					</li>
+					<li>
+						死亡5730年后，生物体内碳14含量为$(1-p)^{5730}$
+					</li>
+				</ul>
+				
+				<br>
+
+				根据半衰期的定义，$(1-p)^{5730}=\frac{1}{2}$。所以：
+				<br>
+
+				$1-p=(\frac{1}{2})^{\frac{1}{5730}} ,p=1-(\frac{1}{2})^{\frac{1}{5730}} $
+
+				
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate>
+				<h3><strong>新知</strong></h3>
+				
+				如果生物死亡年数为$x$，死亡生物体内碳14含量为$y$，那么:
+
+				$$y=(1-p)^x= ((\frac{1}{2})^{\frac{1}{5730}})^x(x\in[0,+\infty) )$$
+
+				这也是一个函数，其中其中底数是一个常数，指数$x$是自变量。
+
+
+
+			</section>
+
+
+
+			
+		</section>
+
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+				
+				<ul>
+					<li>
+						问题1：游客年增长率为：0.11，$x$年后游客人次：$y=1.11^x$。
+					</li>
+					<li>
+						问题2：碳14含量年衰减率为：$1-(\frac{1}{2})^{\frac{1}{5730}}$，$x$年后生物体内碳含量：$y= ((\frac{1}{2})^{\frac{1}{5730}})^x$。
+					</li>
+				</ul>
+
+				<br>
+
+				如果用字母$a$代替上面两式中的底数，那么两个式子都可以表示
+				为：
+				<font color="red">$$y=a^x$$ </font> 的形式，其中指数$x$是自变量，底数$a$是一个大于0且不等于1的常量。
+
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+
+				<font color="red">一般地，形如$y=a^x(a>0,且a\neq 1)$的函数叫做指数函数，其中指数$x$是自变量，定义域为$R$。
+				</font>
+
+				<ul>
+					<li>
+						底数$a$为常数，$a>0且a\neq 1$；系数为1。
+					</li>
+					<li>
+						指数$x$为自变量，定义域为$R$。
+					</li>
+					<li>
+						形如$y=k\cdot a^x(k\in R且k\neq 1,a>0且a\neq 1)$的函数属于指数型函数。
+					</li>
+				</ul>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+				
+				指数函数定义中为什么规定$a$大于0且不等于1?
+
+				<ul>
+					<li>
+						若$a=1$，则$y=a^x$恒为1，对于函数来说没有研究意义。
+					</li>
+					<li>
+						若$𝑎< 0$，当$x < 0$时，$y=a^x$不一定有意义。
+					</li>
+					<li>
+						若$a=0$，当$x>0$时，$y=a^x $恒为0；当$x\leqslant 0$，$y=a^x$没有意义。
+					</li>
+				</ul>
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+				辨析下列函数是指数函数么？
+
+				<br>
+
+				<ol>
+					<li>
+						$y=4^x$
+					</li>
+					<li>
+						$y=4^{x+3}$
+					</li>
+					<li>
+						$y=1^x$
+					</li>
+					<li>
+						$y=(\pi-3)^x$
+					</li>
+					<li>
+						$y=(2x)^x$
+					</li>
+					<li>
+						$y=(-2)^x$
+					</li>
+					<li>
+						$y=(\frac{2}{3})^{-x}$
+					</li>
+					<li>
+						$y=x^4$
+					</li>
+				</ol>
+				
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+				
+				
+				<font color="blue">例1</font> 已知指数函数$f(x)=a^x(a>0,a\neq 1),f(3)=\pi$，求$f(0),f(1),f(-3)$的值。
+				
+				<br>
+
+				$$f(3)=a^3=\pi,a=(\pi)^{\frac{1}{3}},f(x)=((\pi)^{\frac{1}{3}})^x $$
+				
+				
+				<font color="blue">变式</font> 已知函数$f(x)=a^x+b(a>0,a\neq 1)$，其函数图象过点$(-1,5),(0,4)$，则$f(-2)$的值是多少？
+				
+
+
+			</section>
+
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+				
+			
+
+				<ul>
+					<li>
+						在问题1中，如果平均每位游客出游一次可给当地带来1000元门票之外的收入，A地景区的门票价格为150元，比较这15年间A，B两地旅游收入变化情况。
+					</li>
+					<li>
+						在问题2中，某生物死亡10000年后，它体内碳14的含量衰减为原来的百分之几？
+					</li>
+				</ul>
+				
+
+
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+
+				设经过$x$年后，游客给$A,B$两地带来的收入分别为$f(x),g(x)$元，则
+				<br>
+
+				$f(x)=1150\times (600+10x)$
+				<br>
+
+				$g(x)=1000\times 278 \times 1.11^x $
+				
+				
+				
+
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+
+				<div class="main">
+					<div id="box1" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+
+				<ul>
+					<li>
+						函数$y=(a^2-3a+3)a^x$是指数函数，求$a$的值。
+					</li>
+					<li>
+						若指数函数$f(x)$的图象经过点$(3,9)$，求$f(x)$。
+					</li>
+					<li>
+						我国工农业总产值从1997年到2017年的20年间翻了两番，求年平均增长率。
+					</li>
+				</ul>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="2">
+				<h3><strong>指数函数</strong></h3>
+
+				常见的指数类型函数
+
+				<br>
+
+				<ul>
+					<li>
+						指数增长模型，设原有量为$N$，每次的增长率为$p$，则经过$x$次增长，该量增长到$y$，则$y=N(1+p)^x$
+					</li>
+					<li>
+						指数减少模型，设原有量为$N$，每次的减少率为$p$，则经过$x$次减少，该量减少到$y$，则$y=N(1-p)^x$
+					</li>
+					<li>
+						指数型函数，把形如$y=ka^x(k\neq0,a>0,且a\neq 1)$的函数称为指数型函数。
+					</li>
+				</ul>
+
+			</section>
+
+
+		</section>
+
+		<section  data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				列出函数$y=2^x$自变量和函数值的表格，使用描点法画图。
+
+				<table><thead>
+					<tr>
+					  <th>x</th>
+					  <th>-2</th>
+					  <th>-1</th>
+					  <th>-0.5</th>
+					  <th>0</th>
+					  <th>0.5</th>
+					  <th>1</th>
+					  <th>2</th>
+					</tr></thead>
+				  <tbody>
+					<tr>
+					  <td>y</td>
+					  <td>0.25</td>
+					  <td>0.5</td>
+					  <td>0.71</td>
+					  <td>1</td>
+					  <td>1.41</td>
+					  <td>2</td>
+					  <td>4</td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				  <div class="main">
+					<div id="box2" class="jxgbox" style="width:400px; height:400px;"></div>
+				</div>
+
+				
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				类似的，画出函数$y=(\frac{1}{2})^x$的图象，比较和$y=2^x$的关系。
+
+				<div class="main">
+					<div id="box3" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+	
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				选取$a$的若干值画图，发现指数函数的图像按底数的取值，可分为$0< a < 1$和$a>1$两种类型。 
+
+				<div class="main">
+					<div id="box4" class="jxgbox" style="width:450px; height:450px;"></div>
+				</div>
+				
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				指数函数$y=a^x$的图象和性质
+
+				<div class="main">
+					<img src="4-2-3.png" alt="表格2" width="900px"/>
+				</div>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				<div class="main">
+					<div id="box5" class="jxgbox" style="width:550px; height:550px;"></div>
+				</div>
+				
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				指数函数$ y=a^x, y=b^x,y=c^x,y=d^x$的图象如下图所示，判断$a,b,c,d,1$的大小关系。
+
+				<div class="main">
+					<div id="box6" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+
+				
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				指数类型函数$y=a^{x+b}+c$的图象是怎么样的？
+
+				
+
+				
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的图象</strong></h3>
+
+				<ul>
+					<li>
+						函数$f(x)=a^{3-x}-1(a>0,a\neq 1)$的图象恒过哪个定点？
+					</li>
+					<li>
+						函数$f(x)=a^{2x+2}+3(a>0,a\neq 1)$的图象恒过哪个定点？
+					</li>
+				</ul>
+
+
+				
+
+			</section>
+
+			
+
+			
+			
+
+		</section>
+
+
+		<section data-transition="convex">
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				<ul>
+					<li>
+						求函数$y=\frac{1}{3^x+1}$的值域。
+					</li>
+					<li>
+						求函数$y=\frac{3^x}{1+3^x} $的值域。
+					</li>
+					<li>
+						求函数$y=4^x-2^x+1 $的值域。
+					</li>
+				</ul>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				已知函数$y=a(\frac{1}{2})^{|x|}+b$的图象过原点，且无限接近直线$y=2$但又不与该直线相交。
+
+				<ul>
+					<li>
+						求该函数的解析式。
+					</li>
+					<li>
+						判断该函数的奇偶性和单调性。
+					</li>
+					
+				</ul>
+
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				<div class="main">
+					<div id="box8" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				比较下列各数的大小：
+
+				<br>
+
+				<ul>
+					<li>
+						$0.6^{0.6},0.6^{1.5},1.5^{0.6}$
+					</li>
+					<li>
+						$0.4^3,\pi^0,3^{0.4}$
+					</li>
+					<li>
+						$0.8^{0.7},0.8^{0.9},1.2^{0.8}$
+					</li>
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				
+
+				<ul>
+					<li>
+						$a^{-5x}>a^{x+7}(a>0,a\neq 1)$，求$x$的取值范围。
+					</li>
+					<li>
+						$(a^2+a+2)^{x}>(a^2+a+2)^{1-x}$，求$x$的取值范围。
+					</li>
+				
+				</ul>
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				复合函数的单调性
+
+				<br>
+
+				$$y=f(g(x))$$
+
+				$$y=f(u),u=g(x) $$
+
+				$f(u),g(x) $单调性相同的时候，$y$单调递增。反之，$f(u),g(x) $单调性相反的时候，$y$单调递减。
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				复合函数的单调性
+
+				<br>
+
+				$y=f(g(x))$，$g(x)$在$x\in D$上单调递减，$g(x)\in I$，$f(x)$在$x\in I$上单调递增。
+
+				<br>
+
+				$\forall x_1,x_2 \in D,x_1< x_2$，则$g(x_1)>g(x_2),f(g(x_1))>f(g(x_2))$。所以$f(g(x))$单调递减。
+
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				函数$y=a^{f(x)}$的单调性
+
+				<br>
+
+				<ul>
+					<li>
+						$a>1, 0< a < 1$
+					</li>
+					<li>
+						$f(x)$的单调性
+					</li>
+				</ul>
+
+				<br>
+
+				$y=a^{f(x)}$是由$y=a^u,u=f(x)$的复合而成。
+
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="4">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				
+
+			
+
+				<ul>
+					<li>
+						判断函数$f(x)=(\frac{1}{3})^{x^2-2x}$的单调性，并求值域。
+					</li>
+					<li>
+						求函数$y=a^{x^2+2x-3}$的单调区间。
+					</li>
+				</ul>
+
+				<br>
+
+				
+			</section>
+
+			<section  data-transition="convex" data-auto-animate data-auto-animate-id="3">
+				<h3><strong>指数函数的应用</strong></h3>
+
+				指数类型函数$y=(\frac{1}{3})^{x+b}+c$的图象是怎么样的？
+
+				<div class="main">
+					<div id="box7" class="jxgbox" style="width:500px; height:500px;"></div>
+				</div>
+
+				
+
+			</section>
+
+
+
+
+
+
+
+
+		</section>
+
+			
+
+			</div>
+		</div>
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-5, 1500000, 20, -5], axis:true,showCopyright: false,});
+			var graph1 = board1.create('functiongraph',
+                       [function(x){ return 1150*(10*x+600);}, 0, 16],{name:'$f(x)=11500x+690000 $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+                    );
+			var graph2 = board1.create('functiongraph',
+                       [function(x){ return 278000*Math.pow(1.11,x);}, 0, 16],{name:'$g(x)=278000\\times 1.11^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+                    );
+			var p11 = board1.create('intersection', [graph1, graph2, 0],{name:''});
+
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-3, 8 , 3, -1], axis:true,showCopyright: false,});
+			var graph21 = board2.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3, 3],{name:'$f(x)=2^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var p21 = board2.create('point', [-2,0.25],{name: ''});
+			var p22 = board2.create('point', [-1.5,Math.pow(2,-1.5)],{name: ''});
+			var p23 = board2.create('point', [-1,Math.pow(2,-1)],{name: ''});
+			var p24 = board2.create('point', [-.5,Math.pow(2,-.5)],{name: ''});
+			var p25 = board2.create('point', [0,Math.pow(2,0)],{name: ''});
+			var p26 = board2.create('point', [0.5,Math.pow(2,0.5)],{name: ''});
+			var p27 = board2.create('point', [1.0,Math.pow(2,1.0)],{name: ''});
+			var p28 = board2.create('point', [1.5,Math.pow(2,1.5)],{name: ''});
+			var p29 = board2.create('point', [2.0,Math.pow(2,2.0)],{name: ''});
+
+			
+						
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board3 = JXG.JSXGraph.initBoard('box3', {boundingbox: [-3, 8, 3, -1], axis:true,showCopyright: false,});
+			var graph31 = board3.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3, 3],{name:'$f(x)=2^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+			var graph32 = board3.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3, 3],{name:'$g(x)=(\\frac{1}{2})^x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			var a31 = board3.create('slider', [[1.5, .5], [2.5, .5], [-3.0, 1, 3.0]]);
+			
+			var p31 = board3.create('point',
+					[function(x){ return a31.Value() },function(x){ return Math.pow(2,a31.Value() )}],{name:''}
+					);
+
+			var p32 = board3.create('point',
+					[function(x){ return -a31.Value() },function(x){ return Math.pow(0.5,-a31.Value() )}],{name:''}
+					);
+
+			var li31 = board3.create('line',[[function(){return a31.Value()},0 ],p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+
+		    var li33 = board3.create('line',[[function(){return -a31.Value()},0 ],p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+			var li32 = board3.create('line',[[0,function(){return Math.pow(2,a31.Value())}],p31], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+
+			var li32 = board3.create('line',[[0,function(){return Math.pow(2,a31.Value())}],p32], 
+					{straightFirst:false, straightLast:false, strokeWidth:2, dash:1 });
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board4 = JXG.JSXGraph.initBoard('box4', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var graph41 = board4.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3.5, 3.5],{name:'$y=2^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph42 = board4.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{2})^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph43 = board4.create('functiongraph',
+					[function(x){ return Math.pow(3,x);}, -3.5, 3.5],{name:'$y=3^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+
+			var graph44 = board4.create('functiongraph',
+					[function(x){ return Math.pow(4,x);}, -3.5, 3.5],{name:'$y=4^x $',withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			var graph45 = board4.create('functiongraph',
+					[function(x){ return Math.pow(1/3,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{3})^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph46 = board4.create('functiongraph',
+					[function(x){ return Math.pow(1/4,x);}, -3.5, 3.5],{name:'$y=(\\frac{1}{4})^x$',strokeColor:'red', withLabel:true,label:{position:'bottom', offsets:[10,10]}}
+					);
+
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board5 = JXG.JSXGraph.initBoard('box5', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var a51 = board5.create('slider', [[1.5, .5], [3.5, .5], [0, 1.5, 4.0]]);
+			
+			var graph51 = board5.create('functiongraph',
+					[function(x){ return Math.pow(a51.Value(),x)  ;}, -4, 4], {trace:true}
+					);
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board6 = JXG.JSXGraph.initBoard('box6', {boundingbox: [-4, 10, 4, -1], axis:true,showCopyright: false,});
+			var graph61 = board6.create('functiongraph',
+					[function(x){ return Math.pow(2,x);}, -3.5, 3.5],{name:'$y=a^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			var graph62 = board6.create('functiongraph',
+					[function(x){ return Math.pow(0.5,x);}, -3.5, 3.5],{name:'$y=b^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);		
+
+			var graph63 = board6.create('functiongraph',
+					[function(x){ return Math.pow(4,x);}, -3.5, 3.5],{name:'$y=c^x $',withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+	
+			var graph64 = board6.create('functiongraph',
+					[function(x){ return Math.pow(1/4,x);}, -3.5, 3.5],{name:'$y=d^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+					);
+			
+			var li61 = board6.create('line',[[1,0],[1,1]], 
+					{straightFirst:true, straightLast:true, strokeWidth:2, dash:1 });
+			
+
+			var p61 = board6.create('intersection', [graph61, li61, 0],{name:'$(1,a)$'});
+
+			var p62 = board6.create('intersection', [graph62, li61, 0],{name:'$(1,b)$'});
+
+			var p63 = board6.create('intersection', [graph63, li61, 0],{name:'$(1,c)$'});
+
+			var p64 = board6.create('intersection', [graph64, li61, 0],{name:'$(1,d)$'});
+			
+		</script>
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board7 = JXG.JSXGraph.initBoard('box7', {boundingbox: [-5, 10, 5, -2], axis:true,showCopyright: false,});
+			var a71 = board7.create('slider', [[1.5, .5], [3.5, .5], [0, 1/3, 4.0]],{name:'a'});
+			var a72 = board7.create('slider', [[1.5, 1.5], [3.5, 1.5], [-4.0, 0, 4.0]],{name:'b'});
+			var a73 = board7.create('slider', [[1.5, 2.5], [3.5, 2.5], [-4, 0, 4.0]],{name:'c'});
+			
+			var graph71 = board7.create('functiongraph',
+					[function(x){ return Math.pow(a71.Value(),x+a72.Value())+a73.Value() ;}, -20, 20],{trace:false}
+					);
+		</script>
+
+
+		<script type="text/javascript">
+			JXG.Options.text.useKatex = true;
+			var board8 = JXG.JSXGraph.initBoard('box8', {boundingbox: [-5, 10, 5, -2], axis:true,showCopyright: false,});
+			var a81 = board8.create('slider', [[1.5, .5], [3.5, .5], [-4.0, -2.0, 4.0]],{name:'a'});
+			var a82 = board8.create('slider', [[1.5, 1.5], [3.5, 1.5], [-4.0, 2.0, 4.0]],{name:'b'});
+			
+			var graph81 = board8.create('functiongraph',
+					[function(x){ return a81.Value()*Math.pow(0.5,Math.abs(x))+a82.Value() ;}, -20, 20],{trace:false}
+					);
+		</script>
+
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				backgroundTransition: 'convex',
+				chart: {
+					defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+				},
+				customcontrols: {
+    			controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+						]
+					},
+				chalkboard: {rememberColor:true,chalkEffect:0.0,theme: "whiteboard"},
+				keyboard: {
+				    174: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    175: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+				mouseWheel: true,
+				touch: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealChalkboard, RevealCustomControls,RevealMath.KaTeX,RevealMarkdown,RevealChart]
+			});
+		</script>
+		
+	</body>
+</html>
