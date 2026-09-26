@@ -471,6 +471,7 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
 		<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+		
 		<script>
 			// 1. 初始化画板，默认隐藏坐标轴
 			const board = JXG.JSXGraph.initBoard('box1', {
@@ -488,7 +489,6 @@
 			axesVisible = !axesVisible;
 			board.defaultAxes.x.setAttribute({ visible: axesVisible });
 			board.defaultAxes.y.setAttribute({ visible: axesVisible });
-			// 可选：更新按钮文字
 			btn.setText(axesVisible ? '隐藏坐标轴' : '显示坐标轴');
 			}
 
@@ -498,12 +498,53 @@
 			padding: 6
 			});
 
+			// 4.【新增】动态生成二次函数图象
+			// 关键：把图象的右端点写成一个函数，动画时不断增大 progress，
+			// 每次 board.update() 都按新范围 [0, progress] 重画，实现“从左往右画出”
+			let progress = 0;          // 当前已画到的 x 值
+			let animTimer = null;      // 动画定时器
+			let graphVisible = false;  // 图象当前是否可见
+
 			var graph11 = board.create('functiongraph',
-                       [function(x){ return -2/585*x*x+4/3*x;}, 0, 390]
+                       [function(x){ return -2/585*x*x+4/3*x;},
+                        0,
+                        function(){ return progress; }],   // 右端点随 progress 变化
+                       { visible: false, strokeWidth: 2 }
                     );
+
+			// 5.【新增】点击生成 / 隐藏图象
+			function toggleGraph() {
+			if (animTimer) { return; }                 // 动画播放中忽略点击
+			if (graphVisible) {                        // 已显示 → 隐藏
+				graph11.setAttribute({ visible: false });
+				graphVisible = false;
+				btnGraph.setText('生成飞行轨迹');
+				return;
+			}
+			// 未显示 → 播放画图动画
+			graphVisible = true;
+			progress = 0;
+			graph11.setAttribute({ visible: true });
+			btnGraph.setText('隐藏飞行轨迹');
+			animTimer = setInterval(function () {
+				progress += 8;                         // 每帧向右推进 8 个单位
+				if (progress >= 390) {                 // 画到 B 点为止
+					progress = 390;
+					clearInterval(animTimer);
+					animTimer = null;
+				}
+				board.update();
+			}, 30);
+			}
+
+			const btnGraph = board.create('button', [-4, 130, '生成飞行轨迹', toggleGraph], {
+			fontSize: 14,
+			padding: 6
+			});
+
 			var p11 = board.create('point', [0, 0], { size: 2, visible: true,name:'A' });
 			var p12 = board.create('point', [390, 0], { size: 2, visible: true,name:'B' });
-			var p12 = board.create('point', [195, 130], { size: 2, visible: true,name:'C' });
+			var p13 = board.create('point', [195, 130], { size: 2, visible: true,name:'C' });
 
 		</script>
 
