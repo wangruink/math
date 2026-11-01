@@ -886,7 +886,7 @@
                        [function(x){ return 1150*(10*x+600);}, 0, 16],{name:'$f(x)=11500x+690000 $',withLabel:true,label:{position:'top', offsets:[10,10]}}
                     );
 			var graph2 = board1.create('functiongraph',
-                       [function(x){ return 278000*Math.pow(1.11,x);}, 0, 16],{name:'$g(x)=278000\\times 1.11^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}}
+                       [function(x){ return 278000*Math.pow(1.11,x);}, 0, 16],{name:'$g(x)=278000\\times 1.11^x$',strokeColor:'red', withLabel:true,label:{position:'top', offsets:[10,10]}, doAdvancedPlot:false, numberPointsHigh:1000, RDPsmoothing:false}
                     );
 			var p11 = board1.create('intersection', [graph1, graph2, 0],{name:''});
 
