@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="dist/theme/serif.css">
 
 
+		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 		<!-- Font awesome is required for the chalkboard plugin -->
 		<script src="vendor/fontawesome/js/all.min.js"></script>
@@ -26,6 +27,10 @@
 		<script src="vendor/chartjs/chart-3.2.0.min.js"></script>
 		<script src="vendor/chartjs/chart-4.5.1.min.js"></script>
 		<script type="text/javascript" src="vendor/jsxgraph/jsxgraphcore-latest.js"></script>
+		<script src="vendor/reveal-plugins/animate/plugin.js"></script>
+		<script src="vendor/svgjs/svg.min.js"></script>
+		<script src="vendor/logicflow/index.min.js"></script>
+		<link href="vendor/logicflow/index.min.css" rel="stylesheet">
 
 
 		<!-- Font awesome is required for the chalkboard plugin -->
@@ -1242,7 +1247,6 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				katex: { local: 'vendor/katex' },
 				backgroundTransition: 'convex',
 				chart: {
 					defaults: {
